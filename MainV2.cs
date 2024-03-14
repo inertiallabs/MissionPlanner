@@ -686,6 +686,15 @@ namespace MissionPlanner
                     t.TabPages.Remove(FlightData.tabPagemessages);
                 }
 
+                if (DisplayConfiguration.displayInertialLabsTab && !t.TabPages.Contains(FlightData.tabInertialLabs))
+                {
+                    t.TabPages.Add(FlightData.tabInertialLabs);
+                }
+                else if (!DisplayConfiguration.displayInertialLabsTab && t.TabPages.Contains(FlightData.tabInertialLabs))
+                {
+                    t.TabPages.Remove(FlightData.tabInertialLabs);
+                }
+
                 t.SelectedIndex = 0;
 
                 MainV2.instance.FlightData.loadTabControlActions();

@@ -59,6 +59,7 @@ namespace MissionPlanner.Utilities
         public Boolean displayTelemetryTab { get; set; }
         public Boolean displayDataflashTab { get; set; }
         public Boolean displayMessagesTab { get; set; }
+        public Boolean displayInertialLabsTab { get; set; }
 
         //flight plan
         public Boolean displayRallyPointsMenu { get; set; }
@@ -150,6 +151,7 @@ namespace MissionPlanner.Utilities
             displayTelemetryTab = true;
             displayDataflashTab = true;
             displayMessagesTab = true;
+            displayInertialLabsTab = true;
 
             //flight plan
             displayRallyPointsMenu = true;
@@ -278,6 +280,7 @@ namespace MissionPlanner.Utilities
                 displayTelemetryTab = true,
                 displayDataflashTab = true,
                 displayMessagesTab = true,
+                displayInertialLabsTab = true,
 
                 //flight plan
                 displayRallyPointsMenu = true,
@@ -360,6 +363,7 @@ namespace MissionPlanner.Utilities
                 displayTelemetryTab = true,
                 displayDataflashTab = true,
                 displayMessagesTab = true,
+                displayInertialLabsTab = true,
 
                 //flight plan
                 displayRallyPointsMenu = true,
