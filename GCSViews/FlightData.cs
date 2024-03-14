@@ -708,6 +708,8 @@ namespace MissionPlanner.GCSViews
             TabListDisplay.Add(tabAuxFunction.Name, MainV2.DisplayConfiguration.displayAuxFunctionTab);
 
             TabListDisplay.Add(tabPayload.Name, MainV2.DisplayConfiguration.displayPayloadTab);
+
+            TabListDisplay.Add(tabInertialLabs.Name, MainV2.DisplayConfiguration.displayInertialLabsTab);
         }
 
         private void loadTabControlActions()
@@ -6323,6 +6325,26 @@ namespace MissionPlanner.GCSViews
             {
                 CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
             }
+        }
+
+        private void BUT_inertiallabs_gnss_enable_Click(object sender, EventArgs e)
+        {
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.ENABLE_GNSS, 0, 0, 0, 0, 0, 0);
+        }
+
+        private void BUT_inertiallabs_gnss_disable_Click(object sender, EventArgs e)
+        {
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.DISABLE_GNSS, 0, 0, 0, 0, 0, 0);
+        }
+
+        private void BUT_inertiallabs_vg3dclb_flight_start_Click(object sender, EventArgs e)
+        {
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.START_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0);
+        }
+
+        private void BUT_inertiallabs_vg3dclb_flight_stop_Click(object sender, EventArgs e)
+        {
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0);
         }
     }
 }

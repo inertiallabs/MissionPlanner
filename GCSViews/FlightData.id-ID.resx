@@ -246,6 +246,9 @@
   <data name="tablogbrowse.Text" xml:space="preserve">
     <value>DataFlash Logs</value>
   </data>
+  <data name="tabInertialLabs.Text" xml:space="preserve">
+    <value>InertialLabs</value>
+  </data>
   <data name="BUT_mountmode.ToolTip" xml:space="preserve">
     <value>Perubahan Mode di sebelah kiri</value>
   </data>
