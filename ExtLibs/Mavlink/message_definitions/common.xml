@@ -2135,6 +2135,16 @@
         <param index="6">Empty.</param>
         <param index="7">Empty.</param>
       </entry>
+      <entry value="33000" name="MAV_CMD_INERTIALLABS_AHRS_SEND" hasLocation="false" isDestination="false">
+        <description>Send command to Inertial Labs AHRS</description>
+        <param index="1" label="CommandType" enum="INERTIALLABS_AHRS_COMMAND_TYPE">Command type</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
     </enum>
     <enum name="MAV_DATA_STREAM">
       <description>A data stream is not a fixed set of messages, but rather a
@@ -4121,6 +4131,20 @@
       </entry>
       <entry value="5" name="MISSION_STATE_COMPLETE">
         <description>Mission has executed all mission items.</description>
+      </entry>
+    </enum>
+    <enum name="INERTIALLABS_AHRS_COMMAND_TYPE">
+      <entry value="0" name="DISABLE_GNSS">
+        <description>Disable GNSS for Inertial Labs AHRS</description>
+      </entry>
+      <entry value="1" name="ENABLE_GNSS">
+        <description>Enable GNSS for Inertial Labs AHRS</description>
+      </entry>
+      <entry value="2" name="START_VG3D_CALIBRATION_IN_FLIGHT">
+        <description>Start on-the-fly VG3D calibration</description>
+      </entry>
+      <entry value="3" name="STOP_VG3D_CALIBRATION_IN_FLIGHT">
+        <description>Stop on-the-fly VG3D calibration</description>
       </entry>
     </enum>
   </enums>
