@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Thu Aug 01 2024";
+    public const string MAVLINK_BUILD_DATE = "Fri Aug 02 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -274,6 +274,7 @@ public partial class MAVLink
         new message_info(386, "CAN_FRAME", 132, 16, 16, typeof( mavlink_can_frame_t )),
         new message_info(387, "CANFD_FRAME", 4, 72, 72, typeof( mavlink_canfd_frame_t )),
         new message_info(388, "CAN_FILTER_MODIFY", 8, 37, 37, typeof( mavlink_can_filter_modify_t )),
+        new message_info(400, "EAHRS_STATUS_INFO", 231, 10, 10, typeof( mavlink_eahrs_status_info_t )),
         new message_info(9000, "WHEEL_DISTANCE", 113, 137, 137, typeof( mavlink_wheel_distance_t )),
         new message_info(9005, "WINCH_STATUS", 117, 34, 34, typeof( mavlink_winch_status_t )),
         new message_info(10001, "UAVIONIX_ADSB_OUT_CFG", 209, 20, 20, typeof( mavlink_uavionix_adsb_out_cfg_t )),
@@ -603,6 +604,7 @@ public partial class MAVLink
         CAN_FRAME = 386,
         CANFD_FRAME = 387,
         CAN_FILTER_MODIFY = 388,
+        EAHRS_STATUS_INFO = 400,
         WHEEL_DISTANCE = 9000,
         WINCH_STATUS = 9005,
         UAVIONIX_ADSB_OUT_CFG = 10001,
@@ -850,8 +852,8 @@ public partial class MAVLink
         [hasLocation()]
         [Obsolete]
         DO_RETURN_PATH_START=188, 
-        ///<summary> Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. 	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. 	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence. 	 |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  </summary>
-        [Description("Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. 	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. 	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence. 	")]
+        ///<summary> Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.       It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.       The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.      |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  </summary>
+        [Description("Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.       It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.       The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.     ")]
         [hasLocation()]
         DO_LAND_START=189, 
         ///<summary> Mission command to perform a landing from a rally point. |Break altitude| Landing speed| Empty| Empty| Empty| Empty| Empty|  </summary>
@@ -1234,6 +1236,44 @@ public partial class MAVLink
         ///<summary> Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages |Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for 3rd bus).| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages")]
         CAN_FORWARD=32000, 
+        ///<summary> Send command 'start sending user defined data' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'start sending user defined data' to external AHRS")]
+        EXTERNAL_AHRS_START_UDD=33000, 
+        ///<summary> Send command 'stop sending data' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'stop sending data' to external AHRS")]
+        EXTERNAL_AHRS_STOP=33001, 
+        ///<summary> Send command 'enable GNSS' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'enable GNSS' to external AHRS")]
+        EXTERNAL_AHRS_ENABLE_GNSS=33002, 
+        ///<summary> Send command 'disable GNSS' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'disable GNSS' to external AHRS")]
+        EXTERNAL_AHRS_DISABLE_GNSS=33003, 
+        ///<summary> Send command 'start vg3d calibration in flight' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'start vg3d calibration in flight' to external AHRS")]
+        EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT=33004, 
+        ///<summary> Send command 'stop vg3d calibration in flight' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'stop vg3d calibration in flight' to external AHRS")]
+        EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT=33005, 
+        ///<summary> Send external position aiding data to AHRS |Latency| Latitude STD| Longitude STD| Altitude STD| Latitude| Longitude| Altitude|  </summary>
+        [Description("Send external position aiding data to AHRS")]
+        [hasLocation()]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION=33006, 
+        ///<summary> Send external horizontal position aiding data to AHRS |Latitude STD| Longitude STD| Latency| Empty.| Latitude| Longitude| Empty.|  </summary>
+        [Description("Send external horizontal position aiding data to AHRS")]
+        [hasLocation()]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION=33007, 
+        ///<summary> Send external altitude aiding data to AHRS |Altitude STD| Empty.| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
+        [Description("Send external altitude aiding data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE=33008, 
+        ///<summary> Send wind aiding data to AHRS |N Wind| N Wind| N Wind STD| N Wind STD| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send wind aiding data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_WIND=33009, 
+        ///<summary> Send aiding data ambient air data to AHRS |Temperature| Pressure| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
+        [Description("Send aiding data ambient air data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR=33010, 
+        ///<summary> Send aiding data external heading to AHRS |Heading| Heading STD| Latency| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send aiding data external heading to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING=33011, 
         ///<summary> A system wide power-off event has been initiated. |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("A system wide power-off event has been initiated.")]
         POWER_OFF_INITIATED=42000, 
@@ -2099,6 +2139,199 @@ public partial class MAVLink
         
     };
     
+    ///<summary> Flags for the EAHRS common status. </summary>
+    [Flags]
+	public enum EAHRS_COMMON_STATUS_FLAGS: int /*default*/
+    {
+        ///<summary> Ok. | </summary>
+        [Description("Ok.")]
+        OK=1, 
+        ///<summary> Info. | </summary>
+        [Description("Info.")]
+        INFO=2, 
+        ///<summary> Warning. | </summary>
+        [Description("Warning.")]
+        WARNING=4, 
+        ///<summary> Fail. | </summary>
+        [Description("Fail.")]
+        FAIL=8, 
+        
+    };
+    
+    ///<summary> Flags in ILABS_EAHRS_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_STATUS_FLAGS: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - unsuccessful initial alignment due to INS movement or large change of outer magnetic field. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initial alignment due to INS movement or large change of outer magnetic field.")]
+        EAHRS_INITIAL_ALIGNMENT=1, 
+        ///<summary> 0 - ok. 1 - incorrect data appeared at calculations. | </summary>
+        [Description("0 - ok. 1 - incorrect data appeared at calculations.")]
+        EAHRS_SOFTWARE_STATUS=2, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_GYROSCOPE_UNIT=4, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_ACCELEROMETER_UNIT=8, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_MAGNETOMETER_UNIT=16, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_ELECTRONICS=32, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_GNSS_RECEIVER=64, 
+        ///<summary> 1 - during data accumulation and calculation. 0 - otherwise. | </summary>
+        [Description("1 - during data accumulation and calculation. 0 - otherwise.")]
+        EAHRS_ON_THE_FLY_CALIBRATION=128, 
+        ///<summary> 0 - ok. 1 - low supply voltage detected. | </summary>
+        [Description("0 - ok. 1 - low supply voltage detected.")]
+        EAHRS_INCORRECT_LOW_POWER_SUPPLY=256, 
+        ///<summary> 0 - ok. 1 - high supply voltage detected. | </summary>
+        [Description("0 - ok. 1 - high supply voltage detected.")]
+        EAHRS_INCORRECT_HIGH_POWER_SUPPLY=512, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT=1024, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT=2048, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT=4096, 
+        ///<summary> 0 - ok. 1 - total magnetic field limit is exceeded. | </summary>
+        [Description("0 - ok. 1 - total magnetic field limit is exceeded.")]
+        EAHRS_LARGE_MAGNETIC_FIELD_DETECT=8192, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ENVIRONMENTAL_TEMPERATURE=16384, 
+        ///<summary> 0 - no. 1 - successfully calibrated during current run. | </summary>
+        [Description("0 - no. 1 - successfully calibrated during current run.")]
+        EAHRS_ON_THE_FLY_CALIBRATED=32768, 
+        
+    };
+    
+    ///<summary> Flags in ILABS_EAHRS_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_STATUS_FLAGS2: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_X_ACCELERATION_EXCEEDING_DETECT=1, 
+        ///<summary> 0 - ok. 1 - 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - 1 - out of range.")]
+        EAHRS_Y_ACCELERATION_EXCEEDING_DETECT=2, 
+        ///<summary> 0 - ok. 1 - 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - 1 - out of range.")]
+        EAHRS_Z_ACCELERATION_EXCEEDING_DETECT=4, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_BARO_ALTIMETER=8, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_DIFFERENTIAL_PRESSURE_SENSOR=16, 
+        ///<summary> 0 - not active. 1 - in progress. | </summary>
+        [Description("0 - not active. 1 - in progress.")]
+        EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION=32, 
+        ///<summary> 0 - not active. 1 - in progress. | </summary>
+        [Description("0 - not active. 1 - in progress.")]
+        EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION=64, 
+        ///<summary> 0 - switched on. 1 - switched off. | </summary>
+        [Description("0 - switched on. 1 - switched off.")]
+        EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM=128, 
+        ///<summary> 0 - switched on. 1 - switched off. | </summary>
+        [Description("0 - switched on. 1 - switched off.")]
+        EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM=256, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_RESERVED_BIT_9=512, 
+        ///<summary> 0 - valid. 1 - invalid. | </summary>
+        [Description("0 - valid. 1 - invalid.")]
+        EAHRS_GNSS_POSITION_VALIDITY=1024, 
+        
+    };
+    
+    ///<summary> Flags in ADU_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_ADU_STATUS_FLAGS: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - unsuccessful initialization. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initialization.")]
+        EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION=1, 
+        ///<summary> 0 - ok. 1 - unsuccessful initialization. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initialization.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION=2, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS=4, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS=8, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_ADU_STATIC_PRESSURE_MEASUREMENT=16, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT=32, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_ADU_RESERVED_BIT_6=64, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_ADU_RESERVED_BIT_7=128, 
+        ///<summary> 0 - ok. 1 - incorrect. | </summary>
+        [Description("0 - ok. 1 - incorrect.")]
+        EAHRS_ADU_PRESSURE_ALTITUDE=256, 
+        ///<summary> 0 - ok. 1 - incorrect. | </summary>
+        [Description("0 - ok. 1 - incorrect.")]
+        EAHRS_ADU_AIR_SPEED=512, 
+        ///<summary> 0 - ok. 1 - below the threshold. | </summary>
+        [Description("0 - ok. 1 - below the threshold.")]
+        EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD=1024, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ADU_BAROMETRIC_TEMPERATURE=2048, 
+        
+    };
+    
+    ///<summary>  </summary>
+    public enum ILABS_EAHRS_GPS_FIX_STATUS: int /*default*/
+    {
+        ///<summary> No fix. | </summary>
+        [Description("No fix.")]
+        NO=0, 
+        ///<summary> 2D fix. | </summary>
+        [Description("2D fix.")]
+        FIX_2D=1, 
+        ///<summary> 3D fix. | </summary>
+        [Description("3D fix.")]
+        FIX_3D=2, 
+        ///<summary> Other fix. | </summary>
+        [Description("Other fix.")]
+        OTHER=3, 
+        
+    };
+    
+    ///<summary>  </summary>
+    public enum ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS: int /*default*/
+    {
+        ///<summary> Unknown or deactivated spoofing. | </summary>
+        [Description("Unknown or deactivated spoofing.")]
+        UNKNOWN_OR_DEACTIVATED=0, 
+        ///<summary> No spoofing indicated. | </summary>
+        [Description("No spoofing indicated.")]
+        NO_INDICATED=1, 
+        ///<summary> Spoofing indicated. | </summary>
+        [Description("Spoofing indicated.")]
+        INDICATED=2, 
+        ///<summary> Multiple spoofing indicated. | </summary>
+        [Description("Multiple spoofing indicated.")]
+        MULTIPLE_INDICATIONS=3, 
+        
+    };
+    
     ///<summary>  </summary>
     public enum PID_TUNING_AXIS: byte
     {
@@ -2722,7 +2955,7 @@ public partial class MAVLink
         
     };
     
-    ///<summary> Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.              Global frames use the following naming conventions:       - 'GLOBAL': Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.          The following modifiers may be used with 'GLOBAL':         - 'RELATIVE_ALT': Altitude is relative to the vehicle home position rather than MSL.         - 'TERRAIN_ALT': Altitude is relative to ground level rather than MSL.         - 'INT': Latitude/longitude (in degrees) are scaled by multiplying by 1E7.        Local frames use the following naming conventions:       - 'LOCAL': Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is the origin of the vehicle position-estimator ('EKF').       - 'BODY': Origin of local frame travels with the vehicle. NOTE, 'BODY' does NOT indicate alignment of frame axis with vehicle attitude.       - 'OFFSET': Deprecated synonym for 'BODY' (origin travels with the vehicle). Not to be used for new frames.        Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and MAV_FRAME_BODY_OFFSET_NED).   </summary>
+    ///<summary> Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.        Global frames use the following naming conventions:       - 'GLOBAL': Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.         The following modifiers may be used with 'GLOBAL':         - 'RELATIVE_ALT': Altitude is relative to the vehicle home position rather than MSL.         - 'TERRAIN_ALT': Altitude is relative to ground level rather than MSL.         - 'INT': Latitude/longitude (in degrees) are scaled by multiplying by 1E7.        Local frames use the following naming conventions:       - 'LOCAL': Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is the origin of the vehicle position-estimator ('EKF').       - 'BODY': Origin of local frame travels with the vehicle. NOTE, 'BODY' does NOT indicate alignment of frame axis with vehicle attitude.       - 'OFFSET': Deprecated synonym for 'BODY' (origin travels with the vehicle). Not to be used for new frames.        Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and MAV_FRAME_BODY_OFFSET_NED).   </summary>
     public enum MAV_FRAME: byte
     {
         ///<summary> Global (WGS84) coordinate frame + altitude relative to mean sea level (MSL). | </summary>
@@ -27037,7 +27270,7 @@ public partial class MAVLink
     
     /// extensions_start 0
     [StructLayout(LayoutKind.Sequential,Pack=1,Size=32)]
-    ///<summary> Low level message to control a gimbal device's attitude. 	  This message is to be sent from the gimbal manager to the gimbal device component. 	  The quaternion and angular velocities can be set to NaN according to use case. 	  For the angles encoded in the quaternion and the angular velocities holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame). 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame). 	  If neither of these flags are set, then (for backwards compatibility) it holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame), 	  else they are relative to the vehicle heading (vehicle frame). 	  Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed. 	  These rules are to ensure backwards compatibility. 	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME. </summary>
+    ///<summary> Low level message to control a gimbal device's attitude.       This message is to be sent from the gimbal manager to the gimbal device component.       The quaternion and angular velocities can be set to NaN according to use case.       For the angles encoded in the quaternion and the angular velocities holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).       If neither of these flags are set, then (for backwards compatibility) it holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),       else they are relative to the vehicle heading (vehicle frame).       Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed.       These rules are to ensure backwards compatibility.       New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME. </summary>
     public struct mavlink_gimbal_device_set_attitude_t
     {
         /// packet ordered constructor
@@ -27117,7 +27350,7 @@ public partial class MAVLink
     
     /// extensions_start 9
     [StructLayout(LayoutKind.Sequential,Pack=1,Size=49)]
-    ///<summary> Message reporting the status of a gimbal device. 	  This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz). 	  For the angles encoded in the quaternion and the angular velocities holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame). 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame). 	  If neither of these flags are set, then (for backwards compatibility) it holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame), 	  else they are relative to the vehicle heading (vehicle frame). 	  Other conditions of the flags are not allowed. 	  The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as 	  q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN). 	  If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set, 	  then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored. 	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME, 	  and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN. </summary>
+    ///<summary> Message reporting the status of a gimbal device.       This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz).       For the angles encoded in the quaternion and the angular velocities holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).       If neither of these flags are set, then (for backwards compatibility) it holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),       else they are relative to the vehicle heading (vehicle frame).       Other conditions of the flags are not allowed.       The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as       q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN).       If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set,       then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored.       New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME,       and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN. </summary>
     public struct mavlink_gimbal_device_attitude_status_t
     {
         /// packet ordered constructor
@@ -29451,6 +29684,69 @@ public partial class MAVLink
         [Description("number of IDs in filter list")]
         //[FieldOffset(36)]
         public  byte num_ids;
+    };
+
+    
+    /// extensions_start 0
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=10)]
+    ///<summary> Info about EAHRS status. </summary>
+    public struct mavlink_eahrs_status_info_t
+    {
+        /// packet ordered constructor
+        public mavlink_eahrs_status_info_t(ushort status1,ushort status2,ushort status3,ushort status4,ushort status5) 
+        {
+            this.status1 = status1;
+            this.status2 = status2;
+            this.status3 = status3;
+            this.status4 = status4;
+            this.status5 = status5;
+            
+        }
+        
+        /// packet xml order
+        public static mavlink_eahrs_status_info_t PopulateXMLOrder(ushort status1,ushort status2,ushort status3,ushort status4,ushort status5) 
+        {
+            var msg = new mavlink_eahrs_status_info_t();
+
+            msg.status1 = status1;
+            msg.status2 = status2;
+            msg.status3 = status3;
+            msg.status4 = status4;
+            msg.status5 = status5;
+            
+            return msg;
+        }
+        
+
+        /// <summary>Status flags1.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags1.")]
+        //[FieldOffset(0)]
+        public  ushort status1;
+
+        /// <summary>Status flags2.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags2.")]
+        //[FieldOffset(2)]
+        public  ushort status2;
+
+        /// <summary>Status flags3.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags3.")]
+        //[FieldOffset(4)]
+        public  ushort status3;
+
+        /// <summary>Status flags4.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags4.")]
+        //[FieldOffset(6)]
+        public  ushort status4;
+
+        /// <summary>Status flags5.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags5.")]
+        //[FieldOffset(8)]
+        public  ushort status5;
     };
 
     

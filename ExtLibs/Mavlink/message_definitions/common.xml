@@ -217,9 +217,9 @@
     </enum>
     <enum name="MAV_FRAME">
       <description>Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.
-      
+
       Global frames use the following naming conventions:
-      - "GLOBAL": Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default. 
+      - "GLOBAL": Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.
         The following modifiers may be used with "GLOBAL":
         - "RELATIVE_ALT": Altitude is relative to the vehicle home position rather than MSL.
         - "TERRAIN_ALT": Altitude is relative to ground level rather than MSL.
@@ -1191,9 +1191,9 @@
       </entry>
       <entry value="189" name="MAV_CMD_DO_LAND_START" hasLocation="true" isDestination="false">
         <description>Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.
-	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.
-	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.
-	</description>
+      It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.
+      The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.
+    </description>
         <param index="1">Empty</param>
         <param index="2">Empty</param>
         <param index="3">Empty</param>
@@ -2213,6 +2213,127 @@
         <param index="1" label="bus">Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for 3rd bus).</param>
         <param index="2">Empty.</param>
         <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <!-- External AHRS commands (32000 to 32099) -->
+      <entry value="33000" name="MAV_CMD_EXTERNAL_AHRS_START_UDD" hasLocation="false" isDestination="false">
+        <description>Send command "start sending user defined data" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33001" name="MAV_CMD_EXTERNAL_AHRS_STOP" hasLocation="false" isDestination="false">
+        <description>Send command "stop sending data" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33002" name="MAV_CMD_EXTERNAL_AHRS_ENABLE_GNSS" hasLocation="false" isDestination="false">
+        <description>Send command "enable GNSS" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33003" name="MAV_CMD_EXTERNAL_AHRS_DISABLE_GNSS" hasLocation="false" isDestination="false">
+        <description>Send command "disable GNSS" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33004" name="MAV_CMD_EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT" hasLocation="false" isDestination="false">
+        <description>Send command "start vg3d calibration in flight" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33005" name="MAV_CMD_EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT" hasLocation="false" isDestination="false">
+        <description>Send command "stop vg3d calibration in flight" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33006" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION" hasLocation="true" isDestination="false">
+        <description>Send external position aiding data to AHRS</description>
+        <param index="1" label="Latency" units="s">Latency</param>
+        <param index="2" label="LatitudeStd" units="m">Latitude STD</param>
+        <param index="3" label="LongitudeStd" units="m">Longitude STD</param>
+        <param index="4" label="AltitudeStd" units="m">Altitude STD</param>
+        <param index="5" label="Latitude" units="degE7">Latitude</param>
+        <param index="6" label="Longitude" units="degE7">Longitude</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33007" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION" hasLocation="true" isDestination="false">
+        <description>Send external horizontal position aiding data to AHRS</description>
+        <param index="1" label="LatitudeStd" units="m">Latitude STD</param>
+        <param index="2" label="LongitudeStd" units="m">Longitude STD</param>
+        <param index="3" label="Latency" units="s">Latency</param>
+        <param index="4">Empty.</param>
+        <param index="5" label="Latitude" units="degE7">Latitude</param>
+        <param index="6" label="Longitude" units="degE7">Longitude</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33008" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE" hasLocation="false" isDestination="false">
+        <description>Send external altitude aiding data to AHRS</description>
+        <param index="1" label="AltitudeStd" units="m">Altitude STD</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33009" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_WIND" hasLocation="false" isDestination="false">
+        <description>Send wind aiding data to AHRS</description>
+        <param index="1" label="NWind">N Wind</param>
+        <param index="2" label="EWind">N Wind</param>
+        <param index="3" label="NWindStd">N Wind STD</param>
+        <param index="4" label="EWindStd">N Wind STD</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33010" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR" hasLocation="false" isDestination="false">
+        <description>Send aiding data ambient air data to AHRS</description>
+        <param index="1" label="Temperature">Temperature</param>
+        <param index="2" label="Pressure">Pressure</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33011" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING" hasLocation="false" isDestination="false">
+        <description>Send aiding data external heading to AHRS</description>
+        <param index="1" label="Heading" units="deg">Heading</param>
+        <param index="2" label="HeadingStd" units="deg">Heading STD</param>
+        <param index="3" label="Latency" units="s">Latency</param>
         <param index="4">Empty.</param>
         <param index="5">Empty.</param>
         <param index="6">Empty.</param>
@@ -6160,17 +6281,17 @@
     </message>
     <message id="284" name="GIMBAL_DEVICE_SET_ATTITUDE">
       <description>Low level message to control a gimbal device's attitude.
-	  This message is to be sent from the gimbal manager to the gimbal device component.
-	  The quaternion and angular velocities can be set to NaN according to use case.
-	  For the angles encoded in the quaternion and the angular velocities holds:
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).
-	  If neither of these flags are set, then (for backwards compatibility) it holds:
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),
-	  else they are relative to the vehicle heading (vehicle frame).
-	  Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed.
-	  These rules are to ensure backwards compatibility.
-	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME.</description>
+      This message is to be sent from the gimbal manager to the gimbal device component.
+      The quaternion and angular velocities can be set to NaN according to use case.
+      For the angles encoded in the quaternion and the angular velocities holds:
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).
+      If neither of these flags are set, then (for backwards compatibility) it holds:
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),
+      else they are relative to the vehicle heading (vehicle frame).
+      Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed.
+      These rules are to ensure backwards compatibility.
+      New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME.</description>
       <field type="uint8_t" name="target_system">System ID</field>
       <field type="uint8_t" name="target_component">Component ID</field>
       <field type="uint16_t" name="flags" enum="GIMBAL_DEVICE_FLAGS" display="bitmask">Low level gimbal flags.</field>
@@ -6181,20 +6302,20 @@
     </message>
     <message id="285" name="GIMBAL_DEVICE_ATTITUDE_STATUS">
       <description>Message reporting the status of a gimbal device.
-	  This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz).
-	  For the angles encoded in the quaternion and the angular velocities holds:
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).
-	  If neither of these flags are set, then (for backwards compatibility) it holds:
-	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),
-	  else they are relative to the vehicle heading (vehicle frame).
-	  Other conditions of the flags are not allowed.
-	  The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as
-	  q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN).
-	  If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set,
-	  then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored.
-	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME,
-	  and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN.</description>
+      This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz).
+      For the angles encoded in the quaternion and the angular velocities holds:
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).
+      If neither of these flags are set, then (for backwards compatibility) it holds:
+      If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),
+      else they are relative to the vehicle heading (vehicle frame).
+      Other conditions of the flags are not allowed.
+      The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as
+      q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN).
+      If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set,
+      then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored.
+      New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME,
+      and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN.</description>
       <field type="uint8_t" name="target_system">System ID</field>
       <field type="uint8_t" name="target_component">Component ID</field>
       <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot).</field>
@@ -6495,6 +6616,15 @@
       <field type="uint8_t" name="num_ids">number of IDs in filter list</field>
       <field type="uint16_t[16]" name="ids">filter IDs, length num_ids</field>
     </message>
+    <!-- EAHRS messages -->
+    <message id="400" name="EAHRS_STATUS_INFO">
+      <description>Info about EAHRS status.</description>
+      <field type="uint16_t" name="status1" display="bitmask">Status flags1.</field>
+      <field type="uint16_t" name="status2" display="bitmask">Status flags2.</field>
+      <field type="uint16_t" name="status3" display="bitmask">Status flags3.</field>
+      <field type="uint16_t" name="status4" display="bitmask">Status flags4.</field>
+      <field type="uint16_t" name="status5" display="bitmask">Status flags5.</field>
+    </message>
     <!-- Rover specific messages -->
     <message id="9000" name="WHEEL_DISTANCE">
       <description>Cumulative distance traveled for each reported wheel.</description>
@@ -6636,4 +6766,3 @@
     </message>
   </messages>
 </mavlink>
-
