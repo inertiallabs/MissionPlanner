@@ -1002,6 +1002,181 @@
         <description>Set if EKF has never been healthy.</description>
       </entry>
     </enum>
+    <!-- EAHRS_COMMON_STATUS_FLAGS - these values should be bit-and with the messages flags field to know if flag has been set -->
+    <enum name="EAHRS_COMMON_STATUS_FLAGS" bitmask="true">
+      <description>Flags for the EAHRS common status.</description>
+      <entry value="1" name="OK">
+        <description>Ok.</description>
+      </entry>
+      <entry value="2" name="INFO">
+        <description>Info.</description>
+      </entry>
+      <entry value="4" name="WARNING">
+        <description>Warning.</description>
+      </entry>
+      <entry value="8" name="FAIL">
+        <description>Fail.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_STATUS_FLAGS (unit status word) - these values should be bit-and with the messages flags field to know if flag has been set -->
+    <enum name="ILABS_EAHRS_STATUS_FLAGS" bitmask="true">
+      <description>Flags in ILABS_EAHRS_STATUS message.</description>
+      <entry value="1" name="EAHRS_INITIAL_ALIGNMENT">
+        <description>0 - ok. 1 - unsuccessful initial alignment due to INS movement or large change of outer magnetic field.</description>
+      </entry>
+      <entry value="2" name="EAHRS_SOFTWARE_STATUS">
+        <description>0 - ok. 1 - incorrect data appeared at calculations.</description>
+      </entry>
+      <entry value="4" name="EAHRS_GYROSCOPE_UNIT">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="8" name="EAHRS_ACCELEROMETER_UNIT">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="16" name="EAHRS_MAGNETOMETER_UNIT">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="32" name="EAHRS_ELECTRONICS">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="64" name="EAHRS_GNSS_RECEIVER">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="128" name="EAHRS_ON_THE_FLY_CALIBRATION">
+        <description>1 - during data accumulation and calculation. 0 - otherwise.</description>
+      </entry>
+      <entry value="256" name="EAHRS_INCORRECT_LOW_POWER_SUPPLY">
+        <description>0 - ok. 1 - low supply voltage detected.</description>
+      </entry>
+      <entry value="512" name="EAHRS_INCORRECT_HIGH_POWER_SUPPLY">
+        <description>0 - ok. 1 - high supply voltage detected.</description>
+      </entry>
+      <entry value="1024" name="EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="2048" name="EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="4096" name="EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="8192" name="EAHRS_LARGE_MAGNETIC_FIELD_DETECT">
+        <description>0 - ok. 1 - total magnetic field limit is exceeded.</description>
+      </entry>
+      <entry value="16384" name="EAHRS_ENVIRONMENTAL_TEMPERATURE">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="32768" name="EAHRS_ON_THE_FLY_CALIBRATED">
+        <description>0 - no. 1 - successfully calibrated during current run.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_STATUS_FLAGS2 (unit status word) - these values should be bit-and with the messages flags field to know if flag has been set -->
+    <enum name="ILABS_EAHRS_STATUS_FLAGS2" bitmask="true">
+      <description>Flags in ILABS_EAHRS_STATUS message.</description>
+      <entry value="1" name="EAHRS_X_ACCELERATION_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="2" name="EAHRS_Y_ACCELERATION_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - 1 - out of range.</description>
+      </entry>
+      <entry value="4" name="EAHRS_Z_ACCELERATION_EXCEEDING_DETECT">
+        <description>0 - ok. 1 - 1 - out of range.</description>
+      </entry>
+      <entry value="8" name="EAHRS_BARO_ALTIMETER">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="16" name="EAHRS_DIFFERENTIAL_PRESSURE_SENSOR">
+        <description>0 - ok. 1 - failure detected.</description>
+      </entry>
+      <entry value="32" name="EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION">
+        <description>0 - not active. 1 - in progress.</description>
+      </entry>
+      <entry value="64" name="EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION">
+        <description>0 - not active. 1 - in progress.</description>
+      </entry>
+      <entry value="128" name="EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM">
+        <description>0 - switched on. 1 - switched off.</description>
+      </entry>
+      <entry value="256" name="EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM">
+        <description>0 - switched on. 1 - switched off.</description>
+      </entry>
+      <entry value="512" name="EAHRS_RESERVED_BIT_9">
+        <description>Reserved bit</description>
+      </entry>
+      <entry value="1024" name="EAHRS_GNSS_POSITION_VALIDITY">
+        <description>0 - valid. 1 - invalid.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_ADU_STATUS_FLAGS (air data unit) - these values should be bit-and with the messages flags field to know if flag has been set -->
+    <enum name="ILABS_EAHRS_ADU_STATUS_FLAGS" bitmask="true">
+      <description>Flags in ADU_STATUS message.</description>
+      <entry value="1" name="EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION">
+        <description>0 - ok. 1 - unsuccessful initialization.</description>
+      </entry>
+      <entry value="2" name="EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION">
+        <description>0 - ok. 1 - unsuccessful initialization.</description>
+      </entry>
+      <entry value="4" name="EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS">
+        <description>0 - no fails. 1 - failure detected.</description>
+      </entry>
+      <entry value="8" name="EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS">
+        <description>0 - no fails. 1 - failure detected.</description>
+      </entry>
+      <entry value="16" name="EAHRS_ADU_STATIC_PRESSURE_MEASUREMENT">
+        <description>0 - no fails. 1 - failure detected.</description>
+      </entry>
+      <entry value="32" name="EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+      <entry value="64" name="EAHRS_ADU_RESERVED_BIT_6">
+        <description>Reserved bit</description>
+      </entry>
+      <entry value="128" name="EAHRS_ADU_RESERVED_BIT_7">
+        <description>Reserved bit</description>
+      </entry>
+      <entry value="256" name="EAHRS_ADU_PRESSURE_ALTITUDE">
+        <description>0 - ok. 1 - incorrect.</description>
+      </entry>
+      <entry value="512" name="EAHRS_ADU_AIR_SPEED">
+        <description>0 - ok. 1 - incorrect.</description>
+      </entry>
+      <entry value="1024" name="EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD">
+        <description>0 - ok. 1 - below the threshold.</description>
+      </entry>
+      <entry value="2048" name="EAHRS_ADU_BAROMETRIC_TEMPERATURE">
+        <description>0 - ok. 1 - out of range.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_GPS_FIX_STATUS - these values for the GNSS extended info in UDD package -->
+    <enum name="ILABS_EAHRS_GPS_FIX_STATUS">
+      <entry value="0" name="NO">
+        <description>No fix.</description>
+      </entry>
+      <entry value="1" name="FIX_2D">
+        <description>2D fix.</description>
+      </entry>
+      <entry value="2" name="FIX_3D">
+        <description>3D fix.</description>
+      </entry>
+      <entry value="3" name="OTHER">
+        <description>Other fix.</description>
+      </entry>
+    </enum>
+    <!-- ILABS_EAHRS_GPS_SPOOFING_DETECT_STATUS - these values for the GNSS extended info in UDD package -->
+    <enum name="ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS">
+      <entry value="0" name="UNKNOWN_OR_DEACTIVATED">
+        <description>Unknown or deactivated spoofing.</description>
+      </entry>
+      <entry value="1" name="NO_INDICATED">
+        <description>No spoofing indicated.</description>
+      </entry>
+      <entry value="2" name="INDICATED">
+        <description>Spoofing indicated.</description>
+      </entry>
+      <entry value="3" name="MULTIPLE_INDICATIONS">
+        <description>Multiple spoofing indicated.</description>
+      </entry>
+    </enum>
     <enum name="PID_TUNING_AXIS">
       <entry value="1" name="PID_TUNING_ROLL"/>
       <entry value="2" name="PID_TUNING_PITCH"/>
