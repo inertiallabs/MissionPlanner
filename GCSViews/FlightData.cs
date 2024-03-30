@@ -6294,5 +6294,12 @@ namespace MissionPlanner.GCSViews
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0);
         }
+
+        private void myButton4_Click(object sender, EventArgs e)
+        {
+            Form frm = new AidingData();
+            ThemeManager.ApplyThemeTo(frm);
+            frm.Show();
+        }
     }
 }

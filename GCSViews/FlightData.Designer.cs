@@ -232,6 +232,7 @@ namespace MissionPlanner.GCSViews
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.myButton4 = new MissionPlanner.Controls.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainH)).BeginInit();
             this.MainH.Panel1.SuspendLayout();
             this.MainH.Panel2.SuspendLayout();
@@ -2405,6 +2406,7 @@ namespace MissionPlanner.GCSViews
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_gnss_disable, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_start, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_stop, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.myButton4, 3, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
             // BUT_inertiallabs_gnss_enable
@@ -2642,7 +2644,7 @@ namespace MissionPlanner.GCSViews
             this.windDir1.BackColor = System.Drawing.Color.Transparent;
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Direction", this.bindingSource1, "wind_dir", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.windDir1.DataBindings.Add(new System.Windows.Forms.Binding("Speed", this.bindingSource1, "wind_vel", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.windDir1.Direction = 360D;
+            this.windDir1.Direction = 180D;
             resources.ApplyResources(this.windDir1, "windDir1");
             this.windDir1.Name = "windDir1";
             this.windDir1.Speed = 0D;
@@ -2843,6 +2845,14 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // myButton4
+            // 
+            resources.ApplyResources(this.myButton4, "myButton4");
+            this.myButton4.Name = "myButton4";
+            this.myButton4.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.myButton4.UseVisualStyleBackColor = true;
+            this.myButton4.Click += new System.EventHandler(this.myButton4_Click);
+            // 
             // FlightData
             // 
             this.Controls.Add(this.MainH);
@@ -2907,7 +2917,6 @@ namespace MissionPlanner.GCSViews
             this.tablogbrowse.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tabInertialLabs.ResumeLayout(false);
-            this.tabInertialLabs.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableMap.ResumeLayout(false);
             this.tableMap.PerformLayout();
@@ -3152,5 +3161,6 @@ namespace MissionPlanner.GCSViews
         private Controls.MyButton BUT_inertiallabs_gnss_disable;
         private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_start;
         private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_stop;
+        private Controls.MyButton myButton4;
     }
 }
