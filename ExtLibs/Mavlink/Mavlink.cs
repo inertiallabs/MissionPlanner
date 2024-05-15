@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Thu May 16 2024";
+    public const string MAVLINK_BUILD_DATE = "Sun May 26 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -850,8 +850,8 @@ public partial class MAVLink
         [hasLocation()]
         [Obsolete]
         DO_RETURN_PATH_START=188, 
-        ///<summary> Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. 	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. 	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence. 	 |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  </summary>
-        [Description("Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. 	  It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. 	  The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence. 	")]
+        ///<summary> Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.       It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.       The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.      |Empty| Empty| Empty| Empty| Latitude| Longitude| Altitude|  </summary>
+        [Description("Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts.       It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used.       The Latitude/Longitude/Altitude is optional, and may be set to 0 if not needed. If specified then it will be used to help find the closest landing sequence.     ")]
         [hasLocation()]
         DO_LAND_START=189, 
         ///<summary> Mission command to perform a landing from a rally point. |Break altitude| Landing speed| Empty| Empty| Empty| Empty| Empty|  </summary>
@@ -1234,9 +1234,44 @@ public partial class MAVLink
         ///<summary> Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages |Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for 3rd bus).| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages")]
         CAN_FORWARD=32000, 
-        ///<summary> Send command to Inertial Labs AHRS |Command type| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
-        [Description("Send command to Inertial Labs AHRS")]
-        INERTIALLABS_AHRS_SEND=33000, 
+        ///<summary> Send command 'start sending user defined data' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'start sending user defined data' to external AHRS")]
+        EXTERNAL_AHRS_START_UDD=33000, 
+        ///<summary> Send command 'stop sending data' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'stop sending data' to external AHRS")]
+        EXTERNAL_AHRS_STOP=33001, 
+        ///<summary> Send command 'enable GNSS' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'enable GNSS' to external AHRS")]
+        EXTERNAL_AHRS_ENABLE_GNSS=33002, 
+        ///<summary> Send command 'disable GNSS' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'disable GNSS' to external AHRS")]
+        EXTERNAL_AHRS_DISABLE_GNSS=33003, 
+        ///<summary> Send command 'start vg3d calibration in flight' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'start vg3d calibration in flight' to external AHRS")]
+        EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT=33004, 
+        ///<summary> Send command 'stop vg3d calibration in flight' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'stop vg3d calibration in flight' to external AHRS")]
+        EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT=33005, 
+        ///<summary> Send external position aiding data to AHRS |Latency| Latitude STD| Longitude STD| Altitude STD| Latitude| Longitude| Altitude|  </summary>
+        [Description("Send external position aiding data to AHRS")]
+        [hasLocation()]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION=33006, 
+        ///<summary> Send external horizontal position aiding data to AHRS |Latitude STD| Longitude STD| Latency| Empty.| Latitude| Longitude| Empty.|  </summary>
+        [Description("Send external horizontal position aiding data to AHRS")]
+        [hasLocation()]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION=33007, 
+        ///<summary> Send external altitude aiding data to AHRS |Altitude STD| Empty.| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
+        [Description("Send external altitude aiding data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE=33008, 
+        ///<summary> Send wind aiding data to AHRS |N Wind| N Wind| N Wind STD| N Wind STD| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send wind aiding data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_WIND=33009, 
+        ///<summary> Send aiding data ambient air data to AHRS |Temperature| Pressure| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
+        [Description("Send aiding data ambient air data to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR=33010, 
+        ///<summary> Send aiding data external heading to AHRS |Heading| Heading STD| Latency| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send aiding data external heading to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING=33011, 
         ///<summary> A system wide power-off event has been initiated. |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("A system wide power-off event has been initiated.")]
         POWER_OFF_INITIATED=42000, 
@@ -5903,36 +5938,6 @@ public partial class MAVLink
         ///<summary> Safety switch is NOT engaged and motors, propellers and other actuators should be considered active. | </summary>
         [Description("Safety switch is NOT engaged and motors, propellers and other actuators should be considered active.")]
         DANGEROUS=1, 
-        ///<summary> Stop on-the-fly VG3D calibration | </summary>
-        [Description("Stop on-the-fly VG3D calibration")]
-        START=4, 
-        ///<summary> Stop on-the-fly VG3D calibration | </summary>
-        [Description("Stop on-the-fly VG3D calibration")]
-        STOP=5, 
-        
-    };
-    
-    ///<summary>  </summary>
-    public enum INERTIALLABS_AHRS_COMMAND_TYPE: int /*default*/
-    {
-        ///<summary> Disable GNSS for Inertial Labs AHRS | </summary>
-        [Description("Disable GNSS for Inertial Labs AHRS")]
-        DISABLE_GNSS=0, 
-        ///<summary> Enable GNSS for Inertial Labs AHRS | </summary>
-        [Description("Enable GNSS for Inertial Labs AHRS")]
-        ENABLE_GNSS=1, 
-        ///<summary> Start on-the-fly VG3D calibration | </summary>
-        [Description("Start on-the-fly VG3D calibration")]
-        START_VG3D_CALIBRATION_IN_FLIGHT=2, 
-        ///<summary> Stop on-the-fly VG3D calibration | </summary>
-        [Description("Stop on-the-fly VG3D calibration")]
-        STOP_VG3D_CALIBRATION_IN_FLIGHT=3, 
-        ///<summary> Stop on-the-fly VG3D calibration | </summary>
-        [Description("Stop on-the-fly VG3D calibration")]
-        START=4, 
-        ///<summary> Stop on-the-fly VG3D calibration | </summary>
-        [Description("Stop on-the-fly VG3D calibration")]
-        STOP=5, 
         
     };
     
@@ -27044,7 +27049,7 @@ public partial class MAVLink
     
     /// extensions_start 0
     [StructLayout(LayoutKind.Sequential,Pack=1,Size=32)]
-    ///<summary> Low level message to control a gimbal device's attitude. 	  This message is to be sent from the gimbal manager to the gimbal device component. 	  The quaternion and angular velocities can be set to NaN according to use case. 	  For the angles encoded in the quaternion and the angular velocities holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame). 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame). 	  If neither of these flags are set, then (for backwards compatibility) it holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame), 	  else they are relative to the vehicle heading (vehicle frame). 	  Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed. 	  These rules are to ensure backwards compatibility. 	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME. </summary>
+    ///<summary> Low level message to control a gimbal device's attitude.       This message is to be sent from the gimbal manager to the gimbal device component.       The quaternion and angular velocities can be set to NaN according to use case.       For the angles encoded in the quaternion and the angular velocities holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).       If neither of these flags are set, then (for backwards compatibility) it holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),       else they are relative to the vehicle heading (vehicle frame).       Setting both GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME and GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is not allowed.       These rules are to ensure backwards compatibility.       New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME. </summary>
     public struct mavlink_gimbal_device_set_attitude_t
     {
         /// packet ordered constructor
@@ -27124,7 +27129,7 @@ public partial class MAVLink
     
     /// extensions_start 9
     [StructLayout(LayoutKind.Sequential,Pack=1,Size=49)]
-    ///<summary> Message reporting the status of a gimbal device. 	  This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz). 	  For the angles encoded in the quaternion and the angular velocities holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame). 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame). 	  If neither of these flags are set, then (for backwards compatibility) it holds: 	  If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame), 	  else they are relative to the vehicle heading (vehicle frame). 	  Other conditions of the flags are not allowed. 	  The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as 	  q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN). 	  If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set, 	  then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored. 	  New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME, 	  and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN. </summary>
+    ///<summary> Message reporting the status of a gimbal device.       This message should be broadcast by a gimbal device component at a low regular rate (e.g. 5 Hz).       For the angles encoded in the quaternion and the angular velocities holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME is set, then they are relative to the vehicle heading (vehicle frame).       If the flag GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME is set, then they are relative to absolute North (earth frame).       If neither of these flags are set, then (for backwards compatibility) it holds:       If the flag GIMBAL_DEVICE_FLAGS_YAW_LOCK is set, then they are relative to absolute North (earth frame),       else they are relative to the vehicle heading (vehicle frame).       Other conditions of the flags are not allowed.       The quaternion and angular velocities in the other frame can be calculated from delta_yaw and delta_yaw_velocity as       q_earth = q_delta_yaw * q_vehicle and w_earth = w_delta_yaw_velocity + w_vehicle (if not NaN).       If neither the GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME nor the GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME flag is set,       then (for backwards compatibility) the data in the delta_yaw and delta_yaw_velocity fields are to be ignored.       New implementations should always set either GIMBAL_DEVICE_FLAGS_YAW_IN_VEHICLE_FRAME or GIMBAL_DEVICE_FLAGS_YAW_IN_EARTH_FRAME,       and always should set delta_yaw and delta_yaw_velocity either to the proper value or NaN. </summary>
     public struct mavlink_gimbal_device_attitude_status_t
     {
         /// packet ordered constructor
