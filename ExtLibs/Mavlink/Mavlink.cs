@@ -1234,6 +1234,9 @@ public partial class MAVLink
         ///<summary> Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages |Bus number (0 to disable forwarding, 1 for first bus, 2 for 2nd bus, 3 for 3rd bus).| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Request forwarding of CAN packets from the given CAN bus to this interface. CAN Frames are sent using CAN_FRAME and CANFD_FRAME messages")]
         CAN_FORWARD=32000, 
+        ///<summary> Send command to Inertial Labs AHRS |Command type| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command to Inertial Labs AHRS")]
+        INERTIALLABS_AHRS_SEND=33000, 
         ///<summary> A system wide power-off event has been initiated. |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("A system wide power-off event has been initiated.")]
         POWER_OFF_INITIATED=42000, 
@@ -2719,7 +2722,7 @@ public partial class MAVLink
         
     };
     
-    ///<summary> Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.              Global frames use the following naming conventions:       - 'GLOBAL': Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.          The following modifiers may be used with 'GLOBAL':         - 'RELATIVE_ALT': Altitude is relative to the vehicle home position rather than MSL.         - 'TERRAIN_ALT': Altitude is relative to ground level rather than MSL.         - 'INT': Latitude/longitude (in degrees) are scaled by multiplying by 1E7.        Local frames use the following naming conventions:       - 'LOCAL': Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is the origin of the vehicle position-estimator ('EKF').       - 'BODY': Origin of local frame travels with the vehicle. NOTE, 'BODY' does NOT indicate alignment of frame axis with vehicle attitude.       - 'OFFSET': Deprecated synonym for 'BODY' (origin travels with the vehicle). Not to be used for new frames.        Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and MAV_FRAME_BODY_OFFSET_NED).   </summary>
+    ///<summary> Co-ordinate frames used by MAVLink. Not all frames are supported by all commands, messages, or vehicles.        Global frames use the following naming conventions:       - 'GLOBAL': Global co-ordinate frame with WGS84 latitude/longitude and altitude positive over mean sea level (MSL) by default.         The following modifiers may be used with 'GLOBAL':         - 'RELATIVE_ALT': Altitude is relative to the vehicle home position rather than MSL.         - 'TERRAIN_ALT': Altitude is relative to ground level rather than MSL.         - 'INT': Latitude/longitude (in degrees) are scaled by multiplying by 1E7.        Local frames use the following naming conventions:       - 'LOCAL': Origin of local frame is fixed relative to earth. Unless otherwise specified this origin is the origin of the vehicle position-estimator ('EKF').       - 'BODY': Origin of local frame travels with the vehicle. NOTE, 'BODY' does NOT indicate alignment of frame axis with vehicle attitude.       - 'OFFSET': Deprecated synonym for 'BODY' (origin travels with the vehicle). Not to be used for new frames.        Some deprecated frames do not follow these conventions (e.g. MAV_FRAME_BODY_NED and MAV_FRAME_BODY_OFFSET_NED).   </summary>
     public enum MAV_FRAME: byte
     {
         ///<summary> Global (WGS84) coordinate frame + altitude relative to mean sea level (MSL). | </summary>
@@ -5900,6 +5903,36 @@ public partial class MAVLink
         ///<summary> Safety switch is NOT engaged and motors, propellers and other actuators should be considered active. | </summary>
         [Description("Safety switch is NOT engaged and motors, propellers and other actuators should be considered active.")]
         DANGEROUS=1, 
+        ///<summary> Stop on-the-fly VG3D calibration | </summary>
+        [Description("Stop on-the-fly VG3D calibration")]
+        START=4, 
+        ///<summary> Stop on-the-fly VG3D calibration | </summary>
+        [Description("Stop on-the-fly VG3D calibration")]
+        STOP=5, 
+        
+    };
+    
+    ///<summary>  </summary>
+    public enum INERTIALLABS_AHRS_COMMAND_TYPE: int /*default*/
+    {
+        ///<summary> Disable GNSS for Inertial Labs AHRS | </summary>
+        [Description("Disable GNSS for Inertial Labs AHRS")]
+        DISABLE_GNSS=0, 
+        ///<summary> Enable GNSS for Inertial Labs AHRS | </summary>
+        [Description("Enable GNSS for Inertial Labs AHRS")]
+        ENABLE_GNSS=1, 
+        ///<summary> Start on-the-fly VG3D calibration | </summary>
+        [Description("Start on-the-fly VG3D calibration")]
+        START_VG3D_CALIBRATION_IN_FLIGHT=2, 
+        ///<summary> Stop on-the-fly VG3D calibration | </summary>
+        [Description("Stop on-the-fly VG3D calibration")]
+        STOP_VG3D_CALIBRATION_IN_FLIGHT=3, 
+        ///<summary> Stop on-the-fly VG3D calibration | </summary>
+        [Description("Stop on-the-fly VG3D calibration")]
+        START=4, 
+        ///<summary> Stop on-the-fly VG3D calibration | </summary>
+        [Description("Stop on-the-fly VG3D calibration")]
+        STOP=5, 
         
     };
     
