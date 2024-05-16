@@ -30,11 +30,10 @@ namespace MissionPlanner.GCSViews
             this.setBatteryCellCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingSourceHud = new System.Windows.Forms.BindingSource(this.components);
-            this.panel_persistent = new System.Windows.Forms.Panel();
-            this.tabControlactions = new System.Windows.Forms.TabControl();
             this.contextMenuStripactionstab = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multiLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControlactions = new System.Windows.Forms.TabControl();
             this.tabQuick = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelQuick = new System.Windows.Forms.TableLayoutPanel();
             this.quickView6 = new MissionPlanner.Controls.QuickView();
@@ -196,6 +195,7 @@ namespace MissionPlanner.GCSViews
             this.BUT_inertiallabs_gnss_disable = new MissionPlanner.Controls.MyButton();
             this.BUT_inertiallabs_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
             this.BUT_inertiallabs_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
+            this.panel_persistent = new System.Windows.Forms.Panel();
             this.tableMap = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.zg1 = new ZedGraph.ZedGraphControl();
@@ -242,6 +242,8 @@ namespace MissionPlanner.GCSViews
             this.scriptChecker = new System.Windows.Forms.Timer(this.components);
             this.Messagetabtimer = new System.Windows.Forms.Timer(this.components);
             this.bindingSourceStatusTab = new System.Windows.Forms.BindingSource(this.components);
+            this.BUT_inertiallabs_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_inertiallabs_start = new MissionPlanner.Controls.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.MainH)).BeginInit();
             this.MainH.Panel1.SuspendLayout();
             this.MainH.Panel2.SuspendLayout();
@@ -252,8 +254,8 @@ namespace MissionPlanner.GCSViews
             this.SubMainLeft.SuspendLayout();
             this.contextMenuStripHud.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).BeginInit();
-            this.tabControlactions.SuspendLayout();
             this.contextMenuStripactionstab.SuspendLayout();
+            this.tabControlactions.SuspendLayout();
             this.tabQuick.SuspendLayout();
             this.tableLayoutPanelQuick.SuspendLayout();
             this.contextMenuStripQuickView.SuspendLayout();
@@ -573,10 +575,26 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceHud.DataSource = typeof(MissionPlanner.CurrentState);
             // 
-            // panel_persistent
+            // contextMenuStripactionstab
             // 
-            resources.ApplyResources(this.panel_persistent, "panel_persistent");
-            this.panel_persistent.Name = "panel_persistent";
+            this.contextMenuStripactionstab.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripactionstab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem,
+            this.multiLineToolStripMenuItem});
+            this.contextMenuStripactionstab.Name = "contextMenuStripactionstab";
+            resources.ApplyResources(this.contextMenuStripactionstab, "contextMenuStripactionstab");
+            // 
+            // customizeToolStripMenuItem
+            // 
+            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+            resources.ApplyResources(this.customizeToolStripMenuItem, "customizeToolStripMenuItem");
+            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
+            // 
+            // multiLineToolStripMenuItem
+            // 
+            this.multiLineToolStripMenuItem.Name = "multiLineToolStripMenuItem";
+            resources.ApplyResources(this.multiLineToolStripMenuItem, "multiLineToolStripMenuItem");
+            this.multiLineToolStripMenuItem.Click += new System.EventHandler(this.multiLineToolStripMenuItem_Click);
             // 
             // tabControlactions
             // 
@@ -601,27 +619,6 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.SelectedIndex = 0;
             this.tabControlactions.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             this.tabControlactions.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // contextMenuStripactionstab
-            // 
-            this.contextMenuStripactionstab.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripactionstab.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem,
-            this.multiLineToolStripMenuItem});
-            this.contextMenuStripactionstab.Name = "contextMenuStripactionstab";
-            resources.ApplyResources(this.contextMenuStripactionstab, "contextMenuStripactionstab");
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            resources.ApplyResources(this.customizeToolStripMenuItem, "customizeToolStripMenuItem");
-            this.customizeToolStripMenuItem.Click += new System.EventHandler(this.customizeToolStripMenuItem_Click);
-            // 
-            // multiLineToolStripMenuItem
-            // 
-            this.multiLineToolStripMenuItem.Name = "multiLineToolStripMenuItem";
-            resources.ApplyResources(this.multiLineToolStripMenuItem, "multiLineToolStripMenuItem");
-            this.multiLineToolStripMenuItem.Click += new System.EventHandler(this.multiLineToolStripMenuItem_Click);
             // 
             // tabQuick
             // 
@@ -2482,6 +2479,8 @@ namespace MissionPlanner.GCSViews
             // tableLayoutPanel3
             // 
             resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_start, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_stop, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_gnss_enable, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_gnss_disable, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_start, 2, 0);
@@ -2519,6 +2518,11 @@ namespace MissionPlanner.GCSViews
             this.BUT_inertiallabs_vg3dclb_flight_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
             this.BUT_inertiallabs_vg3dclb_flight_stop.UseVisualStyleBackColor = true;
             this.BUT_inertiallabs_vg3dclb_flight_stop.Click += new System.EventHandler(this.BUT_inertiallabs_vg3dclb_flight_stop_Click);
+            // 
+            // panel_persistent
+            // 
+            resources.ApplyResources(this.panel_persistent, "panel_persistent");
+            this.panel_persistent.Name = "panel_persistent";
             // 
             // tableMap
             // 
@@ -2924,6 +2928,22 @@ namespace MissionPlanner.GCSViews
             // 
             this.bindingSourceStatusTab.DataSource = typeof(MissionPlanner.CurrentState);
             // 
+            // BUT_inertiallabs_stop
+            // 
+            resources.ApplyResources(this.BUT_inertiallabs_stop, "BUT_inertiallabs_stop");
+            this.BUT_inertiallabs_stop.Name = "BUT_inertiallabs_stop";
+            this.BUT_inertiallabs_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_inertiallabs_stop.UseVisualStyleBackColor = true;
+            this.BUT_inertiallabs_stop.Click += new System.EventHandler(this.BUT_inertiallabs_stop_Click);
+            // 
+            // BUT_inertiallabs_start
+            // 
+            resources.ApplyResources(this.BUT_inertiallabs_start, "BUT_inertiallabs_start");
+            this.BUT_inertiallabs_start.Name = "BUT_inertiallabs_start";
+            this.BUT_inertiallabs_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_inertiallabs_start.UseVisualStyleBackColor = true;
+            this.BUT_inertiallabs_start.Click += new System.EventHandler(this.BUT_inertiallabs_start_Click);
+            // 
             // FlightData
             // 
             this.Controls.Add(this.MainH);
@@ -2944,8 +2964,8 @@ namespace MissionPlanner.GCSViews
             this.SubMainLeft.ResumeLayout(false);
             this.contextMenuStripHud.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceHud)).EndInit();
-            this.tabControlactions.ResumeLayout(false);
             this.contextMenuStripactionstab.ResumeLayout(false);
+            this.tabControlactions.ResumeLayout(false);
             this.tabQuick.ResumeLayout(false);
             this.tableLayoutPanelQuick.ResumeLayout(false);
             this.contextMenuStripQuickView.ResumeLayout(false);
@@ -2988,7 +3008,6 @@ namespace MissionPlanner.GCSViews
             this.tablogbrowse.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tabInertialLabs.ResumeLayout(false);
-            this.tabInertialLabs.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableMap.ResumeLayout(false);
             this.tableMap.PerformLayout();
@@ -3243,5 +3262,7 @@ namespace MissionPlanner.GCSViews
         private Controls.MyButton BUT_inertiallabs_gnss_disable;
         private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_start;
         private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_stop;
+        private Controls.MyButton BUT_inertiallabs_start;
+        private Controls.MyButton BUT_inertiallabs_stop;
     }
 }
