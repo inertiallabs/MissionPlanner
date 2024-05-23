@@ -1265,7 +1265,7 @@ public partial class MAVLink
         ///<summary> Send external altitude aiding data to AHRS |Altitude STD| Empty.| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
         [Description("Send external altitude aiding data to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE=33008, 
-        ///<summary> Send wind aiding data to AHRS |N Wind| N Wind| N Wind STD| N Wind STD| Empty.| Empty.| Empty.|  </summary>
+        ///<summary> Send wind aiding data to AHRS |Direction| Speed| Speed STD| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Send wind aiding data to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_WIND=33009, 
         ///<summary> Send aiding data ambient air data to AHRS |Temperature| Pressure| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
