@@ -289,6 +289,9 @@
     <Compile Update="Controls\MavFTPUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\AidingData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="GCSViews\ConfigurationView\ConfigADSB.cs">
       <SubType>UserControl</SubType>
     </Compile>
