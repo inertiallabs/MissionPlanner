@@ -1,0 +1,2547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Name" xml:space="preserve">
+    <value>altitudeExternalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Name" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Name" xml:space="preserve">
+    <value>externalHorizontalPositionCheckBox</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Name" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Name" xml:space="preserve">
+    <value>externalPositionCheckBox</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Name" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="externalPositionTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="externalPositionTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="externalPositionTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 407</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="externalPositionTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="externalPositionTabPage.Text" xml:space="preserve">
+    <value>External position</value>
+  </data>
+  <data name="&gt;&gt;externalPositionTabPage.Name" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalPositionTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalPositionTabPage.Parent" xml:space="preserve">
+    <value>aidingDataTabControl</value>
+  </data>
+  <data name="&gt;&gt;externalPositionTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Name" xml:space="preserve">
+    <value>ambientAirDataCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Name" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Name" xml:space="preserve">
+    <value>windDataCheckBox</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Name" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="externalVelocityAirDataTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="externalVelocityAirDataTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="externalVelocityAirDataTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 407</value>
+  </data>
+  <data name="externalVelocityAirDataTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="externalVelocityAirDataTabPage.Text" xml:space="preserve">
+    <value>External velocity and air data</value>
+  </data>
+  <data name="&gt;&gt;externalVelocityAirDataTabPage.Name" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalVelocityAirDataTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalVelocityAirDataTabPage.Parent" xml:space="preserve">
+    <value>aidingDataTabControl</value>
+  </data>
+  <data name="&gt;&gt;externalVelocityAirDataTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Name" xml:space="preserve">
+    <value>headingExternalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Parent" xml:space="preserve">
+    <value>otherAidingDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Name" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Parent" xml:space="preserve">
+    <value>otherAidingDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="otherAidingDataTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="otherAidingDataTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>659, 407</value>
+  </data>
+  <data name="otherAidingDataTabPage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="otherAidingDataTabPage.Text" xml:space="preserve">
+    <value>Other aiding data</value>
+  </data>
+  <data name="&gt;&gt;otherAidingDataTabPage.Name" xml:space="preserve">
+    <value>otherAidingDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;otherAidingDataTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;otherAidingDataTabPage.Parent" xml:space="preserve">
+    <value>aidingDataTabControl</value>
+  </data>
+  <data name="&gt;&gt;otherAidingDataTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="aidingDataTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 96</value>
+  </data>
+  <data name="aidingDataTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>667, 436</value>
+  </data>
+  <data name="aidingDataTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;aidingDataTabControl.Name" xml:space="preserve">
+    <value>aidingDataTabControl</value>
+  </data>
+  <data name="&gt;&gt;aidingDataTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aidingDataTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;aidingDataTabControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="altitudeExternalCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeExternalCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeExternalCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 268</value>
+  </data>
+  <data name="altitudeExternalCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 20</value>
+  </data>
+  <data name="altitudeExternalCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="altitudeExternalCheckBox.Text" xml:space="preserve">
+    <value>Altitude external</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Name" xml:space="preserve">
+    <value>altitudeExternalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Name" xml:space="preserve">
+    <value>altitudeValueStdAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Name" xml:space="preserve">
+    <value>altitudeValueAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeStdLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="altitudeExternalGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="altitudeExternalGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 294</value>
+  </data>
+  <data name="altitudeExternalGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 109</value>
+  </data>
+  <data name="altitudeExternalGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="altitudeExternalGroupBox.Text" xml:space="preserve">
+    <value>Altitude external</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Name" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;altitudeExternalGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altitudeValueStdAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 67</value>
+  </data>
+  <data name="altitudeValueStdAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueStdAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Name" xml:space="preserve">
+    <value>altitudeValueStdAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="altitudeValueAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 31</value>
+  </data>
+  <data name="altitudeValueAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Name" xml:space="preserve">
+    <value>altitudeValueAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 69</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Text" xml:space="preserve">
+    <value>Altitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeStdLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="altitudeLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="altitudeLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="altitudeLabelAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="altitudeLabelAltExt.Text" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 7</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 20</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="externalHorizontalPositionCheckBox.Text" xml:space="preserve">
+    <value>External horizontal position</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Name" xml:space="preserve">
+    <value>externalHorizontalPositionCheckBox</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Name" xml:space="preserve">
+    <value>latencyValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Name" xml:space="preserve">
+    <value>latencyLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="externalHorizontalPositionGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="externalHorizontalPositionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 33</value>
+  </data>
+  <data name="externalHorizontalPositionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 216</value>
+  </data>
+  <data name="externalHorizontalPositionGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="externalHorizontalPositionGroupBox.Text" xml:space="preserve">
+    <value>External horizontal position</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Name" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalHorizontalPositionGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="latencyValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 179</value>
+  </data>
+  <data name="latencyValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latencyValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Name" xml:space="preserve">
+    <value>latencyValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="latencyLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latencyLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 181</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="latencyLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latency (s)</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Name" xml:space="preserve">
+    <value>latencyLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 143</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 145</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Text" xml:space="preserve">
+    <value>Longitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 106</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 16</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="longitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 67</value>
+  </data>
+  <data name="longitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="latitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 31</value>
+  </data>
+  <data name="latitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 16</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Text" xml:space="preserve">
+    <value>Longitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="externalPositionCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="externalPositionCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="externalPositionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 7</value>
+  </data>
+  <data name="externalPositionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 20</value>
+  </data>
+  <data name="externalPositionCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="externalPositionCheckBox.Text" xml:space="preserve">
+    <value>External position</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Name" xml:space="preserve">
+    <value>externalPositionCheckBox</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalPositionCheckBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Name" xml:space="preserve">
+    <value>latencyValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Name" xml:space="preserve">
+    <value>latencyLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>altitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>altitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>longitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>longitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>latitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>latitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Name" xml:space="preserve">
+    <value>altitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Name" xml:space="preserve">
+    <value>altitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Name" xml:space="preserve">
+    <value>longitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Name" xml:space="preserve">
+    <value>latitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Name" xml:space="preserve">
+    <value>longitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Name" xml:space="preserve">
+    <value>latitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="externalPositionGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="externalPositionGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="externalPositionGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 291</value>
+  </data>
+  <data name="externalPositionGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="externalPositionGroupBox.Text" xml:space="preserve">
+    <value>External position</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Name" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.Parent" xml:space="preserve">
+    <value>externalPositionTabPage</value>
+  </data>
+  <data name="&gt;&gt;externalPositionGroupBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="latencyValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 248</value>
+  </data>
+  <data name="latencyValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latencyValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Name" xml:space="preserve">
+    <value>latencyValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtPos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="latencyLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latencyLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latencyLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 250</value>
+  </data>
+  <data name="latencyLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="latencyLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="latencyLabelExtPos.Text" xml:space="preserve">
+    <value>Latency (s)</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Name" xml:space="preserve">
+    <value>latencyLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtPos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altitudeStdValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 213</value>
+  </data>
+  <data name="altitudeStdValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeStdValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>altitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 215</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="altitudeStdLabelExtPos.Text" xml:space="preserve">
+    <value>Altitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>altitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="longitudeStdValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 177</value>
+  </data>
+  <data name="longitudeStdValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeStdValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>longitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 179</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="longitudeStdLabelExtPos.Text" xml:space="preserve">
+    <value>Longitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>longitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="latitudeStdValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 140</value>
+  </data>
+  <data name="latitudeStdValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeStdValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Name" xml:space="preserve">
+    <value>latitudeStdValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtPos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 142</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 16</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="latitudeStdLabelExtPos.Text" xml:space="preserve">
+    <value>Latitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Name" xml:space="preserve">
+    <value>latitudeStdLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtPos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="altitudeValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 102</value>
+  </data>
+  <data name="altitudeValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Name" xml:space="preserve">
+    <value>altitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="altitudeLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 104</value>
+  </data>
+  <data name="altitudeLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="altitudeLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="altitudeLabelExtPos.Text" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Name" xml:space="preserve">
+    <value>altitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="longitudeValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 67</value>
+  </data>
+  <data name="longitudeValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Name" xml:space="preserve">
+    <value>longitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="latitudeValueExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 31</value>
+  </data>
+  <data name="latitudeValueExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeValueExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Name" xml:space="preserve">
+    <value>latitudeValueExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtPos.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="longitudeLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="longitudeLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 16</value>
+  </data>
+  <data name="longitudeLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="longitudeLabelExtPos.Text" xml:space="preserve">
+    <value>Longitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Name" xml:space="preserve">
+    <value>longitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="latitudeLabelExtPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeLabelExtPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeLabelExtPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="latitudeLabelExtPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="latitudeLabelExtPos.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="latitudeLabelExtPos.Text" xml:space="preserve">
+    <value>Latitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Name" xml:space="preserve">
+    <value>latitudeLabelExtPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.Parent" xml:space="preserve">
+    <value>externalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtPos.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="ambientAirDataCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ambientAirDataCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ambientAirDataCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 6</value>
+  </data>
+  <data name="ambientAirDataCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 20</value>
+  </data>
+  <data name="ambientAirDataCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="ambientAirDataCheckBox.Text" xml:space="preserve">
+    <value>Ambient air data</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Name" xml:space="preserve">
+    <value>ambientAirDataCheckBox</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Name" xml:space="preserve">
+    <value>pressureValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Name" xml:space="preserve">
+    <value>pressureLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Name" xml:space="preserve">
+    <value>altitudeValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Name" xml:space="preserve">
+    <value>temperatureValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Name" xml:space="preserve">
+    <value>altitudeLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Name" xml:space="preserve">
+    <value>temperatureLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ambientAirDataGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="ambientAirDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 32</value>
+  </data>
+  <data name="ambientAirDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 140</value>
+  </data>
+  <data name="ambientAirDataGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ambientAirDataGroupBox.Text" xml:space="preserve">
+    <value>Ambient air data</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Name" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;ambientAirDataGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pressureValueAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 106</value>
+  </data>
+  <data name="pressureValueAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="pressureValueAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Name" xml:space="preserve">
+    <value>pressureValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;pressureValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="pressureLabelAmbientAirData.Text" xml:space="preserve">
+    <value>Pressure (Pa)</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Name" xml:space="preserve">
+    <value>pressureLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;pressureLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altitudeValueAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 67</value>
+  </data>
+  <data name="altitudeValueAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Name" xml:space="preserve">
+    <value>altitudeValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="temperatureValueAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 31</value>
+  </data>
+  <data name="temperatureValueAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="temperatureValueAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Name" xml:space="preserve">
+    <value>temperatureValueAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;temperatureValueAmbientAirData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="altitudeLabelAmbientAirData.Text" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Name" xml:space="preserve">
+    <value>altitudeLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 16</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="temperatureLabelAmbientAirData.Text" xml:space="preserve">
+    <value>Temperature (C)</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Name" xml:space="preserve">
+    <value>temperatureLabelAmbientAirData</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.Parent" xml:space="preserve">
+    <value>ambientAirDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;temperatureLabelAmbientAirData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="windDataCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="windDataCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="windDataCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="windDataCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="windDataCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="windDataCheckBox.Text" xml:space="preserve">
+    <value>Wind data</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Name" xml:space="preserve">
+    <value>windDataCheckBox</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;windDataCheckBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Name" xml:space="preserve">
+    <value>WindDirectionValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Name" xml:space="preserve">
+    <value>WindDirectionLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="windDataGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="windDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 32</value>
+  </data>
+  <data name="windDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 140</value>
+  </data>
+  <data name="windDataGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="windDataGroupBox.Text" xml:space="preserve">
+    <value>Wind data</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Name" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;windDataGroupBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 106</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 16</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Text" xml:space="preserve">
+    <value>Speed STD (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 67</value>
+  </data>
+  <data name="WindSpeedValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindSpeedValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WindDirectionValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 31</value>
+  </data>
+  <data name="WindDirectionValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindDirectionValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Name" xml:space="preserve">
+    <value>WindDirectionValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WindSpeedLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindSpeedLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 16</value>
+  </data>
+  <data name="WindSpeedLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Text" xml:space="preserve">
+    <value>Speed (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WindDirectionLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindDirectionLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
+  </data>
+  <data name="WindDirectionLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Text" xml:space="preserve">
+    <value>Direction (deg)</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Name" xml:space="preserve">
+    <value>WindDirectionLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="headingExternalCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="headingExternalCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="headingExternalCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 9</value>
+  </data>
+  <data name="headingExternalCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="headingExternalCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="headingExternalCheckBox.Text" xml:space="preserve">
+    <value>Heading external</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Name" xml:space="preserve">
+    <value>headingExternalCheckBox</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.Parent" xml:space="preserve">
+    <value>otherAidingDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;headingExternalCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Name" xml:space="preserve">
+    <value>latencyValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Name" xml:space="preserve">
+    <value>latencyLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Name" xml:space="preserve">
+    <value>headingStdValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Name" xml:space="preserve">
+    <value>headingStdLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Name" xml:space="preserve">
+    <value>headingValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Name" xml:space="preserve">
+    <value>headingLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="headingExternalGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="headingExternalGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 35</value>
+  </data>
+  <data name="headingExternalGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 138</value>
+  </data>
+  <data name="headingExternalGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="headingExternalGroupBox.Text" xml:space="preserve">
+    <value>Heading external</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Name" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.Parent" xml:space="preserve">
+    <value>otherAidingDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;headingExternalGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="latencyValueHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 103</value>
+  </data>
+  <data name="latencyValueHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latencyValueHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Name" xml:space="preserve">
+    <value>latencyValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 105</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="latencyLabelHeadingExternal.Text" xml:space="preserve">
+    <value>Latency (s)</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Name" xml:space="preserve">
+    <value>latencyLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="headingStdValueHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 66</value>
+  </data>
+  <data name="headingStdValueHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="headingStdValueHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Name" xml:space="preserve">
+    <value>headingStdValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingStdValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 68</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 16</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="headingStdLabelHeadingExternal.Text" xml:space="preserve">
+    <value>Heading STD (deg)</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Name" xml:space="preserve">
+    <value>headingStdLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingStdLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="headingValueHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>166, 31</value>
+  </data>
+  <data name="headingValueHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="headingValueHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Name" xml:space="preserve">
+    <value>headingValueHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingValueHeadingExternal.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="headingLabelHeadingExternal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="headingLabelHeadingExternal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="headingLabelHeadingExternal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="headingLabelHeadingExternal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 16</value>
+  </data>
+  <data name="headingLabelHeadingExternal.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="headingLabelHeadingExternal.Text" xml:space="preserve">
+    <value>Heading (deg)</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Name" xml:space="preserve">
+    <value>headingLabelHeadingExternal</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.Parent" xml:space="preserve">
+    <value>headingExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;headingLabelHeadingExternal.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="BUT_uncheckall.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="BUT_uncheckall.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BUT_uncheckall.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 537</value>
+  </data>
+  <data name="BUT_uncheckall.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 33</value>
+  </data>
+  <data name="BUT_uncheckall.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BUT_uncheckall.Text" xml:space="preserve">
+    <value>Uncheck all</value>
+  </data>
+  <data name="&gt;&gt;BUT_uncheckall.Name" xml:space="preserve">
+    <value>BUT_uncheckall</value>
+  </data>
+  <data name="&gt;&gt;BUT_uncheckall.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_uncheckall.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_uncheckall.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="BUT_close.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="BUT_close.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BUT_close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>540, 537</value>
+  </data>
+  <data name="BUT_close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 33</value>
+  </data>
+  <data name="BUT_close.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="BUT_close.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;BUT_close.Name" xml:space="preserve">
+    <value>BUT_close</value>
+  </data>
+  <data name="&gt;&gt;BUT_close.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_close.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_close.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="BUT_sendtoahrs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="BUT_sendtoahrs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BUT_sendtoahrs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 11</value>
+  </data>
+  <data name="BUT_sendtoahrs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>208, 57</value>
+  </data>
+  <data name="BUT_sendtoahrs.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="BUT_sendtoahrs.Text" xml:space="preserve">
+    <value>Send to AHRS</value>
+  </data>
+  <data name="&gt;&gt;BUT_sendtoahrs.Name" xml:space="preserve">
+    <value>BUT_sendtoahrs</value>
+  </data>
+  <data name="&gt;&gt;BUT_sendtoahrs.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_sendtoahrs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BUT_sendtoahrs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>727, 602</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>745, 620</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>745, 620</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AidingData</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
