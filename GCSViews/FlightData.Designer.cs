@@ -197,6 +197,7 @@ namespace MissionPlanner.GCSViews
             this.BUT_inertiallabs_gnss_disable = new MissionPlanner.Controls.MyButton();
             this.BUT_inertiallabs_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
             this.BUT_inertiallabs_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_inertiallabs_aiding_data = new MissionPlanner.Controls.MyButton();
             this.panel_persistent = new System.Windows.Forms.Panel();
             this.tableMap = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -2485,6 +2486,7 @@ namespace MissionPlanner.GCSViews
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_stop, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_start, 2, 3);
             this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_stop, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_aiding_data, 3, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
             // BUT_inertiallabs_start
@@ -2534,6 +2536,14 @@ namespace MissionPlanner.GCSViews
             this.BUT_inertiallabs_vg3dclb_flight_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
             this.BUT_inertiallabs_vg3dclb_flight_stop.UseVisualStyleBackColor = true;
             this.BUT_inertiallabs_vg3dclb_flight_stop.Click += new System.EventHandler(this.BUT_inertiallabs_vg3dclb_flight_stop_Click);
+            // 
+            // BUT_inertiallabs_aiding_data
+            // 
+            resources.ApplyResources(this.BUT_inertiallabs_aiding_data, "BUT_inertiallabs_aiding_data");
+            this.BUT_inertiallabs_aiding_data.Name = "BUT_inertiallabs_aiding_data";
+            this.BUT_inertiallabs_aiding_data.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_inertiallabs_aiding_data.UseVisualStyleBackColor = true;
+            this.BUT_inertiallabs_aiding_data.Click += new System.EventHandler(this.BUT_inertiallabs_aiding_data_Click);
             // 
             // panel_persistent
             // 
@@ -3264,5 +3274,6 @@ namespace MissionPlanner.GCSViews
         private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_stop;
         private Controls.MyButton BUT_inertiallabs_start;
         private Controls.MyButton BUT_inertiallabs_stop;
+        private Controls.MyButton BUT_inertiallabs_aiding_data;
     }
 }

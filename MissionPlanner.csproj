@@ -297,6 +297,63 @@
     <EmbeddedResource Include="GCSViews\FlightPlanner.uk.resx">
       <DependentUpon>FlightPlanner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.ar.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.az-Latn-AZ.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.de-DE.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.es-ES.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.fr.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.id-ID.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.it-IT.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.ja-JP.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.ko-KR.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.pl.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.pt.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.ru-KZ.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.ru-RU.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.tr.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.uk.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.zh-Hans.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.zh-Hant.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCSViews\AidingData.zh-TW.resx">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GCSViews\Help.uk.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
@@ -907,6 +964,12 @@
     <Compile Include="GCSViews\ConfigurationView\DeviceInfo.cs" />
     <Compile Include="GCSViews\ConfigurationView\DroneCANModel.cs" />
     <Compile Include="GCSViews\ConfigurationView\uitype.cs" />
+    <Compile Include="GCSViews\AidingData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCSViews\AidingData.Designer.cs">
+      <DependentUpon>AidingData.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Joystick\JoystickAxis.cs">
       <SubType>UserControl</SubType>

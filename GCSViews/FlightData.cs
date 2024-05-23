@@ -141,7 +141,7 @@ namespace MissionPlanner.GCSViews
         bool playingLog;
         GMapOverlay polygons;
         private Propagation prop;
-        
+
         GMapRoute route;
         GMapOverlay routes;
         GMapOverlay adsbais;
@@ -153,7 +153,7 @@ namespace MissionPlanner.GCSViews
 
         //the thread the script is running on
         Thread scriptthread;
-                
+
         public readonly List<TabPage> TabListOriginal = new List<TabPage>();
         public Dictionary<string,bool> TabListDisplay = new Dictionary<string, bool>();
 
@@ -345,7 +345,7 @@ namespace MissionPlanner.GCSViews
             log.Info("Graph Setup");
             CreateChart(zg1);
 
-            // config map      
+            // config map
             log.Info("Map Setup");
             gMapControl1.CacheLocation = Settings.GetDataDirectory() +
                                          "gmapcache" + Path.DirectorySeparatorChar;
@@ -448,7 +448,7 @@ namespace MissionPlanner.GCSViews
                     if (ctls.Length > 0)
                     {
                         QuickView QV = (QuickView) ctls[0];
-                        
+
                         // set description and unit
                         string desc = Settings.Instance["quickView" + f];
                         if (QV.Tag == null)
@@ -1659,7 +1659,7 @@ namespace MissionPlanner.GCSViews
                 try
                 {
                     MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.SCRIPTING, (int)MAVLink.SCRIPTING_CMD.STOP_AND_RESTART, 0, 0, 0, 0, 0, 0);
-                    return; 
+                    return;
                 }
                 catch
                 {
@@ -2414,7 +2414,7 @@ namespace MissionPlanner.GCSViews
 
         private void NumberToBindingType(object sender, ConvertEventArgs e)
         {
-           
+
         }
 
         private void BindingTypeToNumber(object sender, ConvertEventArgs e)
@@ -3505,7 +3505,7 @@ namespace MissionPlanner.GCSViews
                     if (MainV2.comPort.MAV.param.ContainsKey("BATT_CRT_VOLT")) critvolt = MainV2.comPort.MAV.param["BATT_CRT_VOLT"].Value;
                     if (MainV2.comPort.MAV.param.ContainsKey("BATT_CRT_MAH") && MainV2.comPort.MAV.param.ContainsKey("BATT_CAPACITY"))
                     {
-                        if (MainV2.comPort.MAV.param["BATT_CRT_MAH"].Value > 0) 
+                        if (MainV2.comPort.MAV.param["BATT_CRT_MAH"].Value > 0)
                         {
                             critpercent = MainV2.comPort.MAV.param["BATT_CRT_MAH"].Value / MainV2.comPort.MAV.param["BATT_CAPACITY"].Value * 100 ;
                         }
@@ -3625,7 +3625,7 @@ namespace MissionPlanner.GCSViews
                     }
 
                     // update map - 0.3sec if connected , 2 sec if not connected
-                    if (((MainV2.comPort.BaseStream.IsOpen || MainV2.comPort.logreadmode) && 
+                    if (((MainV2.comPort.BaseStream.IsOpen || MainV2.comPort.logreadmode) &&
                          tracklast.AddSeconds(Settings.Instance.GetDouble("FD_MapUpdateDelay", 0.3)) < DateTime.Now) ||
                         tracklast.AddSeconds(2) < DateTime.Now)
                     {
@@ -3888,7 +3888,7 @@ namespace MissionPlanner.GCSViews
                         try
                         {
 
-                            // cleanup old - no markers where added, so remove all old 
+                            // cleanup old - no markers where added, so remove all old
                             if (MainV2.comPort.MAV.camerapoints.Count < photosoverlay.Markers.Count)
                                 photosoverlay.Markers.Clear();
 
@@ -4175,7 +4175,7 @@ namespace MissionPlanner.GCSViews
             Func<TBuilder, string> GetTagSource, Func<GMapMarker, string> GetTagMarker,
             Func<TBuilder, GMapMarker> create, Action<TBuilder, GMapMarker> update)
         {
-            if (list == null || gMapOverlay == null || GetTagSource == null 
+            if (list == null || gMapOverlay == null || GetTagSource == null
                 || GetTagMarker == null || create == null || update == null)
                 return;
 
@@ -4185,7 +4185,7 @@ namespace MissionPlanner.GCSViews
             {
                 if (item == null)
                     continue;
-                
+
                 if (markers.Any(a => a is TMarker && GetTagMarker(a) == GetTagSource(item)))
                 {
                     update(item, markers.First(a => a is TMarker && GetTagMarker(a) == GetTagSource(item)));
@@ -4436,8 +4436,8 @@ namespace MissionPlanner.GCSViews
                     if(fieldValue is bool)
                     {
                         fieldValue = ((bool)fieldValue) == true ? 1 : 0;
-                    } 
-                    else 
+                    }
+                    else
                         continue;
                 }
 
@@ -4827,7 +4827,7 @@ namespace MissionPlanner.GCSViews
                 {
                     //Change random color to be the next available color
                     var differentColorQuickView = colorsForDefaultQuickView[random.Next(colorsForDefaultQuickView.Length)];
-                    //Variable to find the items that are in colorsForDefault array, but are not in ListQV list                    
+                    //Variable to find the items that are in colorsForDefault array, but are not in ListQV list
                     var colorsRemaining = colorsForDefaultQuickView.Except(listQuickView);
 
                     //if differentColor is the same as randomColor, then select the next item in the list of colors which are still available to be chosen from.
@@ -5024,7 +5024,7 @@ namespace MissionPlanner.GCSViews
 
             e.Graphics.FillRectangle(linear, e.Bounds);
 
-            // Draw the current item text based on the current Font 
+            // Draw the current item text based on the current Font
             // and the custom brush settings.
             e.Graphics.DrawString(((TabControl) sender).TabPages[e.Index].Text,
                 e.Font, myBrush, e.Bounds, StringFormat.GenericDefault);
@@ -5224,7 +5224,7 @@ namespace MissionPlanner.GCSViews
             }
             catch
             {
-            } // ignore any invalid 
+            } // ignore any invalid
         }
 
         private void triggerCameraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5348,7 +5348,7 @@ namespace MissionPlanner.GCSViews
                     MainV2.comPort.MAV.cs.UpdateCurrentSettings(
                         bindingSourceHud.UpdateDataSource(MainV2.comPort.MAV.cs));
                 }
-                //if the tab detached wi have to update it 
+                //if the tab detached wi have to update it
                 if (tabQuickDetached) MainV2.comPort.MAV.cs.UpdateCurrentSettings(bindingSourceQuickTab.UpdateDataSource(MainV2.comPort.MAV.cs));
 
                 lastscreenupdate = DateTime.Now;
@@ -5539,7 +5539,7 @@ namespace MissionPlanner.GCSViews
 
             int max_length = 0;
             List<(string name, string desc)> fields = new List<(string, string)>();
-                        
+
             foreach (var field in test.GetProperties())
             {
                 // field.Name has the field's name.
@@ -5569,7 +5569,7 @@ namespace MissionPlanner.GCSViews
             max_length += 25;
             fields.Sort((a, b) => {
                 var ans = CurrentState.GetGroupText(a.name).CompareTo(CurrentState.GetGroupText(b.name));
-                if (ans == 0) return a.Item2.CompareTo(b.Item2); 
+                if (ans == 0) return a.Item2.CompareTo(b.Item2);
                 return ans;
             });
 
@@ -5959,7 +5959,7 @@ namespace MissionPlanner.GCSViews
 
             if (DialogResult.Cancel == InputBox.Show("Battery Cell Count", "Cell Count", ref CellCount))
                 return;
-            
+
             if (!int.TryParse(CellCount, out iCellCount))
             {
                 CustomMessageBox.Show("Bad Radius");
@@ -6216,9 +6216,9 @@ namespace MissionPlanner.GCSViews
                     Mode_clb.SetItemChecked(1, MainV2.comPort.MAV.cs.xpdr_mode_C_enabled);
                     Mode_clb.SetItemChecked(2, MainV2.comPort.MAV.cs.xpdr_mode_S_enabled);
                     Mode_clb.SetItemChecked(3, MainV2.comPort.MAV.cs.xpdr_es1090_tx_enabled);
-                    STBY_btn.Font = new Font(STBY_btn.Font, (!Mode_clb.GetItemChecked(0) && 
-                                                             !Mode_clb.GetItemChecked(1) && 
-                                                             !Mode_clb.GetItemChecked(2) && 
+                    STBY_btn.Font = new Font(STBY_btn.Font, (!Mode_clb.GetItemChecked(0) &&
+                                                             !Mode_clb.GetItemChecked(1) &&
+                                                             !Mode_clb.GetItemChecked(2) &&
                                                              !Mode_clb.GetItemChecked(3)) ? FontStyle.Bold : FontStyle.Regular);
                     ON_btn.Font   = new Font(ON_btn.Font,   ( Mode_clb.GetItemChecked(0) &&
                                                               Mode_clb.GetItemChecked(1) &&
@@ -6329,27 +6329,27 @@ namespace MissionPlanner.GCSViews
 
         private void BUT_inertiallabs_gnss_enable_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.ENABLE_GNSS, 0, 0, 0, 0, 0, 0);
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
         }
 
         private void BUT_inertiallabs_gnss_disable_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.DISABLE_GNSS, 0, 0, 0, 0, 0, 0);
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
         }
 
         private void BUT_inertiallabs_vg3dclb_flight_start_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.START_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0);
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
         }
 
         private void BUT_inertiallabs_vg3dclb_flight_stop_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0);
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
         }
 
         private void BUT_inertiallabs_start_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.START, 0, 0, 0, 0, 0, 0);
+            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD, 0, 0, 0, 0, 0, 0, 0);
         }
 
         private void BUT_inertiallabs_stop_Click(object sender, EventArgs e)
@@ -6358,8 +6358,15 @@ namespace MissionPlanner.GCSViews
                     "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) ==
                     CustomMessageBox.DialogResult.OK)
             {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP, 0, 0, 0, 0, 0, 0);
+                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP, 0, 0, 0, 0, 0, 0, 0);
             }
+        }
+
+        private void BUT_inertiallabs_aiding_data_Click(object sender, EventArgs e)
+        {
+            Form frm = new AidingData();
+            ThemeManager.ApplyThemeTo(frm);
+            frm.Show();
         }
     }
 }

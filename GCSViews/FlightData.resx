@@ -5368,8 +5368,35 @@
   <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_stop.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="BUT_inertiallabs_aiding_data.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="BUT_inertiallabs_aiding_data.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 65</value>
+  </data>
+  <data name="BUT_inertiallabs_aiding_data.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 57</value>
+  </data>
+  <data name="BUT_inertiallabs_aiding_data.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="BUT_inertiallabs_aiding_data.Text" xml:space="preserve">
+    <value>Aiding data</value>
+  </data>
+  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Name" xml:space="preserve">
+    <value>BUT_inertiallabs_aiding_data</value>
+  </data>
+  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Parent" xml:space="preserve">
+    <value>tableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 7</value>
+    <value>7, 6</value>
   </data>
   <data name="tableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
