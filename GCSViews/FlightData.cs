@@ -6354,7 +6354,12 @@ namespace MissionPlanner.GCSViews
 
         private void BUT_inertiallabs_stop_Click(object sender, EventArgs e)
         {
-            MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP, 0, 0, 0, 0, 0, 0);
+            if (CustomMessageBox.Show( "Attention! External AHRS will be stopped.\nAre you Sure?",
+                    "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) ==
+                    CustomMessageBox.DialogResult.OK)
+            {
+                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.INERTIALLABS_AHRS_SEND, (int)MAVLink.INERTIALLABS_AHRS_COMMAND_TYPE.STOP, 0, 0, 0, 0, 0, 0);
+            }
         }
     }
 }
