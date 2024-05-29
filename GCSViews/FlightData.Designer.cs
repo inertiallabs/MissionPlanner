@@ -189,15 +189,15 @@ namespace MissionPlanner.GCSViews
             this.but_bintolog = new MissionPlanner.Controls.MyButton();
             this.but_dflogtokml = new MissionPlanner.Controls.MyButton();
             this.BUT_loganalysis = new MissionPlanner.Controls.MyButton();
-            this.tabInertialLabs = new System.Windows.Forms.TabPage();
+            this.tabExternalAHRS = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.BUT_inertiallabs_start = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_stop = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_gnss_enable = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_gnss_disable = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_aiding_data = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_start = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_gnss_enable = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_gnss_disable = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_aiding_data = new MissionPlanner.Controls.MyButton();
             this.panel_persistent = new System.Windows.Forms.Panel();
             this.tableMap = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -289,7 +289,7 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).BeginInit();
             this.tablogbrowse.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tabInertialLabs.SuspendLayout();
+            this.tabExternalAHRS.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -614,7 +614,7 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.Controls.Add(this.tabPayload);
             this.tabControlactions.Controls.Add(this.tabTLogs);
             this.tabControlactions.Controls.Add(this.tablogbrowse);
-            this.tabControlactions.Controls.Add(this.tabInertialLabs);
+            this.tabControlactions.Controls.Add(this.tabExternalAHRS);
             resources.ApplyResources(this.tabControlactions, "tabControlactions");
             this.tabControlactions.Name = "tabControlactions";
             this.tabControlactions.SelectedIndex = 0;
@@ -2470,80 +2470,80 @@ namespace MissionPlanner.GCSViews
             this.BUT_loganalysis.UseVisualStyleBackColor = true;
             this.BUT_loganalysis.Click += new System.EventHandler(this.BUT_loganalysis_Click);
             // 
-            // tabInertialLabs
+            // tabExternalAHRS
             // 
-            resources.ApplyResources(this.tabInertialLabs, "tabInertialLabs");
-            this.tabInertialLabs.Controls.Add(this.tableLayoutPanel3);
-            this.tabInertialLabs.Name = "tabInertialLabs";
-            this.tabInertialLabs.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.tabExternalAHRS, "tabExternalAHRS");
+            this.tabExternalAHRS.Controls.Add(this.tableLayoutPanel3);
+            this.tabExternalAHRS.Name = "tabExternalAHRS";
+            this.tabExternalAHRS.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
             resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_gnss_enable, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_gnss_disable, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_start, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_vg3dclb_flight_stop, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_start, 2, 3);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_stop, 3, 3);
-            this.tableLayoutPanel3.Controls.Add(this.BUT_inertiallabs_aiding_data, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_gnss_enable, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_gnss_disable, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_vg3dclb_flight_start, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_vg3dclb_flight_stop, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_start, 2, 3);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_stop, 3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_aiding_data, 3, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
-            // BUT_inertiallabs_start
+            // BUT_externalAHRS_start
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_start, "BUT_inertiallabs_start");
-            this.BUT_inertiallabs_start.Name = "BUT_inertiallabs_start";
-            this.BUT_inertiallabs_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_start.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_start.Click += new System.EventHandler(this.BUT_inertiallabs_start_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_start, "BUT_externalAHRS_start");
+            this.BUT_externalAHRS_start.Name = "BUT_externalAHRS_start";
+            this.BUT_externalAHRS_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_start.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_start.Click += new System.EventHandler(this.BUT_externalAHRS_start_Click);
             // 
-            // BUT_inertiallabs_stop
+            // BUT_externalAHRS_stop
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_stop, "BUT_inertiallabs_stop");
-            this.BUT_inertiallabs_stop.Name = "BUT_inertiallabs_stop";
-            this.BUT_inertiallabs_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_stop.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_stop.Click += new System.EventHandler(this.BUT_inertiallabs_stop_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_stop, "BUT_externalAHRS_stop");
+            this.BUT_externalAHRS_stop.Name = "BUT_externalAHRS_stop";
+            this.BUT_externalAHRS_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_stop.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_stop.Click += new System.EventHandler(this.BUT_externalAHRS_stop_Click);
             // 
-            // BUT_inertiallabs_gnss_enable
+            // BUT_externalAHRS_gnss_enable
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_gnss_enable, "BUT_inertiallabs_gnss_enable");
-            this.BUT_inertiallabs_gnss_enable.Name = "BUT_inertiallabs_gnss_enable";
-            this.BUT_inertiallabs_gnss_enable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_gnss_enable.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_gnss_enable.Click += new System.EventHandler(this.BUT_inertiallabs_gnss_enable_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_gnss_enable, "BUT_externalAHRS_gnss_enable");
+            this.BUT_externalAHRS_gnss_enable.Name = "BUT_externalAHRS_gnss_enable";
+            this.BUT_externalAHRS_gnss_enable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_gnss_enable.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_gnss_enable.Click += new System.EventHandler(this.BUT_externalAHRS_gnss_enable_Click);
             // 
-            // BUT_inertiallabs_gnss_disable
+            // BUT_externalAHRS_gnss_disable
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_gnss_disable, "BUT_inertiallabs_gnss_disable");
-            this.BUT_inertiallabs_gnss_disable.Name = "BUT_inertiallabs_gnss_disable";
-            this.BUT_inertiallabs_gnss_disable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_gnss_disable.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_gnss_disable.Click += new System.EventHandler(this.BUT_inertiallabs_gnss_disable_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_gnss_disable, "BUT_externalAHRS_gnss_disable");
+            this.BUT_externalAHRS_gnss_disable.Name = "BUT_externalAHRS_gnss_disable";
+            this.BUT_externalAHRS_gnss_disable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_gnss_disable.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_gnss_disable.Click += new System.EventHandler(this.BUT_externalAHRS_gnss_disable_Click);
             // 
-            // BUT_inertiallabs_vg3dclb_flight_start
+            // BUT_externalAHRS_vg3dclb_flight_start
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_vg3dclb_flight_start, "BUT_inertiallabs_vg3dclb_flight_start");
-            this.BUT_inertiallabs_vg3dclb_flight_start.Name = "BUT_inertiallabs_vg3dclb_flight_start";
-            this.BUT_inertiallabs_vg3dclb_flight_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_vg3dclb_flight_start.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_vg3dclb_flight_start.Click += new System.EventHandler(this.BUT_inertiallabs_vg3dclb_flight_start_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_vg3dclb_flight_start, "BUT_externalAHRS_vg3dclb_flight_start");
+            this.BUT_externalAHRS_vg3dclb_flight_start.Name = "BUT_externalAHRS_vg3dclb_flight_start";
+            this.BUT_externalAHRS_vg3dclb_flight_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_vg3dclb_flight_start.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_vg3dclb_flight_start.Click += new System.EventHandler(this.BUT_externalAHRS_vg3dclb_flight_start_Click);
             // 
-            // BUT_inertiallabs_vg3dclb_flight_stop
+            // BUT_externalAHRS_vg3dclb_flight_stop
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_vg3dclb_flight_stop, "BUT_inertiallabs_vg3dclb_flight_stop");
-            this.BUT_inertiallabs_vg3dclb_flight_stop.Name = "BUT_inertiallabs_vg3dclb_flight_stop";
-            this.BUT_inertiallabs_vg3dclb_flight_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_vg3dclb_flight_stop.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_vg3dclb_flight_stop.Click += new System.EventHandler(this.BUT_inertiallabs_vg3dclb_flight_stop_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_vg3dclb_flight_stop, "BUT_externalAHRS_vg3dclb_flight_stop");
+            this.BUT_externalAHRS_vg3dclb_flight_stop.Name = "BUT_externalAHRS_vg3dclb_flight_stop";
+            this.BUT_externalAHRS_vg3dclb_flight_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_vg3dclb_flight_stop.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_vg3dclb_flight_stop.Click += new System.EventHandler(this.BUT_externalAHRS_vg3dclb_flight_stop_Click);
             // 
-            // BUT_inertiallabs_aiding_data
+            // BUT_externalAHRS_aiding_data
             // 
-            resources.ApplyResources(this.BUT_inertiallabs_aiding_data, "BUT_inertiallabs_aiding_data");
-            this.BUT_inertiallabs_aiding_data.Name = "BUT_inertiallabs_aiding_data";
-            this.BUT_inertiallabs_aiding_data.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_inertiallabs_aiding_data.UseVisualStyleBackColor = true;
-            this.BUT_inertiallabs_aiding_data.Click += new System.EventHandler(this.BUT_inertiallabs_aiding_data_Click);
+            resources.ApplyResources(this.BUT_externalAHRS_aiding_data, "BUT_externalAHRS_aiding_data");
+            this.BUT_externalAHRS_aiding_data.Name = "BUT_externalAHRS_aiding_data";
+            this.BUT_externalAHRS_aiding_data.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_aiding_data.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_aiding_data.Click += new System.EventHandler(this.BUT_externalAHRS_aiding_data_Click);
             // 
             // panel_persistent
             // 
@@ -3017,7 +3017,7 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).EndInit();
             this.tablogbrowse.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tabInertialLabs.ResumeLayout(false);
+            this.tabExternalAHRS.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableMap.ResumeLayout(false);
             this.tableMap.PerformLayout();
@@ -3266,14 +3266,14 @@ namespace MissionPlanner.GCSViews
         private Controls.RelayOptions relayOptions14;
         private Controls.RelayOptions relayOptions15;
         private Controls.RelayOptions relayOptions16;
-        public System.Windows.Forms.TabPage tabInertialLabs;
+        public System.Windows.Forms.TabPage tabExternalAHRS;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private Controls.MyButton BUT_inertiallabs_gnss_enable;
-        private Controls.MyButton BUT_inertiallabs_gnss_disable;
-        private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_start;
-        private Controls.MyButton BUT_inertiallabs_vg3dclb_flight_stop;
-        private Controls.MyButton BUT_inertiallabs_start;
-        private Controls.MyButton BUT_inertiallabs_stop;
-        private Controls.MyButton BUT_inertiallabs_aiding_data;
+        private Controls.MyButton BUT_externalAHRS_gnss_enable;
+        private Controls.MyButton BUT_externalAHRS_gnss_disable;
+        private Controls.MyButton BUT_externalAHRS_vg3dclb_flight_start;
+        private Controls.MyButton BUT_externalAHRS_vg3dclb_flight_stop;
+        private Controls.MyButton BUT_externalAHRS_start;
+        private Controls.MyButton BUT_externalAHRS_stop;
+        private Controls.MyButton BUT_externalAHRS_aiding_data;
     }
 }

@@ -709,7 +709,7 @@ namespace MissionPlanner.GCSViews
 
             TabListDisplay.Add(tabPayload.Name, MainV2.DisplayConfiguration.displayPayloadTab);
 
-            TabListDisplay.Add(tabInertialLabs.Name, MainV2.DisplayConfiguration.displayInertialLabsTab);
+            TabListDisplay.Add(tabExternalAHRS.Name, MainV2.DisplayConfiguration.displayExternalAHRSTab);
         }
 
         private void loadTabControlActions()
@@ -6327,32 +6327,32 @@ namespace MissionPlanner.GCSViews
             }
         }
 
-        private void BUT_inertiallabs_gnss_enable_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_gnss_enable_Click(object sender, EventArgs e)
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
         }
 
-        private void BUT_inertiallabs_gnss_disable_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_gnss_disable_Click(object sender, EventArgs e)
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
         }
 
-        private void BUT_inertiallabs_vg3dclb_flight_start_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_vg3dclb_flight_start_Click(object sender, EventArgs e)
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
         }
 
-        private void BUT_inertiallabs_vg3dclb_flight_stop_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_vg3dclb_flight_stop_Click(object sender, EventArgs e)
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
         }
 
-        private void BUT_inertiallabs_start_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_start_Click(object sender, EventArgs e)
         {
             MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD, 0, 0, 0, 0, 0, 0, 0);
         }
 
-        private void BUT_inertiallabs_stop_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_stop_Click(object sender, EventArgs e)
         {
             if (CustomMessageBox.Show( "Attention! External AHRS will be stopped.\nAre you Sure?",
                     "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) ==
@@ -6362,7 +6362,7 @@ namespace MissionPlanner.GCSViews
             }
         }
 
-        private void BUT_inertiallabs_aiding_data_Click(object sender, EventArgs e)
+        private void BUT_externalAHRS_aiding_data_Click(object sender, EventArgs e)
         {
             Form frm = new AidingData();
             ThemeManager.ApplyThemeTo(frm);

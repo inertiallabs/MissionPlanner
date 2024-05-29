@@ -246,8 +246,8 @@
   <data name="tablogbrowse.Text" xml:space="preserve">
     <value>DataFlash Logs</value>
   </data>
-  <data name="tabInertialLabs.Text" xml:space="preserve">
-    <value>InertialLabs</value>
+  <data name="tabExternalAHRS.Text" xml:space="preserve">
+    <value>External AHRS</value>
   </data>
   <data name="BUT_mountmode.ToolTip" xml:space="preserve">
     <value>Perubahan Mode di sebelah kiri</value>

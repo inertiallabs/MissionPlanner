@@ -5182,217 +5182,217 @@
   <data name="&gt;&gt;tablogbrowse.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="tabInertialLabs.AutoScroll" type="System.Boolean, mscorlib">
+  <data name="tabExternalAHRS.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="tableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="BUT_inertiallabs_start.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_start.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_start.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_start.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_start.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_start.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 57</value>
   </data>
-  <data name="BUT_inertiallabs_start.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_start.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 36</value>
   </data>
-  <data name="BUT_inertiallabs_start.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_start.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="BUT_inertiallabs_start.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_start.Text" xml:space="preserve">
     <value>Start</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_start.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_start</value>
+  <data name="&gt;&gt;BUT_externalAHRS_start.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_start</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_start.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_start.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_start.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_start.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_start.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_start.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="BUT_inertiallabs_stop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_stop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_stop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_stop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_stop.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_stop.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 57</value>
   </data>
-  <data name="BUT_inertiallabs_stop.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_stop.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 36</value>
   </data>
-  <data name="BUT_inertiallabs_stop.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_stop.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="BUT_inertiallabs_stop.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_stop.Text" xml:space="preserve">
     <value>Stop</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_stop.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_stop</value>
+  <data name="&gt;&gt;BUT_externalAHRS_stop.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_stop</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_stop.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_stop.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_stop.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_stop.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_stop.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_stop.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_gnss_enable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_gnss_enable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_gnss_enable.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_gnss_enable.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 48</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_gnss_enable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_enable.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_gnss_enable.Text" xml:space="preserve">
     <value>Enable GNSS</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_enable.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_gnss_enable</value>
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_enable.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_gnss_enable</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_enable.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_enable.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_enable.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_enable.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_enable.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_enable.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_gnss_disable.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_gnss_disable.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_gnss_disable.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 3</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_gnss_disable.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 48</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_gnss_disable.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="BUT_inertiallabs_gnss_disable.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_gnss_disable.Text" xml:space="preserve">
     <value>Disable GNSS</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_disable.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_gnss_disable</value>
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_disable.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_gnss_disable</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_disable.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_disable.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_disable.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_disable.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_gnss_disable.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_gnss_disable.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 3</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 48</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_start.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_vg3dclb_flight_start.Text" xml:space="preserve">
     <value>Start vg3dclb in flight</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_start.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_vg3dclb_flight_start</value>
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_start.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_vg3dclb_flight_start</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_start.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_start.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_start.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_start.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_start.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_start.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 3</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 48</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="BUT_inertiallabs_vg3dclb_flight_stop.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_vg3dclb_flight_stop.Text" xml:space="preserve">
     <value>Stop vg3dclb in flight</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_stop.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_vg3dclb_flight_stop</value>
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_stop.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_vg3dclb_flight_stop</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_stop.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_stop.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_stop.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_stop.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_vg3dclb_flight_stop.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_vg3dclb_flight_stop.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="BUT_inertiallabs_aiding_data.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="BUT_externalAHRS_aiding_data.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="BUT_inertiallabs_aiding_data.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="BUT_externalAHRS_aiding_data.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 65</value>
   </data>
-  <data name="BUT_inertiallabs_aiding_data.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="BUT_externalAHRS_aiding_data.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 57</value>
   </data>
-  <data name="BUT_inertiallabs_aiding_data.TabIndex" type="System.Int32, mscorlib">
+  <data name="BUT_externalAHRS_aiding_data.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="BUT_inertiallabs_aiding_data.Text" xml:space="preserve">
+  <data name="BUT_externalAHRS_aiding_data.Text" xml:space="preserve">
     <value>Aiding data</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Name" xml:space="preserve">
-    <value>BUT_inertiallabs_aiding_data</value>
+  <data name="&gt;&gt;BUT_externalAHRS_aiding_data.Name" xml:space="preserve">
+    <value>BUT_externalAHRS_aiding_data</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Type" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_aiding_data.Type" xml:space="preserve">
     <value>MissionPlanner.Controls.MyButton, MissionPlanner.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_aiding_data.Parent" xml:space="preserve">
     <value>tableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;BUT_inertiallabs_aiding_data.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;BUT_externalAHRS_aiding_data.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="tableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
@@ -5414,39 +5414,39 @@
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.Parent" xml:space="preserve">
-    <value>tabInertialLabs</value>
+    <value>tabExternalAHRS</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BUT_inertiallabs_start" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_inertiallabs_stop" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_inertiallabs_gnss_enable" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_inertiallabs_gnss_disable" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="BUT_inertiallabs_vg3dclb_flight_start" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="BUT_inertiallabs_vg3dclb_flight_stop" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48,88889,Percent,51,11111,Absolute,70,Absolute,69" /&gt;&lt;Rows Styles="Percent,50,Absolute,42,Absolute,37,Absolute,29" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="BUT_externalAHRS_start" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_externalAHRS_stop" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_externalAHRS_gnss_enable" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="BUT_externalAHRS_gnss_disable" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="BUT_externalAHRS_vg3dclb_flight_start" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="BUT_externalAHRS_vg3dclb_flight_stop" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48,88889,Percent,51,11111,Absolute,70,Absolute,69" /&gt;&lt;Rows Styles="Percent,50,Absolute,42,Absolute,37,Absolute,29" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="tabInertialLabs.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabExternalAHRS.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 44</value>
   </data>
-  <data name="tabInertialLabs.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabExternalAHRS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabInertialLabs.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabExternalAHRS.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 175</value>
   </data>
-  <data name="tabInertialLabs.TabIndex" type="System.Int32, mscorlib">
+  <data name="tabExternalAHRS.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
-  <data name="tabInertialLabs.Text" xml:space="preserve">
-    <value>InertialLabs</value>
+  <data name="tabExternalAHRS.Text" xml:space="preserve">
+    <value>External AHRS</value>
   </data>
-  <data name="&gt;&gt;tabInertialLabs.Name" xml:space="preserve">
-    <value>tabInertialLabs</value>
+  <data name="&gt;&gt;tabExternalAHRS.Name" xml:space="preserve">
+    <value>tabExternalAHRS</value>
   </data>
-  <data name="&gt;&gt;tabInertialLabs.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabExternalAHRS.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabInertialLabs.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabExternalAHRS.Parent" xml:space="preserve">
     <value>tabControlactions</value>
   </data>
-  <data name="&gt;&gt;tabInertialLabs.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tabExternalAHRS.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
   <data name="tabControlactions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

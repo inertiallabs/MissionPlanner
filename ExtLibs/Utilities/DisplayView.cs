@@ -62,7 +62,7 @@ namespace MissionPlanner.Utilities
         public Boolean displayTransponderTab { get; set; }
         public Boolean displayAuxFunctionTab { get; set; }
         public Boolean displayPayloadTab { get; set; }
-        public Boolean displayInertialLabsTab { get; set; }
+        public Boolean displayExternalAHRSTab { get; set; }
 
         //flight plan
         public Boolean displayRallyPointsMenu { get; set; }
@@ -158,7 +158,7 @@ namespace MissionPlanner.Utilities
             displayTransponderTab = true;
             displayAuxFunctionTab = true;
             displayPayloadTab = true;
-            displayInertialLabsTab = true;
+            displayExternalAHRSTab = true;
 
             //flight plan
             displayRallyPointsMenu = true;
@@ -292,7 +292,7 @@ namespace MissionPlanner.Utilities
                 displayTransponderTab = true,
                 displayAuxFunctionTab = true,
                 displayPayloadTab = true,
-                displayInertialLabsTab = true,
+                displayExternalAHRSTab = true,
 
                 //flight plan
                 displayRallyPointsMenu = true,
@@ -380,7 +380,7 @@ namespace MissionPlanner.Utilities
                 displayTransponderTab = true,
                 displayAuxFunctionTab = true,
                 displayPayloadTab = true,
-                displayInertialLabsTab = true,
+                displayExternalAHRSTab = true,
 
                 //flight plan
                 displayRallyPointsMenu = true,
