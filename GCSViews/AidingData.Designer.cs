@@ -191,6 +191,11 @@
             0,
             131072});
             this.altitudeValueStdAltExt.Name = "altitudeValueStdAltExt";
+            this.altitudeValueStdAltExt.Value = new decimal(new int[] {
+            1054,
+            0,
+            0,
+            131072});
             // 
             // altitudeValueAltExt
             // 
@@ -212,6 +217,11 @@
             0,
             -2147483648});
             this.altitudeValueAltExt.Name = "altitudeValueAltExt";
+            this.altitudeValueAltExt.Value = new decimal(new int[] {
+            152034,
+            0,
+            0,
+            196608});
             // 
             // altitudeStdLabelAltExt
             // 
@@ -261,6 +271,11 @@
             0,
             196608});
             this.latencyValueExtHorPos.Name = "latencyValueExtHorPos";
+            this.latencyValueExtHorPos.Value = new decimal(new int[] {
+            300,
+            0,
+            0,
+            196608});
             // 
             // latencyLabelExtHorPos
             // 
@@ -282,6 +297,11 @@
             0,
             131072});
             this.longitudeStdValueExtHorPos.Name = "longitudeStdValueExtHorPos";
+            this.longitudeStdValueExtHorPos.Value = new decimal(new int[] {
+            562,
+            0,
+            0,
+            131072});
             // 
             // longitudeStdLabelExtHorPos
             // 
@@ -303,6 +323,11 @@
             0,
             131072});
             this.latitudeStdValueExtHorPos.Name = "latitudeStdValueExtHorPos";
+            this.latitudeStdValueExtHorPos.Value = new decimal(new int[] {
+            125,
+            0,
+            0,
+            131072});
             // 
             // latitudeStdLabelExtHorPos
             // 
@@ -324,6 +349,11 @@
             0,
             -2147483648});
             this.longitudeValueExtHorPos.Name = "longitudeValueExtHorPos";
+            this.longitudeValueExtHorPos.Value = new decimal(new int[] {
+            771465547,
+            0,
+            0,
+            -2147024896});
             // 
             // latitudeValueExtHorPos
             // 
@@ -340,6 +370,11 @@
             0,
             -2147483648});
             this.latitudeValueExtHorPos.Name = "latitudeValueExtHorPos";
+            this.latitudeValueExtHorPos.Value = new decimal(new int[] {
+            399451452,
+            0,
+            0,
+            458752});
             // 
             // longitudeLabelExtHorPos
             // 
@@ -393,6 +428,11 @@
             0,
             196608});
             this.latencyValueExtPos.Name = "latencyValueExtPos";
+            this.latencyValueExtPos.Value = new decimal(new int[] {
+            300,
+            0,
+            0,
+            196608});
             // 
             // latencyLabelExtPos
             // 
@@ -414,6 +454,11 @@
             0,
             131072});
             this.altitudeStdValueExtPos.Name = "altitudeStdValueExtPos";
+            this.altitudeStdValueExtPos.Value = new decimal(new int[] {
+            1054,
+            0,
+            0,
+            131072});
             // 
             // altitudeStdLabelExtPos
             // 
@@ -435,6 +480,11 @@
             0,
             131072});
             this.longitudeStdValueExtPos.Name = "longitudeStdValueExtPos";
+            this.longitudeStdValueExtPos.Value = new decimal(new int[] {
+            562,
+            0,
+            0,
+            131072});
             // 
             // longitudeStdLabelExtPos
             // 
@@ -456,6 +506,11 @@
             0,
             131072});
             this.latitudeStdValueExtPos.Name = "latitudeStdValueExtPos";
+            this.latitudeStdValueExtPos.Value = new decimal(new int[] {
+            125,
+            0,
+            0,
+            131072});
             // 
             // latitudeStdLabelExtPos
             // 
@@ -482,6 +537,11 @@
             0,
             -2147483648});
             this.altitudeValueExtPos.Name = "altitudeValueExtPos";
+            this.altitudeValueExtPos.Value = new decimal(new int[] {
+            152034,
+            0,
+            0,
+            196608});
             // 
             // altitudeLabelExtPos
             // 
@@ -508,6 +568,11 @@
             0,
             -2147483648});
             this.longitudeValueExtPos.Name = "longitudeValueExtPos";
+            this.longitudeValueExtPos.Value = new decimal(new int[] {
+            771465547,
+            0,
+            0,
+            -2147024896});
             // 
             // latitudeValueExtPos
             // 
@@ -529,6 +594,11 @@
             0,
             -2147483648});
             this.latitudeValueExtPos.Name = "latitudeValueExtPos";
+            this.latitudeValueExtPos.Value = new decimal(new int[] {
+            399451452,
+            0,
+            0,
+            458752});
             // 
             // longitudeLabelExtPos
             // 
@@ -578,6 +648,11 @@
             0,
             0});
             this.pressureValueAmbientAirData.Name = "pressureValueAmbientAirData";
+            this.pressureValueAmbientAirData.Value = new decimal(new int[] {
+            101700,
+            0,
+            0,
+            0});
             // 
             // pressureLabelAmbientAirData
             // 
@@ -604,6 +679,11 @@
             0,
             -2147483648});
             this.altitudeValueAmbientAirData.Name = "altitudeValueAmbientAirData";
+            this.altitudeValueAmbientAirData.Value = new decimal(new int[] {
+            15000,
+            0,
+            0,
+            131072});
             // 
             // temperatureValueAmbientAirData
             // 
@@ -625,6 +705,11 @@
             0,
             -2147483648});
             this.temperatureValueAmbientAirData.Name = "temperatureValueAmbientAirData";
+            this.temperatureValueAmbientAirData.Value = new decimal(new int[] {
+            230,
+            0,
+            0,
+            65536});
             // 
             // altitudeLabelAmbientAirData
             // 
@@ -672,6 +757,11 @@
             0,
             131072});
             this.EWindStdValueWindData.Name = "EWindStdValueWindData";
+            this.EWindStdValueWindData.Value = new decimal(new int[] {
+            42,
+            0,
+            0,
+            131072});
             // 
             // EWindStdLabelWindData
             // 
@@ -693,6 +783,11 @@
             0,
             131072});
             this.NWindStdValueWindData.Name = "NWindStdValueWindData";
+            this.NWindStdValueWindData.Value = new decimal(new int[] {
+            52,
+            0,
+            0,
+            131072});
             // 
             // NWindStdLabelWindData
             // 
@@ -719,6 +814,11 @@
             0,
             -2147352576});
             this.EWindValueWindData.Name = "EWindValueWindData";
+            this.EWindValueWindData.Value = new decimal(new int[] {
+            501,
+            0,
+            0,
+            -2147352576});
             // 
             // NWindValueWindData
             // 
@@ -740,6 +840,11 @@
             0,
             -2147352576});
             this.NWindValueWindData.Name = "NWindValueWindData";
+            this.NWindValueWindData.Value = new decimal(new int[] {
+            1001,
+            0,
+            0,
+            131072});
             // 
             // EWindLabelWindData
             // 
@@ -793,6 +898,11 @@
             0,
             196608});
             this.latencyValueHeadingExternal.Name = "latencyValueHeadingExternal";
+            this.latencyValueHeadingExternal.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            196608});
             // 
             // latencyLabelHeadingExternal
             // 
@@ -814,6 +924,11 @@
             0,
             131072});
             this.headingStdValueHeadingExternal.Name = "headingStdValueHeadingExternal";
+            this.headingStdValueHeadingExternal.Value = new decimal(new int[] {
+            245,
+            0,
+            0,
+            131072});
             // 
             // headingStdLabelHeadingExternal
             // 
@@ -835,6 +950,11 @@
             0,
             0});
             this.headingValueHeadingExternal.Name = "headingValueHeadingExternal";
+            this.headingValueHeadingExternal.Value = new decimal(new int[] {
+            17989,
+            0,
+            0,
+            131072});
             // 
             // headingLabelHeadingExternal
             // 
