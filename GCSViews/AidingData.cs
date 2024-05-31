@@ -123,5 +123,10 @@ namespace MissionPlanner.GCSViews
                                             0, 0, 0, 0);
             }
         }
+
+        private void BUT_close_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }

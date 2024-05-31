@@ -133,6 +133,8 @@ namespace MissionPlanner.GCSViews
         double LogPlayBackSpeed = 1.0;
         GMapMarker marker;
 
+        private AidingData aidingDataDialog = new AidingData();
+
         int messagecount;
 
         //whether or not the output console has already started
@@ -407,7 +409,6 @@ namespace MissionPlanner.GCSViews
             hud1.displayicons = Settings.Instance.GetBoolean("HUD_showicons", false);
 
             tabControlactions.Multiline = Settings.Instance.GetBoolean("tabControlactions_Multiline", false);
-
         }
 
         public void Activate()
@@ -6364,9 +6365,8 @@ namespace MissionPlanner.GCSViews
 
         private void BUT_externalAHRS_aiding_data_Click(object sender, EventArgs e)
         {
-            Form frm = new AidingData();
-            ThemeManager.ApplyThemeTo(frm);
-            frm.Show();
+            ThemeManager.ApplyThemeTo(aidingDataDialog);
+            aidingDataDialog.Show();
         }
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AidingData));
-            this.BUT_sendtoahrs = new MissionPlanner.Controls.MyButton();
             this.aidingDataTabControl = new System.Windows.Forms.TabControl();
             this.externalPositionTabPage = new System.Windows.Forms.TabPage();
             this.altitudeExternalCheckBox = new System.Windows.Forms.CheckBox();
@@ -94,6 +93,8 @@
             this.headingStdLabelHeadingExternal = new System.Windows.Forms.Label();
             this.headingValueHeadingExternal = new System.Windows.Forms.NumericUpDown();
             this.headingLabelHeadingExternal = new System.Windows.Forms.Label();
+            this.BUT_sendtoahrs = new MissionPlanner.Controls.MyButton();
+            this.BUT_close = new MissionPlanner.Controls.MyButton();
             this.aidingDataTabControl.SuspendLayout();
             this.externalPositionTabPage.SuspendLayout();
             this.altitudeExternalGroupBox.SuspendLayout();
@@ -129,14 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.headingStdValueHeadingExternal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.headingValueHeadingExternal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BUT_sendtoahrs
-            // 
-            resources.ApplyResources(this.BUT_sendtoahrs, "BUT_sendtoahrs");
-            this.BUT_sendtoahrs.Name = "BUT_sendtoahrs";
-            this.BUT_sendtoahrs.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_sendtoahrs.UseVisualStyleBackColor = true;
-            this.BUT_sendtoahrs.Click += new System.EventHandler(this.BUT_sendtoahrs_Click);
             // 
             // aidingDataTabControl
             // 
@@ -961,12 +954,33 @@
             resources.ApplyResources(this.headingLabelHeadingExternal, "headingLabelHeadingExternal");
             this.headingLabelHeadingExternal.Name = "headingLabelHeadingExternal";
             // 
+            // BUT_sendtoahrs
+            // 
+            resources.ApplyResources(this.BUT_sendtoahrs, "BUT_sendtoahrs");
+            this.BUT_sendtoahrs.Name = "BUT_sendtoahrs";
+            this.BUT_sendtoahrs.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_sendtoahrs.UseVisualStyleBackColor = true;
+            this.BUT_sendtoahrs.Click += new System.EventHandler(this.BUT_sendtoahrs_Click);
+            // 
+            // BUT_close
+            // 
+            resources.ApplyResources(this.BUT_close, "BUT_close");
+            this.BUT_close.Name = "BUT_close";
+            this.BUT_close.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_close.UseVisualStyleBackColor = true;
+            this.BUT_close.Click += new System.EventHandler(this.BUT_close_Click);
+            // 
             // AidingData
             // 
             resources.ApplyResources(this, "$this");
+            this.ControlBox = false;
+            this.Controls.Add(this.BUT_close);
             this.Controls.Add(this.aidingDataTabControl);
             this.Controls.Add(this.BUT_sendtoahrs);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AidingData";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AidingData_Load);
             this.aidingDataTabControl.ResumeLayout(false);
             this.externalPositionTabPage.ResumeLayout(false);
@@ -1081,5 +1095,6 @@
         private System.Windows.Forms.Label headingStdLabelHeadingExternal;
         private System.Windows.Forms.NumericUpDown headingValueHeadingExternal;
         private System.Windows.Forms.Label headingLabelHeadingExternal;
+        private Controls.MyButton BUT_close;
     }
 }
