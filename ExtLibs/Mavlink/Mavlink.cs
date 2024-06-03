@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Sun May 26 2024";
+    public const string MAVLINK_BUILD_DATE = "Mon Jun 03 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -1263,7 +1263,7 @@ public partial class MAVLink
         ///<summary> Send external altitude aiding data to AHRS |Altitude STD| Empty.| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>
         [Description("Send external altitude aiding data to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE=33008, 
-        ///<summary> Send wind aiding data to AHRS |N Wind| N Wind| N Wind STD| N Wind STD| Empty.| Empty.| Empty.|  </summary>
+        ///<summary> Send wind aiding data to AHRS |Direction| Speed| Speed STD| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Send wind aiding data to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_WIND=33009, 
         ///<summary> Send aiding data ambient air data to AHRS |Temperature| Pressure| Empty.| Empty.| Empty.| Empty.| Altitude|  </summary>

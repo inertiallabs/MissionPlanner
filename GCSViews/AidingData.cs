@@ -94,11 +94,10 @@ namespace MissionPlanner.GCSViews
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
                                             MainV2.comPort.MAV.compid,
                                             MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_WIND,
-                                            (float)NWindValueWindData.Value,
-                                            (float)EWindValueWindData.Value,
-                                            (float)NWindStdValueWindData.Value,
-                                            (float)EWindStdValueWindData.Value,
-                                            0, 0, 0);
+                                            (float)WindDirectionValueWindData.Value,
+                                            (float)WindSpeedValueWindData.Value,
+                                            (float)WindSpeedStdValueWindData.Value,
+                                            0, 0, 0, 0);
             }
 
             if (ambientAirDataCheckBox.Checked)

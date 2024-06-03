@@ -76,14 +76,12 @@
             this.temperatureLabelAmbientAirData = new System.Windows.Forms.Label();
             this.windDataCheckBox = new System.Windows.Forms.CheckBox();
             this.windDataGroupBox = new System.Windows.Forms.GroupBox();
-            this.EWindStdValueWindData = new System.Windows.Forms.NumericUpDown();
-            this.EWindStdLabelWindData = new System.Windows.Forms.Label();
-            this.NWindStdValueWindData = new System.Windows.Forms.NumericUpDown();
-            this.NWindStdLabelWindData = new System.Windows.Forms.Label();
-            this.EWindValueWindData = new System.Windows.Forms.NumericUpDown();
-            this.NWindValueWindData = new System.Windows.Forms.NumericUpDown();
-            this.EWindLabelWindData = new System.Windows.Forms.Label();
-            this.NWindLabelWindData = new System.Windows.Forms.Label();
+            this.WindSpeedStdValueWindData = new System.Windows.Forms.NumericUpDown();
+            this.WindSpeedStdLabelWindData = new System.Windows.Forms.Label();
+            this.WindSpeedValueWindData = new System.Windows.Forms.NumericUpDown();
+            this.WindDirectionValueWindData = new System.Windows.Forms.NumericUpDown();
+            this.WindSpeedLabelWindData = new System.Windows.Forms.Label();
+            this.WindDirectionLabelWindData = new System.Windows.Forms.Label();
             this.otherAidingDataTabPage = new System.Windows.Forms.TabPage();
             this.headingExternalCheckBox = new System.Windows.Forms.CheckBox();
             this.headingExternalGroupBox = new System.Windows.Forms.GroupBox();
@@ -120,10 +118,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.altitudeValueAmbientAirData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.temperatureValueAmbientAirData)).BeginInit();
             this.windDataGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EWindStdValueWindData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NWindStdValueWindData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EWindValueWindData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NWindValueWindData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindSpeedStdValueWindData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindSpeedValueWindData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindDirectionValueWindData)).BeginInit();
             this.otherAidingDataTabPage.SuspendLayout();
             this.headingExternalGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.latencyValueHeadingExternal)).BeginInit();
@@ -723,131 +720,98 @@
             // 
             // windDataGroupBox
             // 
-            this.windDataGroupBox.Controls.Add(this.EWindStdValueWindData);
-            this.windDataGroupBox.Controls.Add(this.EWindStdLabelWindData);
-            this.windDataGroupBox.Controls.Add(this.NWindStdValueWindData);
-            this.windDataGroupBox.Controls.Add(this.NWindStdLabelWindData);
-            this.windDataGroupBox.Controls.Add(this.EWindValueWindData);
-            this.windDataGroupBox.Controls.Add(this.NWindValueWindData);
-            this.windDataGroupBox.Controls.Add(this.EWindLabelWindData);
-            this.windDataGroupBox.Controls.Add(this.NWindLabelWindData);
+            this.windDataGroupBox.Controls.Add(this.WindSpeedStdValueWindData);
+            this.windDataGroupBox.Controls.Add(this.WindSpeedStdLabelWindData);
+            this.windDataGroupBox.Controls.Add(this.WindSpeedValueWindData);
+            this.windDataGroupBox.Controls.Add(this.WindDirectionValueWindData);
+            this.windDataGroupBox.Controls.Add(this.WindSpeedLabelWindData);
+            this.windDataGroupBox.Controls.Add(this.WindDirectionLabelWindData);
             resources.ApplyResources(this.windDataGroupBox, "windDataGroupBox");
             this.windDataGroupBox.Name = "windDataGroupBox";
             this.windDataGroupBox.TabStop = false;
             // 
-            // EWindStdValueWindData
+            // WindSpeedStdValueWindData
             // 
-            this.EWindStdValueWindData.DecimalPlaces = 2;
-            this.EWindStdValueWindData.Increment = new decimal(new int[] {
+            this.WindSpeedStdValueWindData.DecimalPlaces = 2;
+            this.WindSpeedStdValueWindData.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            resources.ApplyResources(this.EWindStdValueWindData, "EWindStdValueWindData");
-            this.EWindStdValueWindData.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.WindSpeedStdValueWindData, "WindSpeedStdValueWindData");
+            this.WindSpeedStdValueWindData.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             131072});
-            this.EWindStdValueWindData.Name = "EWindStdValueWindData";
-            this.EWindStdValueWindData.Value = new decimal(new int[] {
+            this.WindSpeedStdValueWindData.Name = "WindSpeedStdValueWindData";
+            this.WindSpeedStdValueWindData.Value = new decimal(new int[] {
             42,
             0,
             0,
             131072});
             // 
-            // EWindStdLabelWindData
+            // WindSpeedStdLabelWindData
             // 
-            resources.ApplyResources(this.EWindStdLabelWindData, "EWindStdLabelWindData");
-            this.EWindStdLabelWindData.Name = "EWindStdLabelWindData";
+            resources.ApplyResources(this.WindSpeedStdLabelWindData, "WindSpeedStdLabelWindData");
+            this.WindSpeedStdLabelWindData.Name = "WindSpeedStdLabelWindData";
             // 
-            // NWindStdValueWindData
+            // WindSpeedValueWindData
             // 
-            this.NWindStdValueWindData.DecimalPlaces = 2;
-            this.NWindStdValueWindData.Increment = new decimal(new int[] {
+            this.WindSpeedValueWindData.DecimalPlaces = 2;
+            this.WindSpeedValueWindData.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            resources.ApplyResources(this.NWindStdValueWindData, "NWindStdValueWindData");
-            this.NWindStdValueWindData.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            131072});
-            this.NWindStdValueWindData.Name = "NWindStdValueWindData";
-            this.NWindStdValueWindData.Value = new decimal(new int[] {
-            52,
-            0,
-            0,
-            131072});
-            // 
-            // NWindStdLabelWindData
-            // 
-            resources.ApplyResources(this.NWindStdLabelWindData, "NWindStdLabelWindData");
-            this.NWindStdLabelWindData.Name = "NWindStdLabelWindData";
-            // 
-            // EWindValueWindData
-            // 
-            this.EWindValueWindData.DecimalPlaces = 2;
-            this.EWindValueWindData.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            resources.ApplyResources(this.EWindValueWindData, "EWindValueWindData");
-            this.EWindValueWindData.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.WindSpeedValueWindData, "WindSpeedValueWindData");
+            this.WindSpeedValueWindData.Maximum = new decimal(new int[] {
             32760,
             0,
             0,
             131072});
-            this.EWindValueWindData.Minimum = new decimal(new int[] {
+            this.WindSpeedValueWindData.Minimum = new decimal(new int[] {
             32760,
             0,
             0,
             -2147352576});
-            this.EWindValueWindData.Name = "EWindValueWindData";
-            this.EWindValueWindData.Value = new decimal(new int[] {
+            this.WindSpeedValueWindData.Name = "WindSpeedValueWindData";
+            this.WindSpeedValueWindData.Value = new decimal(new int[] {
             501,
             0,
             0,
             -2147352576});
             // 
-            // NWindValueWindData
+            // WindDirectionValueWindData
             // 
-            this.NWindValueWindData.DecimalPlaces = 2;
-            this.NWindValueWindData.Increment = new decimal(new int[] {
+            this.WindDirectionValueWindData.DecimalPlaces = 1;
+            this.WindDirectionValueWindData.Increment = new decimal(new int[] {
             1,
             0,
             0,
-            131072});
-            resources.ApplyResources(this.NWindValueWindData, "NWindValueWindData");
-            this.NWindValueWindData.Maximum = new decimal(new int[] {
-            32760,
+            65536});
+            resources.ApplyResources(this.WindDirectionValueWindData, "WindDirectionValueWindData");
+            this.WindDirectionValueWindData.Maximum = new decimal(new int[] {
+            360,
             0,
             0,
-            131072});
-            this.NWindValueWindData.Minimum = new decimal(new int[] {
-            32760,
+            0});
+            this.WindDirectionValueWindData.Name = "WindDirectionValueWindData";
+            this.WindDirectionValueWindData.Value = new decimal(new int[] {
+            180,
             0,
             0,
-            -2147352576});
-            this.NWindValueWindData.Name = "NWindValueWindData";
-            this.NWindValueWindData.Value = new decimal(new int[] {
-            1001,
-            0,
-            0,
-            131072});
+            0});
             // 
-            // EWindLabelWindData
+            // WindSpeedLabelWindData
             // 
-            resources.ApplyResources(this.EWindLabelWindData, "EWindLabelWindData");
-            this.EWindLabelWindData.Name = "EWindLabelWindData";
+            resources.ApplyResources(this.WindSpeedLabelWindData, "WindSpeedLabelWindData");
+            this.WindSpeedLabelWindData.Name = "WindSpeedLabelWindData";
             // 
-            // NWindLabelWindData
+            // WindDirectionLabelWindData
             // 
-            resources.ApplyResources(this.NWindLabelWindData, "NWindLabelWindData");
-            this.NWindLabelWindData.Name = "NWindLabelWindData";
+            resources.ApplyResources(this.WindDirectionLabelWindData, "WindDirectionLabelWindData");
+            this.WindDirectionLabelWindData.Name = "WindDirectionLabelWindData";
             // 
             // otherAidingDataTabPage
             // 
@@ -1014,10 +978,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.temperatureValueAmbientAirData)).EndInit();
             this.windDataGroupBox.ResumeLayout(false);
             this.windDataGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EWindStdValueWindData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NWindStdValueWindData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EWindValueWindData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NWindValueWindData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindSpeedStdValueWindData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindSpeedValueWindData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WindDirectionValueWindData)).EndInit();
             this.otherAidingDataTabPage.ResumeLayout(false);
             this.otherAidingDataTabPage.PerformLayout();
             this.headingExternalGroupBox.ResumeLayout(false);
@@ -1079,14 +1042,12 @@
         private System.Windows.Forms.Label temperatureLabelAmbientAirData;
         private System.Windows.Forms.CheckBox windDataCheckBox;
         private System.Windows.Forms.GroupBox windDataGroupBox;
-        private System.Windows.Forms.NumericUpDown EWindStdValueWindData;
-        private System.Windows.Forms.Label EWindStdLabelWindData;
-        private System.Windows.Forms.NumericUpDown NWindStdValueWindData;
-        private System.Windows.Forms.Label NWindStdLabelWindData;
-        private System.Windows.Forms.NumericUpDown EWindValueWindData;
-        private System.Windows.Forms.NumericUpDown NWindValueWindData;
-        private System.Windows.Forms.Label EWindLabelWindData;
-        private System.Windows.Forms.Label NWindLabelWindData;
+        private System.Windows.Forms.NumericUpDown WindSpeedStdValueWindData;
+        private System.Windows.Forms.Label WindSpeedStdLabelWindData;
+        private System.Windows.Forms.NumericUpDown WindSpeedValueWindData;
+        private System.Windows.Forms.NumericUpDown WindDirectionValueWindData;
+        private System.Windows.Forms.Label WindSpeedLabelWindData;
+        private System.Windows.Forms.Label WindDirectionLabelWindData;
         private System.Windows.Forms.CheckBox headingExternalCheckBox;
         private System.Windows.Forms.GroupBox headingExternalGroupBox;
         private System.Windows.Forms.NumericUpDown latencyValueHeadingExternal;

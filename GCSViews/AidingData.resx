@@ -1272,209 +1272,158 @@
   <data name="&gt;&gt;windDataCheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="EWindStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 143</value>
-  </data>
-  <data name="EWindStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="EWindStdValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;EWindStdValueWindData.Name" xml:space="preserve">
-    <value>EWindStdValueWindData</value>
-  </data>
-  <data name="&gt;&gt;EWindStdValueWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EWindStdValueWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EWindStdValueWindData.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EWindStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EWindStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EWindStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 145</value>
-  </data>
-  <data name="EWindStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 16</value>
-  </data>
-  <data name="EWindStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="EWindStdLabelWindData.Text" xml:space="preserve">
-    <value>E wind STD (kt)</value>
-  </data>
-  <data name="&gt;&gt;EWindStdLabelWindData.Name" xml:space="preserve">
-    <value>EWindStdLabelWindData</value>
-  </data>
-  <data name="&gt;&gt;EWindStdLabelWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EWindStdLabelWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EWindStdLabelWindData.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="NWindStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="WindSpeedStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
     <value>128, 106</value>
   </data>
-  <data name="NWindStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="WindSpeedStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 22</value>
   </data>
-  <data name="NWindStdValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="WindSpeedStdValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;NWindStdValueWindData.Name" xml:space="preserve">
-    <value>NWindStdValueWindData</value>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdValueWindData</value>
   </data>
-  <data name="&gt;&gt;NWindStdValueWindData.Type" xml:space="preserve">
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NWindStdValueWindData.Parent" xml:space="preserve">
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Parent" xml:space="preserve">
     <value>windDataGroupBox</value>
   </data>
-  <data name="&gt;&gt;NWindStdValueWindData.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="NWindStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NWindStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NWindStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 108</value>
-  </data>
-  <data name="NWindStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 16</value>
-  </data>
-  <data name="NWindStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="NWindStdLabelWindData.Text" xml:space="preserve">
-    <value>N wind STD (kt)</value>
-  </data>
-  <data name="&gt;&gt;NWindStdLabelWindData.Name" xml:space="preserve">
-    <value>NWindStdLabelWindData</value>
-  </data>
-  <data name="&gt;&gt;NWindStdLabelWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NWindStdLabelWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NWindStdLabelWindData.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="EWindValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 67</value>
-  </data>
-  <data name="EWindValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="EWindValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;EWindValueWindData.Name" xml:space="preserve">
-    <value>EWindValueWindData</value>
-  </data>
-  <data name="&gt;&gt;EWindValueWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EWindValueWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EWindValueWindData.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="NWindValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 31</value>
-  </data>
-  <data name="NWindValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="NWindValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;NWindValueWindData.Name" xml:space="preserve">
-    <value>NWindValueWindData</value>
-  </data>
-  <data name="&gt;&gt;NWindValueWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NWindValueWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;NWindValueWindData.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="EWindLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EWindLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="EWindLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 69</value>
-  </data>
-  <data name="EWindLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 16</value>
-  </data>
-  <data name="EWindLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="EWindLabelWindData.Text" xml:space="preserve">
-    <value>E wind (kt)</value>
-  </data>
-  <data name="&gt;&gt;EWindLabelWindData.Name" xml:space="preserve">
-    <value>EWindLabelWindData</value>
-  </data>
-  <data name="&gt;&gt;EWindLabelWindData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EWindLabelWindData.Parent" xml:space="preserve">
-    <value>windDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;EWindLabelWindData.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="NWindLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="NWindLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="NWindLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 33</value>
-  </data>
-  <data name="NWindLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 16</value>
-  </data>
-  <data name="NWindLabelWindData.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;WindSpeedStdValueWindData.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="NWindLabelWindData.Text" xml:space="preserve">
-    <value>N wind (kt)</value>
+  <data name="WindSpeedStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;NWindLabelWindData.Name" xml:space="preserve">
-    <value>NWindLabelWindData</value>
+  <data name="WindSpeedStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;NWindLabelWindData.Type" xml:space="preserve">
+  <data name="WindSpeedStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 16</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Text" xml:space="preserve">
+    <value>Speed STD (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NWindLabelWindData.Parent" xml:space="preserve">
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Parent" xml:space="preserve">
     <value>windDataGroupBox</value>
   </data>
-  <data name="&gt;&gt;NWindLabelWindData.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 67</value>
+  </data>
+  <data name="WindSpeedValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindSpeedValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WindDirectionValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 31</value>
+  </data>
+  <data name="WindDirectionValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindDirectionValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Name" xml:space="preserve">
+    <value>WindDirectionValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WindSpeedLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindSpeedLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 16</value>
+  </data>
+  <data name="WindSpeedLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Text" xml:space="preserve">
+    <value>Speed (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WindDirectionLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindDirectionLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
+  </data>
+  <data name="WindDirectionLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Text" xml:space="preserve">
+    <value>Direction (deg)</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Name" xml:space="preserve">
+    <value>WindDirectionLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="windDataGroupBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1483,7 +1432,7 @@
     <value>6, 32</value>
   </data>
   <data name="windDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 180</value>
+    <value>304, 140</value>
   </data>
   <data name="windDataGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1510,7 +1459,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="externalVelocityAirDataTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 420</value>
+    <value>659, 407</value>
   </data>
   <data name="externalVelocityAirDataTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1744,7 +1693,7 @@
     <value>4, 25</value>
   </data>
   <data name="otherAidingDataTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>659, 420</value>
+    <value>659, 407</value>
   </data>
   <data name="otherAidingDataTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>

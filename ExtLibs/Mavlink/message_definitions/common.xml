@@ -2311,10 +2311,10 @@
       </entry>
       <entry value="33009" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_WIND" hasLocation="false" isDestination="false">
         <description>Send wind aiding data to AHRS</description>
-        <param index="1" label="NWind">N Wind</param>
-        <param index="2" label="EWind">N Wind</param>
-        <param index="3" label="NWindStd">N Wind STD</param>
-        <param index="4" label="EWindStd">N Wind STD</param>
+        <param index="1" label="Direction">Direction</param>
+        <param index="2" label="Speed">Speed</param>
+        <param index="3" label="SpeedStd">Speed STD</param>
+        <param index="4">Empty.</param>
         <param index="5">Empty.</param>
         <param index="6">Empty.</param>
         <param index="7">Empty.</param>
