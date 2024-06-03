@@ -150,15 +150,6 @@
   <data name="&gt;&gt;altitudeExternalCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="altitudeValueStdAltExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 67</value>
-  </data>
-  <data name="altitudeValueStdAltExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="altitudeValueStdAltExt.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
   <data name="&gt;&gt;altitudeValueStdAltExt.Name" xml:space="preserve">
     <value>altitudeValueStdAltExt</value>
   </data>
@@ -170,15 +161,6 @@
   </data>
   <data name="&gt;&gt;altitudeValueStdAltExt.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="altitudeValueAltExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 31</value>
-  </data>
-  <data name="altitudeValueAltExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="altitudeValueAltExt.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;altitudeValueAltExt.Name" xml:space="preserve">
     <value>altitudeValueAltExt</value>
@@ -192,24 +174,6 @@
   <data name="&gt;&gt;altitudeValueAltExt.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="altitudeStdLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="altitudeStdLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="altitudeStdLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 69</value>
-  </data>
-  <data name="altitudeStdLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 16</value>
-  </data>
-  <data name="altitudeStdLabelAltExt.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="altitudeStdLabelAltExt.Text" xml:space="preserve">
-    <value>Altitude STD (m)</value>
-  </data>
   <data name="&gt;&gt;altitudeStdLabelAltExt.Name" xml:space="preserve">
     <value>altitudeStdLabelAltExt</value>
   </data>
@@ -221,24 +185,6 @@
   </data>
   <data name="&gt;&gt;altitudeStdLabelAltExt.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="altitudeLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="altitudeLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="altitudeLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 33</value>
-  </data>
-  <data name="altitudeLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 16</value>
-  </data>
-  <data name="altitudeLabelAltExt.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="altitudeLabelAltExt.Text" xml:space="preserve">
-    <value>Altitude (m)</value>
   </data>
   <data name="&gt;&gt;altitudeLabelAltExt.Name" xml:space="preserve">
     <value>altitudeLabelAltExt</value>
@@ -309,15 +255,6 @@
   <data name="&gt;&gt;externalHorizontalPositionCheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="latencyValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 179</value>
-  </data>
-  <data name="latencyValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="latencyValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
   <data name="&gt;&gt;latencyValueExtHorPos.Name" xml:space="preserve">
     <value>latencyValueExtHorPos</value>
   </data>
@@ -329,24 +266,6 @@
   </data>
   <data name="&gt;&gt;latencyValueExtHorPos.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="latencyLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="latencyLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="latencyLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 181</value>
-  </data>
-  <data name="latencyLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
-  </data>
-  <data name="latencyLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="latencyLabelExtHorPos.Text" xml:space="preserve">
-    <value>Latency (s)</value>
   </data>
   <data name="&gt;&gt;latencyLabelExtHorPos.Name" xml:space="preserve">
     <value>latencyLabelExtHorPos</value>
@@ -360,15 +279,6 @@
   <data name="&gt;&gt;latencyLabelExtHorPos.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="longitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 143</value>
-  </data>
-  <data name="longitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="longitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="&gt;&gt;longitudeStdValueExtHorPos.Name" xml:space="preserve">
     <value>longitudeStdValueExtHorPos</value>
   </data>
@@ -380,24 +290,6 @@
   </data>
   <data name="&gt;&gt;longitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 145</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 16</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="longitudeStdLabelExtHorPos.Text" xml:space="preserve">
-    <value>Longitude STD (m)</value>
   </data>
   <data name="&gt;&gt;longitudeStdLabelExtHorPos.Name" xml:space="preserve">
     <value>longitudeStdLabelExtHorPos</value>
@@ -411,15 +303,6 @@
   <data name="&gt;&gt;longitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="latitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 106</value>
-  </data>
-  <data name="latitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="latitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="&gt;&gt;latitudeStdValueExtHorPos.Name" xml:space="preserve">
     <value>latitudeStdValueExtHorPos</value>
   </data>
@@ -431,24 +314,6 @@
   </data>
   <data name="&gt;&gt;latitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 108</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 16</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="latitudeStdLabelExtHorPos.Text" xml:space="preserve">
-    <value>Latitude STD (m)</value>
   </data>
   <data name="&gt;&gt;latitudeStdLabelExtHorPos.Name" xml:space="preserve">
     <value>latitudeStdLabelExtHorPos</value>
@@ -462,15 +327,6 @@
   <data name="&gt;&gt;latitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="longitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 67</value>
-  </data>
-  <data name="longitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="longitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;longitudeValueExtHorPos.Name" xml:space="preserve">
     <value>longitudeValueExtHorPos</value>
   </data>
@@ -482,15 +338,6 @@
   </data>
   <data name="&gt;&gt;longitudeValueExtHorPos.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="latitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 31</value>
-  </data>
-  <data name="latitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="latitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;latitudeValueExtHorPos.Name" xml:space="preserve">
     <value>latitudeValueExtHorPos</value>
@@ -504,24 +351,6 @@
   <data name="&gt;&gt;latitudeValueExtHorPos.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="longitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="longitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="longitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 69</value>
-  </data>
-  <data name="longitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 16</value>
-  </data>
-  <data name="longitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="longitudeLabelExtHorPos.Text" xml:space="preserve">
-    <value>Longitude (deg)</value>
-  </data>
   <data name="&gt;&gt;longitudeLabelExtHorPos.Name" xml:space="preserve">
     <value>longitudeLabelExtHorPos</value>
   </data>
@@ -533,24 +362,6 @@
   </data>
   <data name="&gt;&gt;longitudeLabelExtHorPos.ZOrder" xml:space="preserve">
     <value>8</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 33</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 16</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="latitudeLabelExtHorPos.Text" xml:space="preserve">
-    <value>Latitude (deg)</value>
   </data>
   <data name="&gt;&gt;latitudeLabelExtHorPos.Name" xml:space="preserve">
     <value>latitudeLabelExtHorPos</value>
@@ -1272,15 +1083,6 @@
   <data name="&gt;&gt;windDataCheckBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="WindSpeedStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 106</value>
-  </data>
-  <data name="WindSpeedStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="WindSpeedStdValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="&gt;&gt;WindSpeedStdValueWindData.Name" xml:space="preserve">
     <value>WindSpeedStdValueWindData</value>
   </data>
@@ -1292,24 +1094,6 @@
   </data>
   <data name="&gt;&gt;WindSpeedStdValueWindData.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 108</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 16</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="WindSpeedStdLabelWindData.Text" xml:space="preserve">
-    <value>Speed STD (m/s)</value>
   </data>
   <data name="&gt;&gt;WindSpeedStdLabelWindData.Name" xml:space="preserve">
     <value>WindSpeedStdLabelWindData</value>
@@ -1323,15 +1107,6 @@
   <data name="&gt;&gt;WindSpeedStdLabelWindData.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="WindSpeedValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 67</value>
-  </data>
-  <data name="WindSpeedValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="WindSpeedValueWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;WindSpeedValueWindData.Name" xml:space="preserve">
     <value>WindSpeedValueWindData</value>
   </data>
@@ -1342,15 +1117,6 @@
     <value>windDataGroupBox</value>
   </data>
   <data name="&gt;&gt;WindSpeedValueWindData.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="WindDirectionValueWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 31</value>
-  </data>
-  <data name="WindDirectionValueWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
-  </data>
-  <data name="WindDirectionValueWindData.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="&gt;&gt;WindDirectionValueWindData.Name" xml:space="preserve">
@@ -1365,24 +1131,6 @@
   <data name="&gt;&gt;WindDirectionValueWindData.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="WindSpeedLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="WindSpeedLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WindSpeedLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 69</value>
-  </data>
-  <data name="WindSpeedLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 16</value>
-  </data>
-  <data name="WindSpeedLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="WindSpeedLabelWindData.Text" xml:space="preserve">
-    <value>Speed (m/s)</value>
-  </data>
   <data name="&gt;&gt;WindSpeedLabelWindData.Name" xml:space="preserve">
     <value>WindSpeedLabelWindData</value>
   </data>
@@ -1394,24 +1142,6 @@
   </data>
   <data name="&gt;&gt;WindSpeedLabelWindData.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="WindDirectionLabelWindData.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="WindDirectionLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="WindDirectionLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 33</value>
-  </data>
-  <data name="WindDirectionLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 16</value>
-  </data>
-  <data name="WindDirectionLabelWindData.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="WindDirectionLabelWindData.Text" xml:space="preserve">
-    <value>Direction (deg)</value>
   </data>
   <data name="&gt;&gt;WindDirectionLabelWindData.Name" xml:space="preserve">
     <value>WindDirectionLabelWindData</value>
@@ -1733,6 +1463,516 @@
   </data>
   <data name="&gt;&gt;aidingDataTabControl.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="altitudeValueStdAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 67</value>
+  </data>
+  <data name="altitudeValueStdAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueStdAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Name" xml:space="preserve">
+    <value>altitudeValueStdAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueStdAltExt.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="altitudeValueAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 31</value>
+  </data>
+  <data name="altitudeValueAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="altitudeValueAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Name" xml:space="preserve">
+    <value>altitudeValueAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeValueAltExt.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 69</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 16</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="altitudeStdLabelAltExt.Text" xml:space="preserve">
+    <value>Altitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeStdLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeStdLabelAltExt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="altitudeLabelAltExt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="altitudeLabelAltExt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="altitudeLabelAltExt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="altitudeLabelAltExt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 16</value>
+  </data>
+  <data name="altitudeLabelAltExt.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="altitudeLabelAltExt.Text" xml:space="preserve">
+    <value>Altitude (m)</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Name" xml:space="preserve">
+    <value>altitudeLabelAltExt</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.Parent" xml:space="preserve">
+    <value>altitudeExternalGroupBox</value>
+  </data>
+  <data name="&gt;&gt;altitudeLabelAltExt.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="latencyValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 179</value>
+  </data>
+  <data name="latencyValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latencyValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Name" xml:space="preserve">
+    <value>latencyValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="latencyLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latencyLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 181</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="latencyLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="latencyLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latency (s)</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Name" xml:space="preserve">
+    <value>latencyLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>143, 143</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 145</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 16</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="longitudeStdLabelExtHorPos.Text" xml:space="preserve">
+    <value>Longitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>143, 106</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeStdValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 16</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="latitudeStdLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latitude STD (m)</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeStdLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeStdLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="longitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 67</value>
+  </data>
+  <data name="longitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="longitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>longitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="latitudeValueExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 31</value>
+  </data>
+  <data name="latitudeValueExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latitudeValueExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Name" xml:space="preserve">
+    <value>latitudeValueExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeValueExtHorPos.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 16</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="longitudeLabelExtHorPos.Text" xml:space="preserve">
+    <value>Longitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>longitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;longitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 16</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="latitudeLabelExtHorPos.Text" xml:space="preserve">
+    <value>Latitude (deg)</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Name" xml:space="preserve">
+    <value>latitudeLabelExtHorPos</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.Parent" xml:space="preserve">
+    <value>externalHorizontalPositionGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latitudeLabelExtHorPos.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 106</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindSpeedStdValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdValueWindData.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 108</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 16</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="WindSpeedStdLabelWindData.Text" xml:space="preserve">
+    <value>Speed STD (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedStdLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedStdLabelWindData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 67</value>
+  </data>
+  <data name="WindSpeedValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindSpeedValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Name" xml:space="preserve">
+    <value>WindSpeedValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedValueWindData.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="WindDirectionValueWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 31</value>
+  </data>
+  <data name="WindDirectionValueWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="WindDirectionValueWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Name" xml:space="preserve">
+    <value>WindDirectionValueWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionValueWindData.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="WindSpeedLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindSpeedLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 16</value>
+  </data>
+  <data name="WindSpeedLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="WindSpeedLabelWindData.Text" xml:space="preserve">
+    <value>Speed (m/s)</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Name" xml:space="preserve">
+    <value>WindSpeedLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindSpeedLabelWindData.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="WindDirectionLabelWindData.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="WindDirectionLabelWindData.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 16</value>
+  </data>
+  <data name="WindDirectionLabelWindData.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="WindDirectionLabelWindData.Text" xml:space="preserve">
+    <value>Direction (deg)</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Name" xml:space="preserve">
+    <value>WindDirectionLabelWindData</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.Parent" xml:space="preserve">
+    <value>windDataGroupBox</value>
+  </data>
+  <data name="&gt;&gt;WindDirectionLabelWindData.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="BUT_sendtoahrs.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom</value>
