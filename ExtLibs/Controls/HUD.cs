@@ -230,6 +230,9 @@ namespace MissionPlanner.Controls
         [System.ComponentModel.Browsable(true), DefaultValue(true)]
         public bool displayCellVoltage { get; set; }
 
+        [System.ComponentModel.Browsable(true), DefaultValue(true)]
+        public bool displayeahrs { get; set; }
+
         private static ImageCodecInfo ici = GetImageCodec("image/jpeg");
         private static EncoderParameters eps = new EncoderParameters(1);
 
@@ -247,12 +250,13 @@ namespace MissionPlanner.Controls
                 displayvibe =
                     displayekf =
                         displayprearm =
-                            displayheading =
-                                displayspeed =
-                                    displayalt =
-                                        displayconninfo =
-                                            displayxtrack =
-                                                displayrollpitch = displaygps = bgon = hudon = batteryon = batteryon2 = true;
+                            displayeahrs =
+                                displayheading =
+                                    displayspeed =
+                                        displayalt =
+                                            displayconninfo =
+                                                displayxtrack =
+                                                    displayrollpitch = displaygps = bgon = hudon = batteryon = batteryon2 = true;
 
             displayAOASSA = false;
 
@@ -867,6 +871,9 @@ namespace MissionPlanner.Controls
         public bool prearmstatus { get; set; }
 
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
+        public uint eahrsstatus { get; set; }
+
+        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
         public float AOA
         {
             get { return _AOA; }
@@ -994,6 +1001,7 @@ namespace MissionPlanner.Controls
         private readonly SolidBrush _whiteBrush = new SolidBrush(Color.White);
         private readonly SolidBrush _redBrush = new SolidBrush(Color.Red);
         private readonly SolidBrush _orangeBrush = new SolidBrush(Color.Orange);
+        private readonly SolidBrush _darkCyanBrush = new SolidBrush(Color.DarkCyan);
 
         private static readonly SolidBrush SolidBrush = new SolidBrush(Color.FromArgb(0x55, 0xff, 0xff, 0xff));
 
@@ -1180,10 +1188,12 @@ namespace MissionPlanner.Controls
         public event EventHandler ekfclick;
         public event EventHandler vibeclick;
         public event EventHandler prearmclick;
+        public event EventHandler eahrsclick;
 
         Rectangle ekfhitzone = new Rectangle();
         Rectangle vibehitzone = new Rectangle();
         Rectangle prearmhitzone = new Rectangle();
+        Rectangle eahrshitzone = new Rectangle();
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
@@ -1206,6 +1216,12 @@ namespace MissionPlanner.Controls
                 if (prearmclick != null)
                     prearmclick(this, null);
             }
+
+            if (eahrshitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)))
+            {
+                if (eahrsclick != null)
+                    eahrsclick(this, null);
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -1221,6 +1237,10 @@ namespace MissionPlanner.Controls
                 Cursor.Current = Cursors.Hand;
             }
             else if (prearmhitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)) && !status) // Only when not armed
+            {
+                Cursor.Current = Cursors.Hand;
+            }
+            else if (eahrshitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)))
             {
                 Cursor.Current = Cursors.Hand;
             }
@@ -2814,9 +2834,10 @@ namespace MissionPlanner.Controls
                 int yBotOffset = (fontsize >= 8) ? (fontsize / 3) : 2; // this replaces fontoffset for bottom lines
                 int yTextOffset = (fontsize + yBotOffset + 2); // creates a 25% font size space between multiple lines
                 int xPos = fontsize; // spaces text off left 1 character
-                Int32[] yPos = new Int32[] {this.Height - 2*yTextOffset - yBotOffset - 4,  //line upper
-                                  this.Height - yTextOffset - yBotOffset - 4 };            //line lower
-                
+                Int32[] yPos = new Int32[] {this.Height - yTextOffset - yBotOffset - 4,  // low line
+                                  this.Height - 2*yTextOffset - yBotOffset - 4,          // second line
+                                  this.Height - 3*yTextOffset - yBotOffset - 4 };        // third line
+
                 //Console.WriteLine("HUD Height " + this.Height + " fontsize " + fontsize + " offset " + yBotOffset + " ypos0: " + yPos[0] + " ypos1: " + yPos[1]);
 
                 // battery
@@ -2860,24 +2881,24 @@ namespace MissionPlanner.Controls
                         DrawImage(icon, 3, this.Height - bottomsize, bottomsize / 2, bottomsize);
 
                         text = _batterylevel.ToString("0.00v") + " " + _current.ToString("0.0 A") + " " + (_batteryremaining) + "%";
-                        drawstring(text, font, fontsize + 1, textcolor, bottomsize / 2 + 6, yPos[1]);
+                        drawstring(text, font, fontsize + 1, textcolor, bottomsize / 2 + 6, yPos[0]);
                         if (displayCellVoltage & (_batterycellcount != 0))
-                            drawstring((_batterylevel / _batterycellcount).ToString("0.00v"), font, fontsize, textcolor, bottomsize / 2 + 6, yPos[1]);
+                            drawstring((_batterylevel / _batterycellcount).ToString("0.00v"), font, fontsize, textcolor, bottomsize / 2 + 6, yPos[0]);
 
                     }
                     else
                     {
 
                         if (displayCellVoltage & (_batterycellcount != 0))
-                            drawstring(HUDT.Cell + " " + (_batterylevel / _batterycellcount).ToString("0.00v"), font, fontsize + 2, textcolor, xPos, yPos[1]);
+                            drawstring(HUDT.Cell + " " + (_batterylevel / _batterycellcount).ToString("0.00v"), font, fontsize + 2, textcolor, xPos, yPos[0]);
                         else if (_batterylevel2 > 0 && batteryon2)
                         {
                             text = HUDT.Bat + "2 " + _batterylevel2.ToString("0.00v") + " " + _current2.ToString("0.0 A") + " " +
                                    (_batteryremaining2) + "%";
 
-                            drawstring(text, font, fontsize, textcolor, xPos, yPos[1]);
+                            drawstring(text, font, fontsize, textcolor, xPos, yPos[0]);
                         } else {
-                            textIdx=1;
+                            textIdx=0;
                         }
 
                        
@@ -2958,7 +2979,7 @@ namespace MissionPlanner.Controls
                             continue;
 
 
-                        int textIdx = (a == 0 && _gpsfix2 > 0) ? 0 : 1;
+                        int textIdx = (a == 0 && _gpsfix2 > 0) ? 1 : 0;
 
 
                         //If displayicons is true then we display image icons instead of text on GPS staus
@@ -3118,7 +3139,7 @@ namespace MissionPlanner.Controls
                     }
                     else
                     {
-                        vibehitzone = new Rectangle(this.Width - 18 * fontsize, yPos[1], 40, fontsize * 2);
+                        vibehitzone = new Rectangle(this.Width - 18 * fontsize, yPos[0], 40, fontsize * 2);
                     }
 
                     if (vibex > 30 || vibey > 30 || vibez > 30)
@@ -3173,7 +3194,7 @@ namespace MissionPlanner.Controls
                     }
                     else
                     {
-                        ekfhitzone = new Rectangle(this.Width - 23 * fontsize,yPos[1], 40, fontsize * 2);
+                        ekfhitzone = new Rectangle(this.Width - 23 * fontsize,yPos[0], 40, fontsize * 2);
                     }
 
                     if (ekfstatus > 0.5)
@@ -3227,7 +3248,7 @@ namespace MissionPlanner.Controls
                         if (!prearmstatus) x -= 2 * fontsize;
                         // Estimate the width of the string for the hit zone
                         int width = TextRenderer.MeasureText(prearmstatus ? HUDT.ReadyToArm : HUDT.NotReadyToArm, new Font(HUDT.Font, fontsize + 2)).Width;
-                        prearmhitzone = new Rectangle(x, yPos[0] - 4, width, fontsize * 2);
+                        prearmhitzone = new Rectangle(x, yPos[1] - 4, width, fontsize * 2);
                     }
 
                     if (prearmstatus)
@@ -3250,6 +3271,70 @@ namespace MissionPlanner.Controls
                         else
                         {
                             drawstring(HUDT.NotReadyToArm, font, fontsize + 2, (SolidBrush)Brushes.Red, prearmhitzone.X, prearmhitzone.Y);
+                        }
+                    }
+                }
+
+                if (displayeahrs)
+                {
+                    if (displayicons)
+                    {
+                        var width = (fontsize + 8) * 3;
+                        eahrshitzone = new Rectangle(this.Width - width * 5 + width / 2 - 7,
+                                                     this.Height - (fontsize*3 + 38),
+                                                     width,
+                                                     fontsize + 8);
+                    }
+                    else
+                    {
+                        eahrshitzone = new Rectangle(this.Width - 24 * fontsize,
+                                                     yPos[2] - 8,
+                                                     75,
+                                                     fontsize * 2);
+                    }
+
+                    if (eahrsstatus >= 8)
+                    {
+                        if (displayicons)
+                        {
+                            DrawImage(HUDT.eahrs_red, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                        }
+                        else
+                        {
+                            drawstring("EAHRS", font, fontsize + 2, (SolidBrush)Brushes.Red, eahrshitzone.X, eahrshitzone.Y);
+                        }
+                    }
+                    else if (eahrsstatus >= 4)
+                    {
+                        if (displayicons)
+                        {
+                            DrawImage(HUDT.eahrs_yellow, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                        }
+                        else
+                        {
+                            drawstring("EAHRS", font, fontsize + 2, (SolidBrush)Brushes.Orange, eahrshitzone.X, eahrshitzone.Y);
+                        }
+                    }
+                    else if (eahrsstatus >= 2)
+                    {
+                        if (displayicons)
+                        {
+                            DrawImage(HUDT.eahrs_blue, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                        }
+                        else
+                        {
+                            drawstring("EAHRS", font, fontsize + 2, _darkCyanBrush, eahrshitzone.X, eahrshitzone.Y);
+                        }
+                    }
+                    else
+                    {
+                        if (displayicons)
+                        {
+                            DrawImage(HUDT.eahrs_green, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                        }
+                        else
+                        {
+                            drawstring("EAHRS", font, fontsize + 2, _whiteBrush, eahrshitzone.X, eahrshitzone.Y);
                         }
                     }
                 }
