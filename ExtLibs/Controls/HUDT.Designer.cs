@@ -19,7 +19,7 @@ namespace MissionPlanner.Controls {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class HUDT {
@@ -109,7 +109,7 @@ namespace MissionPlanner.Controls {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bat .
+        ///   Looks up a localized string similar to Bat.
         /// </summary>
         public static string Bat {
             get {
@@ -201,6 +201,46 @@ namespace MissionPlanner.Controls {
         public static string E {
             get {
                 return ResourceManager.GetString("E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eahrs_blue {
+            get {
+                object obj = ResourceManager.GetObject("eahrs_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eahrs_green {
+            get {
+                object obj = ResourceManager.GetObject("eahrs_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eahrs_red {
+            get {
+                object obj = ResourceManager.GetObject("eahrs_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eahrs_yellow {
+            get {
+                object obj = ResourceManager.GetObject("eahrs_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

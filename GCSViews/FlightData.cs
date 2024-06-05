@@ -3243,6 +3243,11 @@ namespace MissionPlanner.GCSViews
             frm.Show();
         }
 
+        private void hud1_eahrsclick(object sender, EventArgs e)
+        {
+            /* show eahrs status dialog */
+        }
+
         /// <summary>
         /// <para>Collapses or expands MainH.Panel1 depending on no. of controls within.</para>
         /// If you add controls to <b>SubMainLeft</b> that can be hidden, displaced or removed, add their first parent control here. <br/>
