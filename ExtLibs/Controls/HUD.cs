@@ -230,6 +230,9 @@ namespace MissionPlanner.Controls
         [System.ComponentModel.Browsable(true), DefaultValue(true)]
         public bool displayCellVoltage { get; set; }
 
+        [System.ComponentModel.Browsable(true), DefaultValue(true)]
+        public bool displayeahrs { get; set; }
+
         private static ImageCodecInfo ici = GetImageCodec("image/jpeg");
         private static EncoderParameters eps = new EncoderParameters(1);
 
@@ -247,12 +250,13 @@ namespace MissionPlanner.Controls
                 displayvibe =
                     displayekf =
                         displayprearm =
-                            displayheading =
-                                displayspeed =
-                                    displayalt =
-                                        displayconninfo =
-                                            displayxtrack =
-                                                displayrollpitch = displaygps = bgon = hudon = batteryon = batteryon2 = true;
+                            displayeahrs =
+                                displayheading =
+                                    displayspeed =
+                                        displayalt =
+                                            displayconninfo =
+                                                displayxtrack =
+                                                    displayrollpitch = displaygps = bgon = hudon = batteryon = batteryon2 = true;
 
             displayAOASSA = false;
 
@@ -867,6 +871,9 @@ namespace MissionPlanner.Controls
         public bool prearmstatus { get; set; }
 
         [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
+        public float eahrsstatus { get; set; }
+
+        [System.ComponentModel.Browsable(true), System.ComponentModel.Category("Values")]
         public float AOA
         {
             get { return _AOA; }
@@ -1180,10 +1187,12 @@ namespace MissionPlanner.Controls
         public event EventHandler ekfclick;
         public event EventHandler vibeclick;
         public event EventHandler prearmclick;
+        public event EventHandler eahrsclick;
 
         Rectangle ekfhitzone = new Rectangle();
         Rectangle vibehitzone = new Rectangle();
         Rectangle prearmhitzone = new Rectangle();
+        Rectangle eahrshitzone = new Rectangle();
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
@@ -1206,6 +1215,12 @@ namespace MissionPlanner.Controls
                 if (prearmclick != null)
                     prearmclick(this, null);
             }
+
+            if (eahrshitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)))
+            {
+                if (eahrsclick != null)
+                    eahrsclick(this, null);
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -1221,6 +1236,10 @@ namespace MissionPlanner.Controls
                 Cursor.Current = Cursors.Hand;
             }
             else if (prearmhitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)) && !status) // Only when not armed
+            {
+                Cursor.Current = Cursors.Hand;
+            }
+            else if (eahrshitzone.IntersectsWith(new Rectangle(e.X, e.Y, 5, 5)))
             {
                 Cursor.Current = Cursors.Hand;
             }
@@ -3245,6 +3264,62 @@ namespace MissionPlanner.Controls
                         else
                         {
                             drawstring(HUDT.NotReadyToArm, font, fontsize + 2, (SolidBrush)Brushes.Red, prearmhitzone.X, prearmhitzone.Y);
+                        }
+                    }
+                }
+
+                if (displayeahrs)
+                {
+                    if (displayicons)
+                    {
+                        var width = (fontsize + 8) * 3;
+                        eahrshitzone = new Rectangle(this.Width - width * 5 + width / 2 - 10,
+                                                     this.Height - (fontsize + 65),
+                                                     (fontsize + 8) * 3,
+                                                     fontsize + 8);
+                    }
+                    else
+                    {
+                        eahrshitzone = new Rectangle(this.Width - 23 * fontsize,
+                                                     yPos[1] - 45,
+                                                     75,
+                                                     fontsize * 2);
+                    }
+
+                    if (eahrsstatus > 0.5)
+                    {
+                        if (eahrsstatus > 0.8)
+                        {
+                            if (displayicons)
+                            {
+                                DrawImage(HUDT.eahrs_red, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                            }
+                            else
+                            {
+                                drawstring("EAHRS", font, fontsize + 2, (SolidBrush)Brushes.Red, eahrshitzone.X, eahrshitzone.Y);
+                            }
+                        }
+                        else
+                        {
+                            if (displayicons)
+                            {
+                                DrawImage(HUDT.eahrs_yellow, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                            }
+                            else
+                            {
+                                drawstring("EAHRS", font, fontsize + 2, (SolidBrush)Brushes.Orange, eahrshitzone.X, eahrshitzone.Y);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (displayicons)
+                        {
+                            DrawImage(HUDT.eahrs_green, eahrshitzone.X, eahrshitzone.Y + 2, eahrshitzone.Width, eahrshitzone.Height);
+                        }
+                        else
+                        {
+                            drawstring("EAHRS", font, fontsize + 2, _whiteBrush, eahrshitzone.X, eahrshitzone.Y);
                         }
                     }
                 }

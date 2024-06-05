@@ -221,6 +221,18 @@
   <data name="prearm_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\prearm_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eahrs_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\eahrs_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eahrs_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\eahrs_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eahrs_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\eahrs_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eahrs_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\eahrs_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ReadyToArm" xml:space="preserve">
     <value>Ready to Arm</value>
   </data>

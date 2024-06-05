@@ -62,6 +62,7 @@ namespace hudonoff
                 {"displayvibe", "Vibe"},
                 {"displayprearm", "Prearm Status"},
                 {"displayAOASSA", "AOA"},
+                {"displayeahrs", "EAHRS Status"},
             };
 
             var hide = Settings.Instance.GetList(configname);
