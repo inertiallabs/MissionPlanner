@@ -127,5 +127,15 @@ namespace MissionPlanner.GCSViews
         {
             Hide();
         }
+
+        private void BUT_uncheckall_Click(object sender, EventArgs e)
+        {
+            externalPositionCheckBox.Checked = false;
+            externalHorizontalPositionCheckBox.Checked = false;
+            altitudeExternalCheckBox.Checked = false;
+            windDataCheckBox.Checked = false;
+            ambientAirDataCheckBox.Checked = false;
+            headingExternalCheckBox.Checked = false;
+        }
     }
 }

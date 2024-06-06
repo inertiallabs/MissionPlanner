@@ -91,8 +91,9 @@
             this.headingStdLabelHeadingExternal = new System.Windows.Forms.Label();
             this.headingValueHeadingExternal = new System.Windows.Forms.NumericUpDown();
             this.headingLabelHeadingExternal = new System.Windows.Forms.Label();
-            this.BUT_sendtoahrs = new MissionPlanner.Controls.MyButton();
+            this.BUT_uncheckall = new MissionPlanner.Controls.MyButton();
             this.BUT_close = new MissionPlanner.Controls.MyButton();
+            this.BUT_sendtoahrs = new MissionPlanner.Controls.MyButton();
             this.aidingDataTabControl.SuspendLayout();
             this.externalPositionTabPage.SuspendLayout();
             this.altitudeExternalGroupBox.SuspendLayout();
@@ -181,11 +182,6 @@
             0,
             131072});
             this.altitudeValueStdAltExt.Name = "altitudeValueStdAltExt";
-            this.altitudeValueStdAltExt.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // altitudeValueAltExt
             // 
@@ -262,7 +258,7 @@
             131072});
             this.latencyValueExtHorPos.Name = "latencyValueExtHorPos";
             this.latencyValueExtHorPos.Value = new decimal(new int[] {
-            10,
+            150,
             0,
             0,
             196608});
@@ -287,11 +283,6 @@
             0,
             131072});
             this.longitudeStdValueExtHorPos.Name = "longitudeStdValueExtHorPos";
-            this.longitudeStdValueExtHorPos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // longitudeStdLabelExtHorPos
             // 
@@ -313,11 +304,6 @@
             0,
             131072});
             this.latitudeStdValueExtHorPos.Name = "latitudeStdValueExtHorPos";
-            this.latitudeStdValueExtHorPos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // latitudeStdLabelExtHorPos
             // 
@@ -419,7 +405,7 @@
             131072});
             this.latencyValueExtPos.Name = "latencyValueExtPos";
             this.latencyValueExtPos.Value = new decimal(new int[] {
-            10,
+            150,
             0,
             0,
             196608});
@@ -444,11 +430,6 @@
             0,
             131072});
             this.altitudeStdValueExtPos.Name = "altitudeStdValueExtPos";
-            this.altitudeStdValueExtPos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // altitudeStdLabelExtPos
             // 
@@ -470,11 +451,6 @@
             0,
             131072});
             this.longitudeStdValueExtPos.Name = "longitudeStdValueExtPos";
-            this.longitudeStdValueExtPos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // longitudeStdLabelExtPos
             // 
@@ -496,11 +472,6 @@
             0,
             131072});
             this.latitudeStdValueExtPos.Name = "latitudeStdValueExtPos";
-            this.latitudeStdValueExtPos.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // latitudeStdLabelExtPos
             // 
@@ -745,11 +716,6 @@
             0,
             131072});
             this.WindSpeedStdValueWindData.Name = "WindSpeedStdValueWindData";
-            this.WindSpeedStdValueWindData.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
             // 
             // WindSpeedStdLabelWindData
             // 
@@ -851,7 +817,7 @@
             131072});
             this.latencyValueHeadingExternal.Name = "latencyValueHeadingExternal";
             this.latencyValueHeadingExternal.Value = new decimal(new int[] {
-            1,
+            15,
             0,
             0,
             131072});
@@ -876,11 +842,6 @@
             0,
             131072});
             this.headingStdValueHeadingExternal.Name = "headingStdValueHeadingExternal";
-            this.headingStdValueHeadingExternal.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // headingStdLabelHeadingExternal
             // 
@@ -913,13 +874,13 @@
             resources.ApplyResources(this.headingLabelHeadingExternal, "headingLabelHeadingExternal");
             this.headingLabelHeadingExternal.Name = "headingLabelHeadingExternal";
             // 
-            // BUT_sendtoahrs
+            // BUT_uncheckall
             // 
-            resources.ApplyResources(this.BUT_sendtoahrs, "BUT_sendtoahrs");
-            this.BUT_sendtoahrs.Name = "BUT_sendtoahrs";
-            this.BUT_sendtoahrs.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_sendtoahrs.UseVisualStyleBackColor = true;
-            this.BUT_sendtoahrs.Click += new System.EventHandler(this.BUT_sendtoahrs_Click);
+            resources.ApplyResources(this.BUT_uncheckall, "BUT_uncheckall");
+            this.BUT_uncheckall.Name = "BUT_uncheckall";
+            this.BUT_uncheckall.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_uncheckall.UseVisualStyleBackColor = true;
+            this.BUT_uncheckall.Click += new System.EventHandler(this.BUT_uncheckall_Click);
             // 
             // BUT_close
             // 
@@ -929,10 +890,19 @@
             this.BUT_close.UseVisualStyleBackColor = true;
             this.BUT_close.Click += new System.EventHandler(this.BUT_close_Click);
             // 
+            // BUT_sendtoahrs
+            // 
+            resources.ApplyResources(this.BUT_sendtoahrs, "BUT_sendtoahrs");
+            this.BUT_sendtoahrs.Name = "BUT_sendtoahrs";
+            this.BUT_sendtoahrs.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_sendtoahrs.UseVisualStyleBackColor = true;
+            this.BUT_sendtoahrs.Click += new System.EventHandler(this.BUT_sendtoahrs_Click);
+            // 
             // AidingData
             // 
             resources.ApplyResources(this, "$this");
             this.ControlBox = false;
+            this.Controls.Add(this.BUT_uncheckall);
             this.Controls.Add(this.BUT_close);
             this.Controls.Add(this.aidingDataTabControl);
             this.Controls.Add(this.BUT_sendtoahrs);
@@ -1052,5 +1022,6 @@
         private System.Windows.Forms.NumericUpDown headingValueHeadingExternal;
         private System.Windows.Forms.Label headingLabelHeadingExternal;
         private Controls.MyButton BUT_close;
+        private Controls.MyButton BUT_uncheckall;
     }
 }
