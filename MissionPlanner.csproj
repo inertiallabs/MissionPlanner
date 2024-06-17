@@ -95,6 +95,15 @@
     <EmbeddedResource Include="Controls\DroneCANParams.uk.resx">
       <DependentUpon>DroneCANParams.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EAHRSStatus.ko-KR.resx">
+      <DependentUpon>EAHRSStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EAHRSStatus.resx">
+      <DependentUpon>EAHRSStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EAHRSStatus.uk.resx">
+      <DependentUpon>EAHRSStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\EKFStatus.uk.resx">
       <DependentUpon>EKFStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -759,6 +768,12 @@
     </Compile>
     <Compile Include="Controls\DigitalSkyUI.Designer.cs">
       <DependentUpon>DigitalSkyUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EAHRSStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\EAHRSStatus.Designer.cs">
+      <DependentUpon>EAHRSStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\MavCommandSelection.cs">
       <SubType>Form</SubType>

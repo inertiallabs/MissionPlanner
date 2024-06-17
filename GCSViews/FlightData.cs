@@ -3229,7 +3229,11 @@ namespace MissionPlanner.GCSViews
 
         private void hud1_eahrsclick(object sender, EventArgs e)
         {
-            /* show eahrs status dialog */
+            EAHRSStatus frm = new EAHRSStatus();
+            frm.RestoreStartupLocation();
+            frm.FormClosed += (a, e2) => frm.SaveStartupLocation();
+            frm.TopMost = true;
+            frm.Show();
         }
 
         /// <summary>

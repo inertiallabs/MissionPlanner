@@ -1866,6 +1866,12 @@ namespace MissionPlanner
 
         [GroupText("Flow")][DisplayText("flow quality")] public byte opt_qua { get; set; }
 
+        [GroupText("EAHRS")] public int eahrsStatus { get; set; }
+
+        [GroupText("EAHRS")] public int eahrsStatus2 { get; set; }
+
+        [GroupText("EAHRS")] public int eahrsStatus3 { get; set; }
+
         [GroupText("EKF")] public float ekfstatus { get; set; }
 
         [GroupText("EKF")] public int ekfflags { get; set; }
@@ -3681,6 +3687,15 @@ namespace MissionPlanner
                             xpdr_flight_id = status.flight_id;
 
                             xpdr_status_pending = true;
+                        }
+                        break;
+                    case (uint)MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
+                        {
+                            var status = mavLinkMessage.ToStructure<MAVLink.mavlink_eahrs_status_info_t>();
+
+                            eahrsStatus = status.status1;
+                            eahrsStatus2 = status.status2;
+                            eahrsStatus3 = status.status3;
                         }
                         break;
                 }
