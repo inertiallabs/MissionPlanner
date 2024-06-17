@@ -3245,7 +3245,17 @@ namespace MissionPlanner.GCSViews
 
         private void hud1_eahrsclick(object sender, EventArgs e)
         {
-            /* show eahrs status dialog */
+            double eahrsType = -1;
+            if (MainV2.comPort.MAV.param.ContainsKey("EAHRS_TYPE"))
+            {
+                eahrsType = MainV2.comPort.MAV.param["EAHRS_TYPE"].Value;
+            }
+
+            EAHRSStatus frm = new EAHRSStatus(eahrsType);
+            frm.RestoreStartupLocation();
+            frm.FormClosed += (a, e2) => frm.SaveStartupLocation();
+            frm.TopMost = true;
+            frm.Show();
         }
 
         /// <summary>
