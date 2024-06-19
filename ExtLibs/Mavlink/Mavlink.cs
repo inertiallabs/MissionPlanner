@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Mon Jun 03 2024";
+    public const string MAVLINK_BUILD_DATE = "Mon Jul 01 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -274,6 +274,7 @@ public partial class MAVLink
         new message_info(386, "CAN_FRAME", 132, 16, 16, typeof( mavlink_can_frame_t )),
         new message_info(387, "CANFD_FRAME", 4, 72, 72, typeof( mavlink_canfd_frame_t )),
         new message_info(388, "CAN_FILTER_MODIFY", 8, 37, 37, typeof( mavlink_can_filter_modify_t )),
+        new message_info(400, "EAHRS_STATUS_INFO", 76, 6, 6, typeof( mavlink_eahrs_status_info_t )),
         new message_info(9000, "WHEEL_DISTANCE", 113, 137, 137, typeof( mavlink_wheel_distance_t )),
         new message_info(9005, "WINCH_STATUS", 117, 34, 34, typeof( mavlink_winch_status_t )),
         new message_info(10001, "UAVIONIX_ADSB_OUT_CFG", 209, 20, 20, typeof( mavlink_uavionix_adsb_out_cfg_t )),
@@ -603,6 +604,7 @@ public partial class MAVLink
         CAN_FRAME = 386,
         CANFD_FRAME = 387,
         CAN_FILTER_MODIFY = 388,
+        EAHRS_STATUS_INFO = 400,
         WHEEL_DISTANCE = 9000,
         WINCH_STATUS = 9005,
         UAVIONIX_ADSB_OUT_CFG = 10001,
@@ -2131,6 +2133,144 @@ public partial class MAVLink
         ///<summary> Set if EKF has never been healthy. | </summary>
         [Description("Set if EKF has never been healthy.")]
         EKF_UNINITIALIZED=1024, 
+        
+    };
+    
+    ///<summary> Flags in ILABS_EAHRS_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_STATUS_FLAGS: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - unsuccessful initial alignment due to INS movement or large change of outer magnetic field. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initial alignment due to INS movement or large change of outer magnetic field.")]
+        EAHRS_INITIAL_ALIGNMENT=1, 
+        ///<summary> 0 - ok. 1 - incorrect data appeared at calculations. | </summary>
+        [Description("0 - ok. 1 - incorrect data appeared at calculations.")]
+        EAHRS_SOFTWARE_STATUS=2, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_GYROSCOPE_UNIT=4, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_ACCELEROMETER_UNIT=8, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_MAGNETOMETER_UNIT=16, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_ELECTRONICS=32, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_GNSS_RECEIVER=64, 
+        ///<summary> 1 - during data accumulation and calculation. 0 - otherwise. | </summary>
+        [Description("1 - during data accumulation and calculation. 0 - otherwise.")]
+        EAHRS_ON_THE_FLY_CALIBRATION=128, 
+        ///<summary> 0 - ok. 1 - low supply voltage detected. | </summary>
+        [Description("0 - ok. 1 - low supply voltage detected.")]
+        EAHRS_INCORRECT_LOW_POWER_SUPPLY=256, 
+        ///<summary> 0 - ok. 1 - high supply voltage detected. | </summary>
+        [Description("0 - ok. 1 - high supply voltage detected.")]
+        EAHRS_INCORRECT_HIGH_POWER_SUPPLY=512, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT=1024, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT=2048, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT=4096, 
+        ///<summary> 0 - ok. 1 - total magnetic field limit is exceeded. | </summary>
+        [Description("0 - ok. 1 - total magnetic field limit is exceeded.")]
+        EAHRS_LARGE_MAGNETIC_FIELD_DETECT=8192, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ENVIRONMENTAL_TEMPERATURE=16384, 
+        ///<summary> 0 - no. 1 - successfully calibrated during current run. | </summary>
+        [Description("0 - no. 1 - successfully calibrated during current run.")]
+        EAHRS_ON_THE_FLY_CALIBRATED=32768, 
+        
+    };
+    
+    ///<summary> Flags in ILABS_EAHRS_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_STATUS_FLAGS2: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_X_ACCELERATION_EXCEEDING_DETECT=1, 
+        ///<summary> 0 - ok. 1 - 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - 1 - out of range.")]
+        EAHRS_Y_ACCELERATION_EXCEEDING_DETECT=2, 
+        ///<summary> 0 - ok. 1 - 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - 1 - out of range.")]
+        EAHRS_Z_ACCELERATION_EXCEEDING_DETECT=4, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_BARO_ALTIMETER=8, 
+        ///<summary> 0 - ok. 1 - failure detected. | </summary>
+        [Description("0 - ok. 1 - failure detected.")]
+        EAHRS_DIFFERENTIAL_PRESSURE_SENSOR=16, 
+        ///<summary> 0 - not active. 1 - in progress. | </summary>
+        [Description("0 - not active. 1 - in progress.")]
+        EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION=32, 
+        ///<summary> 0 - not active. 1 - in progress. | </summary>
+        [Description("0 - not active. 1 - in progress.")]
+        EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION=64, 
+        ///<summary> 0 - switched on. 1 - switched off. | </summary>
+        [Description("0 - switched on. 1 - switched off.")]
+        EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM=128, 
+        ///<summary> 0 - switched on. 1 - switched off. | </summary>
+        [Description("0 - switched on. 1 - switched off.")]
+        EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM=256, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_RESERVED_BIT_9=512, 
+        ///<summary> 0 - valid. 1 - invalid. | </summary>
+        [Description("0 - valid. 1 - invalid.")]
+        EAHRS_GNSS_POSITION_VALIDITY=1024, 
+        
+    };
+    
+    ///<summary> Flags in ADU_STATUS message. </summary>
+    [Flags]
+	public enum ILABS_EAHRS_ADU_STATUS_FLAGS: int /*default*/
+    {
+        ///<summary> 0 - ok. 1 - unsuccessful initialization. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initialization.")]
+        EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION=1, 
+        ///<summary> 0 - ok. 1 - unsuccessful initialization. | </summary>
+        [Description("0 - ok. 1 - unsuccessful initialization.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION=2, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS=4, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS=8, 
+        ///<summary> 0 - no fails. 1 - failure detected. | </summary>
+        [Description("0 - no fails. 1 - failure detected.")]
+        EAHRS_DIFFERENTIAL_PRESSURE_SENSOR=16, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT=32, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_ADU_RESERVED_BIT_6=64, 
+        ///<summary> Reserved bit | </summary>
+        [Description("Reserved bit")]
+        EAHRS_ADU_RESERVED_BIT_7=128, 
+        ///<summary> 0 - ok. 1 - incorrect. | </summary>
+        [Description("0 - ok. 1 - incorrect.")]
+        EAHRS_ADU_PRESSURE_ALTITUDE=256, 
+        ///<summary> 0 - ok. 1 - incorrect. | </summary>
+        [Description("0 - ok. 1 - incorrect.")]
+        EAHRS_ADU_AIR_SPEED=512, 
+        ///<summary> 0 - ok. 1 - below the threshold. | </summary>
+        [Description("0 - ok. 1 - below the threshold.")]
+        EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD=1024, 
+        ///<summary> 0 - ok. 1 - out of range. | </summary>
+        [Description("0 - ok. 1 - out of range.")]
+        EAHRS_ADU_BAROMETRIC_TEMPERATURE=2048, 
         
     };
     
@@ -29463,6 +29603,53 @@ public partial class MAVLink
         [Description("number of IDs in filter list")]
         //[FieldOffset(36)]
         public  byte num_ids;
+    };
+
+    
+    /// extensions_start 0
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=6)]
+    ///<summary> Info about EAHRS status. </summary>
+    public struct mavlink_eahrs_status_info_t
+    {
+        /// packet ordered constructor
+        public mavlink_eahrs_status_info_t(ushort status1,ushort status2,ushort status3) 
+        {
+            this.status1 = status1;
+            this.status2 = status2;
+            this.status3 = status3;
+            
+        }
+        
+        /// packet xml order
+        public static mavlink_eahrs_status_info_t PopulateXMLOrder(ushort status1,ushort status2,ushort status3) 
+        {
+            var msg = new mavlink_eahrs_status_info_t();
+
+            msg.status1 = status1;
+            msg.status2 = status2;
+            msg.status3 = status3;
+            
+            return msg;
+        }
+        
+
+        /// <summary>Status flags1.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags1.")]
+        //[FieldOffset(0)]
+        public  ushort status1;
+
+        /// <summary>Status flags2.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags2.")]
+        //[FieldOffset(2)]
+        public  ushort status2;
+
+        /// <summary>Status flags3.   bitmask</summary>
+        [Units("")]
+        [Description("Status flags3.")]
+        //[FieldOffset(4)]
+        public  ushort status3;
     };
 
     

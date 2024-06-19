@@ -6602,6 +6602,13 @@
       <field type="uint8_t" name="num_ids">number of IDs in filter list</field>
       <field type="uint16_t[16]" name="ids">filter IDs, length num_ids</field>
     </message>
+    <!-- EAHRS messages -->
+    <message id="400" name="EAHRS_STATUS_INFO">
+      <description>Info about EAHRS status.</description>
+      <field type="uint16_t" name="status1" display="bitmask">Status flags1.</field>
+      <field type="uint16_t" name="status2" display="bitmask">Status flags2.</field>
+      <field type="uint16_t" name="status3" display="bitmask">Status flags3.</field>
+    </message>
     <!-- Rover specific messages -->
     <message id="9000" name="WHEEL_DISTANCE">
       <description>Cumulative distance traveled for each reported wheel.</description>

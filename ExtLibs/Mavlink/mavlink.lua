@@ -282,6 +282,7 @@ messageName = {
     [386] = 'CAN_FRAME',
     [387] = 'CANFD_FRAME',
     [388] = 'CAN_FILTER_MODIFY',
+    [400] = 'EAHRS_STATUS_INFO',
     [9000] = 'WHEEL_DISTANCE',
     [9005] = 'WINCH_STATUS',
     [12900] = 'OPEN_DRONE_ID_BASIC_ID',
@@ -785,6 +786,51 @@ local enumEntryName = {
         [256] = "EKF_PRED_POS_HORIZ_REL",
         [512] = "EKF_PRED_POS_HORIZ_ABS",
         [1024] = "EKF_UNINITIALIZED",
+    },
+    ["ILABS_EAHRS_STATUS_FLAGS"] = {
+        [1] = "EAHRS_INITIAL_ALIGNMENT",
+        [2] = "EAHRS_SOFTWARE_STATUS",
+        [4] = "EAHRS_GYROSCOPE_UNIT",
+        [8] = "EAHRS_ACCELEROMETER_UNIT",
+        [16] = "EAHRS_MAGNETOMETER_UNIT",
+        [32] = "EAHRS_ELECTRONICS",
+        [64] = "EAHRS_GNSS_RECEIVER",
+        [128] = "EAHRS_ON_THE_FLY_CALIBRATION",
+        [256] = "EAHRS_INCORRECT_LOW_POWER_SUPPLY",
+        [512] = "EAHRS_INCORRECT_HIGH_POWER_SUPPLY",
+        [1024] = "EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT",
+        [2048] = "EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT",
+        [4096] = "EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT",
+        [8192] = "EAHRS_LARGE_MAGNETIC_FIELD_DETECT",
+        [16384] = "EAHRS_ENVIRONMENTAL_TEMPERATURE",
+        [32768] = "EAHRS_ON_THE_FLY_CALIBRATED",
+    },
+    ["ILABS_EAHRS_STATUS_FLAGS2"] = {
+        [1] = "EAHRS_X_ACCELERATION_EXCEEDING_DETECT",
+        [2] = "EAHRS_Y_ACCELERATION_EXCEEDING_DETECT",
+        [4] = "EAHRS_Z_ACCELERATION_EXCEEDING_DETECT",
+        [8] = "EAHRS_BARO_ALTIMETER",
+        [16] = "EAHRS_DIFFERENTIAL_PRESSURE_SENSOR",
+        [32] = "EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION",
+        [64] = "EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION",
+        [128] = "EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM",
+        [256] = "EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM",
+        [512] = "EAHRS_RESERVED_BIT_9",
+        [1024] = "EAHRS_GNSS_POSITION_VALIDITY",
+    },
+    ["ILABS_EAHRS_ADU_STATUS_FLAGS"] = {
+        [1] = "EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION",
+        [2] = "EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION",
+        [4] = "EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS",
+        [8] = "EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS",
+        [16] = "EAHRS_DIFFERENTIAL_PRESSURE_SENSOR",
+        [32] = "EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT",
+        [64] = "EAHRS_ADU_RESERVED_BIT_6",
+        [128] = "EAHRS_ADU_RESERVED_BIT_7",
+        [256] = "EAHRS_ADU_PRESSURE_ALTITUDE",
+        [512] = "EAHRS_ADU_AIR_SPEED",
+        [1024] = "EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD",
+        [2048] = "EAHRS_ADU_BAROMETRIC_TEMPERATURE",
     },
     ["PID_TUNING_AXIS"] = {
         [1] = "PID_TUNING_ROLL",
@@ -10101,6 +10147,10 @@ f.CAN_FILTER_MODIFY_ids_13 = ProtoField.new("ids[13] (uint16_t)", "mavlink_proto
 f.CAN_FILTER_MODIFY_ids_14 = ProtoField.new("ids[14] (uint16_t)", "mavlink_proto.CAN_FILTER_MODIFY_ids_14", ftypes.UINT16, nil)
 f.CAN_FILTER_MODIFY_ids_15 = ProtoField.new("ids[15] (uint16_t)", "mavlink_proto.CAN_FILTER_MODIFY_ids_15", ftypes.UINT16, nil)
 
+f.EAHRS_STATUS_INFO_status1 = ProtoField.new("status1 (uint16_t)", "mavlink_proto.EAHRS_STATUS_INFO_status1", ftypes.UINT16, nil)
+f.EAHRS_STATUS_INFO_status2 = ProtoField.new("status2 (uint16_t)", "mavlink_proto.EAHRS_STATUS_INFO_status2", ftypes.UINT16, nil)
+f.EAHRS_STATUS_INFO_status3 = ProtoField.new("status3 (uint16_t)", "mavlink_proto.EAHRS_STATUS_INFO_status3", ftypes.UINT16, nil)
+
 f.WHEEL_DISTANCE_time_usec = ProtoField.new("time_usec (uint64_t)", "mavlink_proto.WHEEL_DISTANCE_time_usec", ftypes.UINT64, nil)
 f.WHEEL_DISTANCE_count = ProtoField.new("count (uint8_t)", "mavlink_proto.WHEEL_DISTANCE_count", ftypes.UINT8, nil)
 f.WHEEL_DISTANCE_distance_0 = ProtoField.new("distance[0] (double)", "mavlink_proto.WHEEL_DISTANCE_distance_0", ftypes.DOUBLE, nil)
@@ -10853,6 +10903,54 @@ function dissect_flags_EKF_STATUS_FLAGS(tree, name, tvbrange, value)
     tree:add_le(f[name .. "_flagEKF_PRED_POS_HORIZ_REL"], tvbrange, value)
     tree:add_le(f[name .. "_flagEKF_PRED_POS_HORIZ_ABS"], tvbrange, value)
     tree:add_le(f[name .. "_flagEKF_UNINITIALIZED"], tvbrange, value)
+end
+-- dissect flag field
+function dissect_flags_ILABS_EAHRS_STATUS_FLAGS(tree, name, tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_INITIAL_ALIGNMENT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_SOFTWARE_STATUS"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_GYROSCOPE_UNIT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ACCELEROMETER_UNIT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_MAGNETOMETER_UNIT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ELECTRONICS"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_GNSS_RECEIVER"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ON_THE_FLY_CALIBRATION"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_INCORRECT_LOW_POWER_SUPPLY"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_INCORRECT_HIGH_POWER_SUPPLY"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_LARGE_MAGNETIC_FIELD_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ENVIRONMENTAL_TEMPERATURE"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ON_THE_FLY_CALIBRATED"], tvbrange, value)
+end
+-- dissect flag field
+function dissect_flags_ILABS_EAHRS_STATUS_FLAGS2(tree, name, tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_X_ACCELERATION_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_Y_ACCELERATION_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_Z_ACCELERATION_EXCEEDING_DETECT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_BARO_ALTIMETER"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_DIFFERENTIAL_PRESSURE_SENSOR"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_RESERVED_BIT_9"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_GNSS_POSITION_VALIDITY"], tvbrange, value)
+end
+-- dissect flag field
+function dissect_flags_ILABS_EAHRS_ADU_STATUS_FLAGS(tree, name, tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_DIFFERENTIAL_PRESSURE_SENSOR"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_RESERVED_BIT_6"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_RESERVED_BIT_7"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_PRESSURE_ALTITUDE"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_AIR_SPEED"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD"], tvbrange, value)
+    tree:add_le(f[name .. "_flagEAHRS_ADU_BAROMETRIC_TEMPERATURE"], tvbrange, value)
 end
 -- dissect flag field
 function dissect_flags_HL_FAILURE_FLAG(tree, name, tvbrange, value)
@@ -51730,6 +51828,26 @@ function payload_fns.payload_388(buffer, tree, msgid, offset, limit, pinfo)
     tvbrange = padded(offset + 30, 2)
     value = tvbrange:le_uint()
     subtree = tree:add_le(f.CAN_FILTER_MODIFY_ids_15, tvbrange, value)
+end
+-- dissect payload of message type EAHRS_STATUS_INFO
+function payload_fns.payload_400(buffer, tree, msgid, offset, limit, pinfo)
+    local padded, field_offset, value, subtree, tvbrange
+    if (offset + 6 > limit) then
+        padded = buffer(0, limit):bytes()
+        padded:set_size(offset + 6)
+        padded = padded:tvb("Untruncated payload")
+    else
+        padded = buffer
+    end
+    tvbrange = padded(offset + 0, 2)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.EAHRS_STATUS_INFO_status1, tvbrange, value)
+    tvbrange = padded(offset + 2, 2)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.EAHRS_STATUS_INFO_status2, tvbrange, value)
+    tvbrange = padded(offset + 4, 2)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.EAHRS_STATUS_INFO_status3, tvbrange, value)
 end
 -- dissect payload of message type WHEEL_DISTANCE
 function payload_fns.payload_9000(buffer, tree, msgid, offset, limit, pinfo)
