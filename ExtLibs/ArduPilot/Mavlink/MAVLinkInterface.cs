@@ -3881,6 +3881,31 @@ Mission Planner waits for 2 valid heartbeat packets before connecting
             }
         }
 
+        /// <summary>
+        /// used for the sending "I'm here" GPS position
+        /// </summary>
+        public void SendImHerePos(double latitude, double longitude)
+        {
+            mavlink_gps_input_t req = new mavlink_gps_input_t
+            {
+                ignore_flags = (ushort)(MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_ALT |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_VDOP |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_VEL_HORIZ |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_VEL_VERT |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_SPEED_ACCURACY |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_HORIZONTAL_ACCURACY |
+                    MAVLink.GPS_INPUT_IGNORE_FLAGS.GPS_INPUT_IGNORE_FLAG_VERTICAL_ACCURACY),
+                yaw = 0,
+                lat = (int)(latitude * 1E7),
+                lon = (int)(longitude * 1E7),
+                hdop = 0.9F,
+                satellites_visible = 99,
+                fix_type = (byte)MAVLink.GPS_FIX_TYPE._3D_FIX,
+            };
+
+            generatePacket((byte)MAVLink.MAVLINK_MSG_ID.GPS_INPUT, req);
+        }
+
         [Obsolete]
         public MAV_MISSION_RESULT setWP(Locationwp loc, ushort index, MAV_FRAME frame, byte current = 0,
             byte autocontinue = 1, bool use_int = false, MAV_MISSION_TYPE mission_type = MAV_MISSION_TYPE.MISSION)
