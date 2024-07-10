@@ -191,13 +191,13 @@ namespace MissionPlanner.GCSViews
             this.BUT_loganalysis = new MissionPlanner.Controls.MyButton();
             this.tabExternalAHRS = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.BUT_inertiallabs_start = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_stop = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_gnss_enable = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_gnss_disable = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
-            this.BUT_inertiallabs_aiding_data = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_gnss_enable = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_gnss_disable = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_start = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_stop = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_aiding_data = new MissionPlanner.Controls.MyButton();
             this.panel_persistent = new System.Windows.Forms.Panel();
             this.tableMap = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -221,6 +221,7 @@ namespace MissionPlanner.GCSViews
             this.takeOffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.onOffCameraOverlapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jumpToTagToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.but_disablejoystick = new MissionPlanner.Controls.MyButton();
             this.distanceBar1 = new MissionPlanner.Controls.DistanceBar();
             this.windDir1 = new MissionPlanner.Controls.WindDir();
@@ -410,8 +411,8 @@ namespace MissionPlanner.GCSViews
             this.hud1.disttowp = 0F;
             this.hud1.distunit = null;
             resources.ApplyResources(this.hud1, "hud1");
+            this.hud1.eahrsstatus = ((uint)(0u));
             this.hud1.ekfstatus = 0F;
-            this.hud1.eahrsstatus = 0;
             this.hud1.failsafe = false;
             this.hud1.gpsfix = 0F;
             this.hud1.gpsfix2 = 0F;
@@ -2492,22 +2493,6 @@ namespace MissionPlanner.GCSViews
             this.tableLayoutPanel3.Controls.Add(this.BUT_externalAHRS_aiding_data, 3, 1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             // 
-            // BUT_externalAHRS_start
-            // 
-            resources.ApplyResources(this.BUT_externalAHRS_start, "BUT_externalAHRS_start");
-            this.BUT_externalAHRS_start.Name = "BUT_externalAHRS_start";
-            this.BUT_externalAHRS_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_externalAHRS_start.UseVisualStyleBackColor = true;
-            this.BUT_externalAHRS_start.Click += new System.EventHandler(this.BUT_externalAHRS_start_Click);
-            // 
-            // BUT_externalAHRS_stop
-            // 
-            resources.ApplyResources(this.BUT_externalAHRS_stop, "BUT_externalAHRS_stop");
-            this.BUT_externalAHRS_stop.Name = "BUT_externalAHRS_stop";
-            this.BUT_externalAHRS_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
-            this.BUT_externalAHRS_stop.UseVisualStyleBackColor = true;
-            this.BUT_externalAHRS_stop.Click += new System.EventHandler(this.BUT_externalAHRS_stop_Click);
-            // 
             // BUT_externalAHRS_gnss_enable
             // 
             resources.ApplyResources(this.BUT_externalAHRS_gnss_enable, "BUT_externalAHRS_gnss_enable");
@@ -2539,6 +2524,22 @@ namespace MissionPlanner.GCSViews
             this.BUT_externalAHRS_vg3dclb_flight_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
             this.BUT_externalAHRS_vg3dclb_flight_stop.UseVisualStyleBackColor = true;
             this.BUT_externalAHRS_vg3dclb_flight_stop.Click += new System.EventHandler(this.BUT_externalAHRS_vg3dclb_flight_stop_Click);
+            // 
+            // BUT_externalAHRS_start
+            // 
+            resources.ApplyResources(this.BUT_externalAHRS_start, "BUT_externalAHRS_start");
+            this.BUT_externalAHRS_start.Name = "BUT_externalAHRS_start";
+            this.BUT_externalAHRS_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_start.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_start.Click += new System.EventHandler(this.BUT_externalAHRS_start_Click);
+            // 
+            // BUT_externalAHRS_stop
+            // 
+            resources.ApplyResources(this.BUT_externalAHRS_stop, "BUT_externalAHRS_stop");
+            this.BUT_externalAHRS_stop.Name = "BUT_externalAHRS_stop";
+            this.BUT_externalAHRS_stop.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_stop.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_stop.Click += new System.EventHandler(this.BUT_externalAHRS_stop_Click);
             // 
             // BUT_externalAHRS_aiding_data
             // 
@@ -2614,7 +2615,8 @@ namespace MissionPlanner.GCSViews
             this.setHomeHereToolStripMenuItem,
             this.takeOffToolStripMenuItem,
             this.onOffCameraOverlapToolStripMenuItem,
-            this.jumpToTagToolStripMenuItem});
+            this.jumpToTagToolStripMenuItem,
+            this.imHereToolStripMenuItem});
             this.contextMenuStripMap.Name = "contextMenuStrip1";
             resources.ApplyResources(this.contextMenuStripMap, "contextMenuStripMap");
             // 
@@ -2733,6 +2735,12 @@ namespace MissionPlanner.GCSViews
             this.jumpToTagToolStripMenuItem.Name = "jumpToTagToolStripMenuItem";
             resources.ApplyResources(this.jumpToTagToolStripMenuItem, "jumpToTagToolStripMenuItem");
             this.jumpToTagToolStripMenuItem.Click += new System.EventHandler(this.jumpToTagToolStripMenuItem_Click);
+            // 
+            // imHereToolStripMenuItem
+            // 
+            this.imHereToolStripMenuItem.Name = "imHereToolStripMenuItem";
+            resources.ApplyResources(this.imHereToolStripMenuItem, "imHereToolStripMenuItem");
+            this.imHereToolStripMenuItem.Click += new System.EventHandler(this.imHereToolStripMenuItem_Click);
             // 
             // but_disablejoystick
             // 
@@ -3277,5 +3285,6 @@ namespace MissionPlanner.GCSViews
         private Controls.MyButton BUT_externalAHRS_start;
         private Controls.MyButton BUT_externalAHRS_stop;
         private Controls.MyButton BUT_externalAHRS_aiding_data;
+        private ToolStripMenuItem imHereToolStripMenuItem;
     }
 }
