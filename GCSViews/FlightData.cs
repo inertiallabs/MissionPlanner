@@ -6459,5 +6459,37 @@ namespace MissionPlanner.GCSViews
             ThemeManager.ApplyThemeTo(aidingDataDialog);
             aidingDataDialog.Show();
         }
+
+        private void imHereToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (CustomMessageBox.Show("Do you want to set this position as the current position?",
+                    "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) !=
+                    CustomMessageBox.DialogResult.OK)
+            {
+                return;
+            }
+
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                CustomMessageBox.Show(Strings.PleaseConnect, Strings.ERROR);
+                return;
+            }
+
+            if (MouseDownStart.Lat == 0.0 || MouseDownStart.Lng == 0.0)
+            {
+                CustomMessageBox.Show(Strings.BadCoords, Strings.ERROR);
+                return;
+            }
+
+            try
+            {
+                MainV2.comPort.SendImHerePos(MouseDownStart.Lat, MouseDownStart.Lng);
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR);
+            }
+        }
     }
 }
