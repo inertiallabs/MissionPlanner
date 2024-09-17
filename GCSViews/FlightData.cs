@@ -133,8 +133,6 @@ namespace MissionPlanner.GCSViews
         double LogPlayBackSpeed = 1.0;
         GMapMarker marker;
 
-        private AidingData aidingDataDialog = new AidingData();
-
         int messagecount;
 
         //whether or not the output console has already started
@@ -6374,90 +6372,6 @@ namespace MissionPlanner.GCSViews
             {
                 CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
             }
-        }
-
-        private void BUT_externalAHRS_gnss_enable_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_gnss_disable_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_vg3dclb_flight_start_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_vg3dclb_flight_stop_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_start_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_stop_Click(object sender, EventArgs e)
-        {
-            if (CustomMessageBox.Show("Attention! External AHRS will be stopped.\nAre you Sure?",
-                    "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) !=
-                    CustomMessageBox.DialogResult.OK)
-            {
-                return;
-            }
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP, 0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
-        }
-
-        private void BUT_externalAHRS_aiding_data_Click(object sender, EventArgs e)
-        {
-            ThemeManager.ApplyThemeTo(aidingDataDialog);
-            aidingDataDialog.Show();
         }
 
         private void imHereToolStripMenuItem_Click(object sender, EventArgs e)
