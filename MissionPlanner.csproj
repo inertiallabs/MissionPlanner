@@ -259,6 +259,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\EAHRSControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controls\DroneCANSubscriber.cs">
       <SubType>UserControl</SubType>
     </Compile>
