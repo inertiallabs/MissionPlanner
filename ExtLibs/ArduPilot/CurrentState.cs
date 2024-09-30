@@ -345,6 +345,51 @@ namespace MissionPlanner
             }
         }
 
+        public bool show_gps_raw_location = false;
+        public bool show_ins_pos_estimation = false;
+
+        [DisplayFieldName("gcs_distance_around.Field")]
+        [DisplayText("Distance around GCS (m)")]
+        [GroupText("Position")]
+        public uint gcs_distance_around { get; set; }
+
+        public bool is_gps_raw_valid = false;
+
+        [DisplayFieldName("gps_lat_raw.Field")]
+        [DisplayText("Raw Latitude from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_lat_raw { get; set; }
+
+        [DisplayFieldName("gps_lng_raw.Field")]
+        [DisplayText("Raw Longitude from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_lng_raw { get; set; }
+
+        [DisplayFieldName("gps_alt_raw.Field")]
+        [DisplayText("Raw altitude from GPS (m)")]
+        [GroupText("Position")]
+        public double gps_alt_raw { get; set; }
+
+        [DisplayFieldName("gps_track_over_ground_raw.Field")]
+        [DisplayText("Raw track over ground from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_track_over_ground_raw { get; set; }
+
+        [DisplayFieldName("ins_lat_accuracy.Field")]
+        [DisplayText("INS latitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_lat_accuracy { get; set; }
+
+        [DisplayFieldName("ins_lng_accuracy.Field")]
+        [DisplayText("INS longitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_lng_accuracy { get; set; }
+
+        [DisplayFieldName("ins_alt_accuracy.Field")]
+        [DisplayText("INS altitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_alt_accuracy { get; set; }
+
         [GroupText("Position")]
         [DisplayFieldName("altasl.Field")]
         [DisplayText("Altitude (alt)")]
@@ -3304,6 +3349,21 @@ namespace MissionPlanner
                             }
 
                             //MAVLink.packets[(byte)MAVLink.MSG_NAMES.GPS_RAW);
+                        }
+
+                        break;
+                    case (uint)MAVLink.MAVLINK_MSG_ID.AHRS_ADDITIONAL_RAW_INFO:
+                        {
+                            var ahrs_info = mavLinkMessage.ToStructure<MAVLink.mavlink_ahrs_additional_raw_info_t>();
+
+                            gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
+                            gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
+                            gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
+                            gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
+                            is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
+                            ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
+                            ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
+                            ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
                         }
 
                         break;
