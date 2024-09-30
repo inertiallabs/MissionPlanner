@@ -1,4 +1,4 @@
-﻿using log4net;
+using log4net;
 using MissionPlanner.ArduPilot;
 using MissionPlanner.Attributes;
 using MissionPlanner.Utilities;
@@ -343,6 +343,30 @@ namespace MissionPlanner
                 }
             }
         }
+
+        public bool show_gps_raw_location = false;
+
+        public bool is_gps_raw_valid = false;
+
+        [DisplayFieldName("gps_lat_raw.Field")]
+        [DisplayText("Raw Latitude from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_lat_raw { get; set; }
+
+        [DisplayFieldName("gps_lng_raw.Field")]
+        [DisplayText("Raw Longitude from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_lng_raw { get; set; }
+
+        [DisplayFieldName("gps_alt_raw.Field")]
+        [DisplayText("Raw altitude from GPS (m)")]
+        [GroupText("Position")]
+        public double gps_alt_raw { get; set; }
+
+        [DisplayFieldName("gps_track_over_ground_raw.Field")]
+        [DisplayText("Raw track over ground from GPS (deg)")]
+        [GroupText("Position")]
+        public double gps_track_over_ground_raw { get; set; }
 
         [GroupText("Position")]
         [DisplayFieldName("altasl.Field")]
@@ -3214,6 +3238,12 @@ namespace MissionPlanner
                                 altasl = gps.alt / 1000.0f;
                                 // alt = gps.alt; // using vfr as includes baro calc
                             }
+
+                            gps_lat_raw = gps.lat_raw * 1.0e-7;
+                            gps_lng_raw = gps.lon_raw * 1.0e-7;
+                            gps_alt_raw = gps.alt_raw * 1.0e-3;
+                            gps_track_over_ground_raw = gps.track_over_ground_raw * 1.0e-2;
+                            is_gps_raw_valid = gps.gps_raw_status == 0;
 
                             gpsstatus = gps.fix_type;
                             //                    Console.WriteLine("gpsfix {0}",gpsstatus);
