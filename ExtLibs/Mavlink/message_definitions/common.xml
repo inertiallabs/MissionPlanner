@@ -4472,6 +4472,11 @@
       <field type="uint32_t" name="vel_acc" units="mm">Speed uncertainty.</field>
       <field type="uint32_t" name="hdg_acc" units="degE5">Heading / track uncertainty</field>
       <field type="uint16_t" name="yaw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 65535 if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north.</field>
+      <field type="int32_t" name="lat_raw" units="degE7">Latitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="lon_raw" units="degE7">Longitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="alt_raw" units="mm">Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.</field>
+      <field type="uint16_t" name="track_over_ground_raw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.</field>
+      <field type="uint8_t" name="gps_raw_status">Status for GPS data</field>
     </message>
     <message id="25" name="GPS_STATUS">
       <description>The positioning status, as reported by GPS. This message is intended to display status information about each satellite visible to the receiver. See message GLOBAL_POSITION for the global position estimate. This message can contain information for up to 20 satellites.</description>

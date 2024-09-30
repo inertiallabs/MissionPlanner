@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Fri Aug 02 2024";
+    public const string MAVLINK_BUILD_DATE = "Thu Oct 03 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -48,7 +48,7 @@ public partial class MAVLink
         new message_info(21, "PARAM_REQUEST_LIST", 159, 2, 2, typeof( mavlink_param_request_list_t )),
         new message_info(22, "PARAM_VALUE", 220, 25, 25, typeof( mavlink_param_value_t )),
         new message_info(23, "PARAM_SET", 168, 23, 23, typeof( mavlink_param_set_t )),
-        new message_info(24, "GPS_RAW_INT", 24, 30, 52, typeof( mavlink_gps_raw_int_t )),
+        new message_info(24, "GPS_RAW_INT", 24, 30, 67, typeof( mavlink_gps_raw_int_t )),
         new message_info(25, "GPS_STATUS", 23, 101, 101, typeof( mavlink_gps_status_t )),
         new message_info(26, "SCALED_IMU", 170, 22, 24, typeof( mavlink_scaled_imu_t )),
         new message_info(27, "RAW_IMU", 144, 26, 29, typeof( mavlink_raw_imu_t )),
@@ -13304,12 +13304,12 @@ public partial class MAVLink
 
     
     /// extensions_start 10
-    [StructLayout(LayoutKind.Sequential,Pack=1,Size=52)]
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=67)]
     ///<summary> The global position, as returned by the Global Positioning System (GPS). This is                 NOT the global position estimate of the system, but rather a RAW sensor value. See message GLOBAL_POSITION for the global position estimate. </summary>
     public struct mavlink_gps_raw_int_t
     {
         /// packet ordered constructor
-        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw) 
+        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status) 
         {
             this.time_usec = time_usec;
             this.lat = lat;
@@ -13327,11 +13327,16 @@ public partial class MAVLink
             this.vel_acc = vel_acc;
             this.hdg_acc = hdg_acc;
             this.yaw = yaw;
+            this.lat_raw = lat_raw;
+            this.lon_raw = lon_raw;
+            this.alt_raw = alt_raw;
+            this.track_over_ground_raw = track_over_ground_raw;
+            this.gps_raw_status = gps_raw_status;
             
         }
         
         /// packet xml order
-        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw) 
+        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status) 
         {
             var msg = new mavlink_gps_raw_int_t();
 
@@ -13351,6 +13356,11 @@ public partial class MAVLink
             msg.vel_acc = vel_acc;
             msg.hdg_acc = hdg_acc;
             msg.yaw = yaw;
+            msg.lat_raw = lat_raw;
+            msg.lon_raw = lon_raw;
+            msg.alt_raw = alt_raw;
+            msg.track_over_ground_raw = track_over_ground_raw;
+            msg.gps_raw_status = gps_raw_status;
             
             return msg;
         }
@@ -13451,6 +13461,36 @@ public partial class MAVLink
         [Description("Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 65535 if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north.")]
         //[FieldOffset(50)]
         public  ushort yaw;
+
+        /// <summary>Latitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
+        [Units("[degE7]")]
+        [Description("Latitude (WGS84, EGM96 ellipsoid)")]
+        //[FieldOffset(52)]
+        public  int lat_raw;
+
+        /// <summary>Longitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
+        [Units("[degE7]")]
+        [Description("Longitude (WGS84, EGM96 ellipsoid)")]
+        //[FieldOffset(56)]
+        public  int lon_raw;
+
+        /// <summary>Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.")]
+        //[FieldOffset(60)]
+        public  int alt_raw;
+
+        /// <summary>Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.  [cdeg] </summary>
+        [Units("[cdeg]")]
+        [Description("Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.")]
+        //[FieldOffset(64)]
+        public  ushort track_over_ground_raw;
+
+        /// <summary>Status for GPS data   </summary>
+        [Units("")]
+        [Description("Status for GPS data")]
+        //[FieldOffset(66)]
+        public  byte gps_raw_status;
     };
 
     

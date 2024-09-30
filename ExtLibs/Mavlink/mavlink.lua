@@ -5231,6 +5231,11 @@ f.GPS_RAW_INT_v_acc = ProtoField.new("v_acc (uint32_t)", "mavlink_proto.GPS_RAW_
 f.GPS_RAW_INT_vel_acc = ProtoField.new("vel_acc (uint32_t)", "mavlink_proto.GPS_RAW_INT_vel_acc", ftypes.UINT32, nil)
 f.GPS_RAW_INT_hdg_acc = ProtoField.new("hdg_acc (uint32_t)", "mavlink_proto.GPS_RAW_INT_hdg_acc", ftypes.UINT32, nil)
 f.GPS_RAW_INT_yaw = ProtoField.new("yaw (uint16_t)", "mavlink_proto.GPS_RAW_INT_yaw", ftypes.UINT16, nil)
+f.GPS_RAW_INT_lat_raw = ProtoField.new("lat_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_lat_raw", ftypes.INT32, nil)
+f.GPS_RAW_INT_lon_raw = ProtoField.new("lon_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_lon_raw", ftypes.INT32, nil)
+f.GPS_RAW_INT_alt_raw = ProtoField.new("alt_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_alt_raw", ftypes.INT32, nil)
+f.GPS_RAW_INT_track_over_ground_raw = ProtoField.new("track_over_ground_raw (uint16_t)", "mavlink_proto.GPS_RAW_INT_track_over_ground_raw", ftypes.UINT16, nil)
+f.GPS_RAW_INT_gps_raw_status = ProtoField.new("gps_raw_status (uint8_t)", "mavlink_proto.GPS_RAW_INT_gps_raw_status", ftypes.UINT8, nil)
 
 f.GPS_STATUS_satellites_visible = ProtoField.new("satellites_visible (uint8_t)", "mavlink_proto.GPS_STATUS_satellites_visible", ftypes.UINT8, nil)
 f.GPS_STATUS_satellite_prn_0 = ProtoField.new("satellite_prn[0] (uint8_t)", "mavlink_proto.GPS_STATUS_satellite_prn_0", ftypes.UINT8, nil)
@@ -17690,9 +17695,9 @@ end
 -- dissect payload of message type GPS_RAW_INT
 function payload_fns.payload_24(buffer, tree, msgid, offset, limit, pinfo)
     local padded, field_offset, value, subtree, tvbrange
-    if (offset + 52 > limit) then
+    if (offset + 67 > limit) then
         padded = buffer(0, limit):bytes()
-        padded:set_size(offset + 52)
+        padded:set_size(offset + 67)
         padded = padded:tvb("Untruncated payload")
     else
         padded = buffer
@@ -17745,6 +17750,21 @@ function payload_fns.payload_24(buffer, tree, msgid, offset, limit, pinfo)
     tvbrange = padded(offset + 50, 2)
     value = tvbrange:le_uint()
     subtree = tree:add_le(f.GPS_RAW_INT_yaw, tvbrange, value)
+    tvbrange = padded(offset + 52, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.GPS_RAW_INT_lat_raw, tvbrange, value)
+    tvbrange = padded(offset + 56, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.GPS_RAW_INT_lon_raw, tvbrange, value)
+    tvbrange = padded(offset + 60, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.GPS_RAW_INT_alt_raw, tvbrange, value)
+    tvbrange = padded(offset + 64, 2)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.GPS_RAW_INT_track_over_ground_raw, tvbrange, value)
+    tvbrange = padded(offset + 66, 1)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.GPS_RAW_INT_gps_raw_status, tvbrange, value)
 end
 -- dissect payload of message type GPS_STATUS
 function payload_fns.payload_25(buffer, tree, msgid, offset, limit, pinfo)
@@ -54489,4 +54509,3 @@ udp_dissector_table:add(18570, mavlink_proto)
 -- register common Mavlink TCP ports
 
 DissectorTable.get("tcp.port"):add("5760-5763", mavlink_proto)
-
