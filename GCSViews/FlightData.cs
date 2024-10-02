@@ -948,6 +948,19 @@ namespace MissionPlanner.GCSViews
             });
         }
 
+        private void addGPSMarker(MAVState MAV)
+        {
+            this.BeginInvokeIfRequired(() =>
+            {
+                var marker = Common.getGPSMarker(MAV, routes);
+
+                if (marker == null || marker.Position.Lat == 0 && marker.Position.Lng == 0)
+                    return;
+
+                addMissionRouteMarker(marker);
+            });
+        }
+
         private void addMissionRouteMarker(GMapMarker marker)
         {
             if (marker == null) return;
@@ -4160,6 +4173,12 @@ namespace MissionPlanner.GCSViews
 
                             // Draw the active aircraft
                             addMAVMarker(MainV2.comPort.MAV);
+
+                            // Draw the aircraft raw GPS position
+                            if (MainV2.comPort.MAV.cs.show_gps_raw_location && MainV2.comPort.MAV.cs.is_gps_raw_valid)
+                            {
+                                addGPSMarker(MainV2.comPort.MAV);
+                            }
 
                             if (route.Points.Count == 0 || route.Points[route.Points.Count - 1].Lat != 0 &&
                                 (mapupdate.AddSeconds(3) < DateTime.Now) && CHK_autopan.Checked)

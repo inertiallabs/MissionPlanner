@@ -1,4 +1,4 @@
-﻿using GMap.NET;
+using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using log4net;
@@ -221,6 +221,27 @@ namespace MissionPlanner
                 };
             }
         }
+
+        public static GMapMarker getGPSMarker(MAVState MAV, GMapOverlay overlay = null)
+        {
+            PointLatLng location = MAV.cs.Location;
+            location.Lat = MAV.cs.gps_lat_raw;
+            location.Lng = MAV.cs.gps_lng_raw;
+
+            return new GMapMarkerPlane(
+                    2,
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing,
+                    (float)CurrentState.fromDistDisplayUnit(MAV.cs.radius))
+            {
+                DisplayLines = false,
+                Tag = MAV
+            };
+        }
+
         public static Form LoadingBox(string title, string promptText)
         {
             Form form = new Form();
