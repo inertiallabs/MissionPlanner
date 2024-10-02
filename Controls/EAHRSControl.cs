@@ -514,7 +514,7 @@ namespace MissionPlanner.Controls
 
         private void CB_gnss_position_CheckedChanged(object sender, EventArgs e)
         {
-
+            MainV2.comPort.MAV.cs.show_gps_raw_location = CB_gnss_position.Checked;
         }
 
         private void CB_ins_pos_estimation_CheckedChanged(object sender, EventArgs e)
