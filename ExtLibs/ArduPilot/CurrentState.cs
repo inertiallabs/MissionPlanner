@@ -369,6 +369,21 @@ namespace MissionPlanner
         [GroupText("Position")]
         public double gps_track_over_ground_raw { get; set; }
 
+        [DisplayFieldName("ins_lat_accuracy.Field")]
+        [DisplayText("INS latitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_lat_accuracy { get; set; }
+
+        [DisplayFieldName("ins_lng_accuracy.Field")]
+        [DisplayText("INS longitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_lng_accuracy { get; set; }
+
+        [DisplayFieldName("ins_alt_accuracy.Field")]
+        [DisplayText("INS altitude accuracy (m)")]
+        [GroupText("Position")]
+        public double ins_alt_accuracy { get; set; }
+
         [GroupText("Position")]
         [DisplayFieldName("altasl.Field")]
         [DisplayText("Altitude (alt)")]
@@ -3300,6 +3315,9 @@ namespace MissionPlanner
                             gps_alt_raw = gps.alt_raw * 1.0e-3;
                             gps_track_over_ground_raw = gps.track_over_ground_raw * 1.0e-2;
                             is_gps_raw_valid = gps.gps_raw_status == 0;
+                            ins_lat_accuracy = gps.ins_lat_accuracy * 1.0e-3;
+                            ins_lng_accuracy = gps.ins_lng_accuracy * 1.0e-3;
+                            ins_alt_accuracy = gps.ins_alt_accuracy * 1.0e-3;
 
                             gpsstatus = gps.fix_type;
                             //                    Console.WriteLine("gpsfix {0}",gpsstatus);
