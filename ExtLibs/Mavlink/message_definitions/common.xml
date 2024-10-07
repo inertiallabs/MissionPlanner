@@ -4477,6 +4477,9 @@
       <field type="int32_t" name="alt_raw" units="mm">Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.</field>
       <field type="uint16_t" name="track_over_ground_raw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.</field>
       <field type="uint8_t" name="gps_raw_status">Status for GPS data</field>
+      <field type="uint32_t" name="ins_lat_accuracy" units="mm">INS latitude accuracy.</field>
+      <field type="uint32_t" name="ins_lng_accuracy" units="mm">INS longitude accuracy.</field>
+      <field type="uint32_t" name="ins_alt_accuracy" units="mm">INS altitude accuracy.</field>
     </message>
     <message id="25" name="GPS_STATUS">
       <description>The positioning status, as reported by GPS. This message is intended to display status information about each satellite visible to the receiver. See message GLOBAL_POSITION for the global position estimate. This message can contain information for up to 20 satellites.</description>

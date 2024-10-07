@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Thu Oct 03 2024";
+    public const string MAVLINK_BUILD_DATE = "Tue Oct 15 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -48,7 +48,7 @@ public partial class MAVLink
         new message_info(21, "PARAM_REQUEST_LIST", 159, 2, 2, typeof( mavlink_param_request_list_t )),
         new message_info(22, "PARAM_VALUE", 220, 25, 25, typeof( mavlink_param_value_t )),
         new message_info(23, "PARAM_SET", 168, 23, 23, typeof( mavlink_param_set_t )),
-        new message_info(24, "GPS_RAW_INT", 24, 30, 67, typeof( mavlink_gps_raw_int_t )),
+        new message_info(24, "GPS_RAW_INT", 24, 30, 79, typeof( mavlink_gps_raw_int_t )),
         new message_info(25, "GPS_STATUS", 23, 101, 101, typeof( mavlink_gps_status_t )),
         new message_info(26, "SCALED_IMU", 170, 22, 24, typeof( mavlink_scaled_imu_t )),
         new message_info(27, "RAW_IMU", 144, 26, 29, typeof( mavlink_raw_imu_t )),
@@ -13304,12 +13304,12 @@ public partial class MAVLink
 
     
     /// extensions_start 10
-    [StructLayout(LayoutKind.Sequential,Pack=1,Size=67)]
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=79)]
     ///<summary> The global position, as returned by the Global Positioning System (GPS). This is                 NOT the global position estimate of the system, but rather a RAW sensor value. See message GLOBAL_POSITION for the global position estimate. </summary>
     public struct mavlink_gps_raw_int_t
     {
         /// packet ordered constructor
-        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status) 
+        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy) 
         {
             this.time_usec = time_usec;
             this.lat = lat;
@@ -13332,11 +13332,14 @@ public partial class MAVLink
             this.alt_raw = alt_raw;
             this.track_over_ground_raw = track_over_ground_raw;
             this.gps_raw_status = gps_raw_status;
+            this.ins_lat_accuracy = ins_lat_accuracy;
+            this.ins_lng_accuracy = ins_lng_accuracy;
+            this.ins_alt_accuracy = ins_alt_accuracy;
             
         }
         
         /// packet xml order
-        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status) 
+        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy) 
         {
             var msg = new mavlink_gps_raw_int_t();
 
@@ -13361,6 +13364,9 @@ public partial class MAVLink
             msg.alt_raw = alt_raw;
             msg.track_over_ground_raw = track_over_ground_raw;
             msg.gps_raw_status = gps_raw_status;
+            msg.ins_lat_accuracy = ins_lat_accuracy;
+            msg.ins_lng_accuracy = ins_lng_accuracy;
+            msg.ins_alt_accuracy = ins_alt_accuracy;
             
             return msg;
         }
@@ -13491,6 +13497,24 @@ public partial class MAVLink
         [Description("Status for GPS data")]
         //[FieldOffset(66)]
         public  byte gps_raw_status;
+
+        /// <summary>INS latitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS latitude accuracy.")]
+        //[FieldOffset(67)]
+        public  uint ins_lat_accuracy;
+
+        /// <summary>INS longitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS longitude accuracy.")]
+        //[FieldOffset(71)]
+        public  uint ins_lng_accuracy;
+
+        /// <summary>INS altitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS altitude accuracy.")]
+        //[FieldOffset(75)]
+        public  uint ins_alt_accuracy;
     };
 
     
