@@ -44,5 +44,6 @@
         private QuickView quickView4;
         private QuickView quickView5;
         private QuickView quickView6;
+        private System.Windows.Forms.Timer posUpdateTimer;
     }
 }

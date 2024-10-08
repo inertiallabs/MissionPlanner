@@ -1,23 +1,31 @@
-﻿using MissionPlanner.Utilities;
+﻿using log4net;
+using MissionPlanner.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace MissionPlanner.Controls
 {
     public partial class EAHRSControl : UserControl
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        private bool isEahrsStoped = false;
         private AidingData aidingDataDialog = new AidingData();
 
         public EAHRSControl()
         {
             InitializeComponent();
+
+            this.VisibleChanged += EAHRSControl_VisibleChanged;
         }
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EAHRSButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.BUT_externalAHRS_gnss_enable = new MissionPlanner.Controls.MyButton();
@@ -42,6 +50,7 @@ namespace MissionPlanner.Controls
             this.quickView4 = new MissionPlanner.Controls.QuickView();
             this.quickView5 = new MissionPlanner.Controls.QuickView();
             this.quickView6 = new MissionPlanner.Controls.QuickView();
+            this.posUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.EAHRSButtonsTableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -410,6 +419,11 @@ namespace MissionPlanner.Controls
             this.quickView6.TabIndex = 2;
             this.quickView6.Text = "quickView6";
             // 
+            // posUpdateTimer
+            // 
+            this.posUpdateTimer.Interval = 300;
+            this.posUpdateTimer.Tick += new System.EventHandler(this.posUpdateTimer_Tick);
+            // 
             // EAHRSControl
             // 
             this.Controls.Add(this.tableLayoutPanel1);
@@ -428,11 +442,30 @@ namespace MissionPlanner.Controls
 
         }
 
+        private void EAHRSControl_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                if (!isEahrsStoped)
+                {
+                    posUpdateTimer.Start();
+                }
+            }
+            else
+            {
+                posUpdateTimer.Stop();
+                resetInsGnssPosDiffValues();
+                resetInsPosAccuracyValues();
+            }
+        }
+
         private void BUT_externalAHRS_gnss_enable_Click(object sender, EventArgs e)
         {
             try
             {
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
+
+                posUpdateTimer.Start();
             }
             catch (Exception ex)
             {
@@ -481,6 +514,11 @@ namespace MissionPlanner.Controls
             try
             {
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD, 0, 0, 0, 0, 0, 0, 0);
+
+                resetInsGnssPosDiffValues();
+                resetInsPosAccuracyValues();
+                posUpdateTimer.Start();
+                isEahrsStoped = false;
             }
             catch (Exception ex)
             {
@@ -499,6 +537,11 @@ namespace MissionPlanner.Controls
             try
             {
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP, 0, 0, 0, 0, 0, 0, 0);
+
+                posUpdateTimer.Stop();
+                resetInsGnssPosDiffValues();
+                resetInsPosAccuracyValues();
+                isEahrsStoped = true;
             }
             catch (Exception ex)
             {
@@ -514,12 +557,18 @@ namespace MissionPlanner.Controls
 
         private void CB_gnss_position_CheckedChanged(object sender, EventArgs e)
         {
-            MainV2.comPort.MAV.cs.show_gps_raw_location = CB_gnss_position.Checked;
+            if (CB_gnss_position.Checked && !MainV2.comPort.MAV.cs.is_gps_raw_valid)
+            {
+                log.Warn("Can't enable GPS position. Invalid GPS status.");
+            }
+
+            bool needEnable = CB_gnss_position.Checked && MainV2.comPort.MAV.cs.is_gps_raw_valid;
+            CB_gnss_position.Checked = needEnable;
+            MainV2.comPort.MAV.cs.show_gps_raw_location = needEnable;
         }
 
         private void CB_ins_pos_estimation_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void CB_gcs_distance_CheckedChanged(object sender, EventArgs e)
@@ -528,6 +577,71 @@ namespace MissionPlanner.Controls
 
         private void NUD_gcs_distance_around_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+        private void posUpdateTimer_Tick(object sender, EventArgs e)
+        {
+            if (MainV2.comPort.MAV.cs.is_gps_raw_valid)
+            {
+                calculateInsGnssPosDiff();
+            }
+            else
+            {
+                resetInsGnssPosDiffValues();
+            }
+
+            quickView4.number = MainV2.comPort.MAV.cs.ins_lat_accuracy;
+            quickView5.number = MainV2.comPort.MAV.cs.ins_lng_accuracy;
+            quickView6.number = -1 * MainV2.comPort.MAV.cs.ins_alt_accuracy;
+        }
+
+        private void calculateInsGnssPosDiff()
+        {
+            const int r = 6371000; // constant for conversion from Spherical to Cartesian coordinates
+
+            if (MainV2.comPort.MAV.cs.gps_lat_raw != 0)
+            {
+                double delta_lat = (MainV2.comPort.MAV.cs.lat - MainV2.comPort.MAV.cs.gps_lat_raw) * Math.PI / 180;
+                quickView1.number = delta_lat * r;
+            }
+            else
+            {
+                quickView1.number = 0D;
+            }
+
+            if (MainV2.comPort.MAV.cs.gps_lat_raw != 0 && MainV2.comPort.MAV.cs.gps_lng_raw != 0)
+            {
+                double delta_lng = (MainV2.comPort.MAV.cs.lng - MainV2.comPort.MAV.cs.gps_lng_raw) * Math.PI / 180;
+                quickView2.number = delta_lng * r * Math.Cos(MainV2.comPort.MAV.cs.gps_lat_raw * Math.PI / 180);
+            }
+            else
+            {
+                quickView2.number = 0D;
+            }
+
+            if (MainV2.comPort.MAV.cs.gps_alt_raw != 0)
+            {
+                double delta_alt = MainV2.comPort.MAV.cs.altasl - MainV2.comPort.MAV.cs.gps_alt_raw;
+                quickView3.number = -1 * delta_alt;
+            }
+            else
+            {
+                quickView3.number = 0D;
+            }
+        }
+
+        private void resetInsGnssPosDiffValues()
+        {
+            quickView1.number = 0D;
+            quickView2.number = 0D;
+            quickView3.number = 0D;
+        }
+
+        private void resetInsPosAccuracyValues()
+        {
+            quickView4.number = 0D;
+            quickView5.number = 0D;
+            quickView6.number = 0D;
         }
     }
 }
