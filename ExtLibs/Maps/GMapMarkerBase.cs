@@ -19,13 +19,14 @@ namespace MissionPlanner.Maps
         
         // Instance variables
         public bool IsActive = true;
+        public bool DisplayLines = true;
         protected bool IsHidden => InactiveDisplayStyle == InactiveDisplayStyleEnum.Hidden && !IsActive;
         protected bool IsTransparent => InactiveDisplayStyle == InactiveDisplayStyleEnum.Transparent && !IsActive;
-        protected bool DisplayCOG => DisplayCOGSetting && !IsTransparent;
-        protected bool DisplayHeading => DisplayHeadingSetting && !IsTransparent;
-        protected bool DisplayNavBearing => DisplayNavBearingSetting && !IsTransparent;
-        protected bool DisplayRadius => DisplayRadiusSetting && !IsTransparent;
-        protected bool DisplayTarget => DisplayTargetSetting && !IsTransparent;
+        protected bool DisplayCOG => DisplayCOGSetting && !IsTransparent && DisplayLines;
+        protected bool DisplayHeading => DisplayHeadingSetting && !IsTransparent && DisplayLines;
+        protected bool DisplayNavBearing => DisplayNavBearingSetting && !IsTransparent && DisplayLines;
+        protected bool DisplayRadius => DisplayRadiusSetting && !IsTransparent && DisplayLines;
+        protected bool DisplayTarget => DisplayTargetSetting && !IsTransparent && DisplayLines;
         
         public GMapMarkerBase(PointLatLng pos):base(pos)
         {
