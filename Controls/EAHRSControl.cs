@@ -569,14 +569,17 @@ namespace MissionPlanner.Controls
 
         private void CB_ins_pos_estimation_CheckedChanged(object sender, EventArgs e)
         {
+            MainV2.comPort.MAV.cs.show_ins_pos_estimation = CB_ins_pos_estimation.Checked;
         }
 
         private void CB_gcs_distance_CheckedChanged(object sender, EventArgs e)
         {
+            updateGcsDistanceAround();
         }
 
         private void NUD_gcs_distance_around_ValueChanged(object sender, EventArgs e)
         {
+            updateGcsDistanceAround();
         }
 
         private void posUpdateTimer_Tick(object sender, EventArgs e)
@@ -593,6 +596,18 @@ namespace MissionPlanner.Controls
             quickView4.number = MainV2.comPort.MAV.cs.ins_lat_accuracy;
             quickView5.number = MainV2.comPort.MAV.cs.ins_lng_accuracy;
             quickView6.number = -1 * MainV2.comPort.MAV.cs.ins_alt_accuracy;
+        }
+
+        private void updateGcsDistanceAround()
+        {
+            if (CB_gcs_distance.Checked)
+            {
+                MainV2.comPort.MAV.cs.gcs_distance_around = (uint)NUD_gcs_distance_around.Value;
+            }
+            else
+            {
+                MainV2.comPort.MAV.cs.gcs_distance_around = 0;
+            }
         }
 
         private void calculateInsGnssPosDiff()
