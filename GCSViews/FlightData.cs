@@ -32,6 +32,7 @@ using ZedGraph;
 using LogAnalyzer = MissionPlanner.Utilities.LogAnalyzer;
 using TableLayoutPanelCellPosition = System.Windows.Forms.TableLayoutPanelCellPosition;
 using UnauthorizedAccessException = System.UnauthorizedAccessException;
+using static MissionPlanner.Utilities.LTM;
 
 // written by michael oborne
 
@@ -4178,6 +4179,24 @@ namespace MissionPlanner.GCSViews
                             if (MainV2.comPort.MAV.cs.show_gps_raw_location && MainV2.comPort.MAV.cs.is_gps_raw_valid)
                             {
                                 addGPSMarker(MainV2.comPort.MAV);
+                            }
+
+                            // Draw the active aircraft position estimation
+                            if (MainV2.comPort.MAV.cs.show_ins_pos_estimation)
+                            {
+                                double radius_m = Math.Max(MainV2.comPort.MAV.cs.ins_lat_accuracy, MainV2.comPort.MAV.cs.ins_lng_accuracy);
+                                if (radius_m >= 10)
+                                {
+                                    addMissionPhotoMarker(new GMapMarkerCircle(MainV2.comPort.MAV.cs.Location, radius_m, Color.Red));
+                                }
+                            }
+
+                            // Draw the GCS signal area
+                            if (MainV2.comPort.MAV.cs.gcs_distance_around != 0)
+                            {
+                                addMissionPhotoMarker(new GMapMarkerCircle(MainV2.comPort.MAV.cs.HomeLocation,
+                                                                           MainV2.comPort.MAV.cs.gcs_distance_around,
+                                                                           Color.Purple));
                             }
 
                             if (route.Points.Count == 0 || route.Points[route.Points.Count - 1].Lat != 0 &&
