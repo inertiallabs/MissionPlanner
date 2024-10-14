@@ -50,7 +50,7 @@ namespace MissionPlanner.Controls
             this.quickView4 = new MissionPlanner.Controls.QuickView();
             this.quickView5 = new MissionPlanner.Controls.QuickView();
             this.quickView6 = new MissionPlanner.Controls.QuickView();
-            this.posUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.EAHRSButtonsTableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -419,10 +419,10 @@ namespace MissionPlanner.Controls
             this.quickView6.TabIndex = 2;
             this.quickView6.Text = "quickView6";
             // 
-            // posUpdateTimer
+            // updateTimer
             // 
-            this.posUpdateTimer.Interval = 300;
-            this.posUpdateTimer.Tick += new System.EventHandler(this.posUpdateTimer_Tick);
+            this.updateTimer.Interval = 300;
+            this.updateTimer.Tick += new System.EventHandler(this.updateTimer_Tick);
             // 
             // EAHRSControl
             // 
@@ -448,12 +448,12 @@ namespace MissionPlanner.Controls
             {
                 if (!isEahrsStoped)
                 {
-                    posUpdateTimer.Start();
+                    updateTimer.Start();
                 }
             }
             else
             {
-                posUpdateTimer.Stop();
+                updateTimer.Stop();
                 resetInsGnssPosDiffValues();
                 resetInsPosAccuracyValues();
             }
@@ -465,7 +465,7 @@ namespace MissionPlanner.Controls
             {
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS, 0, 0, 0, 0, 0, 0, 0);
 
-                posUpdateTimer.Start();
+                updateTimer.Start();
             }
             catch (Exception ex)
             {
@@ -517,7 +517,7 @@ namespace MissionPlanner.Controls
 
                 resetInsGnssPosDiffValues();
                 resetInsPosAccuracyValues();
-                posUpdateTimer.Start();
+                updateTimer.Start();
                 isEahrsStoped = false;
             }
             catch (Exception ex)
@@ -538,7 +538,7 @@ namespace MissionPlanner.Controls
             {
                 MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP, 0, 0, 0, 0, 0, 0, 0);
 
-                posUpdateTimer.Stop();
+                updateTimer.Stop();
                 resetInsGnssPosDiffValues();
                 resetInsPosAccuracyValues();
                 isEahrsStoped = true;
@@ -582,7 +582,7 @@ namespace MissionPlanner.Controls
             updateGcsDistanceAround();
         }
 
-        private void posUpdateTimer_Tick(object sender, EventArgs e)
+        private void updateTimer_Tick(object sender, EventArgs e)
         {
             if (MainV2.comPort.MAV.cs.is_gps_raw_valid)
             {
@@ -596,6 +596,9 @@ namespace MissionPlanner.Controls
             quickView4.number = MainV2.comPort.MAV.cs.ins_lat_accuracy;
             quickView5.number = MainV2.comPort.MAV.cs.ins_lng_accuracy;
             quickView6.number = -1 * MainV2.comPort.MAV.cs.ins_alt_accuracy;
+
+            BUT_externalAHRS_start.Enabled = !MainV2.comPort.MAV.cs.armed;
+            BUT_externalAHRS_stop.Enabled = !MainV2.comPort.MAV.cs.armed;
         }
 
         private void updateGcsDistanceAround()
