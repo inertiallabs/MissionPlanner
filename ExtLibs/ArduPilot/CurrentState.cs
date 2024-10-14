@@ -1,4 +1,4 @@
-using log4net;
+﻿using log4net;
 using MissionPlanner.ArduPilot;
 using MissionPlanner.Attributes;
 using MissionPlanner.Utilities;
@@ -345,6 +345,12 @@ namespace MissionPlanner
         }
 
         public bool show_gps_raw_location = false;
+        public bool show_ins_pos_estimation = false;
+
+        [DisplayFieldName("gcs_distance_around.Field")]
+        [DisplayText("Distance around GCS (m)")]
+        [GroupText("Position")]
+        public uint gcs_distance_around { get; set; }
 
         public bool is_gps_raw_valid = false;
 
