@@ -5,6 +5,7 @@ using log4net;
 using MissionPlanner.ArduPilot;
 using MissionPlanner.Maps;
 using MissionPlanner.Utilities;
+using NetTopologySuite.Algorithm;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -232,18 +233,49 @@ namespace MissionPlanner
             location.Lat = MAV.cs.gps_lat_raw;
             location.Lng = MAV.cs.gps_lng_raw;
 
-            return new GMapMarkerPlane(
-                    2,
+            if (MAV.aptype == MAVLink.MAV_TYPE.GROUND_ROVER)
+            {
+                return new GMapMarkerRover(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
+            else if (MAV.cs.firmware == Firmwares.ArduCopter2 || MAV.aptype == MAVLink.MAV_TYPE.QUADROTOR)
+            {
+                return new GMapMarkerQuad(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.sysid)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
+            else
+            {
+                return new GMapMarkerPlane(
+                    2, // blue GPS tag
                     location,
                     (float)MAV.cs.gps_track_over_ground_raw,
                     MAV.cs.groundcourse,
                     MAV.cs.nav_bearing,
                     MAV.cs.target_bearing,
                     (float)CurrentState.fromDistDisplayUnit(MAV.cs.radius))
-            {
-                DisplayLines = false,
-                Tag = MAV
-            };
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
         }
 
         public static Form LoadingBox(string title, string promptText)
