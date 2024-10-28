@@ -17,6 +17,7 @@ namespace MissionPlanner.Maps
         float cog = -1;
         float target = -1;
         float nav_bearing = -1;
+        private int which = 0;
 
         public GMapMarkerRover(PointLatLng p, float heading, float cog, float nav_bearing, float target)
             : base(p)
@@ -26,6 +27,12 @@ namespace MissionPlanner.Maps
             this.Target = target;
             this.Nav_bearing = nav_bearing;
             Size = SizeSt;
+        }
+
+        public GMapMarkerRover(int which, PointLatLng p, float heading, float cog, float nav_bearing, float target)
+            : this(p, heading, cog, nav_bearing, target)
+        {
+            this.which = which;
         }
 
         public float Heading { get => heading; set => heading = value; }
@@ -79,7 +86,7 @@ namespace MissionPlanner.Maps
             {
             }
 #if NET472_OR_GREATER
-            var img = Resources.rover;
+            var img =  (which == 2) ? Resources.rover_2 : Resources.rover;
             var ia = new System.Drawing.Imaging.ImageAttributes();
             if (IsTransparent)
             {
