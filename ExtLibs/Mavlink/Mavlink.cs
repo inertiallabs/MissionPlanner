@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 public partial class MAVLink
 {
-    public const string MAVLINK_BUILD_DATE = "Wed Nov 13 2024";
+    public const string MAVLINK_BUILD_DATE = "Tue Dec 10 2024";
     public const string MAVLINK_WIRE_PROTOCOL_VERSION = "2.0";
     public const int MAVLINK_MAX_PAYLOAD_LEN = 255;
 
@@ -48,7 +48,7 @@ public partial class MAVLink
         new message_info(21, "PARAM_REQUEST_LIST", 159, 2, 2, typeof( mavlink_param_request_list_t )),
         new message_info(22, "PARAM_VALUE", 220, 25, 25, typeof( mavlink_param_value_t )),
         new message_info(23, "PARAM_SET", 168, 23, 23, typeof( mavlink_param_set_t )),
-        new message_info(24, "GPS_RAW_INT", 24, 30, 79, typeof( mavlink_gps_raw_int_t )),
+        new message_info(24, "GPS_RAW_INT", 24, 30, 52, typeof( mavlink_gps_raw_int_t )),
         new message_info(25, "GPS_STATUS", 23, 101, 101, typeof( mavlink_gps_status_t )),
         new message_info(26, "SCALED_IMU", 170, 22, 24, typeof( mavlink_scaled_imu_t )),
         new message_info(27, "RAW_IMU", 144, 26, 29, typeof( mavlink_raw_imu_t )),
@@ -275,6 +275,7 @@ public partial class MAVLink
         new message_info(386, "CAN_FRAME", 132, 16, 16, typeof( mavlink_can_frame_t )),
         new message_info(387, "CANFD_FRAME", 4, 72, 72, typeof( mavlink_canfd_frame_t )),
         new message_info(388, "CAN_FILTER_MODIFY", 8, 37, 37, typeof( mavlink_can_filter_modify_t )),
+        new message_info(699, "AHRS_ADDITIONAL_RAW_INFO", 59, 27, 27, typeof( mavlink_ahrs_additional_raw_info_t )),
         new message_info(700, "EAHRS_STATUS_INFO", 231, 10, 10, typeof( mavlink_eahrs_status_info_t )),
         new message_info(9000, "WHEEL_DISTANCE", 113, 137, 137, typeof( mavlink_wheel_distance_t )),
         new message_info(9005, "WINCH_STATUS", 117, 34, 34, typeof( mavlink_winch_status_t )),
@@ -606,6 +607,7 @@ public partial class MAVLink
         CAN_FRAME = 386,
         CANFD_FRAME = 387,
         CAN_FILTER_MODIFY = 388,
+        AHRS_ADDITIONAL_RAW_INFO = 699,
         EAHRS_STATUS_INFO = 700,
         WHEEL_DISTANCE = 9000,
         WINCH_STATUS = 9005,
@@ -13315,12 +13317,12 @@ public partial class MAVLink
 
     
     /// extensions_start 10
-    [StructLayout(LayoutKind.Sequential,Pack=1,Size=79)]
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=52)]
     ///<summary> The global position, as returned by the Global Positioning System (GPS). This is                 NOT the global position estimate of the system, but rather a RAW sensor value. See message GLOBAL_POSITION for the global position estimate. </summary>
     public struct mavlink_gps_raw_int_t
     {
         /// packet ordered constructor
-        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy) 
+        public mavlink_gps_raw_int_t(ulong time_usec,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,/*GPS_FIX_TYPE*/byte fix_type,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw) 
         {
             this.time_usec = time_usec;
             this.lat = lat;
@@ -13338,19 +13340,11 @@ public partial class MAVLink
             this.vel_acc = vel_acc;
             this.hdg_acc = hdg_acc;
             this.yaw = yaw;
-            this.lat_raw = lat_raw;
-            this.lon_raw = lon_raw;
-            this.alt_raw = alt_raw;
-            this.track_over_ground_raw = track_over_ground_raw;
-            this.gps_raw_status = gps_raw_status;
-            this.ins_lat_accuracy = ins_lat_accuracy;
-            this.ins_lng_accuracy = ins_lng_accuracy;
-            this.ins_alt_accuracy = ins_alt_accuracy;
             
         }
         
         /// packet xml order
-        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw,int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy) 
+        public static mavlink_gps_raw_int_t PopulateXMLOrder(ulong time_usec,/*GPS_FIX_TYPE*/byte fix_type,int lat,int lon,int alt,ushort eph,ushort epv,ushort vel,ushort cog,byte satellites_visible,int alt_ellipsoid,uint h_acc,uint v_acc,uint vel_acc,uint hdg_acc,ushort yaw) 
         {
             var msg = new mavlink_gps_raw_int_t();
 
@@ -13370,14 +13364,6 @@ public partial class MAVLink
             msg.vel_acc = vel_acc;
             msg.hdg_acc = hdg_acc;
             msg.yaw = yaw;
-            msg.lat_raw = lat_raw;
-            msg.lon_raw = lon_raw;
-            msg.alt_raw = alt_raw;
-            msg.track_over_ground_raw = track_over_ground_raw;
-            msg.gps_raw_status = gps_raw_status;
-            msg.ins_lat_accuracy = ins_lat_accuracy;
-            msg.ins_lng_accuracy = ins_lng_accuracy;
-            msg.ins_alt_accuracy = ins_alt_accuracy;
             
             return msg;
         }
@@ -13478,54 +13464,6 @@ public partial class MAVLink
         [Description("Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 65535 if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north.")]
         //[FieldOffset(50)]
         public  ushort yaw;
-
-        /// <summary>Latitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
-        [Units("[degE7]")]
-        [Description("Latitude (WGS84, EGM96 ellipsoid)")]
-        //[FieldOffset(52)]
-        public  int lat_raw;
-
-        /// <summary>Longitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
-        [Units("[degE7]")]
-        [Description("Longitude (WGS84, EGM96 ellipsoid)")]
-        //[FieldOffset(56)]
-        public  int lon_raw;
-
-        /// <summary>Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.  [mm] </summary>
-        [Units("[mm]")]
-        [Description("Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.")]
-        //[FieldOffset(60)]
-        public  int alt_raw;
-
-        /// <summary>Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.  [cdeg] </summary>
-        [Units("[cdeg]")]
-        [Description("Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.")]
-        //[FieldOffset(64)]
-        public  ushort track_over_ground_raw;
-
-        /// <summary>Status for GPS data   </summary>
-        [Units("")]
-        [Description("Status for GPS data")]
-        //[FieldOffset(66)]
-        public  byte gps_raw_status;
-
-        /// <summary>INS latitude accuracy.  [mm] </summary>
-        [Units("[mm]")]
-        [Description("INS latitude accuracy.")]
-        //[FieldOffset(67)]
-        public  uint ins_lat_accuracy;
-
-        /// <summary>INS longitude accuracy.  [mm] </summary>
-        [Units("[mm]")]
-        [Description("INS longitude accuracy.")]
-        //[FieldOffset(71)]
-        public  uint ins_lng_accuracy;
-
-        /// <summary>INS altitude accuracy.  [mm] </summary>
-        [Units("[mm]")]
-        [Description("INS altitude accuracy.")]
-        //[FieldOffset(75)]
-        public  uint ins_alt_accuracy;
     };
 
     
@@ -29854,6 +29792,93 @@ public partial class MAVLink
         [Description("number of IDs in filter list")]
         //[FieldOffset(36)]
         public  byte num_ids;
+    };
+
+    
+    /// extensions_start 0
+    [StructLayout(LayoutKind.Sequential,Pack=1,Size=27)]
+    ///<summary> Additional GPS and INS parameters. </summary>
+    public struct mavlink_ahrs_additional_raw_info_t
+    {
+        /// packet ordered constructor
+        public mavlink_ahrs_additional_raw_info_t(int lat_raw,int lon_raw,int alt_raw,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy,ushort track_over_ground_raw,byte gps_raw_status) 
+        {
+            this.lat_raw = lat_raw;
+            this.lon_raw = lon_raw;
+            this.alt_raw = alt_raw;
+            this.ins_lat_accuracy = ins_lat_accuracy;
+            this.ins_lng_accuracy = ins_lng_accuracy;
+            this.ins_alt_accuracy = ins_alt_accuracy;
+            this.track_over_ground_raw = track_over_ground_raw;
+            this.gps_raw_status = gps_raw_status;
+            
+        }
+        
+        /// packet xml order
+        public static mavlink_ahrs_additional_raw_info_t PopulateXMLOrder(int lat_raw,int lon_raw,int alt_raw,ushort track_over_ground_raw,byte gps_raw_status,uint ins_lat_accuracy,uint ins_lng_accuracy,uint ins_alt_accuracy) 
+        {
+            var msg = new mavlink_ahrs_additional_raw_info_t();
+
+            msg.lat_raw = lat_raw;
+            msg.lon_raw = lon_raw;
+            msg.alt_raw = alt_raw;
+            msg.track_over_ground_raw = track_over_ground_raw;
+            msg.gps_raw_status = gps_raw_status;
+            msg.ins_lat_accuracy = ins_lat_accuracy;
+            msg.ins_lng_accuracy = ins_lng_accuracy;
+            msg.ins_alt_accuracy = ins_alt_accuracy;
+            
+            return msg;
+        }
+        
+
+        /// <summary>Latitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
+        [Units("[degE7]")]
+        [Description("Latitude (WGS84, EGM96 ellipsoid)")]
+        //[FieldOffset(0)]
+        public  int lat_raw;
+
+        /// <summary>Longitude (WGS84, EGM96 ellipsoid)  [degE7] </summary>
+        [Units("[degE7]")]
+        [Description("Longitude (WGS84, EGM96 ellipsoid)")]
+        //[FieldOffset(4)]
+        public  int lon_raw;
+
+        /// <summary>Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.")]
+        //[FieldOffset(8)]
+        public  int alt_raw;
+
+        /// <summary>INS latitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS latitude accuracy.")]
+        //[FieldOffset(12)]
+        public  uint ins_lat_accuracy;
+
+        /// <summary>INS longitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS longitude accuracy.")]
+        //[FieldOffset(16)]
+        public  uint ins_lng_accuracy;
+
+        /// <summary>INS altitude accuracy.  [mm] </summary>
+        [Units("[mm]")]
+        [Description("INS altitude accuracy.")]
+        //[FieldOffset(20)]
+        public  uint ins_alt_accuracy;
+
+        /// <summary>Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.  [cdeg] </summary>
+        [Units("[cdeg]")]
+        [Description("Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.")]
+        //[FieldOffset(24)]
+        public  ushort track_over_ground_raw;
+
+        /// <summary>Status for GPS data   </summary>
+        [Units("")]
+        [Description("Status for GPS data")]
+        //[FieldOffset(26)]
+        public  byte gps_raw_status;
     };
 
     
