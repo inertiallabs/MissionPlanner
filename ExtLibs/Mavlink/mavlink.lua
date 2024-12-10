@@ -302,6 +302,7 @@ messageName = {
     [386] = 'CAN_FRAME',
     [387] = 'CANFD_FRAME',
     [388] = 'CAN_FILTER_MODIFY',
+    [699] = 'AHRS_ADDITIONAL_RAW_INFO',
     [700] = 'EAHRS_STATUS_INFO',
     [9000] = 'WHEEL_DISTANCE',
     [9005] = 'WINCH_STATUS',
@@ -5826,14 +5827,6 @@ f.GPS_RAW_INT_v_acc = ProtoField.new("v_acc (uint32_t)", "mavlink_proto.GPS_RAW_
 f.GPS_RAW_INT_vel_acc = ProtoField.new("vel_acc (uint32_t)", "mavlink_proto.GPS_RAW_INT_vel_acc", ftypes.UINT32, nil)
 f.GPS_RAW_INT_hdg_acc = ProtoField.new("hdg_acc (uint32_t)", "mavlink_proto.GPS_RAW_INT_hdg_acc", ftypes.UINT32, nil)
 f.GPS_RAW_INT_yaw = ProtoField.new("yaw (uint16_t)", "mavlink_proto.GPS_RAW_INT_yaw", ftypes.UINT16, nil)
-f.GPS_RAW_INT_lat_raw = ProtoField.new("lat_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_lat_raw", ftypes.INT32, nil)
-f.GPS_RAW_INT_lon_raw = ProtoField.new("lon_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_lon_raw", ftypes.INT32, nil)
-f.GPS_RAW_INT_alt_raw = ProtoField.new("alt_raw (int32_t)", "mavlink_proto.GPS_RAW_INT_alt_raw", ftypes.INT32, nil)
-f.GPS_RAW_INT_track_over_ground_raw = ProtoField.new("track_over_ground_raw (uint16_t)", "mavlink_proto.GPS_RAW_INT_track_over_ground_raw", ftypes.UINT16, nil)
-f.GPS_RAW_INT_gps_raw_status = ProtoField.new("gps_raw_status (uint8_t)", "mavlink_proto.GPS_RAW_INT_gps_raw_status", ftypes.UINT8, nil)
-f.GPS_RAW_INT_ins_lat_accuracy = ProtoField.new("ins_lat_accuracy (uint32_t)", "mavlink_proto.GPS_RAW_INT_ins_lat_accuracy", ftypes.UINT32, nil)
-f.GPS_RAW_INT_ins_lng_accuracy = ProtoField.new("ins_lng_accuracy (uint32_t)", "mavlink_proto.GPS_RAW_INT_ins_lng_accuracy", ftypes.UINT32, nil)
-f.GPS_RAW_INT_ins_alt_accuracy = ProtoField.new("ins_alt_accuracy (uint32_t)", "mavlink_proto.GPS_RAW_INT_ins_alt_accuracy", ftypes.UINT32, nil)
 
 f.GPS_STATUS_satellites_visible = ProtoField.new("satellites_visible (uint8_t)", "mavlink_proto.GPS_STATUS_satellites_visible", ftypes.UINT8, nil)
 f.GPS_STATUS_satellite_prn_0 = ProtoField.new("satellite_prn[0] (uint8_t)", "mavlink_proto.GPS_STATUS_satellite_prn_0", ftypes.UINT8, nil)
@@ -10818,6 +10811,15 @@ f.CAN_FILTER_MODIFY_ids_12 = ProtoField.new("ids[12] (uint16_t)", "mavlink_proto
 f.CAN_FILTER_MODIFY_ids_13 = ProtoField.new("ids[13] (uint16_t)", "mavlink_proto.CAN_FILTER_MODIFY_ids_13", ftypes.UINT16, nil)
 f.CAN_FILTER_MODIFY_ids_14 = ProtoField.new("ids[14] (uint16_t)", "mavlink_proto.CAN_FILTER_MODIFY_ids_14", ftypes.UINT16, nil)
 f.CAN_FILTER_MODIFY_ids_15 = ProtoField.new("ids[15] (uint16_t)", "mavlink_proto.CAN_FILTER_MODIFY_ids_15", ftypes.UINT16, nil)
+
+f.AHRS_ADDITIONAL_RAW_INFO_lat_raw = ProtoField.new("lat_raw (int32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_lat_raw", ftypes.INT32, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_lon_raw = ProtoField.new("lon_raw (int32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_lon_raw", ftypes.INT32, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_alt_raw = ProtoField.new("alt_raw (int32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_alt_raw", ftypes.INT32, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_track_over_ground_raw = ProtoField.new("track_over_ground_raw (uint16_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_track_over_ground_raw", ftypes.UINT16, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_gps_raw_status = ProtoField.new("gps_raw_status (uint8_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_gps_raw_status", ftypes.UINT8, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_ins_lat_accuracy = ProtoField.new("ins_lat_accuracy (uint32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_ins_lat_accuracy", ftypes.UINT32, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_ins_lng_accuracy = ProtoField.new("ins_lng_accuracy (uint32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_ins_lng_accuracy", ftypes.UINT32, nil)
+f.AHRS_ADDITIONAL_RAW_INFO_ins_alt_accuracy = ProtoField.new("ins_alt_accuracy (uint32_t)", "mavlink_proto.AHRS_ADDITIONAL_RAW_INFO_ins_alt_accuracy", ftypes.UINT32, nil)
 
 f.EAHRS_STATUS_INFO_status1 = ProtoField.new("status1 (uint16_t)", "mavlink_proto.EAHRS_STATUS_INFO_status1", ftypes.UINT16, nil)
 f.EAHRS_STATUS_INFO_status2 = ProtoField.new("status2 (uint16_t)", "mavlink_proto.EAHRS_STATUS_INFO_status2", ftypes.UINT16, nil)
@@ -20193,9 +20195,9 @@ end
 -- dissect payload of message type GPS_RAW_INT
 function payload_fns.payload_24(buffer, tree, msgid, offset, limit, pinfo)
     local padded, field_offset, value, subtree, tvbrange
-    if (offset + 79 > limit) then
+    if (offset + 52 > limit) then
         padded = buffer(0, limit):bytes()
-        padded:set_size(offset + 79)
+        padded:set_size(offset + 52)
         padded = padded:tvb("Untruncated payload")
     else
         padded = buffer
@@ -20248,30 +20250,6 @@ function payload_fns.payload_24(buffer, tree, msgid, offset, limit, pinfo)
     tvbrange = padded(offset + 50, 2)
     value = tvbrange:le_uint()
     subtree = tree:add_le(f.GPS_RAW_INT_yaw, tvbrange, value)
-    tvbrange = padded(offset + 52, 4)
-    value = tvbrange:le_int()
-    subtree = tree:add_le(f.GPS_RAW_INT_lat_raw, tvbrange, value)
-    tvbrange = padded(offset + 56, 4)
-    value = tvbrange:le_int()
-    subtree = tree:add_le(f.GPS_RAW_INT_lon_raw, tvbrange, value)
-    tvbrange = padded(offset + 60, 4)
-    value = tvbrange:le_int()
-    subtree = tree:add_le(f.GPS_RAW_INT_alt_raw, tvbrange, value)
-    tvbrange = padded(offset + 64, 2)
-    value = tvbrange:le_uint()
-    subtree = tree:add_le(f.GPS_RAW_INT_track_over_ground_raw, tvbrange, value)
-    tvbrange = padded(offset + 66, 1)
-    value = tvbrange:le_uint()
-    subtree = tree:add_le(f.GPS_RAW_INT_gps_raw_status, tvbrange, value)
-    tvbrange = padded(offset + 67, 4)
-    value = tvbrange:le_uint()
-    subtree = tree:add_le(f.GPS_RAW_INT_ins_lat_accuracy, tvbrange, value)
-    tvbrange = padded(offset + 71, 4)
-    value = tvbrange:le_uint()
-    subtree = tree:add_le(f.GPS_RAW_INT_ins_lng_accuracy, tvbrange, value)
-    tvbrange = padded(offset + 75, 4)
-    value = tvbrange:le_uint()
-    subtree = tree:add_le(f.GPS_RAW_INT_ins_alt_accuracy, tvbrange, value)
 end
 -- dissect payload of message type GPS_STATUS
 function payload_fns.payload_25(buffer, tree, msgid, offset, limit, pinfo)
@@ -56221,6 +56199,41 @@ function payload_fns.payload_388(buffer, tree, msgid, offset, limit, pinfo)
     tvbrange = padded(offset + 30, 2)
     value = tvbrange:le_uint()
     subtree = tree:add_le(f.CAN_FILTER_MODIFY_ids_15, tvbrange, value)
+end
+-- dissect payload of message type AHRS_ADDITIONAL_RAW_INFO
+function payload_fns.payload_699(buffer, tree, msgid, offset, limit, pinfo)
+    local padded, field_offset, value, subtree, tvbrange
+    if (offset + 27 > limit) then
+        padded = buffer(0, limit):bytes()
+        padded:set_size(offset + 27)
+        padded = padded:tvb("Untruncated payload")
+    else
+        padded = buffer
+    end
+    tvbrange = padded(offset + 0, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_lat_raw, tvbrange, value)
+    tvbrange = padded(offset + 4, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_lon_raw, tvbrange, value)
+    tvbrange = padded(offset + 8, 4)
+    value = tvbrange:le_int()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_alt_raw, tvbrange, value)
+    tvbrange = padded(offset + 24, 2)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_track_over_ground_raw, tvbrange, value)
+    tvbrange = padded(offset + 26, 1)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_gps_raw_status, tvbrange, value)
+    tvbrange = padded(offset + 12, 4)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_ins_lat_accuracy, tvbrange, value)
+    tvbrange = padded(offset + 16, 4)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_ins_lng_accuracy, tvbrange, value)
+    tvbrange = padded(offset + 20, 4)
+    value = tvbrange:le_uint()
+    subtree = tree:add_le(f.AHRS_ADDITIONAL_RAW_INFO_ins_alt_accuracy, tvbrange, value)
 end
 -- dissect payload of message type EAHRS_STATUS_INFO
 function payload_fns.payload_700(buffer, tree, msgid, offset, limit, pinfo)
