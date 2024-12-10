@@ -3256,15 +3256,6 @@ namespace MissionPlanner
                                 // alt = gps.alt; // using vfr as includes baro calc
                             }
 
-                            gps_lat_raw = gps.lat_raw * 1.0e-7;
-                            gps_lng_raw = gps.lon_raw * 1.0e-7;
-                            gps_alt_raw = gps.alt_raw * 1.0e-3;
-                            gps_track_over_ground_raw = gps.track_over_ground_raw * 1.0e-2;
-                            is_gps_raw_valid = gps.gps_raw_status == 0;
-                            ins_lat_accuracy = gps.ins_lat_accuracy * 1.0e-3;
-                            ins_lng_accuracy = gps.ins_lng_accuracy * 1.0e-3;
-                            ins_alt_accuracy = gps.ins_alt_accuracy * 1.0e-3;
-
                             gpsstatus = gps.fix_type;
                             //                    Console.WriteLine("gpsfix {0}",gpsstatus);
 
@@ -3298,6 +3289,21 @@ namespace MissionPlanner
                             }
 
                             //MAVLink.packets[(byte)MAVLink.MSG_NAMES.GPS_RAW);
+                        }
+
+                        break;
+                    case (uint)MAVLink.MAVLINK_MSG_ID.AHRS_ADDITIONAL_RAW_INFO:
+                        {
+                            var ahrs_info = mavLinkMessage.ToStructure<MAVLink.mavlink_ahrs_additional_raw_info_t>();
+
+                            gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
+                            gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
+                            gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
+                            gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
+                            is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
+                            ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
+                            ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
+                            ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
                         }
 
                         break;
