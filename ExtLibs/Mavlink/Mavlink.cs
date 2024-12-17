@@ -1393,6 +1393,12 @@ public partial class MAVLink
         ///<summary> Send aiding data external heading to AHRS |Heading| Heading STD| Latency| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Send aiding data external heading to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING=33011, 
+        ///<summary> Send command 'enable spoofing detection' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'enable spoofing detection' to external AHRS")]
+        EXTERNAL_AHRS_ENABLE_SPOOFING_DETECTION=33012, 
+        ///<summary> Send command 'disable spoofing detection' to external AHRS |Empty.| Empty.| Empty.| Empty.| Empty.| Empty.| Empty.|  </summary>
+        [Description("Send command 'disable spoofing detection' to external AHRS")]
+        EXTERNAL_AHRS_DISABLE_SPOOFING_DETECTION=33013, 
         ///<summary> Mission command to reset Maximum Power Point Tracker (MPPT) |MPPT number| Empty| Empty| Empty| Empty| Empty| Empty|  </summary>
         [Description("Mission command to reset Maximum Power Point Tracker (MPPT)")]
         RESET_MPPT=40001, 

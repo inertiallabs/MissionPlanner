@@ -2339,6 +2339,26 @@
         <param index="6">Empty.</param>
         <param index="7">Empty.</param>
       </entry>
+      <entry value="33012" name="MAV_CMD_EXTERNAL_AHRS_ENABLE_SPOOFING_DETECTION" hasLocation="false" isDestination="false">
+        <description>Send command "enable spoofing detection" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33013" name="MAV_CMD_EXTERNAL_AHRS_DISABLE_SPOOFING_DETECTION" hasLocation="false" isDestination="false">
+        <description>Send command "disable spoofing detection" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
     </enum>
     <enum name="MAV_DATA_STREAM">
       <description>A data stream is not a fixed set of messages, but rather a
