@@ -28,11 +28,15 @@ namespace MissionPlanner.Controls
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.EAHRSButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BUT_externalAHRS_spoofing_detection_disable = new MissionPlanner.Controls.MyButton();
+            this.BUT_externalAHRS_spoofing_detection_enable = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_gnss_enable = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_gnss_disable = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_vg3dclb_flight_start = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_vg3dclb_flight_stop = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_start = new MissionPlanner.Controls.MyButton();
+            this.ContextMenu_debug = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenu_debug_Item_debug = new System.Windows.Forms.ToolStripMenuItem();
             this.BUT_externalAHRS_stop = new MissionPlanner.Controls.MyButton();
             this.BUT_externalAHRS_aiding_data = new MissionPlanner.Controls.MyButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,6 +57,7 @@ namespace MissionPlanner.Controls
             this.updateTimer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.EAHRSButtonsTableLayoutPanel.SuspendLayout();
+            this.ContextMenu_debug.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_gcs_distance_around)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -92,6 +97,8 @@ namespace MissionPlanner.Controls
             this.EAHRSButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.37615F));
             this.EAHRSButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.EAHRSButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
+            this.EAHRSButtonsTableLayoutPanel.Controls.Add(this.BUT_externalAHRS_spoofing_detection_disable, 1, 1);
+            this.EAHRSButtonsTableLayoutPanel.Controls.Add(this.BUT_externalAHRS_spoofing_detection_enable, 0, 1);
             this.EAHRSButtonsTableLayoutPanel.Controls.Add(this.BUT_externalAHRS_gnss_enable, 0, 0);
             this.EAHRSButtonsTableLayoutPanel.Controls.Add(this.BUT_externalAHRS_gnss_disable, 1, 0);
             this.EAHRSButtonsTableLayoutPanel.Controls.Add(this.BUT_externalAHRS_vg3dclb_flight_start, 2, 0);
@@ -109,6 +116,34 @@ namespace MissionPlanner.Controls
             this.EAHRSButtonsTableLayoutPanel.Size = new System.Drawing.Size(286, 188);
             this.EAHRSButtonsTableLayoutPanel.TabIndex = 1;
             // 
+            // BUT_externalAHRS_spoofing_detection_disable
+            // 
+            this.BUT_externalAHRS_spoofing_detection_disable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BUT_externalAHRS_spoofing_detection_disable.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BUT_externalAHRS_spoofing_detection_disable.Location = new System.Drawing.Point(70, 67);
+            this.BUT_externalAHRS_spoofing_detection_disable.Name = "BUT_externalAHRS_spoofing_detection_disable";
+            this.BUT_externalAHRS_spoofing_detection_disable.Size = new System.Drawing.Size(64, 39);
+            this.BUT_externalAHRS_spoofing_detection_disable.TabIndex = 7;
+            this.BUT_externalAHRS_spoofing_detection_disable.Text = "Disable spoofing detection";
+            this.BUT_externalAHRS_spoofing_detection_disable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_spoofing_detection_disable.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_spoofing_detection_disable.Visible = false;
+            this.BUT_externalAHRS_spoofing_detection_disable.Click += new System.EventHandler(this.BUT_externalAHRS_spoofing_detection_disable_Click);
+            // 
+            // BUT_externalAHRS_spoofing_detection_enable
+            // 
+            this.BUT_externalAHRS_spoofing_detection_enable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BUT_externalAHRS_spoofing_detection_enable.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BUT_externalAHRS_spoofing_detection_enable.Location = new System.Drawing.Point(3, 67);
+            this.BUT_externalAHRS_spoofing_detection_enable.Name = "BUT_externalAHRS_spoofing_detection_enable";
+            this.BUT_externalAHRS_spoofing_detection_enable.Size = new System.Drawing.Size(61, 39);
+            this.BUT_externalAHRS_spoofing_detection_enable.TabIndex = 6;
+            this.BUT_externalAHRS_spoofing_detection_enable.Text = "Enable spoofing detection";
+            this.BUT_externalAHRS_spoofing_detection_enable.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
+            this.BUT_externalAHRS_spoofing_detection_enable.UseVisualStyleBackColor = true;
+            this.BUT_externalAHRS_spoofing_detection_enable.Visible = false;
+            this.BUT_externalAHRS_spoofing_detection_enable.Click += new System.EventHandler(this.BUT_externalAHRS_spoofing_detection_enable_Click);
+            // 
             // BUT_externalAHRS_gnss_enable
             // 
             this.BUT_externalAHRS_gnss_enable.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,6 +159,7 @@ namespace MissionPlanner.Controls
             // 
             // BUT_externalAHRS_gnss_disable
             // 
+            this.BUT_externalAHRS_gnss_disable.ContextMenuStrip = this.ContextMenu_debug;
             this.BUT_externalAHRS_gnss_disable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BUT_externalAHRS_gnss_disable.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BUT_externalAHRS_gnss_disable.Location = new System.Drawing.Point(70, 3);
@@ -173,6 +209,22 @@ namespace MissionPlanner.Controls
             this.BUT_externalAHRS_start.TextColorNotEnabled = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(87)))), ((int)(((byte)(4)))));
             this.BUT_externalAHRS_start.UseVisualStyleBackColor = true;
             this.BUT_externalAHRS_start.Click += new System.EventHandler(this.BUT_externalAHRS_start_Click);
+            // 
+            // ContextMenu_debug
+            // 
+            this.ContextMenu_debug.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ContextMenu_debug.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenu_debug_Item_debug});
+            this.ContextMenu_debug.Name = "ContextMenu_debug";
+            this.ContextMenu_debug.Size = new System.Drawing.Size(124, 28);
+            // 
+            // contextMenu_debug_Item_debug
+            // 
+            this.contextMenu_debug_Item_debug.CheckOnClick = true;
+            this.contextMenu_debug_Item_debug.Name = "contextMenu_debug_Item_debug";
+            this.contextMenu_debug_Item_debug.Size = new System.Drawing.Size(123, 24);
+            this.contextMenu_debug_Item_debug.Text = "Debug";
+            this.contextMenu_debug_Item_debug.Click += new System.EventHandler(this.contextMenu_debug_Item_debug_Click);
             // 
             // BUT_externalAHRS_stop
             // 
@@ -431,6 +483,7 @@ namespace MissionPlanner.Controls
             this.Size = new System.Drawing.Size(565, 252);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.EAHRSButtonsTableLayoutPanel.ResumeLayout(false);
+            this.ContextMenu_debug.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_gcs_distance_around)).EndInit();
@@ -456,6 +509,30 @@ namespace MissionPlanner.Controls
                 updateTimer.Stop();
                 resetInsGnssPosDiffValues();
                 resetInsPosAccuracyValues();
+            }
+        }
+
+        private void BUT_externalAHRS_spoofing_detection_enable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_SPOOFING_DETECTION, 0, 0, 0, 0, 0, 0, 0);
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
+            }
+        }
+
+        private void BUT_externalAHRS_spoofing_detection_disable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid, MainV2.comPort.MAV.compid, MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_SPOOFING_DETECTION, 0, 0, 0, 0, 0, 0, 0);
+            }
+            catch (Exception ex)
+            {
+                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
             }
         }
 
@@ -660,6 +737,12 @@ namespace MissionPlanner.Controls
             quickView4.number = 0D;
             quickView5.number = 0D;
             quickView6.number = 0D;
+        }
+
+        private void contextMenu_debug_Item_debug_Click(object sender, EventArgs e)
+        {
+            this.BUT_externalAHRS_spoofing_detection_enable.Visible = contextMenu_debug_Item_debug.Checked;
+            this.BUT_externalAHRS_spoofing_detection_disable.Visible = contextMenu_debug_Item_debug.Checked;
         }
     }
 }

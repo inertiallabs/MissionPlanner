@@ -45,5 +45,9 @@
         private QuickView quickView5;
         private QuickView quickView6;
         private System.Windows.Forms.Timer updateTimer;
+        private MyButton BUT_externalAHRS_spoofing_detection_enable;
+        private MyButton BUT_externalAHRS_spoofing_detection_disable;
+        private System.Windows.Forms.ContextMenuStrip ContextMenu_debug;
+        private System.Windows.Forms.ToolStripMenuItem contextMenu_debug_Item_debug;
     }
 }
