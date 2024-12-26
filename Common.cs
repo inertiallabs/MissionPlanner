@@ -257,6 +257,20 @@ namespace MissionPlanner
                     Tag = MAV
                 };
             }
+            else if (MAV.aptype == MAVLink.MAV_TYPE.SURFACE_BOAT)
+            {
+                return new GMapMarkerBoat(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }    
             else
             {
                 return new GMapMarkerPlane(
