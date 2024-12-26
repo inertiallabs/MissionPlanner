@@ -17,6 +17,7 @@ namespace MissionPlanner.Maps
         float cog = -1;
         float target = -1;
         float nav_bearing = -1;
+        private int which = 0;
 
         public GMapMarkerBoat(PointLatLng p, float heading, float cog, float nav_bearing, float target)
             : base(p)
@@ -27,6 +28,17 @@ namespace MissionPlanner.Maps
             this.nav_bearing = nav_bearing;
             Size = SizeSt;
         }
+
+        public GMapMarkerBoat(int which, PointLatLng p, float heading, float cog, float nav_bearing, float target)
+            : this(p, heading, cog, nav_bearing, target)
+        {
+            this.which = which;
+        }
+
+        public float Heading { get => heading; set => heading = value; }
+        public float Cog { get => cog; set => cog = value; }
+        public float Target { get => target; set => target = value; }
+        public float Nav_bearing { get => nav_bearing; set => nav_bearing = value; }
 
         public override void OnRender(IGraphics g)
         {
@@ -45,8 +57,8 @@ namespace MissionPlanner.Maps
             {
                 if (DisplayHeading)
                     g.DrawLine(new Pen(Color.Red, 2), 0.0f, 0.0f,
-                        (float) Math.Cos((heading - 90) * MathHelper.deg2rad) * length,
-                        (float) Math.Sin((heading - 90) * MathHelper.deg2rad) * length);
+                        (float) Math.Cos((Heading - 90) * MathHelper.deg2rad) * length,
+                        (float) Math.Sin((Heading - 90) * MathHelper.deg2rad) * length);
             }
             catch
             {
@@ -54,28 +66,28 @@ namespace MissionPlanner.Maps
 
             if (DisplayNavBearing)
                 g.DrawLine(new Pen(Color.Green, 2), 0.0f, 0.0f,
-                    (float) Math.Cos((nav_bearing - 90) * MathHelper.deg2rad) * length,
-                    (float) Math.Sin((nav_bearing - 90) * MathHelper.deg2rad) * length);
+                    (float) Math.Cos((Nav_bearing - 90) * MathHelper.deg2rad) * length,
+                    (float) Math.Sin((Nav_bearing - 90) * MathHelper.deg2rad) * length);
             if (DisplayCOG)
                 g.DrawLine(new Pen(Color.Black, 2), 0.0f, 0.0f,
-                    (float) Math.Cos((cog - 90) * MathHelper.deg2rad) * length,
-                    (float) Math.Sin((cog - 90) * MathHelper.deg2rad) * length);
+                    (float) Math.Cos((Cog - 90) * MathHelper.deg2rad) * length,
+                    (float) Math.Sin((Cog - 90) * MathHelper.deg2rad) * length);
             if (DisplayTarget)
                 g.DrawLine(new Pen(Color.Orange, 2), 0.0f, 0.0f,
-                    (float) Math.Cos((target - 90) * MathHelper.deg2rad) * length,
-                    (float) Math.Sin((target - 90) * MathHelper.deg2rad) * length);
+                    (float) Math.Cos((Target - 90) * MathHelper.deg2rad) * length,
+                    (float) Math.Sin((Target - 90) * MathHelper.deg2rad) * length);
             // anti NaN
 
             try
             {
-                g.RotateTransform(heading);
+                g.RotateTransform(Heading);
             }
             catch
             {
             }
 
 #if NET472_OR_GREATER
-            var img = Resources.boat;
+            var img =  (which == 2) ? Resources.boat_2 : Resources.boat;
             var ia = new System.Drawing.Imaging.ImageAttributes();
             if(IsTransparent)
             {
