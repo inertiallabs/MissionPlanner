@@ -2201,6 +2201,127 @@
         <param index="6">Empty.</param>
         <param index="7">Empty.</param>
       </entry>
+      <!-- External AHRS commands (32000 to 32099) -->
+      <entry value="33000" name="MAV_CMD_EXTERNAL_AHRS_START_UDD" hasLocation="false" isDestination="false">
+        <description>Send command "start sending user defined data" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33001" name="MAV_CMD_EXTERNAL_AHRS_STOP" hasLocation="false" isDestination="false">
+        <description>Send command "stop sending data" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33002" name="MAV_CMD_EXTERNAL_AHRS_ENABLE_GNSS" hasLocation="false" isDestination="false">
+        <description>Send command "enable GNSS" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33003" name="MAV_CMD_EXTERNAL_AHRS_DISABLE_GNSS" hasLocation="false" isDestination="false">
+        <description>Send command "disable GNSS" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33004" name="MAV_CMD_EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT" hasLocation="false" isDestination="false">
+        <description>Send command "start vg3d calibration in flight" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33005" name="MAV_CMD_EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT" hasLocation="false" isDestination="false">
+        <description>Send command "stop vg3d calibration in flight" to external AHRS</description>
+        <param index="1">Empty.</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33006" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION" hasLocation="true" isDestination="false">
+        <description>Send external position aiding data to AHRS</description>
+        <param index="1" label="Latency" units="s">Latency</param>
+        <param index="2" label="LatitudeStd" units="m">Latitude STD</param>
+        <param index="3" label="LongitudeStd" units="m">Longitude STD</param>
+        <param index="4" label="AltitudeStd" units="m">Altitude STD</param>
+        <param index="5" label="Latitude" units="degE7">Latitude</param>
+        <param index="6" label="Longitude" units="degE7">Longitude</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33007" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION" hasLocation="true" isDestination="false">
+        <description>Send external horizontal position aiding data to AHRS</description>
+        <param index="1" label="LatitudeStd" units="m">Latitude STD</param>
+        <param index="2" label="LongitudeStd" units="m">Longitude STD</param>
+        <param index="3" label="Latency" units="s">Latency</param>
+        <param index="4">Empty.</param>
+        <param index="5" label="Latitude" units="degE7">Latitude</param>
+        <param index="6" label="Longitude" units="degE7">Longitude</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33008" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE" hasLocation="false" isDestination="false">
+        <description>Send external altitude aiding data to AHRS</description>
+        <param index="1" label="AltitudeStd" units="m">Altitude STD</param>
+        <param index="2">Empty.</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33009" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_WIND" hasLocation="false" isDestination="false">
+        <description>Send wind aiding data to AHRS</description>
+        <param index="1" label="Direction">Direction</param>
+        <param index="2" label="Speed">Speed</param>
+        <param index="3" label="SpeedStd">Speed STD</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
+      <entry value="33010" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR" hasLocation="false" isDestination="false">
+        <description>Send aiding data ambient air data to AHRS</description>
+        <param index="1" label="Temperature">Temperature</param>
+        <param index="2" label="Pressure">Pressure</param>
+        <param index="3">Empty.</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7" label="Altitude" units="m">Altitude</param>
+      </entry>
+      <entry value="33011" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING" hasLocation="false" isDestination="false">
+        <description>Send aiding data external heading to AHRS</description>
+        <param index="1" label="Heading" units="deg">Heading</param>
+        <param index="2" label="HeadingStd" units="deg">Heading STD</param>
+        <param index="3" label="Latency" units="s">Latency</param>
+        <param index="4">Empty.</param>
+        <param index="5">Empty.</param>
+        <param index="6">Empty.</param>
+        <param index="7">Empty.</param>
+      </entry>
     </enum>
     <enum name="MAV_DATA_STREAM">
       <description>A data stream is not a fixed set of messages, but rather a
@@ -6474,6 +6595,26 @@
       <field type="uint8_t" name="operation" enum="CAN_FILTER_OP">what operation to perform on the filter list. See CAN_FILTER_OP enum.</field>
       <field type="uint8_t" name="num_ids">number of IDs in filter list</field>
       <field type="uint16_t[16]" name="ids">filter IDs, length num_ids</field>
+    </message>
+    <message id="699" name="AHRS_ADDITIONAL_RAW_INFO">
+      <description>Additional GPS and INS parameters.</description>
+      <field type="int32_t" name="lat_raw" units="degE7">Latitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="lon_raw" units="degE7">Longitude (WGS84, EGM96 ellipsoid)</field>
+      <field type="int32_t" name="alt_raw" units="mm">Altitude (MSL). Positive for up. Note that virtually all GPS modules provide the MSL altitude in addition to the WGS84 altitude.</field>
+      <field type="uint16_t" name="track_over_ground_raw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 36000 for north.</field>
+      <field type="uint8_t" name="gps_raw_status">Status for GPS data</field>
+      <field type="uint32_t" name="ins_lat_accuracy" units="mm">INS latitude accuracy.</field>
+      <field type="uint32_t" name="ins_lng_accuracy" units="mm">INS longitude accuracy.</field>
+      <field type="uint32_t" name="ins_alt_accuracy" units="mm">INS altitude accuracy.</field>
+    </message>
+    <!-- EAHRS messages -->
+    <message id="700" name="EAHRS_STATUS_INFO">
+      <description>Info about EAHRS status.</description>
+      <field type="uint16_t" name="status1" display="bitmask">Status flags1.</field>
+      <field type="uint16_t" name="status2" display="bitmask">Status flags2.</field>
+      <field type="uint16_t" name="status3" display="bitmask">Status flags3.</field>
+      <field type="uint16_t" name="status4" display="bitmask">Status flags4.</field>
+      <field type="uint16_t" name="status5" display="bitmask">Status flags5.</field>
     </message>
     <!-- Rover specific messages -->
     <message id="9000" name="WHEEL_DISTANCE">
