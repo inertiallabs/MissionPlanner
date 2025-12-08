@@ -135,6 +135,8 @@ namespace MissionPlanner.GCSViews
         double LogPlayBackSpeed = 1.0;
         GMapMarker marker;
 
+        private AidingData aidingDataDialog = new AidingData();
+
         int messagecount;
 
         //whether or not the output console has already started
@@ -6674,6 +6676,12 @@ namespace MissionPlanner.GCSViews
 
             // Pass `this` to keep the pop-out always on top
             form.Show(this);
+        }
+
+        private void BUT_externalAHRS_aiding_data_Click(object sender, EventArgs e)
+        {
+            ThemeManager.ApplyThemeTo(aidingDataDialog);
+            aidingDataDialog.Show();
         }
     }
 }
