@@ -366,6 +366,7 @@ namespace MissionPlanner.GCSViews
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("datetime", this.bindingSourceHud, "datetime", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("disttowp", this.bindingSourceHud, "wp_dist", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("ekfstatus", this.bindingSourceHud, "ekfstatus", true));
+            this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("eahrsstatus", this.bindingSourceHud, "eahrsStatus", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("failsafe", this.bindingSourceHud, "failsafe", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("gpsfix", this.bindingSourceHud, "gpsstatus", true));
             this.hud1.DataBindings.Add(new System.Windows.Forms.Binding("gpsfix2", this.bindingSourceHud, "gpsstatus2", true));
@@ -407,6 +408,7 @@ namespace MissionPlanner.GCSViews
             this.hud1.distunit = null;
             resources.ApplyResources(this.hud1, "hud1");
             this.hud1.ekfstatus = 0F;
+            this.hud1.eahrsstatus = ((uint)(0u));
             this.hud1.failsafe = false;
             this.hud1.gpsfix = 0F;
             this.hud1.gpsfix2 = 0F;
@@ -452,6 +454,7 @@ namespace MissionPlanner.GCSViews
             this.hud1.ekfclick += new System.EventHandler(this.hud1_ekfclick);
             this.hud1.vibeclick += new System.EventHandler(this.hud1_vibeclick);
             this.hud1.prearmclick += new System.EventHandler(this.hud1_prearmclick);
+            this.hud1.eahrsclick += new System.EventHandler(this.hud1_eahrsclick);
             this.hud1.Load += new System.EventHandler(this.hud1_Load);
             this.hud1.DoubleClick += new System.EventHandler(this.hud1_DoubleClick);
             this.hud1.Resize += new System.EventHandler(this.hud1_Resize);
