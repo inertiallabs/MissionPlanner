@@ -1,10 +1,11 @@
-﻿using GMap.NET;
+using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using log4net;
 using MissionPlanner.ArduPilot;
 using MissionPlanner.Maps;
 using MissionPlanner.Utilities;
+using NetTopologySuite.Algorithm;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -225,6 +226,72 @@ namespace MissionPlanner
                 };
             }
         }
+
+        public static GMapMarker getGPSMarker(MAVState MAV, GMapOverlay overlay = null)
+        {
+            PointLatLng location = MAV.cs.Location;
+            location.Lat = MAV.cs.gps_lat_raw;
+            location.Lng = MAV.cs.gps_lng_raw;
+
+            if (MAV.aptype == MAVLink.MAV_TYPE.GROUND_ROVER)
+            {
+                return new GMapMarkerRover(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
+            else if (MAV.cs.firmware == Firmwares.ArduCopter2 || MAV.aptype == MAVLink.MAV_TYPE.QUADROTOR)
+            {
+                return new GMapMarkerQuad(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.sysid)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
+            else if (MAV.aptype == MAVLink.MAV_TYPE.SURFACE_BOAT)
+            {
+                return new GMapMarkerBoat(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing)
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }    
+            else
+            {
+                return new GMapMarkerPlane(
+                    2, // blue GPS tag
+                    location,
+                    (float)MAV.cs.gps_track_over_ground_raw,
+                    MAV.cs.groundcourse,
+                    MAV.cs.nav_bearing,
+                    MAV.cs.target_bearing,
+                    (float)CurrentState.fromDistDisplayUnit(MAV.cs.radius))
+                {
+                    DisplayLines = false,
+                    Tag = MAV
+                };
+            }
+        }
+
         public static Form LoadingBox(string title, string promptText)
         {
             Form form = new Form();
