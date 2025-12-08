@@ -5539,8 +5539,14 @@
   <data name="gimbalVideoToolStripMenuItem.Text" xml:space="preserve">
     <value>Gimbal Video</value>
   </data>
+  <data name="imHereToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 24</value>
+  </data>
+  <data name="imHereToolStripMenuItem.Text" xml:space="preserve">
+    <value>I'm here</value>
+  </data>
   <data name="contextMenuStripMap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 290</value>
+    <value>221, 316</value>
   </data>
   <data name="&gt;&gt;contextMenuStripMap.Name" xml:space="preserve">
     <value>contextMenuStripMap</value>
@@ -6461,6 +6467,12 @@
     <value>gimbalVideoPopOutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;gimbalVideoPopOutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imHereToolStripMenuItem.Name" xml:space="preserve">
+    <value>imHereToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;imHereToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">

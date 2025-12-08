@@ -219,6 +219,7 @@ namespace MissionPlanner.GCSViews
             this.gimbalVideoMiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gimbalVideoPopOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.imHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.but_disablejoystick = new MissionPlanner.Controls.MyButton();
             this.Zoomlevel = new System.Windows.Forms.NumericUpDown();
             this.distanceBar1 = new MissionPlanner.Controls.DistanceBar();
@@ -2547,7 +2548,8 @@ namespace MissionPlanner.GCSViews
             this.takeOffToolStripMenuItem,
             this.onOffCameraOverlapToolStripMenuItem,
             this.jumpToTagToolStripMenuItem,
-            this.gimbalVideoToolStripMenuItem});
+            this.gimbalVideoToolStripMenuItem,
+            this.imHereToolStripMenuItem});
             this.contextMenuStripMap.Name = "contextMenuStrip1";
             resources.ApplyResources(this.contextMenuStripMap, "contextMenuStripMap");
             // 
@@ -2698,6 +2700,12 @@ namespace MissionPlanner.GCSViews
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            // 
+            // imHereToolStripMenuItem
+            //
+            this.imHereToolStripMenuItem.Name = "imHereToolStripMenuItem";
+            resources.ApplyResources(this.imHereToolStripMenuItem, "imHereToolStripMenuItem");
+            this.imHereToolStripMenuItem.Click += new System.EventHandler(this.imHereToolStripMenuItem_Click);
             // 
             // but_disablejoystick
             // 
@@ -3236,5 +3244,6 @@ namespace MissionPlanner.GCSViews
         private ToolStripMenuItem gimbalVideoPopOutToolStripMenuItem;
         public System.Windows.Forms.TabPage tabExternalAHRS;
         private Controls.EAHRSControl eahrsControl1;
+        private ToolStripMenuItem imHereToolStripMenuItem;
     }
 }
