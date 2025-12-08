@@ -722,6 +722,8 @@ namespace MissionPlanner.GCSViews
             TabListDisplay.Add(tabAuxFunction.Name, MainV2.DisplayConfiguration.displayAuxFunctionTab);
 
             TabListDisplay.Add(tabPayload.Name, MainV2.DisplayConfiguration.displayPayloadTab);
+
+            TabListDisplay.Add(tabExternalAHRS.Name, MainV2.DisplayConfiguration.displayExternalAHRSTab);
         }
 
         private void loadTabControlActions()

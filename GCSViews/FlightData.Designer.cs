@@ -189,6 +189,8 @@ namespace MissionPlanner.GCSViews
             this.but_bintolog = new MissionPlanner.Controls.MyButton();
             this.but_dflogtokml = new MissionPlanner.Controls.MyButton();
             this.BUT_loganalysis = new MissionPlanner.Controls.MyButton();
+            this.tabExternalAHRS = new System.Windows.Forms.TabPage();
+            this.eahrsControl1 = new MissionPlanner.Controls.EAHRSControl();
             this.panel_persistent = new System.Windows.Forms.Panel();
             this.tableMap = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -284,6 +286,8 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).BeginInit();
             this.tablogbrowse.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tabExternalAHRS.SuspendLayout();
+            this.eahrsControl1.SuspendLayout();
             this.tableMap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -605,6 +609,7 @@ namespace MissionPlanner.GCSViews
             this.tabControlactions.Controls.Add(this.tabPayload);
             this.tabControlactions.Controls.Add(this.tabTLogs);
             this.tabControlactions.Controls.Add(this.tablogbrowse);
+            this.tabControlactions.Controls.Add(this.tabExternalAHRS);
             resources.ApplyResources(this.tabControlactions, "tabControlactions");
             this.tabControlactions.Name = "tabControlactions";
             this.tabControlactions.SelectedIndex = 0;
@@ -2460,6 +2465,18 @@ namespace MissionPlanner.GCSViews
             this.BUT_loganalysis.UseVisualStyleBackColor = true;
             this.BUT_loganalysis.Click += new System.EventHandler(this.BUT_loganalysis_Click);
             // 
+            // tabExternalAHRS
+            // 
+            resources.ApplyResources(this.tabExternalAHRS, "tabExternalAHRS");
+            this.tabExternalAHRS.Controls.Add(this.eahrsControl1);
+            this.tabExternalAHRS.Name = "tabExternalAHRS";
+            this.tabExternalAHRS.UseVisualStyleBackColor = true;
+            // 
+            // eahrsControl1
+            // 
+            resources.ApplyResources(this.eahrsControl1, "eahrsControl1");
+            this.eahrsControl1.Name = "eahrsControl1";
+            // 
             // panel_persistent
             // 
             resources.ApplyResources(this.panel_persistent, "panel_persistent");
@@ -2959,6 +2976,10 @@ namespace MissionPlanner.GCSViews
             ((System.ComponentModel.ISupportInitialize)(this.tracklog)).EndInit();
             this.tablogbrowse.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tabExternalAHRS.ResumeLayout(false);
+            this.tabExternalAHRS.PerformLayout();
+            this.eahrsControl1.ResumeLayout(false);
+            this.eahrsControl1.PerformLayout();
             this.tableMap.ResumeLayout(false);
             this.tableMap.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -3210,5 +3231,7 @@ namespace MissionPlanner.GCSViews
         private ToolStripMenuItem gimbalVideoFullSizedToolStripMenuItem;
         private ToolStripMenuItem gimbalVideoMiniToolStripMenuItem;
         private ToolStripMenuItem gimbalVideoPopOutToolStripMenuItem;
+        public System.Windows.Forms.TabPage tabExternalAHRS;
+        private Controls.EAHRSControl eahrsControl1;
     }
 }

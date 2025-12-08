@@ -5182,6 +5182,66 @@
   <data name="&gt;&gt;tablogbrowse.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="tabExternalAHRS.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="eahrsControl1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="eahrsControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="eahrsControl1.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>562, 250</value>
+  </data>
+  <data name="eahrsControl1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>562, 250</value>
+  </data>
+  <data name="eahrsControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>562, 250</value>
+  </data>
+  <data name="eahrsControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;eahrsControl1.Name" xml:space="preserve">
+    <value>eahrsControl1</value>
+  </data>
+  <data name="&gt;&gt;eahrsControl1.Type" xml:space="preserve">
+    <value>MissionPlanner.Controls.EAHRSControl, MissionPlanner, Version=1.3.9046.33088, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;eahrsControl1.Parent" xml:space="preserve">
+    <value>tabExternalAHRS</value>
+  </data>
+  <data name="&gt;&gt;eahrsControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabExternalAHRS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
+  <data name="tabExternalAHRS.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabExternalAHRS.Size" type="System.Drawing.Size, System.Drawing">
+    <value>290, 175</value>
+  </data>
+  <data name="tabExternalAHRS.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="tabExternalAHRS.Text" xml:space="preserve">
+    <value>External AHRS</value>
+  </data>
+  <data name="&gt;&gt;tabExternalAHRS.Name" xml:space="preserve">
+    <value>tabExternalAHRS</value>
+  </data>
+  <data name="&gt;&gt;tabExternalAHRS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabExternalAHRS.Parent" xml:space="preserve">
+    <value>tabControlactions</value>
+  </data>
+  <data name="&gt;&gt;tabExternalAHRS.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
   <data name="tabControlactions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
