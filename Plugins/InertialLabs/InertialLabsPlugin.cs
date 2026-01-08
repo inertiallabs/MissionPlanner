@@ -11,6 +11,7 @@ namespace InertialLabs
     {
         private Embedders.MAVLinkMessages mavLinkMessagesEmbedder;
         private Embedders.EahrsTab eahrsTabEmbedder;
+        private Embedders.EahrsHudStatus eahrsHudStatusEmbedder;
 
         public override string Name => "Inertial Labs Plugin";
         public override string Version => "0.1";
@@ -26,6 +27,8 @@ namespace InertialLabs
             eahrsTabEmbedder = new Embedders.EahrsTab(this);
             eahrsTabEmbedder.Init();
 
+            eahrsHudStatusEmbedder = new Embedders.EahrsHudStatus(this);
+            eahrsHudStatusEmbedder.Init();
             return true;
         }
 

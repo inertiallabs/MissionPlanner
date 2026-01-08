@@ -17,14 +17,11 @@ namespace InertialLabs.Forms
             eahrsHudStatusRef = eahrsHudStatus;
 
             InitializeComponent();
-
+            this.Height = 700;
             MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(this);
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             timer1.Start();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
         }
 
         private void timer1_Tick(object sender, EventArgs e)

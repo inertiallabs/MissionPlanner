@@ -1,8 +1,6 @@
 using MissionPlanner;
-using MissionPlanner.Attributes;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 
@@ -10,6 +8,10 @@ namespace InertialLabs.Embedders
 {
     public class EahrsHudStatus : EmbedderInterface
     {
+        private InertialLabsPlugin inertialLabsPluginRef;
+        private Timer loadWaitTimer;
+        private System.Windows.Forms.Label eahrsLabel;
+
         public uint eahrsStatusResultValue { get; set; }
         public uint eahrsStatusValue1 { get; set; }
         public uint eahrsStatusValue2 { get; set; }
@@ -19,10 +21,15 @@ namespace InertialLabs.Embedders
 
         InertialLabs.Forms.EAHRSStatus eahrsStatus;
 
+        public EahrsHudStatus(InertialLabsPlugin inertialLabsPlugin)
+        {
+            inertialLabsPluginRef = inertialLabsPlugin;
+            loadWaitTimer = new Timer();
+        }
+
         public override bool Init()
         {
-            // TODO: remove Hardcode 5
-            eahrsStatus = new InertialLabs.Forms.EAHRSStatus(this, 5);
+            EmbedInUi();
 
             // this needs to be set per "comport" - prevent any duplicates
             MainV2.comPort.OnPacketReceived -= MavlinkMessageHandler;
@@ -31,11 +38,80 @@ namespace InertialLabs.Embedders
             return true;
         }
 
+        private void EmbedInUi()
+        {
+            eahrsLabel = new System.Windows.Forms.Label
+            {
+                Name = "eahrsLabel",
+                Tag = "custom",
+                Text = "EAHRS",
+                TextAlign = ContentAlignment.MiddleCenter,
+                BackColor = Color.DarkRed,
+                ForeColor = Color.White,
+                AutoSize = true,
+                ImeMode = ImeMode.NoControl,
+                Cursor = Cursors.Hand,
+            };
+
+            eahrsLabel.Click += (obj, eventArgs) =>
+            {
+                if (eahrsStatus == null || eahrsStatus.IsDisposed)
+                {
+                    eahrsStatus = new InertialLabs.Forms.EAHRSStatus(this, 5);
+                    eahrsStatus.Show();
+                }
+                else
+                {
+                    eahrsStatus.BringToFront();
+                }
+            };
+
+            // Wait the full loading of the original UI
+            loadWaitTimer.Interval = 1000;
+            loadWaitTimer.Tick += (s, e) =>
+            {
+                var flightData = inertialLabsPluginRef.Host.MainForm.FlightData;
+                if (flightData != null)
+                {
+                    var hud = MissionPlanner.GCSViews.FlightData.myhud;
+
+                    int fontsize = hud.Height / 30;
+                    int fontoffset = fontsize - 10;
+
+                    eahrsLabel.Font = new Font(eahrsLabel.Font.FontFamily, fontsize, FontStyle.Bold);
+                    eahrsLabel.Location = new Point(
+                        (hud.Width - eahrsLabel.PreferredWidth) / 2,
+                        hud.Height - eahrsLabel.PreferredHeight - 4 * fontsize - 3 * fontoffset
+                    );
+
+                    hud.Resize += (obj, eventArgs) =>
+                    {
+                        var _hud = MissionPlanner.GCSViews.FlightData.myhud;
+                        int _fontsize = _hud.Height / 30;
+                        int _fontoffset = _fontsize - 10;
+
+                        eahrsLabel.Font = new Font(eahrsLabel.Font.FontFamily, _fontsize, FontStyle.Bold);
+
+                        eahrsLabel.Location = new Point(
+                            (_hud.Width - eahrsLabel.PreferredWidth) / 2,
+                            _hud.Height - eahrsLabel.PreferredHeight - 4 * _fontsize - 3 * _fontoffset
+                        );
+                    };
+
+                    hud.Controls.Add(eahrsLabel);
+                    eahrsLabel.BringToFront();
+
+                    loadWaitTimer.Stop();
+                }
+            };
+            loadWaitTimer.Start();
+        }
+
         private void MavlinkMessageHandler(object sender, global::MAVLink.MAVLinkMessage mavLinkMessage)
         {
             switch (mavLinkMessage.msgid)
             {
-                case (uint)MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
+                case (uint)InertialLabs.MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
                     {
                         var status = mavLinkMessage.ToStructure<MAVLink.mavlink_eahrs_status_info_t>();
                         eahrsStatusValue1 = status.status1;
@@ -50,6 +126,26 @@ namespace InertialLabs.Embedders
                     {
                     }
                     break;
+            }
+        }
+
+        public void UpdateEahrsLabelColor()
+        {
+            if (eahrsStatusResultValue >= 8)
+            {
+                eahrsLabel.BackColor = Color.DarkRed;
+            }
+            else if (eahrsStatusResultValue >= 4)
+            {
+                eahrsLabel.BackColor = Color.Orange;
+            }
+            else if (eahrsStatusResultValue >= 2)
+            {
+                eahrsLabel.BackColor = Color.DarkCyan;
+            }
+            else
+            {
+                eahrsLabel.BackColor = Color.Green;
             }
         }
 
@@ -200,6 +296,7 @@ namespace InertialLabs.Embedders
             }
 
             eahrsStatusResultValue = calculatedStatus;
+            UpdateEahrsLabelColor();
         }
     }
 }
