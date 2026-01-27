@@ -1,5 +1,6 @@
 using MissionPlanner;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Reflection;
@@ -12,7 +13,10 @@ namespace InertialLabs.Embedders
     {
         private InertialLabsPlugin inertialLabsPluginRef;
         private Timer loadWaitTimer;
+
         private ToolStripMenuItem imHereToolStripMenuItem;
+        private Label gpsPositionLabel;
+        private Label antennaDistanceLabel;
 
         public bool show_gps_raw_location = false;
         public bool show_ins_pos_estimation = false;
@@ -51,10 +55,56 @@ namespace InertialLabs.Embedders
             imHereToolStripMenuItem.Name = "imHereToolStripMenuItem";
             imHereToolStripMenuItem.Click += new System.EventHandler(this.imHereToolStripMenuItem_Click);
 
+            // Map agenda labels
+            gpsPositionLabel = new Label
+            {
+                Name = "gpsPositionLabel",
+                Tag = "custom",
+                Text = "GPS Position",
+                BackColor = Color.Black,
+                ForeColor = Color.Blue,
+                Anchor = (AnchorStyles.Bottom | AnchorStyles.Left),
+                AutoSize = true,
+                Size = new Size(86, 16),
+                ImeMode = ImeMode.NoControl
+            };
+
+            antennaDistanceLabel = new Label
+            {
+                Name = "antennaDistanceLabel",
+                Tag = "custom",
+                Text = "Antenna distance",
+                BackColor = Color.Black,
+                ForeColor = Color.Purple,
+                Anchor = (AnchorStyles.Bottom | AnchorStyles.Left),
+                AutoSize = true,
+                Size = new Size(110, 16),
+                ImeMode = ImeMode.NoControl
+            };
+
             // Wait the full loading of the original UI
             loadWaitTimer.Interval = 1000;
             loadWaitTimer.Tick += (s, e) =>
             {
+                var bottomLabelPanel = MissionPlanner.GCSViews.FlightData.instance
+                                       .Controls
+                                       .Find("splitContainer1", true)
+                                       .FirstOrDefault() is SplitContainer split
+                                       ? split.Panel2
+                                       : null;
+                if (bottomLabelPanel == null)
+                {
+                    Console.WriteLine("splitContainer1 not found in GCSViews.FlightData");
+                }
+                int desiredYOffsetFromBottom = 15;
+                int labelsY = bottomLabelPanel.Height - gpsPositionLabel.Height - desiredYOffsetFromBottom;
+                bottomLabelPanel.Controls.Add(gpsPositionLabel);
+                bottomLabelPanel.Controls.Add(antennaDistanceLabel);
+                gpsPositionLabel.Location = new Point(435, labelsY);
+                antennaDistanceLabel.Location = new Point(510, labelsY);
+                bottomLabelPanel.Controls.SetChildIndex(gpsPositionLabel, 6);
+                bottomLabelPanel.Controls.SetChildIndex(antennaDistanceLabel, 6);
+
                 var flightData = inertialLabsPluginRef.Host.MainForm.FlightData;
                 if (flightData != null)
                 {
