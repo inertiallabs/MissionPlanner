@@ -15,20 +15,6 @@ namespace InertialLabs.Embedders
         private Timer loadWaitTimer;
         private Timer tabUpdateTimer;
 
-        public bool show_gps_raw_location = false;
-        public bool show_ins_pos_estimation = false;
-
-        public uint gcs_distance_around { get; set; }
-
-        public bool is_gps_raw_valid = false;
-        public double gps_lat_raw { get; set; }
-        public double gps_lng_raw { get; set; }
-        public double gps_alt_raw { get; set; }
-        public double gps_track_over_ground_raw { get; set; }
-        public double ins_lat_accuracy { get; set; }
-        public double ins_lng_accuracy { get; set; }
-        public double ins_alt_accuracy { get; set; }
-
         private InertialLabs.Controls.EAHRSControl eahrsControl;
         private System.Windows.Forms.TabPage tabExternalAHRS;
 
@@ -140,14 +126,14 @@ namespace InertialLabs.Embedders
                     {
                         var ahrs_info = mavLinkMessage.ToStructure<MAVLink.mavlink_ahrs_additional_raw_info_t>();
 
-                        gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
-                        gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
-                        gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
-                        gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
-                        is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
-                        ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
-                        ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
-                        ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
+                        PluginState.gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
+                        PluginState.gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
+                        PluginState.gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
+                        PluginState.gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
+                        PluginState.is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
+                        PluginState.ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
+                        PluginState.ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
+                        PluginState.ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
                     }
                     break;
                 default:

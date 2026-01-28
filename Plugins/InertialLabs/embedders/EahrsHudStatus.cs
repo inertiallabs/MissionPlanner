@@ -12,13 +12,6 @@ namespace InertialLabs.Embedders
         private Timer loadWaitTimer;
         private System.Windows.Forms.Label eahrsLabel;
 
-        public uint eahrsStatusResultValue { get; set; }
-        public uint eahrsStatusValue1 { get; set; }
-        public uint eahrsStatusValue2 { get; set; }
-        public uint eahrsStatusValue3 { get; set; }
-        public uint eahrsStatusValue4 { get; set; }
-        public uint eahrsStatusValue5 { get; set; }
-
         InertialLabs.Forms.EAHRSStatus eahrsStatus;
 
         public EahrsHudStatus(InertialLabsPlugin inertialLabsPlugin)
@@ -114,11 +107,11 @@ namespace InertialLabs.Embedders
                 case (uint)InertialLabs.MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
                     {
                         var status = mavLinkMessage.ToStructure<MAVLink.mavlink_eahrs_status_info_t>();
-                        eahrsStatusValue1 = status.status1;
-                        eahrsStatusValue2 = status.status2;
-                        eahrsStatusValue3 = status.status3;
-                        eahrsStatusValue4 = status.status4;
-                        eahrsStatusValue5 = status.status5;
+                        PluginState.eahrsStatusValue1 = status.status1;
+                        PluginState.eahrsStatusValue2 = status.status2;
+                        PluginState.eahrsStatusValue3 = status.status3;
+                        PluginState.eahrsStatusValue4 = status.status4;
+                        PluginState.eahrsStatusValue5 = status.status5;
                         UpdateEahrsStatus();
                     }
                     break;
@@ -131,15 +124,15 @@ namespace InertialLabs.Embedders
 
         public void UpdateEahrsLabelColor()
         {
-            if (eahrsStatusResultValue >= 8)
+            if (PluginState.eahrsStatusResultValue >= 8)
             {
                 eahrsLabel.BackColor = Color.DarkRed;
             }
-            else if (eahrsStatusResultValue >= 4)
+            else if (PluginState.eahrsStatusResultValue >= 4)
             {
                 eahrsLabel.BackColor = Color.Orange;
             }
-            else if (eahrsStatusResultValue >= 2)
+            else if (PluginState.eahrsStatusResultValue >= 2)
             {
                 eahrsLabel.BackColor = Color.DarkCyan;
             }
@@ -170,7 +163,7 @@ namespace InertialLabs.Embedders
             // ILabs USW flags
             for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATED; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsStatusValue1 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue1 & bitvalue);
                 var currentflag = (MAVLink.ILABS_EAHRS_STATUS_FLAGS)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_STATUS_FLAGS), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
@@ -207,7 +200,7 @@ namespace InertialLabs.Embedders
             // ILabs USW2 flags
             for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsStatusValue2 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue2 & bitvalue);
                 var currentflag = (MAVLink.ILABS_EAHRS_STATUS_FLAGS2)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_STATUS_FLAGS2), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
@@ -239,7 +232,7 @@ namespace InertialLabs.Embedders
             // ILabs EAHRS ADU flags
             for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsStatusValue3 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue3 & bitvalue);
                 var currentflag = (MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_ADU_RESERVED_BIT"))
@@ -266,13 +259,13 @@ namespace InertialLabs.Embedders
             }
 
             // ILabs EAHRS GPS fix flag
-            if (eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.NO)
+            if (PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.NO)
             {
                 calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
             }
-            else if (eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_2D ||
-                 eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_3D ||
-                 eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.OTHER)
+            else if (PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_2D ||
+                 PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_3D ||
+                 PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.OTHER)
             {
             }
             else
@@ -281,13 +274,13 @@ namespace InertialLabs.Embedders
             }
 
             // ILabs EAHRS GPS spoofing flag
-            if (eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.INDICATED ||
-                eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.MULTIPLE_INDICATIONS)
+            if (PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.INDICATED ||
+                PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.MULTIPLE_INDICATIONS)
             {
                 calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
             }
-            else if (eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.UNKNOWN_OR_DEACTIVATED ||
-                 eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.NO_INDICATED)
+            else if (PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.UNKNOWN_OR_DEACTIVATED ||
+                 PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.NO_INDICATED)
             {
             }
             else
@@ -295,7 +288,7 @@ namespace InertialLabs.Embedders
                 calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
             }
 
-            eahrsStatusResultValue = calculatedStatus;
+            PluginState.eahrsStatusResultValue = calculatedStatus;
             UpdateEahrsLabelColor();
         }
     }

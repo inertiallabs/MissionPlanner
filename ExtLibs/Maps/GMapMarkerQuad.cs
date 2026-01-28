@@ -180,7 +180,7 @@ namespace MissionPlanner.Maps
                 g.DrawArc(thisgreenpen, 35f - 2.5f + Offset.X, 57f - 2.5f + Offset.Y, 5, 5, 0, 360);
                 g.DrawArc(thisgreenpen, 57f - 2.5f + Offset.X, 35f - 2.5f + Offset.Y, 5, 5, 0, 360);
                 g.DrawArc(thisgreenpen, 12f - 2.5f + Offset.X, 35f - 2.5f + Offset.Y, 5, 5, 0, 360);
-                                
+
                 g.DrawLine(thisbluepen, 35 + Offset.X, 12 + Offset.Y, 35 + Offset.X, 35 + Offset.Y);
                 g.DrawLine(thisgreenpen, 35 + Offset.X, 36 + Offset.Y, 35 + Offset.X, 57 + Offset.Y);
                 g.DrawLine(thisgreenpen, 57 + Offset.X, 35 + Offset.Y, 12 + Offset.X, 35 + Offset.Y);

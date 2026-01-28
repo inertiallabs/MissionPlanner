@@ -155,19 +155,19 @@ namespace InertialLabs.Controls
 
         private void CB_gnss_position_CheckedChanged(object sender, EventArgs e)
         {
-            if (CB_gnss_position.Checked && !eahrsTab.is_gps_raw_valid)
+            if (CB_gnss_position.Checked && !PluginState.is_gps_raw_valid)
             {
                 log.Warn("Can't enable GPS position. Invalid GPS status.");
             }
 
-            bool needEnable = CB_gnss_position.Checked && eahrsTab.is_gps_raw_valid;
+            bool needEnable = CB_gnss_position.Checked && PluginState.is_gps_raw_valid;
             CB_gnss_position.Checked = needEnable;
-            eahrsTab.show_gps_raw_location = needEnable;
+            PluginState.show_gps_raw_location = needEnable;
         }
 
         private void CB_ins_pos_estimation_CheckedChanged(object sender, EventArgs e)
         {
-            eahrsTab.show_ins_pos_estimation = CB_ins_pos_estimation.Checked;
+            PluginState.show_ins_pos_estimation = CB_ins_pos_estimation.Checked;
         }
 
         private void CB_gcs_distance_CheckedChanged(object sender, EventArgs e)
@@ -182,7 +182,7 @@ namespace InertialLabs.Controls
 
         private void updateTimer_Tick(object sender, EventArgs e)
         {
-            if (eahrsTab.is_gps_raw_valid)
+            if (PluginState.is_gps_raw_valid)
             {
                 calculateInsGnssPosDiff();
             }
@@ -191,9 +191,9 @@ namespace InertialLabs.Controls
                 resetInsGnssPosDiffValues();
             }
 
-            quickView4.number = eahrsTab.ins_lat_accuracy;
-            quickView5.number = eahrsTab.ins_lng_accuracy;
-            quickView6.number = -1 * eahrsTab.ins_alt_accuracy;
+            quickView4.number = PluginState.ins_lat_accuracy;
+            quickView5.number = PluginState.ins_lng_accuracy;
+            quickView6.number = -1 * PluginState.ins_alt_accuracy;
 
             BUT_externalAHRS_start.Enabled = !MainV2.comPort.MAV.cs.armed;
             BUT_externalAHRS_stop.Enabled = !MainV2.comPort.MAV.cs.armed;
@@ -201,23 +201,17 @@ namespace InertialLabs.Controls
 
         private void updateGcsDistanceAround()
         {
-            if (CB_gcs_distance.Checked)
-            {
-                eahrsTab.gcs_distance_around = (uint)NUD_gcs_distance_around.Value;
-            }
-            else
-            {
-                eahrsTab.gcs_distance_around = 0;
-            }
+            PluginState.show_gcs_distance_around = CB_gcs_distance.Checked;
+            PluginState.gcs_distance_around = (uint)NUD_gcs_distance_around.Value;
         }
 
         private void calculateInsGnssPosDiff()
         {
             const int r = 6371000; // constant for conversion from Spherical to Cartesian coordinates
 
-            if (eahrsTab.gps_lat_raw != 0)
+            if (PluginState.gps_lat_raw != 0)
             {
-                double delta_lat = (MainV2.comPort.MAV.cs.lat - eahrsTab.gps_lat_raw) * Math.PI / 180;
+                double delta_lat = (MainV2.comPort.MAV.cs.lat - PluginState.gps_lat_raw) * Math.PI / 180;
                 quickView1.number = delta_lat * r;
             }
             else
@@ -225,19 +219,19 @@ namespace InertialLabs.Controls
                 quickView1.number = 0D;
             }
 
-            if (eahrsTab.gps_lat_raw != 0 && eahrsTab.gps_lng_raw != 0)
+            if (PluginState.gps_lat_raw != 0 && PluginState.gps_lng_raw != 0)
             {
-                double delta_lng = (MainV2.comPort.MAV.cs.lng - eahrsTab.gps_lng_raw) * Math.PI / 180;
-                quickView2.number = delta_lng * r * Math.Cos(eahrsTab.gps_lat_raw * Math.PI / 180);
+                double delta_lng = (MainV2.comPort.MAV.cs.lng - PluginState.gps_lng_raw) * Math.PI / 180;
+                quickView2.number = delta_lng * r * Math.Cos(PluginState.gps_lat_raw * Math.PI / 180);
             }
             else
             {
                 quickView2.number = 0D;
             }
 
-            if (eahrsTab.gps_alt_raw != 0)
+            if (PluginState.gps_alt_raw != 0)
             {
-                double delta_alt = MainV2.comPort.MAV.cs.altasl - eahrsTab.gps_alt_raw;
+                double delta_alt = MainV2.comPort.MAV.cs.altasl - PluginState.gps_alt_raw;
                 quickView3.number = -1 * delta_alt;
             }
             else

@@ -39,7 +39,7 @@ namespace InertialLabs.Forms
             // ILabs USW flags
             for (uint bitvalue = 1; bitvalue <= (uint)(global::MAVLink.MAV_CMD)InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATED; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsHudStatusRef.eahrsStatusValue1 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue1 & bitvalue);
                 var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
@@ -92,7 +92,7 @@ namespace InertialLabs.Forms
             // ILabs USW2 flags
             for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsHudStatusRef.eahrsStatusValue2 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue2 & bitvalue);
                 var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
@@ -136,7 +136,7 @@ namespace InertialLabs.Forms
             // ILabs EAHRS ADU flags
             for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD; bitvalue = bitvalue << 1)
             {
-                uint currentbit = (eahrsHudStatusRef.eahrsStatusValue3 & bitvalue);
+                uint currentbit = (PluginState.eahrsStatusValue3 & bitvalue);
                 var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS), bitvalue.ToString());
 
                 if (currentflag.ToString().StartsWith("EAHRS_ADU_RESERVED_BIT"))
@@ -175,7 +175,7 @@ namespace InertialLabs.Forms
             }
 
             // ILabs EAHRS GPS fix flag
-            uint statusValue = eahrsHudStatusRef.eahrsStatusValue4;
+            uint statusValue = PluginState.eahrsStatusValue4;
             if (flowLayoutPanel1.Controls.Count <= idx)
             {
                 flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
@@ -201,7 +201,7 @@ namespace InertialLabs.Forms
             idx++;
 
             // ILabs EAHRS GPS spoofing flag
-            statusValue = eahrsHudStatusRef.eahrsStatusValue5;
+            statusValue = PluginState.eahrsStatusValue5;
             if (flowLayoutPanel1.Controls.Count <= idx)
             {
                 flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
