@@ -64,6 +64,11 @@ namespace InertialLabs.Forms
             headingExternalGroupBox.Enabled = headingExternalCheckBox.Checked;
         }
 
+        private void dvlCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            dvlGroupBox.Enabled = dvlCheckBox.Checked;
+        }
+
         private void BUT_sendtoahrs_Click(object sender, EventArgs e)
         {
             /* send mavlink commands */
@@ -139,6 +144,20 @@ namespace InertialLabs.Forms
                                                 (float)latencyValueHeadingExternal.Value,
                                                 0, 0, 0, 0);
                 }
+
+                if (dvlCheckBox.Checked)
+                {
+                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
+                                                MainV2.comPort.MAV.compid,
+                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_DVL,
+                                                (float)lateralVelocityDvl.Value * 1e3f,
+                                                (float)forwardVelocityDvl.Value * 1e3f,
+                                                (float)verticalVelocityDvl.Value * 1e3f,
+                                                (float)lateralVelocityStdDvl.Value * 1e3f,
+                                                (int)((float)forwardVelocityStdDvl.Value * 1e3f),
+                                                (int)((float)verticalVelocityStdDvl.Value * 1e3f),
+                                                (float)latencyDvl.Value * 1e3f);
+                }
             }
             catch (Exception ex)
             {
@@ -159,6 +178,7 @@ namespace InertialLabs.Forms
             windDataCheckBox.Checked = false;
             ambientAirDataCheckBox.Checked = false;
             headingExternalCheckBox.Checked = false;
+            dvlCheckBox.Checked = false;
         }
     }
 }

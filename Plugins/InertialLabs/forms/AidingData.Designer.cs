@@ -66,6 +66,22 @@
             this.longitudeLabelExtPos = new System.Windows.Forms.Label();
             this.latitudeLabelExtPos = new System.Windows.Forms.Label();
             this.externalVelocityAirDataTabPage = new System.Windows.Forms.TabPage();
+            this.dvlGroupBox = new System.Windows.Forms.GroupBox();
+            this.latencyDvl = new System.Windows.Forms.NumericUpDown();
+            this.latencyLabelDvl = new System.Windows.Forms.Label();
+            this.verticalVelocityStdDvl = new System.Windows.Forms.NumericUpDown();
+            this.verticalVelocityStdLabelDvl = new System.Windows.Forms.Label();
+            this.forwardVelocityStdDvl = new System.Windows.Forms.NumericUpDown();
+            this.forwardVelocityStdLabelDvl = new System.Windows.Forms.Label();
+            this.lateralVelocityStdDvl = new System.Windows.Forms.NumericUpDown();
+            this.lateralVelocityStdLabelDvl = new System.Windows.Forms.Label();
+            this.verticalVelocityDvl = new System.Windows.Forms.NumericUpDown();
+            this.verticalVelocityLabelDvl = new System.Windows.Forms.Label();
+            this.forwardVelocityDvl = new System.Windows.Forms.NumericUpDown();
+            this.lateralVelocityDvl = new System.Windows.Forms.NumericUpDown();
+            this.forwardVelocityLabelDvl = new System.Windows.Forms.Label();
+            this.lateralVelocityLabelDvl = new System.Windows.Forms.Label();
+            this.dvlCheckBox = new System.Windows.Forms.CheckBox();
             this.ambientAirDataCheckBox = new System.Windows.Forms.CheckBox();
             this.ambientAirDataGroupBox = new System.Windows.Forms.GroupBox();
             this.pressureValueAmbientAirData = new System.Windows.Forms.NumericUpDown();
@@ -114,6 +130,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.longitudeValueExtPos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.latitudeValueExtPos)).BeginInit();
             this.externalVelocityAirDataTabPage.SuspendLayout();
+            this.dvlGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.latencyDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalVelocityStdDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardVelocityStdDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lateralVelocityStdDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalVelocityDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardVelocityDvl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lateralVelocityDvl)).BeginInit();
             this.ambientAirDataGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pressureValueAmbientAirData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.altitudeValueAmbientAirData)).BeginInit();
@@ -573,6 +597,8 @@
             //
             // externalVelocityAirDataTabPage
             //
+            this.externalVelocityAirDataTabPage.Controls.Add(this.dvlGroupBox);
+            this.externalVelocityAirDataTabPage.Controls.Add(this.dvlCheckBox);
             this.externalVelocityAirDataTabPage.Controls.Add(this.ambientAirDataCheckBox);
             this.externalVelocityAirDataTabPage.Controls.Add(this.ambientAirDataGroupBox);
             this.externalVelocityAirDataTabPage.Controls.Add(this.windDataCheckBox);
@@ -580,6 +606,195 @@
             resources.ApplyResources(this.externalVelocityAirDataTabPage, "externalVelocityAirDataTabPage");
             this.externalVelocityAirDataTabPage.Name = "externalVelocityAirDataTabPage";
             this.externalVelocityAirDataTabPage.UseVisualStyleBackColor = true;
+            //
+            // dvlGroupBox
+            //
+            this.dvlGroupBox.Controls.Add(this.latencyDvl);
+            this.dvlGroupBox.Controls.Add(this.latencyLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.verticalVelocityStdDvl);
+            this.dvlGroupBox.Controls.Add(this.verticalVelocityStdLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.forwardVelocityStdDvl);
+            this.dvlGroupBox.Controls.Add(this.forwardVelocityStdLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.lateralVelocityStdDvl);
+            this.dvlGroupBox.Controls.Add(this.lateralVelocityStdLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.verticalVelocityDvl);
+            this.dvlGroupBox.Controls.Add(this.verticalVelocityLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.forwardVelocityDvl);
+            this.dvlGroupBox.Controls.Add(this.lateralVelocityDvl);
+            this.dvlGroupBox.Controls.Add(this.forwardVelocityLabelDvl);
+            this.dvlGroupBox.Controls.Add(this.lateralVelocityLabelDvl);
+            resources.ApplyResources(this.dvlGroupBox, "dvlGroupBox");
+            this.dvlGroupBox.Name = "dvlGroupBox";
+            this.dvlGroupBox.TabStop = false;
+            //
+            // latencyDvl
+            //
+            this.latencyDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.latencyDvl, "latencyDvl");
+            this.latencyDvl.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            196608});
+            this.latencyDvl.Name = "latencyDvl";
+            this.latencyDvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            //
+            // latencyLabelDvl
+            //
+            resources.ApplyResources(this.latencyLabelDvl, "latencyLabelDvl");
+            this.latencyLabelDvl.Name = "latencyLabelDvl";
+            //
+            // verticalVelocityStdDvl
+            //
+            this.verticalVelocityStdDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.verticalVelocityStdDvl, "verticalVelocityStdDvl");
+            this.verticalVelocityStdDvl.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            196608});
+            this.verticalVelocityStdDvl.Name = "verticalVelocityStdDvl";
+            this.verticalVelocityStdDvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            //
+            // verticalVelocityStdLabelDvl
+            //
+            resources.ApplyResources(this.verticalVelocityStdLabelDvl, "verticalVelocityStdLabelDvl");
+            this.verticalVelocityStdLabelDvl.Name = "verticalVelocityStdLabelDvl";
+            //
+            // forwardVelocityStdDvl
+            //
+            this.forwardVelocityStdDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.forwardVelocityStdDvl, "forwardVelocityStdDvl");
+            this.forwardVelocityStdDvl.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            196608});
+            this.forwardVelocityStdDvl.Name = "forwardVelocityStdDvl";
+            this.forwardVelocityStdDvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            //
+            // forwardVelocityStdLabelDvl
+            //
+            resources.ApplyResources(this.forwardVelocityStdLabelDvl, "forwardVelocityStdLabelDvl");
+            this.forwardVelocityStdLabelDvl.Name = "forwardVelocityStdLabelDvl";
+            //
+            // lateralVelocityStdDvl
+            //
+            this.lateralVelocityStdDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.lateralVelocityStdDvl, "lateralVelocityStdDvl");
+            this.lateralVelocityStdDvl.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            196608});
+            this.lateralVelocityStdDvl.Name = "lateralVelocityStdDvl";
+            this.lateralVelocityStdDvl.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            //
+            // lateralVelocityStdLabelDvl
+            //
+            resources.ApplyResources(this.lateralVelocityStdLabelDvl, "lateralVelocityStdLabelDvl");
+            this.lateralVelocityStdLabelDvl.Name = "lateralVelocityStdLabelDvl";
+            //
+            // verticalVelocityDvl
+            //
+            this.verticalVelocityDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.verticalVelocityDvl, "verticalVelocityDvl");
+            this.verticalVelocityDvl.Maximum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            0});
+            this.verticalVelocityDvl.Minimum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            -2147483648});
+            this.verticalVelocityDvl.Name = "verticalVelocityDvl";
+            this.verticalVelocityDvl.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            0});
+            //
+            // verticalVelocityLabelDvl
+            //
+            resources.ApplyResources(this.verticalVelocityLabelDvl, "verticalVelocityLabelDvl");
+            this.verticalVelocityLabelDvl.Name = "verticalVelocityLabelDvl";
+            //
+            // forwardVelocityDvl
+            //
+            this.forwardVelocityDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.forwardVelocityDvl, "forwardVelocityDvl");
+            this.forwardVelocityDvl.Maximum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            0});
+            this.forwardVelocityDvl.Minimum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            -2147483648});
+            this.forwardVelocityDvl.Name = "forwardVelocityDvl";
+            this.forwardVelocityDvl.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            //
+            // lateralVelocityDvl
+            //
+            this.lateralVelocityDvl.DecimalPlaces = 3;
+            resources.ApplyResources(this.lateralVelocityDvl, "lateralVelocityDvl");
+            this.lateralVelocityDvl.Maximum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            0});
+            this.lateralVelocityDvl.Minimum = new decimal(new int[] {
+            2147483,
+            0,
+            0,
+            -2147483648});
+            this.lateralVelocityDvl.Name = "lateralVelocityDvl";
+            this.lateralVelocityDvl.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            //
+            // forwardVelocityLabelDvl
+            //
+            resources.ApplyResources(this.forwardVelocityLabelDvl, "forwardVelocityLabelDvl");
+            this.forwardVelocityLabelDvl.Name = "forwardVelocityLabelDvl";
+            //
+            // lateralVelocityLabelDvl
+            //
+            resources.ApplyResources(this.lateralVelocityLabelDvl, "lateralVelocityLabelDvl");
+            this.lateralVelocityLabelDvl.Name = "lateralVelocityLabelDvl";
+            //
+            // dvlCheckBox
+            //
+            resources.ApplyResources(this.dvlCheckBox, "dvlCheckBox");
+            this.dvlCheckBox.Name = "dvlCheckBox";
+            this.dvlCheckBox.UseVisualStyleBackColor = true;
+            this.dvlCheckBox.CheckedChanged += new System.EventHandler(this.dvlCheckBox_CheckedChanged);
             //
             // ambientAirDataCheckBox
             //
@@ -935,6 +1150,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.latitudeValueExtPos)).EndInit();
             this.externalVelocityAirDataTabPage.ResumeLayout(false);
             this.externalVelocityAirDataTabPage.PerformLayout();
+            this.dvlGroupBox.ResumeLayout(false);
+            this.dvlGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.latencyDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalVelocityStdDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardVelocityStdDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lateralVelocityStdDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalVelocityDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.forwardVelocityDvl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lateralVelocityDvl)).EndInit();
             this.ambientAirDataGroupBox.ResumeLayout(false);
             this.ambientAirDataGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pressureValueAmbientAirData)).EndInit();
@@ -1022,5 +1246,21 @@
         private System.Windows.Forms.Label headingLabelHeadingExternal;
         private MissionPlanner.Controls.MyButton BUT_close;
         private MissionPlanner.Controls.MyButton BUT_uncheckall;
+        private System.Windows.Forms.GroupBox dvlGroupBox;
+        private System.Windows.Forms.NumericUpDown latencyDvl;
+        private System.Windows.Forms.Label latencyLabelDvl;
+        private System.Windows.Forms.NumericUpDown verticalVelocityStdDvl;
+        private System.Windows.Forms.Label verticalVelocityStdLabelDvl;
+        private System.Windows.Forms.NumericUpDown forwardVelocityStdDvl;
+        private System.Windows.Forms.Label forwardVelocityStdLabelDvl;
+        private System.Windows.Forms.NumericUpDown lateralVelocityStdDvl;
+        private System.Windows.Forms.Label lateralVelocityStdLabelDvl;
+        private System.Windows.Forms.NumericUpDown verticalVelocityDvl;
+        private System.Windows.Forms.Label verticalVelocityLabelDvl;
+        private System.Windows.Forms.NumericUpDown forwardVelocityDvl;
+        private System.Windows.Forms.NumericUpDown lateralVelocityDvl;
+        private System.Windows.Forms.Label forwardVelocityLabelDvl;
+        private System.Windows.Forms.Label lateralVelocityLabelDvl;
+        private System.Windows.Forms.CheckBox dvlCheckBox;
     }
 }

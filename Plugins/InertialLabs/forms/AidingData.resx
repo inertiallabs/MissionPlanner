@@ -219,30 +219,6 @@
   <data name="&gt;&gt;externalPositionTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;ambientAirDataCheckBox.Name" xml:space="preserve">
-    <value>ambientAirDataCheckBox</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataCheckBox.Parent" xml:space="preserve">
-    <value>externalVelocityAirDataTabPage</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataGroupBox.Name" xml:space="preserve">
-    <value>ambientAirDataGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataGroupBox.Parent" xml:space="preserve">
-    <value>externalVelocityAirDataTabPage</value>
-  </data>
-  <data name="&gt;&gt;ambientAirDataGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;windDataCheckBox.Name" xml:space="preserve">
     <value>windDataCheckBox</value>
   </data>
@@ -1584,14 +1560,14 @@
   <data name="&gt;&gt;latitudeLabelExtPos.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="ambientAirDataCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <data name="ambientAirDataCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ambientAirDataCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="ambientAirDataCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 6</value>
+    <value>6, 191</value>
   </data>
   <data name="ambientAirDataCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 20</value>
@@ -1612,7 +1588,7 @@
     <value>externalVelocityAirDataTabPage</value>
   </data>
   <data name="&gt;&gt;ambientAirDataCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;pressureValueAmbientAirData.Name" xml:space="preserve">
     <value>pressureValueAmbientAirData</value>
@@ -1690,7 +1666,7 @@
     <value>False</value>
   </data>
   <data name="ambientAirDataGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 32</value>
+    <value>6, 217</value>
   </data>
   <data name="ambientAirDataGroupBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 140</value>
@@ -1711,7 +1687,7 @@
     <value>externalVelocityAirDataTabPage</value>
   </data>
   <data name="&gt;&gt;ambientAirDataGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="pressureValueAmbientAirData.Location" type="System.Drawing.Point, System.Drawing">
     <value>167, 106</value>
@@ -1865,6 +1841,420 @@
   </data>
   <data name="&gt;&gt;temperatureLabelAmbientAirData.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="latencyDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 248</value>
+  </data>
+  <data name="latencyDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="latencyDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;latencyDvl.Name" xml:space="preserve">
+    <value>latencyDvl</value>
+  </data>
+  <data name="&gt;&gt;latencyDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyDvl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="latencyLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="latencyLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="latencyLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 250</value>
+  </data>
+  <data name="latencyLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 16</value>
+  </data>
+  <data name="latencyLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="latencyLabelDvl.Text" xml:space="preserve">
+    <value>Latency (s)</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelDvl.Name" xml:space="preserve">
+    <value>latencyLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;latencyLabelDvl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="verticalVelocityStdDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 213</value>
+  </data>
+  <data name="verticalVelocityStdDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="verticalVelocityStdDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdDvl.Name" xml:space="preserve">
+    <value>verticalVelocityStdDvl</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdDvl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 215</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 16</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="verticalVelocityStdLabelDvl.Text" xml:space="preserve">
+    <value>Vertical velocity STD (m/c)</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdLabelDvl.Name" xml:space="preserve">
+    <value>verticalVelocityStdLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityStdLabelDvl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="forwardVelocityStdDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 177</value>
+  </data>
+  <data name="forwardVelocityStdDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="forwardVelocityStdDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdDvl.Name" xml:space="preserve">
+    <value>forwardVelocityStdDvl</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdDvl.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 179</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 16</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="forwardVelocityStdLabelDvl.Text" xml:space="preserve">
+    <value>Forward velocity STD (m/c)</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdLabelDvl.Name" xml:space="preserve">
+    <value>forwardVelocityStdLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityStdLabelDvl.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lateralVelocityStdDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 140</value>
+  </data>
+  <data name="lateralVelocityStdDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="lateralVelocityStdDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdDvl.Name" xml:space="preserve">
+    <value>lateralVelocityStdDvl</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdDvl.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 142</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 16</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lateralVelocityStdLabelDvl.Text" xml:space="preserve">
+    <value>Lateral velocity STD (m/c)</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdLabelDvl.Name" xml:space="preserve">
+    <value>lateralVelocityStdLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityStdLabelDvl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="verticalVelocityDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 102</value>
+  </data>
+  <data name="verticalVelocityDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="verticalVelocityDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityDvl.Name" xml:space="preserve">
+    <value>verticalVelocityDvl</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityDvl.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 104</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 16</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="verticalVelocityLabelDvl.Text" xml:space="preserve">
+    <value>Vertical velocity (m/c)</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityLabelDvl.Name" xml:space="preserve">
+    <value>verticalVelocityLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;verticalVelocityLabelDvl.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="forwardVelocityDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 67</value>
+  </data>
+  <data name="forwardVelocityDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="forwardVelocityDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityDvl.Name" xml:space="preserve">
+    <value>forwardVelocityDvl</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityDvl.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lateralVelocityDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 31</value>
+  </data>
+  <data name="lateralVelocityDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
+  </data>
+  <data name="lateralVelocityDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityDvl.Name" xml:space="preserve">
+    <value>lateralVelocityDvl</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityDvl.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 69</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="forwardVelocityLabelDvl.Text" xml:space="preserve">
+    <value>Forward velocity (m/c)</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityLabelDvl.Name" xml:space="preserve">
+    <value>forwardVelocityLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;forwardVelocityLabelDvl.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 33</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 16</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lateralVelocityLabelDvl.Text" xml:space="preserve">
+    <value>Lateral velocity (m/c)</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityLabelDvl.Name" xml:space="preserve">
+    <value>lateralVelocityLabelDvl</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityLabelDvl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityLabelDvl.Parent" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;lateralVelocityLabelDvl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="dvlGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dvlGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 32</value>
+  </data>
+  <data name="dvlGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 291</value>
+  </data>
+  <data name="dvlGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="dvlGroupBox.Text" xml:space="preserve">
+    <value>Doppler velocity log</value>
+  </data>
+  <data name="&gt;&gt;dvlGroupBox.Name" xml:space="preserve">
+    <value>dvlGroupBox</value>
+  </data>
+  <data name="&gt;&gt;dvlGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dvlGroupBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;dvlGroupBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="dvlCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="dvlCheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="dvlCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>328, 6</value>
+  </data>
+  <data name="dvlCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 20</value>
+  </data>
+  <data name="dvlCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="dvlCheckBox.Text" xml:space="preserve">
+    <value>Doppler velocity log</value>
+  </data>
+  <data name="&gt;&gt;dvlCheckBox.Name" xml:space="preserve">
+    <value>dvlCheckBox</value>
+  </data>
+  <data name="&gt;&gt;dvlCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dvlCheckBox.Parent" xml:space="preserve">
+    <value>externalVelocityAirDataTabPage</value>
+  </data>
+  <data name="&gt;&gt;dvlCheckBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="windDataCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
