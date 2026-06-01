@@ -268,6 +268,9 @@ public partial class MAVLink
         ///<summary> Send aiding data external heading to AHRS |Heading| Heading STD| Latency| Empty.| Empty.| Empty.| Empty.|  </summary>
         [Description("Send aiding data external heading to AHRS")]
         EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING=33011,
+        ///<summary> Send aiding data DVL to AHRS |Lateral velocity| Forward velocity| Vertical velocity| Lateral velocity STD| Forward velocity STD| Vertical velocity STD| Velocity latency|  </summary>
+        [Description("Send aiding data DVL to AHRS")]
+        EXTERNAL_AHRS_AIDING_DATA_DVL=33012,
     };
 
     /// extensions_start 0

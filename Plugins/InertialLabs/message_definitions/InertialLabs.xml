@@ -300,6 +300,16 @@
         <param index="6">Empty.</param>
         <param index="7">Empty.</param>
       </entry>
+      <entry value="33012" name="MAV_CMD_EXTERNAL_AHRS_AIDING_DATA_DVL" hasLocation="false" isDestination="false">
+        <description>Send aiding data DVL to AHRS</description>
+        <param index="1" label="Lateral velocity" units="m/s*1000">Lateral velocity</param>
+        <param index="2" label="Forward velocity" units="m/s*1000">Forward velocity</param>
+        <param index="3" label="Vertical velocity" units="m/s*1000">Vertical velocity</param>
+        <param index="4" label="Lateral velocity STD" units="m/s*1000">Lateral velocity STD</param>
+        <param index="5" label="Forward velocity STD" units="m/s*1000">Forward velocity STD</param>
+        <param index="6" label="Vertical velocity STD" units="m/s*1000">Vertical velocity STD</param>
+        <param index="7" label="Velocity latency" units="ms">Velocity latency</param>
+      </entry>
     </enum>
   </enums>
   <messages>
