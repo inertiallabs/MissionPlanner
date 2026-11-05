@@ -182,18 +182,27 @@ namespace InertialLabs.Controls
 
         private void updateTimer_Tick(object sender, EventArgs e)
         {
-            if (PluginState.is_gps_raw_valid)
+            if (PluginState.IsAhrsAdditionalRawInfoFresh)
             {
-                calculateInsGnssPosDiff();
+                if (PluginState.is_gps_raw_valid)
+                {
+                    calculateInsGnssPosDiff();
+                }
+                else
+                {
+                    resetInsGnssPosDiffValues();
+                }
+
+                quickView4.number = PluginState.ins_lat_accuracy;
+                quickView5.number = PluginState.ins_lng_accuracy;
+                quickView6.number = -1 * PluginState.ins_alt_accuracy;
             }
             else
             {
-                resetInsGnssPosDiffValues();
+                // No fresh AHRS_ADDITIONAL_RAW_INFO: show NaN, neither the last values nor zeros are current
+                resetInsGnssPosDiffValues(double.NaN);
+                resetInsPosAccuracyValues(double.NaN);
             }
-
-            quickView4.number = PluginState.ins_lat_accuracy;
-            quickView5.number = PluginState.ins_lng_accuracy;
-            quickView6.number = -1 * PluginState.ins_alt_accuracy;
 
             BUT_externalAHRS_start.Enabled = !MainV2.comPort.MAV.cs.armed;
             BUT_externalAHRS_stop.Enabled = !MainV2.comPort.MAV.cs.armed;
@@ -240,18 +249,18 @@ namespace InertialLabs.Controls
             }
         }
 
-        private void resetInsGnssPosDiffValues()
+        private void resetInsGnssPosDiffValues(double value = 0D)
         {
-            quickView1.number = 0D;
-            quickView2.number = 0D;
-            quickView3.number = 0D;
+            quickView1.number = value;
+            quickView2.number = value;
+            quickView3.number = value;
         }
 
-        private void resetInsPosAccuracyValues()
+        private void resetInsPosAccuracyValues(double value = 0D)
         {
-            quickView4.number = 0D;
-            quickView5.number = 0D;
-            quickView6.number = 0D;
+            quickView4.number = value;
+            quickView5.number = value;
+            quickView6.number = value;
         }
     }
 }

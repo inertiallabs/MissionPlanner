@@ -145,7 +145,7 @@ namespace InertialLabs.Embedders
 
         private void UpdateGPSMarker()
         {
-            if (!PluginState.show_gps_raw_location || !PluginState.is_gps_raw_valid)
+            if (!PluginState.show_gps_raw_location || !PluginState.is_gps_raw_valid || !PluginState.IsAhrsAdditionalRawInfoFresh)
             {
                 gpsMarker.IsVisible = false;
                 return;
@@ -173,7 +173,7 @@ namespace InertialLabs.Embedders
 
         private void UpdateVechiclePosEstimation()
         {
-            if (!PluginState.show_ins_pos_estimation)
+            if (!PluginState.show_ins_pos_estimation || !PluginState.IsAhrsAdditionalRawInfoFresh)
             {
                 vechiclePosEstimationCircleMarker.IsVisible = false;
                 return;

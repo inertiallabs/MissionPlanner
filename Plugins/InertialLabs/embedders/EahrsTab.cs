@@ -134,6 +134,7 @@ namespace InertialLabs.Embedders
                         PluginState.ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
                         PluginState.ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
                         PluginState.ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
+                        PluginState.SaveAhrsAdditionalRawInfoTimestamp();
                     }
                     break;
                 default:

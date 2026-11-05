@@ -10,6 +10,7 @@ namespace InertialLabs.Forms
     {
         private InertialLabs.Embedders.EahrsHudStatus eahrsHudStatusRef;
         private double eahrsType;
+        private readonly string formTitle;
 
         public EAHRSStatus(InertialLabs.Embedders.EahrsHudStatus eahrsHudStatus, double eahrsTypeRef)
         {
@@ -17,6 +18,7 @@ namespace InertialLabs.Forms
             eahrsHudStatusRef = eahrsHudStatus;
 
             InitializeComponent();
+            formTitle = Text;
             this.Height = 700;
             MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(this);
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -32,6 +34,13 @@ namespace InertialLabs.Forms
             if (eahrsType != 5 /*Inertial Labs EAHRS*/)
             {
                 return;
+            }
+
+            bool hasData = PluginState.IsEahrsStatusInfoFresh;
+            string title = hasData ? formTitle : formTitle + " - NO DATA";
+            if (Text != title)
+            {
+                Text = title;
             }
 
             int idx = 0;
@@ -225,6 +234,14 @@ namespace InertialLabs.Forms
             }
 
             idx++;
+
+            if (!hasData)
+            {
+                foreach (Control label in flowLayoutPanel1.Controls)
+                {
+                    label.ForeColor = EahrsHudStatus.NoDataColor;
+                }
+            }
         }
     }
 }

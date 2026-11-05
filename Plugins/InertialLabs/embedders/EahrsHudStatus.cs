@@ -8,8 +8,11 @@ namespace InertialLabs.Embedders
 {
     public class EahrsHudStatus : EmbedderInterface
     {
+        internal static readonly Color NoDataColor = Color.Gray;
+
         private InertialLabsPlugin inertialLabsPluginRef;
         private Timer loadWaitTimer;
+        private Timer statusUpdateTimer;
         private System.Windows.Forms.Label eahrsLabel;
 
         InertialLabs.Forms.EAHRSStatus eahrsStatus;
@@ -18,6 +21,7 @@ namespace InertialLabs.Embedders
         {
             inertialLabsPluginRef = inertialLabsPlugin;
             loadWaitTimer = new Timer();
+            statusUpdateTimer = new Timer();
         }
 
         public override bool Init()
@@ -39,7 +43,7 @@ namespace InertialLabs.Embedders
                 Tag = "custom",
                 Text = "EAHRS",
                 TextAlign = ContentAlignment.MiddleCenter,
-                BackColor = Color.DarkRed,
+                BackColor = NoDataColor,
                 ForeColor = Color.White,
                 AutoSize = true,
                 ImeMode = ImeMode.NoControl,
@@ -98,6 +102,10 @@ namespace InertialLabs.Embedders
                 }
             };
             loadWaitTimer.Start();
+
+            statusUpdateTimer.Interval = 500;
+            statusUpdateTimer.Tick += (s, e) => UpdateEahrsStatus();
+            statusUpdateTimer.Start();
         }
 
         private void MavlinkMessageHandler(object sender, global::MAVLink.MAVLinkMessage mavLinkMessage)
@@ -112,7 +120,7 @@ namespace InertialLabs.Embedders
                         PluginState.eahrsStatusValue3 = status.status3;
                         PluginState.eahrsStatusValue4 = status.status4;
                         PluginState.eahrsStatusValue5 = status.status5;
-                        UpdateEahrsStatus();
+                        PluginState.SaveEahrsStatusInfoTimestamp();
                     }
                     break;
                 default:
@@ -144,17 +152,22 @@ namespace InertialLabs.Embedders
 
         public void UpdateEahrsStatus()
         {
+            bool hasStatus;
             try
             {
-                if (MainV2.comPort.MAV.cs.parent == null ||
-                    !MainV2.comPort.MAV.cs.parent.parent.MAV.param.ContainsKey("EAHRS_TYPE") ||
-                    MainV2.comPort.MAV.cs.parent.parent.MAV.param["EAHRS_TYPE"].Value != 5 /*Inertial Labs*/)
-                {
-                    return;
-                }
+                hasStatus = PluginState.IsEahrsStatusInfoFresh &&
+                            MainV2.comPort.MAV.cs.parent != null &&
+                            MainV2.comPort.MAV.cs.parent.parent.MAV.param.ContainsKey("EAHRS_TYPE") &&
+                            MainV2.comPort.MAV.cs.parent.parent.MAV.param["EAHRS_TYPE"].Value == 5 /*Inertial Labs*/;
             }
             catch
             {
+                hasStatus = false;
+            }
+
+            if (!hasStatus)
+            {
+                eahrsLabel.BackColor = NoDataColor;
                 return;
             }
 
