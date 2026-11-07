@@ -12,7 +12,6 @@ namespace InertialLabs.Controls
         private InertialLabs.Embedders.EahrsTab eahrsTab;
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private bool isEahrsStoped = false;
         private InertialLabs.Forms.AidingData aidingDataDialog = new InertialLabs.Forms.AidingData();
 
         public EAHRSControl(InertialLabs.Embedders.EahrsTab eahrsTabRef)
@@ -26,10 +25,7 @@ namespace InertialLabs.Controls
         {
             if (this.Visible)
             {
-                if (!isEahrsStoped)
-                {
-                    updateTimer.Start();
-                }
+                updateTimer.Start();
             }
             else
             {
@@ -41,109 +37,73 @@ namespace InertialLabs.Controls
 
         private void BUT_externalAHRS_gnss_enable_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS,
-                                            0, 0, 0, 0, 0, 0, 0);
-
-                updateTimer.Start();
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
+            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS);
         }
 
         private void BUT_externalAHRS_gnss_disable_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS,
-                                            0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
+            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS);
         }
 
         private void BUT_externalAHRS_vg3dclb_flight_start_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT,
-                                            0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
+            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT);
         }
 
         private void BUT_externalAHRS_vg3dclb_flight_stop_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT,
-                                            0, 0, 0, 0, 0, 0, 0);
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
-            }
+            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT);
         }
 
         private void BUT_externalAHRS_start_Click(object sender, EventArgs e)
         {
-            try
+            if (ConfirmCommand("External AHRS will be started."))
             {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD,
-                                            0, 0, 0, 0, 0, 0, 0);
-
-                resetInsGnssPosDiffValues();
-                resetInsPosAccuracyValues();
-                updateTimer.Start();
-                isEahrsStoped = false;
-            }
-            catch (Exception ex)
-            {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
+                SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD);
             }
         }
 
         private void BUT_externalAHRS_stop_Click(object sender, EventArgs e)
         {
-            if (CustomMessageBox.Show("Attention! External AHRS will be stopped.\nAre you Sure?",
-                    "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) !=
-                    CustomMessageBox.DialogResult.OK)
+            if (ConfirmCommand("External AHRS will be stopped."))
             {
+                SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP);
+            }
+        }
+
+        private static bool ConfirmCommand(string action)
+        {
+            string armedWarning = MainV2.comPort.MAV.cs.armed ? "\nThe vehicle is ARMED!" : "";
+            return CustomMessageBox.Show(action + armedWarning + "\nAre you sure?",
+                       "Are you sure?", CustomMessageBox.MessageBoxButtons.OKCancel) ==
+                   CustomMessageBox.DialogResult.OK;
+        }
+
+        private static void SendCommand(InertialLabs.MAVLink.MAV_CMD command)
+        {
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                CustomMessageBox.Show(Strings.PleaseConnect, Strings.ERROR);
                 return;
             }
+
             try
             {
-                MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                            MainV2.comPort.MAV.compid,
-                                            (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP,
-                                            0, 0, 0, 0, 0, 0, 0);
-
-                updateTimer.Stop();
-                resetInsGnssPosDiffValues();
-                resetInsPosAccuracyValues();
-                isEahrsStoped = true;
+                if (!MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
+                                                 MainV2.comPort.MAV.compid,
+                                                 (global::MAVLink.MAV_CMD)command,
+                                                 0, 0, 0, 0, 0, 0, 0))
+                {
+                    CustomMessageBox.Show(Strings.ErrorRejectedByMAV, Strings.ERROR);
+                }
+            }
+            catch (TimeoutException)
+            {
+                CustomMessageBox.Show("No acknowledgement from the vehicle: the command may or may not have been executed. Check the External AHRS status.", Strings.ERROR);
             }
             catch (Exception ex)
             {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.ToString(), Strings.ERROR);
+                CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR);
             }
         }
 
@@ -203,9 +163,6 @@ namespace InertialLabs.Controls
                 resetInsGnssPosDiffValues(double.NaN);
                 resetInsPosAccuracyValues(double.NaN);
             }
-
-            BUT_externalAHRS_start.Enabled = !MainV2.comPort.MAV.cs.armed;
-            BUT_externalAHRS_stop.Enabled = !MainV2.comPort.MAV.cs.armed;
         }
 
         private void updateGcsDistanceAround()
