@@ -1,5 +1,8 @@
 ﻿using MissionPlanner;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace InertialLabs.Forms
@@ -71,98 +74,136 @@ namespace InertialLabs.Forms
 
         private void BUT_sendtoahrs_Click(object sender, EventArgs e)
         {
-            /* send mavlink commands */
-            try
+            var aiding = new List<(string Name, Func<bool> Send)>();
+
+            if (externalPositionCheckBox.Checked)
             {
-                if (externalPositionCheckBox.Checked)
+                aiding.Add((externalPositionCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION,
+                    (float)latencyValueExtPos.Value,
+                    (float)latitudeStdValueExtPos.Value,
+                    (float)longitudeStdValueExtPos.Value,
+                    (float)altitudeStdValueExtPos.Value,
+                    (int)((float)latitudeValueExtPos.Value * 1e7),
+                    (int)((float)longitudeValueExtPos.Value * 1e7),
+                    (float)altitudeValueExtPos.Value)));
+            }
+
+            if (externalHorizontalPositionCheckBox.Checked)
+            {
+                aiding.Add((externalHorizontalPositionCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION,
+                    (float)latitudeStdValueExtHorPos.Value,
+                    (float)longitudeStdValueExtHorPos.Value,
+                    (float)latencyValueExtHorPos.Value,
+                    0,
+                    (int)((float)latitudeValueExtHorPos.Value * 1e7),
+                    (int)((float)longitudeValueExtHorPos.Value * 1e7),
+                    0)));
+            }
+
+            if (altitudeExternalCheckBox.Checked)
+            {
+                aiding.Add((altitudeExternalCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE,
+                    (float)altitudeValueStdAltExt.Value,
+                    0, 0, 0, 0, 0,
+                    (float)altitudeValueAltExt.Value)));
+            }
+
+            if (windDataCheckBox.Checked)
+            {
+                aiding.Add((windDataCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_WIND,
+                    (float)WindDirectionValueWindData.Value,
+                    (float)WindSpeedValueWindData.Value,
+                    (float)WindSpeedStdValueWindData.Value,
+                    0, 0, 0, 0)));
+            }
+
+            if (ambientAirDataCheckBox.Checked)
+            {
+                aiding.Add((ambientAirDataCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR,
+                    (float)temperatureValueAmbientAirData.Value,
+                    (float)pressureValueAmbientAirData.Value,
+                    0, 0, 0, 0,
+                    (float)altitudeValueAmbientAirData.Value)));
+            }
+
+            if (headingExternalCheckBox.Checked)
+            {
+                aiding.Add((headingExternalCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING,
+                    (float)headingValueHeadingExternal.Value,
+                    (float)headingStdValueHeadingExternal.Value,
+                    (float)latencyValueHeadingExternal.Value,
+                    0, 0, 0, 0)));
+            }
+
+            if (dvlCheckBox.Checked)
+            {
+                aiding.Add((dvlCheckBox.Text, () => SendAidingCommand(
+                    InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_DVL,
+                    (float)lateralVelocityDvl.Value * 1e3f,
+                    (float)forwardVelocityDvl.Value * 1e3f,
+                    (float)verticalVelocityDvl.Value * 1e3f,
+                    (float)lateralVelocityStdDvl.Value * 1e3f,
+                    (int)((float)forwardVelocityStdDvl.Value * 1e3f),
+                    (int)((float)verticalVelocityStdDvl.Value * 1e3f),
+                    (float)latencyDvl.Value * 1e3f)));
+            }
+
+            if (aiding.Count == 0)
+            {
+                return;
+            }
+
+            if (!MainV2.comPort.BaseStream.IsOpen)
+            {
+                CustomMessageBox.Show(Strings.PleaseConnect, Strings.ERROR);
+                return;
+            }
+
+            var report = new StringBuilder();
+            bool isFailed = false;
+            foreach (var (name, send) in aiding)
+            {
+                if (!MainV2.comPort.BaseStream.IsOpen)
                 {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_POSITION,
-                                                (float)latencyValueExtPos.Value,
-                                                (float)latitudeStdValueExtPos.Value,
-                                                (float)longitudeStdValueExtPos.Value,
-                                                (float)altitudeStdValueExtPos.Value,
-                                                (int)((float)latitudeValueExtPos.Value * 1e7),
-                                                (int)((float)longitudeValueExtPos.Value * 1e7),
-                                                (float)altitudeValueExtPos.Value);
+                    report.AppendLine(name + ": not sent, not connected");
+                    isFailed = true;
+                    continue;
                 }
 
-                if (externalHorizontalPositionCheckBox.Checked)
+                try
                 {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HORIZONTAL_POSITION,
-                                                (float)latitudeStdValueExtHorPos.Value,
-                                                (float)longitudeStdValueExtHorPos.Value,
-                                                (float)latencyValueExtHorPos.Value,
-                                                0,
-                                                (int)((float)latitudeValueExtHorPos.Value * 1e7),
-                                                (int)((float)longitudeValueExtHorPos.Value * 1e7),
-                                                0);
+                    bool accepted = send();
+                    report.AppendLine(name + (accepted ? ": accepted" : ": rejected by MAV"));
+                    if (!accepted)
+                    {
+                        isFailed = true;
+                    }
                 }
-
-                if (altitudeExternalCheckBox.Checked)
+                catch (Exception ex)
                 {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_ALTITUDE,
-                                                (float)altitudeValueStdAltExt.Value,
-                                                0, 0, 0, 0, 0,
-                                                (float)altitudeValueAltExt.Value);
-                }
-
-                if (windDataCheckBox.Checked)
-                {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_WIND,
-                                                (float)WindDirectionValueWindData.Value,
-                                                (float)WindSpeedValueWindData.Value,
-                                                (float)WindSpeedStdValueWindData.Value,
-                                                0, 0, 0, 0);
-                }
-
-                if (ambientAirDataCheckBox.Checked)
-                {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_AMBIENT_AIR,
-                                                (float)temperatureValueAmbientAirData.Value,
-                                                (float)pressureValueAmbientAirData.Value,
-                                                0, 0, 0, 0,
-                                                (float)altitudeValueAmbientAirData.Value);
-                }
-
-                if (headingExternalCheckBox.Checked)
-                {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_EXTERNAL_HEADING,
-                                                (float)headingValueHeadingExternal.Value,
-                                                (float)headingStdValueHeadingExternal.Value,
-                                                (float)latencyValueHeadingExternal.Value,
-                                                0, 0, 0, 0);
-                }
-
-                if (dvlCheckBox.Checked)
-                {
-                    MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
-                                                MainV2.comPort.MAV.compid,
-                                                (global::MAVLink.MAV_CMD)InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_AIDING_DATA_DVL,
-                                                (float)lateralVelocityDvl.Value * 1e3f,
-                                                (float)forwardVelocityDvl.Value * 1e3f,
-                                                (float)verticalVelocityDvl.Value * 1e3f,
-                                                (float)lateralVelocityStdDvl.Value * 1e3f,
-                                                (int)((float)forwardVelocityStdDvl.Value * 1e3f),
-                                                (int)((float)verticalVelocityStdDvl.Value * 1e3f),
-                                                (float)latencyDvl.Value * 1e3f);
+                    report.AppendLine(name + ": " + (ex is TimeoutException ? "no acknowledgement, result unknown" : ex.Message));
+                    isFailed = true;
                 }
             }
-            catch (Exception ex)
+
+            if (isFailed)
             {
-                CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR);
+                CustomMessageBox.Show(report.ToString(), "Send to AHRS error");
             }
+        }
+
+        private static bool SendAidingCommand(InertialLabs.MAVLink.MAV_CMD command, float p1, float p2, float p3, float p4, int x, int y, float z)
+        {
+            return MainV2.comPort.doCommandInt(MainV2.comPort.MAV.sysid,
+                                               MainV2.comPort.MAV.compid,
+                                               (global::MAVLink.MAV_CMD)command,
+                                               p1, p2, p3, p4, x, y, z);
         }
 
         private void BUT_close_Click(object sender, EventArgs e)
