@@ -14,6 +14,7 @@ namespace InertialLabs.Embedders
         private Timer loadWaitTimer;
         private Timer statusUpdateTimer;
         private System.Windows.Forms.Label eahrsLabel;
+        private Font eahrsLabelFont;
 
         InertialLabs.Forms.EAHRSStatus eahrsStatus;
 
@@ -70,35 +71,15 @@ namespace InertialLabs.Embedders
                 var flightData = inertialLabsPluginRef.Host.MainForm.FlightData;
                 if (flightData != null)
                 {
+                    loadWaitTimer.Stop();
+
                     var hud = MissionPlanner.GCSViews.FlightData.myhud;
 
-                    int fontsize = hud.Height / 30;
-                    int fontoffset = fontsize - 10;
-
-                    eahrsLabel.Font = new Font(eahrsLabel.Font.FontFamily, fontsize, FontStyle.Bold);
-                    eahrsLabel.Location = new Point(
-                        (hud.Width - eahrsLabel.PreferredWidth) / 2,
-                        hud.Height - eahrsLabel.PreferredHeight - 4 * fontsize - 3 * fontoffset
-                    );
-
-                    hud.Resize += (obj, eventArgs) =>
-                    {
-                        var _hud = MissionPlanner.GCSViews.FlightData.myhud;
-                        int _fontsize = _hud.Height / 30;
-                        int _fontoffset = _fontsize - 10;
-
-                        eahrsLabel.Font = new Font(eahrsLabel.Font.FontFamily, _fontsize, FontStyle.Bold);
-
-                        eahrsLabel.Location = new Point(
-                            (_hud.Width - eahrsLabel.PreferredWidth) / 2,
-                            _hud.Height - eahrsLabel.PreferredHeight - 4 * _fontsize - 3 * _fontoffset
-                        );
-                    };
+                    UpdateEahrsLabelLayout(hud);
+                    hud.Resize += (obj, eventArgs) => UpdateEahrsLabelLayout(hud);
 
                     hud.Controls.Add(eahrsLabel);
                     eahrsLabel.BringToFront();
-
-                    loadWaitTimer.Stop();
                 }
             };
             loadWaitTimer.Start();
@@ -106,6 +87,22 @@ namespace InertialLabs.Embedders
             statusUpdateTimer.Interval = 500;
             statusUpdateTimer.Tick += (s, e) => UpdateEahrsStatus();
             statusUpdateTimer.Start();
+        }
+
+        private void UpdateEahrsLabelLayout(Control hud)
+        {
+            int fontsize = Math.Max(1, hud.Height / 30);
+            int fontoffset = fontsize - 10;
+
+            var oldFont = eahrsLabelFont;
+            eahrsLabelFont = new Font(eahrsLabel.Font.FontFamily, fontsize, FontStyle.Bold);
+            eahrsLabel.Font = eahrsLabelFont;
+            oldFont?.Dispose();
+
+            eahrsLabel.Location = new Point(
+                (hud.Width - eahrsLabel.PreferredWidth) / 2,
+                hud.Height - eahrsLabel.PreferredHeight - 4 * fontsize - 3 * fontoffset
+            );
         }
 
         private void MavlinkMessageHandler(object sender, global::MAVLink.MAVLinkMessage mavLinkMessage)
