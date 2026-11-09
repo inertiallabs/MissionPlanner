@@ -198,7 +198,7 @@ namespace InertialLabs.Controls
 
             if (PluginState.gps_alt_raw != 0)
             {
-                double delta_alt = MainV2.comPort.MAV.cs.altasl - PluginState.gps_alt_raw;
+                double delta_alt = MainV2.comPort.MAV.cs.altasl / CurrentState.multiplieralt - PluginState.gps_alt_raw;
                 quickView3.number = -1 * delta_alt;
             }
             else
