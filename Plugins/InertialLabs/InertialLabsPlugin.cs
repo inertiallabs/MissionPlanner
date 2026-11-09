@@ -16,7 +16,7 @@ namespace InertialLabs
         private Embedders.Map mapEmbedder;
 
         public override string Name => "Inertial Labs Plugin";
-        public override string Version => "0.1";
+        public override string Version => "1.0.0";
         public override string Author => "Valentin Bugrov";
 
         public override bool Init() => true;
