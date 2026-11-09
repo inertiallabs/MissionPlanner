@@ -84,8 +84,8 @@ namespace InertialLabs.Forms
                     (float)latitudeStdValueExtPos.Value,
                     (float)longitudeStdValueExtPos.Value,
                     (float)altitudeStdValueExtPos.Value,
-                    (int)((float)latitudeValueExtPos.Value * 1e7),
-                    (int)((float)longitudeValueExtPos.Value * 1e7),
+                    ToDegE7(latitudeValueExtPos.Value),
+                    ToDegE7(longitudeValueExtPos.Value),
                     (float)altitudeValueExtPos.Value)));
             }
 
@@ -97,8 +97,8 @@ namespace InertialLabs.Forms
                     (float)longitudeStdValueExtHorPos.Value,
                     (float)latencyValueExtHorPos.Value,
                     0,
-                    (int)((float)latitudeValueExtHorPos.Value * 1e7),
-                    (int)((float)longitudeValueExtHorPos.Value * 1e7),
+                    ToDegE7(latitudeValueExtHorPos.Value),
+                    ToDegE7(longitudeValueExtHorPos.Value),
                     0)));
             }
 
@@ -213,6 +213,11 @@ namespace InertialLabs.Forms
                                                MainV2.comPort.MAV.compid,
                                                (global::MAVLink.MAV_CMD)command,
                                                p1, p2, p3, p4, x, y, z);
+        }
+
+        private static int ToDegE7(decimal degrees)
+        {
+            return (int)Math.Round(degrees * 10000000m, MidpointRounding.AwayFromZero);
         }
 
         private void BUT_close_Click(object sender, EventArgs e)
