@@ -99,6 +99,8 @@ namespace InertialLabs.Embedders
             loadWaitTimer.Interval = 1000;
             loadWaitTimer.Tick += (s, e) =>
             {
+                loadWaitTimer.Stop();
+
                 flightDataInstance = MissionPlanner.GCSViews.FlightData.instance;
                 // Agenda Labels
                 var bottomLabelPanel = MissionPlanner.GCSViews.FlightData.instance
@@ -111,14 +113,17 @@ namespace InertialLabs.Embedders
                 {
                     Console.WriteLine("splitContainer1 not found in GCSViews.FlightData");
                 }
-                int desiredYOffsetFromBottom = 15;
-                int labelsY = bottomLabelPanel.Height - gpsPositionLabel.Height - desiredYOffsetFromBottom;
-                bottomLabelPanel.Controls.Add(gpsPositionLabel);
-                bottomLabelPanel.Controls.Add(antennaDistanceLabel);
-                gpsPositionLabel.Location = new Point(435, labelsY);
-                antennaDistanceLabel.Location = new Point(510, labelsY);
-                bottomLabelPanel.Controls.SetChildIndex(gpsPositionLabel, 6);
-                bottomLabelPanel.Controls.SetChildIndex(antennaDistanceLabel, 6);
+                else
+                {
+                    int desiredYOffsetFromBottom = 15;
+                    int labelsY = bottomLabelPanel.Height - gpsPositionLabel.Height - desiredYOffsetFromBottom;
+                    bottomLabelPanel.Controls.Add(gpsPositionLabel);
+                    bottomLabelPanel.Controls.Add(antennaDistanceLabel);
+                    gpsPositionLabel.Location = new Point(435, labelsY);
+                    antennaDistanceLabel.Location = new Point(510, labelsY);
+                    bottomLabelPanel.Controls.SetChildIndex(gpsPositionLabel, 6);
+                    bottomLabelPanel.Controls.SetChildIndex(antennaDistanceLabel, 6);
+                }
 
                 // Menu "I'm here"
                 var flightData = inertialLabsPluginRef.Host.MainForm.FlightData;
@@ -143,8 +148,6 @@ namespace InertialLabs.Embedders
                 markersOverlay.Markers.Add(gcsSignalAreaCircleMarker);
                 MissionPlanner.GCSViews.FlightData.instance.gMapControl1.Overlays.Add(markersOverlay);
                 markersUpdateTimer.Start();
-
-                loadWaitTimer.Stop();
             };
             loadWaitTimer.Start();
         }
