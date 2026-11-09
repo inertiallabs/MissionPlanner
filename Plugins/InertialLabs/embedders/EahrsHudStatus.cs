@@ -28,11 +28,6 @@ namespace InertialLabs.Embedders
         public override bool Init()
         {
             EmbedInUi();
-
-            // this needs to be set per "comport" - prevent any duplicates
-            MainV2.comPort.OnPacketReceived -= MavlinkMessageHandler;
-            MainV2.comPort.OnPacketReceived += MavlinkMessageHandler;
-
             return true;
         }
 
@@ -103,28 +98,6 @@ namespace InertialLabs.Embedders
                 (hud.Width - eahrsLabel.PreferredWidth) / 2,
                 hud.Height - eahrsLabel.PreferredHeight - 4 * fontsize - 3 * fontoffset
             );
-        }
-
-        private void MavlinkMessageHandler(object sender, global::MAVLink.MAVLinkMessage mavLinkMessage)
-        {
-            switch (mavLinkMessage.msgid)
-            {
-                case (uint)InertialLabs.MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
-                    {
-                        var status = mavLinkMessage.ToStructure<MAVLink.mavlink_eahrs_status_info_t>();
-                        PluginState.eahrsStatusValue1 = status.status1;
-                        PluginState.eahrsStatusValue2 = status.status2;
-                        PluginState.eahrsStatusValue3 = status.status3;
-                        PluginState.eahrsStatusValue4 = status.status4;
-                        PluginState.eahrsStatusValue5 = status.status5;
-                        PluginState.SaveEahrsStatusInfoTimestamp();
-                    }
-                    break;
-                default:
-                    {
-                    }
-                    break;
-            }
         }
 
         public void UpdateEahrsLabelColor()

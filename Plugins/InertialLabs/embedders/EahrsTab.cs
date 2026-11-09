@@ -1,5 +1,4 @@
 using BruTile.Wms;
-using MissionPlanner;
 using MissionPlanner.Attributes;
 using System;
 using System.Drawing;
@@ -28,11 +27,6 @@ namespace InertialLabs.Embedders
         public override bool Init()
         {
             EmbedInUi();
-
-            // this needs to be set per "comport" - prevent any duplicates
-            MainV2.comPort.OnPacketReceived -= MavlinkMessageHandler;
-            MainV2.comPort.OnPacketReceived += MavlinkMessageHandler;
-
             return true;
         }
 
@@ -115,32 +109,6 @@ namespace InertialLabs.Embedders
             {
                 tabCtrl.TabPages.Add(tabExternalAHRS);
                 MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(tabExternalAHRS);
-            }
-        }
-
-        private void MavlinkMessageHandler(object sender, global::MAVLink.MAVLinkMessage mavLinkMessage)
-        {
-            switch (mavLinkMessage.msgid)
-            {
-                case (uint)InertialLabs.MAVLink.MAVLINK_MSG_ID.AHRS_ADDITIONAL_RAW_INFO:
-                    {
-                        var ahrs_info = mavLinkMessage.ToStructure<MAVLink.mavlink_ahrs_additional_raw_info_t>();
-
-                        PluginState.gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
-                        PluginState.gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
-                        PluginState.gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
-                        PluginState.gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
-                        PluginState.is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
-                        PluginState.ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
-                        PluginState.ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
-                        PluginState.ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
-                        PluginState.SaveAhrsAdditionalRawInfoTimestamp();
-                    }
-                    break;
-                default:
-                    {
-                    }
-                    break;
             }
         }
     }
