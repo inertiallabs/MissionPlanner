@@ -156,7 +156,7 @@ namespace InertialLabs.Controls
 
                 quickView4.number = PluginState.ins_lat_accuracy;
                 quickView5.number = PluginState.ins_lng_accuracy;
-                quickView6.number = -1 * PluginState.ins_alt_accuracy;
+                quickView6.number = PluginState.ins_alt_accuracy;
             }
             else
             {
