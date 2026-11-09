@@ -79,17 +79,14 @@ namespace InertialLabs.Embedders
                 AddEahrsTabIfNeeded();
             };
 
-            tabCtrl.ControlAdded += (_s, _e) =>
-            {
-                tabUpdateTimer.Stop();
-                tabUpdateTimer.Start();
-            };
+            tabCtrl.ControlAdded += TabControlActions_ControlsChanged;
+            tabCtrl.ControlRemoved += TabControlActions_ControlsChanged;
+        }
 
-            tabCtrl.ControlRemoved += (_s, _e) =>
-            {
-                tabUpdateTimer.Stop();
-                tabUpdateTimer.Start();
-            };
+        private void TabControlActions_ControlsChanged(object sender, ControlEventArgs e)
+        {
+            tabUpdateTimer.Stop();
+            tabUpdateTimer.Start();
         }
 
         private void AddEahrsTabIfNeeded()
