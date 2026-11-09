@@ -7,7 +7,7 @@ namespace InertialLabs
     // Passes a handler the MAVLink packets of the current vehicle, MainV2.comPort.MAV. It's the vehicle that Flight Data
     // shows and the plugin sends its commands to. The host replaces MainV2.comPort when the user selects a vehicle
     // on another link or when the main link closes. Because the switching raises no event a timer here checks this switches.
-    internal class CurrentVehiclePackets
+    internal class CurrentVehiclePackets : IDisposable
     {
         private readonly Action<MAVState, global::MAVLink.MAVLinkMessage> handler;
         private readonly Timer comPortCheckTimer = new Timer { Interval = 500 };
@@ -20,6 +20,12 @@ namespace InertialLabs
             SubscribeToComPort();
             comPortCheckTimer.Tick += (s, e) => SubscribeToComPort();
             comPortCheckTimer.Start();
+        }
+
+        public void Dispose()
+        {
+            comPortCheckTimer.Dispose();
+            subscribedPort.OnPacketReceived -= OnPacketReceived;
         }
 
         private void SubscribeToComPort()

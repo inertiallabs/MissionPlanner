@@ -31,6 +31,18 @@ namespace InertialLabs.Embedders
             return true;
         }
 
+        public override void Exit()
+        {
+            loadWaitTimer.Dispose();
+            statusUpdateTimer.Dispose();
+            MissionPlanner.GCSViews.FlightData.myhud.Resize -= Hud_Resize;
+
+            eahrsStatus?.Dispose();
+
+            eahrsLabel.Dispose();
+            eahrsLabelFont?.Dispose();
+        }
+
         private void EmbedInUi()
         {
             eahrsLabel = new System.Windows.Forms.Label
@@ -71,7 +83,7 @@ namespace InertialLabs.Embedders
                     var hud = MissionPlanner.GCSViews.FlightData.myhud;
 
                     UpdateEahrsLabelLayout(hud);
-                    hud.Resize += (obj, eventArgs) => UpdateEahrsLabelLayout(hud);
+                    hud.Resize += Hud_Resize;
 
                     hud.Controls.Add(eahrsLabel);
                     eahrsLabel.BringToFront();
@@ -82,6 +94,11 @@ namespace InertialLabs.Embedders
             statusUpdateTimer.Interval = 500;
             statusUpdateTimer.Tick += (s, e) => UpdateEahrsStatus();
             statusUpdateTimer.Start();
+        }
+
+        private void Hud_Resize(object sender, EventArgs e)
+        {
+            UpdateEahrsLabelLayout((Control)sender);
         }
 
         private void UpdateEahrsLabelLayout(Control hud)

@@ -29,6 +29,11 @@ namespace InertialLabs.Embedders
             return true;
         }
 
+        public override void Exit()
+        {
+            currentVehiclePackets.Dispose();
+        }
+
         private void MavlinkMessageHandler(MAVState vehicle, global::MAVLink.MAVLinkMessage mavLinkMessage)
         {
             switch (mavLinkMessage.msgid)

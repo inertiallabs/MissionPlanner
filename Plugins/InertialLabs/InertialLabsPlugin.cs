@@ -1,4 +1,5 @@
 ﻿using MissionPlanner;
+using MissionPlanner.Controls;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -39,6 +40,16 @@ namespace InertialLabs
 
         public override bool Loop() => true;
 
-        public override bool Exit() => true;
+        public override bool Exit()
+        {
+            Host.MainForm.InvokeIfRequired(() =>
+            {
+                mapEmbedder.Exit();
+                eahrsHudStatusEmbedder.Exit();
+                eahrsTabEmbedder.Exit();
+                mavLinkMessagesEmbedder.Exit();
+            });
+            return true;
+        }
     };
 }

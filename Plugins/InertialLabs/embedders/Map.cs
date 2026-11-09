@@ -44,6 +44,12 @@ namespace InertialLabs.Embedders
             return true;
         }
 
+        public override void Exit()
+        {
+            loadWaitTimer.Dispose();
+            markersUpdateTimer.Dispose();
+        }
+
         private void EmbedInUi()
         {
             imHereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

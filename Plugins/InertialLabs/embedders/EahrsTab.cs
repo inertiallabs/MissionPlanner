@@ -30,6 +30,18 @@ namespace InertialLabs.Embedders
             return true;
         }
 
+        public override void Exit()
+        {
+            loadWaitTimer.Dispose();
+            tabUpdateTimer.Dispose();
+
+            var tabCtrl = inertialLabsPluginRef.Host.MainForm.FlightData.tabControlactions;
+            tabCtrl.ControlAdded -= TabControlActions_ControlsChanged;
+            tabCtrl.ControlRemoved -= TabControlActions_ControlsChanged;
+
+            eahrsControl.Dispose();
+        }
+
         private void EmbedInUi()
         {
             //

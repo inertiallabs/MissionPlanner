@@ -19,6 +19,7 @@ namespace InertialLabs.Controls
             eahrsTab = eahrsTabRef;
             InitializeComponent();
             this.VisibleChanged += EAHRSControl_VisibleChanged;
+            this.Disposed += (s, e) => aidingDataDialog.Dispose();
         }
 
         private void EAHRSControl_VisibleChanged(object sender, EventArgs e)
