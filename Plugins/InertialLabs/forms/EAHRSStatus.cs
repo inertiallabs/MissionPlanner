@@ -28,9 +28,6 @@ namespace InertialLabs.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // restore colours
-            MissionPlanner.Utilities.ThemeManager.ApplyThemeTo(this);
-
             if (eahrsType != 5 /*Inertial Labs EAHRS*/)
             {
                 return;
