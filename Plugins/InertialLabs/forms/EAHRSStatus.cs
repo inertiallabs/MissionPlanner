@@ -143,7 +143,7 @@ namespace InertialLabs.Forms
             }
 
             // ILabs EAHRS ADU flags
-            for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD; bitvalue = bitvalue << 1)
+            for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE; bitvalue = bitvalue << 1)
             {
                 uint currentbit = (PluginState.eahrsStatusValue3 & bitvalue);
                 var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS), bitvalue.ToString());
