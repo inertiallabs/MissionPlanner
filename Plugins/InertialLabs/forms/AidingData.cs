@@ -229,6 +229,16 @@ namespace InertialLabs.Forms
             Hide();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+            base.OnFormClosing(e);
+        }
+
         private void BUT_uncheckall_Click(object sender, EventArgs e)
         {
             externalPositionCheckBox.Checked = false;
