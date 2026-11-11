@@ -20,7 +20,6 @@ namespace InertialLabs
         public static void SaveEahrsStatusInfoTimestamp(MAVState vehicle) => SaveTimestamp(ref eahrsStatusInfoTimestamp, ref eahrsStatusInfoVehicle, vehicle);
         public static bool IsEahrsStatusInfoFresh => IsFresh(ref eahrsStatusInfoTimestamp, ref eahrsStatusInfoVehicle);
 
-        public static uint eahrsStatusResultValue { get; set; }
         public static uint eahrsStatusValue1 { get; set; }
         public static uint eahrsStatusValue2 { get; set; }
         public static uint eahrsStatusValue3 { get; set; }

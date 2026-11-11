@@ -40,204 +40,34 @@ namespace InertialLabs.Forms
                 Text = title;
             }
 
-            int idx = 0;
-
-            // ILabs USW flags
-            for (uint bitvalue = 1; bitvalue <= (uint)(global::MAVLink.MAV_CMD)InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATED; bitvalue = bitvalue << 1)
+            var rows = EahrsStatusTable.GetStatusRows();
+            for (int idx = 0; idx < rows.Count; idx++)
             {
-                uint currentbit = (PluginState.eahrsStatusValue1 & bitvalue);
-                var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
-                {
-                    continue;
-                }
-
                 if (flowLayoutPanel1.Controls.Count <= idx)
                 {
                     flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
                 }
 
-                flowLayoutPanel1.Controls[idx].Text = currentflag.ToString().Replace("EAHRS_", "").ToLower() + " " +
-                                                         (currentbit != 0 ? "1" : "0") + "\r\n";
-
-                flowLayoutPanel1.Controls[idx].ForeColor = ForeColor;
-
-                if (currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATED && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Green;
-                }
-                else if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ENVIRONMENTAL_TEMPERATURE ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_LARGE_MAGNETIC_FIELD_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INCORRECT_HIGH_POWER_SUPPLY ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INCORRECT_LOW_POWER_SUPPLY) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Orange;
-                }
-                else if (currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATION && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.DarkCyan;
-                }
-                else if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_GNSS_RECEIVER ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ELECTRONICS ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_MAGNETOMETER_UNIT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ACCELEROMETER_UNIT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_GYROSCOPE_UNIT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_SOFTWARE_STATUS ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INITIAL_ALIGNMENT) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Red;
-                }
-
-                idx++;
+                var row = rows[idx];
+                flowLayoutPanel1.Controls[idx].Text = row.Name + " " + row.Value + "\r\n";
+                flowLayoutPanel1.Controls[idx].ForeColor = hasData ? RowColor(row.Severity) : EahrsHudStatus.NoDataColor;
             }
+        }
 
-            // ILabs USW2 flags
-            for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY; bitvalue = bitvalue << 1)
+        private Color RowColor(EahrsSeverity severity)
+        {
+            switch (severity)
             {
-                uint currentbit = (PluginState.eahrsStatusValue2 & bitvalue);
-                var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
-                {
-                    continue;
-                }
-
-                if (flowLayoutPanel1.Controls.Count <= idx)
-                {
-                    flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
-                }
-
-                flowLayoutPanel1.Controls[idx].Text = currentflag.ToString().Replace("EAHRS_", "").ToLower() + " " +
-                                                         (currentbit > 0 ? "1" : "0") + "\r\n";
-
-                flowLayoutPanel1.Controls[idx].ForeColor = ForeColor;
-
-                if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_X_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_Y_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_Z_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Orange;
-                }
-                else if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION ||
-                    currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.DarkCyan;
-                }
-                else if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_BARO_ALTIMETER ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_DIFFERENTIAL_PRESSURE_SENSOR) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Red;
-                }
-
-                idx++;
-            }
-
-            // ILabs EAHRS ADU flags
-            for (uint bitvalue = 1; bitvalue <= (uint)InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE; bitvalue = bitvalue << 1)
-            {
-                uint currentbit = (PluginState.eahrsStatusValue3 & bitvalue);
-                var currentflag = (InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS)Enum.Parse(typeof(InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_ADU_RESERVED_BIT"))
-                {
-                    continue;
-                }
-
-                if (flowLayoutPanel1.Controls.Count <= idx)
-                {
-                    flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
-                }
-
-                flowLayoutPanel1.Controls[idx].Text = currentflag.ToString().Replace("EAHRS_", "").ToLower() + " " +
-                                                         (currentbit > 0 ? "1" : "0") + "\r\n";
-
-                flowLayoutPanel1.Controls[idx].ForeColor = ForeColor;
-
-                if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_MEASUREMENT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Orange;
-                }
-                else if ((currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_PRESSURE_ALTITUDE ||
-                     currentflag == InertialLabs.MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED) && currentbit != 0)
-                {
-                    flowLayoutPanel1.Controls[idx].ForeColor = Color.Red;
-                }
-
-                idx++;
-            }
-
-            // ILabs EAHRS GPS fix flag
-            uint statusValue = PluginState.eahrsStatusValue4;
-            if (flowLayoutPanel1.Controls.Count <= idx)
-            {
-                flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
-            }
-            flowLayoutPanel1.Controls[idx].Text = "gps_fix " + statusValue + "\r\n";
-            flowLayoutPanel1.Controls[idx].ForeColor = ForeColor;
-
-            if (statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.NO)
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Orange;
-            }
-            else if (statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_2D ||
-                 statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_3D ||
-                 statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.OTHER)
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Green;
-            }
-            else
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Red;
-            }
-
-            idx++;
-
-            // ILabs EAHRS GPS spoofing flag
-            statusValue = PluginState.eahrsStatusValue5;
-            if (flowLayoutPanel1.Controls.Count <= idx)
-            {
-                flowLayoutPanel1.Controls.Add(new Label() { Height = 13, Width = flowLayoutPanel1.Width });
-            }
-            flowLayoutPanel1.Controls[idx].Text = "gps_spoofing_indicated " + statusValue + "\r\n";
-            flowLayoutPanel1.Controls[idx].ForeColor = ForeColor;
-
-            if (statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.INDICATED ||
-                statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.MULTIPLE_INDICATIONS)
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Orange;
-            }
-            else if (statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.UNKNOWN_OR_DEACTIVATED ||
-                 statusValue == (uint)InertialLabs.MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.NO_INDICATED)
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Green;
-            }
-            else
-            {
-                flowLayoutPanel1.Controls[idx].ForeColor = Color.Red;
-            }
-
-            idx++;
-
-            if (!hasData)
-            {
-                foreach (Control label in flowLayoutPanel1.Controls)
-                {
-                    label.ForeColor = EahrsHudStatus.NoDataColor;
-                }
+                case EahrsSeverity.Good:
+                    return Color.Green;
+                case EahrsSeverity.Info:
+                    return Color.DarkCyan;
+                case EahrsSeverity.Warning:
+                    return Color.Orange;
+                case EahrsSeverity.Fail:
+                    return Color.Red;
+                default:
+                    return ForeColor;
             }
         }
     }

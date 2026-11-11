@@ -117,17 +117,17 @@ namespace InertialLabs.Embedders
             );
         }
 
-        public void UpdateEahrsLabelColor()
+        private void UpdateEahrsLabelColor(EahrsSeverity mostSevere)
         {
-            if (PluginState.eahrsStatusResultValue >= 8)
+            if (mostSevere >= EahrsSeverity.Fail)
             {
                 eahrsLabel.BackColor = Color.DarkRed;
             }
-            else if (PluginState.eahrsStatusResultValue >= 4)
+            else if (mostSevere >= EahrsSeverity.Warning)
             {
                 eahrsLabel.BackColor = Color.Orange;
             }
-            else if (PluginState.eahrsStatusResultValue >= 2)
+            else if (mostSevere >= EahrsSeverity.Info)
             {
                 eahrsLabel.BackColor = Color.DarkCyan;
             }
@@ -158,138 +158,16 @@ namespace InertialLabs.Embedders
                 return;
             }
 
-            uint calculatedStatus = (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.OK;
-
-            // ILabs USW flags
-            for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATED; bitvalue = bitvalue << 1)
+            var mostSevere = EahrsSeverity.None;
+            foreach (var row in EahrsStatusTable.GetStatusRows())
             {
-                uint currentbit = (PluginState.eahrsStatusValue1 & bitvalue);
-                var currentflag = (MAVLink.ILABS_EAHRS_STATUS_FLAGS)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_STATUS_FLAGS), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
+                if (row.Severity > mostSevere)
                 {
-                    continue;
-                }
-
-                if ((currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ENVIRONMENTAL_TEMPERATURE ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_LARGE_MAGNETIC_FIELD_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_Z_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_Y_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_X_ANGULAR_RATE_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INCORRECT_HIGH_POWER_SUPPLY ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INCORRECT_LOW_POWER_SUPPLY) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
-                }
-                else if (currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ON_THE_FLY_CALIBRATION && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.INFO);
-                }
-                else if ((currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_GNSS_RECEIVER ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ELECTRONICS ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_MAGNETOMETER_UNIT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_ACCELEROMETER_UNIT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_GYROSCOPE_UNIT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_SOFTWARE_STATUS ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS.EAHRS_INITIAL_ALIGNMENT) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
+                    mostSevere = row.Severity;
                 }
             }
 
-            // ILabs USW2 flags
-            for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY; bitvalue = bitvalue << 1)
-            {
-                uint currentbit = (PluginState.eahrsStatusValue2 & bitvalue);
-                var currentflag = (MAVLink.ILABS_EAHRS_STATUS_FLAGS2)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_STATUS_FLAGS2), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_RESERVED_BIT"))
-                {
-                    continue;
-                }
-
-                if ((currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_X_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_Y_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_Z_ACCELERATION_EXCEEDING_DETECT ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_RECEIVER_INPUT_TO_THE_INS_ALGORITHM ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_DIFFERENTIAL_PRESSURE_INPUT_TO_THE_INS_ALGORITHM ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_GNSS_POSITION_VALIDITY) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
-                }
-                else if ((currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_AUTOMATIC_2D_MAGNETOMETERS_CALIBRATION ||
-                    currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_AUTOMATIC_3D_MAGNETOMETERS_CALIBRATION) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.INFO);
-                }
-                else if ((currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_BARO_ALTIMETER ||
-                     currentflag == MAVLink.ILABS_EAHRS_STATUS_FLAGS2.EAHRS_DIFFERENTIAL_PRESSURE_SENSOR) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
-                }
-            }
-
-            // ILabs EAHRS ADU flags
-            for (uint bitvalue = 1; bitvalue <= (uint)MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE; bitvalue = bitvalue << 1)
-            {
-                uint currentbit = (PluginState.eahrsStatusValue3 & bitvalue);
-                var currentflag = (MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS)Enum.Parse(typeof(MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS), bitvalue.ToString());
-
-                if (currentflag.ToString().StartsWith("EAHRS_ADU_RESERVED_BIT"))
-                {
-                    continue;
-                }
-
-                if ((currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_MEASUREMENT ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_MEASUREMENT ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED_BELOW_THRESHOLD ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
-                }
-                else if ((currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_SENSOR_INITIALIZATION ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_INITIALIZATION ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_STATIC_PRESSURE_SENSOR_STATUS ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_DIFFERENTIAL_PRESSURE_SENSOR_STATUS ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_PRESSURE_ALTITUDE ||
-                     currentflag == MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_AIR_SPEED) && currentbit != 0)
-                {
-                    calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
-                }
-            }
-
-            // ILabs EAHRS GPS fix flag
-            if (PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.NO)
-            {
-                calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
-            }
-            else if (PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_2D ||
-                 PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.FIX_3D ||
-                 PluginState.eahrsStatusValue4 == (uint)MAVLink.ILABS_EAHRS_GPS_FIX_STATUS.OTHER)
-            {
-            }
-            else
-            {
-                calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
-            }
-
-            // ILabs EAHRS GPS spoofing flag
-            if (PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.INDICATED ||
-                PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.MULTIPLE_INDICATIONS)
-            {
-                calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.WARNING);
-            }
-            else if (PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.UNKNOWN_OR_DEACTIVATED ||
-                 PluginState.eahrsStatusValue5 == (uint)MAVLink.ILABS_EAHRS_GPS_SPOOFING_INDICATED_STATUS.NO_INDICATED)
-            {
-            }
-            else
-            {
-                calculatedStatus = (calculatedStatus | (uint)MAVLink.EAHRS_COMMON_STATUS_FLAGS.FAIL);
-            }
-
-            PluginState.eahrsStatusResultValue = calculatedStatus;
-            UpdateEahrsLabelColor();
+            UpdateEahrsLabelColor(mostSevere);
         }
     }
 }

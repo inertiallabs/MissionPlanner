@@ -3,22 +3,6 @@
   <version>3</version>
   <dialect>inertial_labs</dialect>
   <enums>
-    <!-- EAHRS_COMMON_STATUS_FLAGS - these values should be bit-and with the messages flags field to know if flag has been set -->
-    <enum name="EAHRS_COMMON_STATUS_FLAGS" bitmask="true">
-      <description>Flags for the EAHRS common status.</description>
-      <entry value="1" name="OK">
-        <description>Ok.</description>
-      </entry>
-      <entry value="2" name="INFO">
-        <description>Info.</description>
-      </entry>
-      <entry value="4" name="WARNING">
-        <description>Warning.</description>
-      </entry>
-      <entry value="8" name="FAIL">
-        <description>Fail.</description>
-      </entry>
-    </enum>
     <!-- ILABS_EAHRS_STATUS_FLAGS (unit status word) - these values should be bit-and with the messages flags field to know if flag has been set -->
     <enum name="ILABS_EAHRS_STATUS_FLAGS" bitmask="true">
       <description>Flags in ILABS_EAHRS_STATUS message.</description>

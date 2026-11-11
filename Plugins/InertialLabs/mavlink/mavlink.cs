@@ -40,24 +40,6 @@ public partial class MAVLink
         EAHRS_STATUS_INFO = 700,
     }
 
-    ///<summary> Flags for the EAHRS common status. </summary>
-    [Flags]
-	public enum EAHRS_COMMON_STATUS_FLAGS: int /*default*/
-    {
-        ///<summary> Ok. | </summary>
-        [Description("Ok.")]
-        OK=1,
-        ///<summary> Info. | </summary>
-        [Description("Info.")]
-        INFO=2,
-        ///<summary> Warning. | </summary>
-        [Description("Warning.")]
-        WARNING=4,
-        ///<summary> Fail. | </summary>
-        [Description("Fail.")]
-        FAIL=8,
-    };
-
     ///<summary> Flags in ILABS_EAHRS_STATUS message. </summary>
     [Flags]
 	public enum ILABS_EAHRS_STATUS_FLAGS: int /*default*/
