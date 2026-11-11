@@ -1,3 +1,4 @@
+using log4net;
 using MissionPlanner;
 using System;
 using System.Drawing;
@@ -15,6 +16,8 @@ namespace InertialLabs.Embedders
 {
     public class Map : EmbedderInterface
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private InertialLabsPlugin inertialLabsPluginRef;
         private System.Windows.Forms.Timer loadWaitTimer;
 
@@ -107,7 +110,7 @@ namespace InertialLabs.Embedders
                                        : null;
                 if (bottomLabelPanel == null)
                 {
-                    Console.WriteLine("splitContainer1 not found in GCSViews.FlightData");
+                    log.Error("splitContainer1 not found in GCSViews.FlightData, the map legend labels are not shown");
                 }
                 else
                 {
@@ -329,6 +332,7 @@ namespace InertialLabs.Embedders
             }
             catch (System.Exception ex)
             {
+                log.Error("I'm here: sending GPS_INPUT failed", ex);
                 CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR);
             }
         }

@@ -96,12 +96,14 @@ namespace InertialLabs.Controls
                     CustomMessageBox.Show(Strings.ErrorRejectedByMAV, Strings.ERROR);
                 }
             }
-            catch (TimeoutException)
+            catch (TimeoutException ex)
             {
+                log.Error("Command " + command + ": no acknowledgement, the result is unknown", ex);
                 CustomMessageBox.Show("No acknowledgement from the vehicle: the command may or may not have been executed. Check the External AHRS status.", Strings.ERROR);
             }
             catch (Exception ex)
             {
+                log.Error("Command " + command + " failed", ex);
                 CustomMessageBox.Show(Strings.CommandFailed + ex.Message, Strings.ERROR);
             }
         }

@@ -1,6 +1,8 @@
-﻿using MissionPlanner;
+﻿using log4net;
+using MissionPlanner;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -8,6 +10,8 @@ namespace InertialLabs.Forms
 {
     public partial class AidingData : Form
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         public AidingData()
         {
             InitializeComponent();
@@ -194,6 +198,7 @@ namespace InertialLabs.Forms
                 }
                 catch (Exception ex)
                 {
+                    log.Error("Aiding data \"" + name + "\" failed", ex);
                     report.AppendLine(name + ": " + (ex is TimeoutException ? "No acknowledgement, result unknown" : ex.Message));
                     isFailed = true;
                     needShowResultDialog = true;
