@@ -116,14 +116,7 @@ namespace InertialLabs.Controls
 
         private void CB_gnss_position_CheckedChanged(object sender, EventArgs e)
         {
-            if (CB_gnss_position.Checked && !PluginState.is_gps_raw_valid)
-            {
-                log.Warn("Can't enable GPS position. Invalid GPS status.");
-            }
-
-            bool needEnable = CB_gnss_position.Checked && PluginState.is_gps_raw_valid;
-            CB_gnss_position.Checked = needEnable;
-            PluginState.show_gps_raw_location = needEnable;
+            PluginState.show_gps_raw_location = CB_gnss_position.Checked;
         }
 
         private void CB_ins_pos_estimation_CheckedChanged(object sender, EventArgs e)
