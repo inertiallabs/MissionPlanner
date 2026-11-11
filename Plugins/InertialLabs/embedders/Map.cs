@@ -10,7 +10,6 @@ using static MAVLink;
 using MissionPlanner.Controls;
 using System.Threading;
 using InertialLabs.Maps;
-using NetTopologySuite.Utilities;
 
 namespace InertialLabs.Embedders
 {
@@ -27,10 +26,8 @@ namespace InertialLabs.Embedders
         private System.Windows.Forms.Timer markersUpdateTimer;
         private global::MAVLink.MAV_TYPE lastAptype = 0;
         private GMapMarkerBase gpsMarker = null;
-        private GMapMarkerCircle vechiclePosEstimationCircleMarker = null;
+        private GMapMarkerCircle vehiclePosEstimationCircleMarker = null;
         private GMapMarkerCircle gcsSignalAreaCircleMarker = null;
-
-        private object flightDataInstance = null;
 
         public Map(InertialLabsPlugin inertialLabsPlugin)
         {
@@ -91,7 +88,7 @@ namespace InertialLabs.Embedders
             markersUpdateTimer.Tick += (s, e) =>
             {
                 UpdateGPSMarker();
-                UpdateVechiclePosEstimation();
+                UpdateVehiclePosEstimation();
                 UpdateGpsDistanceAround();
             };
 
@@ -101,7 +98,6 @@ namespace InertialLabs.Embedders
             {
                 loadWaitTimer.Stop();
 
-                flightDataInstance = MissionPlanner.GCSViews.FlightData.instance;
                 // Agenda Labels
                 var bottomLabelPanel = MissionPlanner.GCSViews.FlightData.instance
                                        .Controls
@@ -137,14 +133,14 @@ namespace InertialLabs.Embedders
                 gpsMarker = GetGPSMarker();
                 gpsMarker.IsVisible = false;
 
-                vechiclePosEstimationCircleMarker = new GMapMarkerCircle(MainV2.comPort.MAV.cs.Location, 0, Color.Red);
-                vechiclePosEstimationCircleMarker.IsVisible = false;
+                vehiclePosEstimationCircleMarker = new GMapMarkerCircle(MainV2.comPort.MAV.cs.Location, 0, Color.Red);
+                vehiclePosEstimationCircleMarker.IsVisible = false;
 
                 gcsSignalAreaCircleMarker = new GMapMarkerCircle(MainV2.comPort.MAV.cs.HomeLocation, 0, Color.Purple);
                 gcsSignalAreaCircleMarker.IsVisible = false;
 
                 markersOverlay.Markers.Add(gpsMarker);
-                markersOverlay.Markers.Add(vechiclePosEstimationCircleMarker);
+                markersOverlay.Markers.Add(vehiclePosEstimationCircleMarker);
                 markersOverlay.Markers.Add(gcsSignalAreaCircleMarker);
                 MissionPlanner.GCSViews.FlightData.instance.gMapControl1.Overlays.Add(markersOverlay);
                 markersUpdateTimer.Start();
@@ -166,7 +162,7 @@ namespace InertialLabs.Embedders
             }
 
             /// Check GPSMarker type change
-            if (gpsMarker == null || lastAptype != MainV2.comPort.MAV.aptype)
+            if (lastAptype != MainV2.comPort.MAV.aptype)
             {
                 ReplaceGPSMarker();
                 lastAptype = MainV2.comPort.MAV.aptype;
@@ -180,25 +176,25 @@ namespace InertialLabs.Embedders
             gpsMarker.IsVisible = true;
         }
 
-        private void UpdateVechiclePosEstimation()
+        private void UpdateVehiclePosEstimation()
         {
             if (!PluginState.show_ins_pos_estimation || !PluginState.IsAhrsAdditionalRawInfoFresh)
             {
-                vechiclePosEstimationCircleMarker.IsVisible = false;
+                vehiclePosEstimationCircleMarker.IsVisible = false;
                 return;
             }
 
             double radius_m = Math.Max(PluginState.ins_lat_accuracy, PluginState.ins_lng_accuracy);
             if (radius_m < 10)
             {
-                vechiclePosEstimationCircleMarker.IsVisible = false;
+                vehiclePosEstimationCircleMarker.IsVisible = false;
                 return;
             }
 
             var pos = MainV2.comPort.MAV.cs.Location;
-            vechiclePosEstimationCircleMarker.Position = pos;
-            vechiclePosEstimationCircleMarker.radius = radius_m;
-            vechiclePosEstimationCircleMarker.IsVisible = true;
+            vehiclePosEstimationCircleMarker.Position = pos;
+            vehiclePosEstimationCircleMarker.radius = radius_m;
+            vehiclePosEstimationCircleMarker.IsVisible = true;
         }
 
         private void UpdateGpsDistanceAround()
@@ -265,10 +261,7 @@ namespace InertialLabs.Embedders
 
         private void ReplaceGPSMarker()
         {
-            if (gpsMarker != null)
-            {
-                markersOverlay.Markers.Remove(gpsMarker);
-            }
+            markersOverlay.Markers.Remove(gpsMarker);
             gpsMarker = GetGPSMarker();
             markersOverlay.Markers.Add(gpsMarker);
         }

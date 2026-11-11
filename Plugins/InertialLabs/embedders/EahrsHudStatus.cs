@@ -62,7 +62,7 @@ namespace InertialLabs.Embedders
             {
                 if (eahrsStatus == null || eahrsStatus.IsDisposed)
                 {
-                    eahrsStatus = new InertialLabs.Forms.EAHRSStatus(this, 5);
+                    eahrsStatus = new InertialLabs.Forms.EAHRSStatus();
                     eahrsStatus.Show();
                 }
                 else
@@ -143,9 +143,8 @@ namespace InertialLabs.Embedders
             try
             {
                 hasStatus = PluginState.IsEahrsStatusInfoFresh &&
-                            MainV2.comPort.MAV.cs.parent != null &&
-                            MainV2.comPort.MAV.cs.parent.parent.MAV.param.ContainsKey("EAHRS_TYPE") &&
-                            MainV2.comPort.MAV.cs.parent.parent.MAV.param["EAHRS_TYPE"].Value == 5 /*Inertial Labs*/;
+                            MainV2.comPort.MAV.param.ContainsKey("EAHRS_TYPE") &&
+                            MainV2.comPort.MAV.param["EAHRS_TYPE"].Value == 5 /*Inertial Labs*/;
             }
             catch
             {

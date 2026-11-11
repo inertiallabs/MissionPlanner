@@ -9,14 +9,12 @@ namespace InertialLabs.Controls
 {
     public partial class EAHRSControl : UserControl
     {
-        private InertialLabs.Embedders.EahrsTab eahrsTab;
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private InertialLabs.Forms.AidingData aidingDataDialog = new InertialLabs.Forms.AidingData();
 
-        public EAHRSControl(InertialLabs.Embedders.EahrsTab eahrsTabRef)
+        public EAHRSControl()
         {
-            eahrsTab = eahrsTabRef;
             InitializeComponent();
             this.VisibleChanged += EAHRSControl_VisibleChanged;
             this.Disposed += (s, e) => aidingDataDialog.Dispose();

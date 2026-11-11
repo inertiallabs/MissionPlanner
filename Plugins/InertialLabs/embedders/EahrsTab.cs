@@ -1,6 +1,3 @@
-using BruTile.Wms;
-using MissionPlanner.Attributes;
-using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -47,7 +44,7 @@ namespace InertialLabs.Embedders
             //
             // eahrsControl
             //
-            eahrsControl = new InertialLabs.Controls.EAHRSControl(this);
+            eahrsControl = new InertialLabs.Controls.EAHRSControl();
             eahrsControl.Name = "eahrsControl1";
 
             //
@@ -104,11 +101,6 @@ namespace InertialLabs.Embedders
         private void AddEahrsTabIfNeeded()
         {
             var tabCtrl = inertialLabsPluginRef.Host.MainForm.FlightData.tabControlactions;
-            if (tabCtrl == null)
-            {
-                Console.WriteLine("tabControlactions not found in GCSViews.FlightData");
-                return;
-            }
 
             bool isTabAdded = tabCtrl.TabPages
                 .Cast<TabPage>()

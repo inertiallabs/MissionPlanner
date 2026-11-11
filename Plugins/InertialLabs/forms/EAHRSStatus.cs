@@ -8,15 +8,10 @@ namespace InertialLabs.Forms
 {
     public partial class EAHRSStatus : Form
     {
-        private InertialLabs.Embedders.EahrsHudStatus eahrsHudStatusRef;
-        private double eahrsType;
         private readonly string formTitle;
 
-        public EAHRSStatus(InertialLabs.Embedders.EahrsHudStatus eahrsHudStatus, double eahrsTypeRef)
+        public EAHRSStatus()
         {
-            eahrsType = eahrsTypeRef;
-            eahrsHudStatusRef = eahrsHudStatus;
-
             InitializeComponent();
             formTitle = Text;
             this.Height = 700;
@@ -28,11 +23,6 @@ namespace InertialLabs.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (eahrsType != 5 /*Inertial Labs EAHRS*/)
-            {
-                return;
-            }
-
             bool hasData = PluginState.IsEahrsStatusInfoFresh;
             string title = hasData ? formTitle : formTitle + " - NO DATA";
             if (Text != title)
