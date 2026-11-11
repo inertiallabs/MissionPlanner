@@ -25,12 +25,11 @@ namespace InertialLabs.Controls
             if (this.Visible)
             {
                 updateTimer.Start();
+                updateTimer_Tick(this, EventArgs.Empty);
             }
             else
             {
                 updateTimer.Stop();
-                resetInsGnssPosDiffValues();
-                resetInsPosAccuracyValues();
             }
         }
 
@@ -154,8 +153,8 @@ namespace InertialLabs.Controls
             else
             {
                 // No fresh AHRS_ADDITIONAL_RAW_INFO: show NaN, neither the last values nor zeros are current
-                resetInsGnssPosDiffValues(double.NaN);
-                resetInsPosAccuracyValues(double.NaN);
+                resetInsGnssPosDiffValues();
+                resetInsPosAccuracyValues();
             }
         }
 
@@ -169,6 +168,12 @@ namespace InertialLabs.Controls
         {
             const int r = 6371000; // constant for conversion from Spherical to Cartesian coordinates
 
+            if (MainV2.comPort.MAV.cs.lat == 0 || MainV2.comPort.MAV.cs.lng == 0)
+            {
+                resetInsGnssPosDiffValues();
+                return;
+            }
+
             if (PluginState.gps_lat_raw != 0)
             {
                 double delta_lat = (MainV2.comPort.MAV.cs.lat - PluginState.gps_lat_raw) * Math.PI / 180;
@@ -176,7 +181,7 @@ namespace InertialLabs.Controls
             }
             else
             {
-                quickView1.number = 0D;
+                quickView1.number = double.NaN;
             }
 
             if (PluginState.gps_lat_raw != 0 && PluginState.gps_lng_raw != 0)
@@ -186,7 +191,7 @@ namespace InertialLabs.Controls
             }
             else
             {
-                quickView2.number = 0D;
+                quickView2.number = double.NaN;
             }
 
             if (PluginState.gps_alt_raw != 0)
@@ -196,22 +201,23 @@ namespace InertialLabs.Controls
             }
             else
             {
-                quickView3.number = 0D;
+                quickView3.number = double.NaN;
             }
         }
 
-        private void resetInsGnssPosDiffValues(double value = 0D)
+        // QuickView shows NaN as the culture's NaN symbol, i.e. "no data"
+        private void resetInsGnssPosDiffValues()
         {
-            quickView1.number = value;
-            quickView2.number = value;
-            quickView3.number = value;
+            quickView1.number = double.NaN;
+            quickView2.number = double.NaN;
+            quickView3.number = double.NaN;
         }
 
-        private void resetInsPosAccuracyValues(double value = 0D)
+        private void resetInsPosAccuracyValues()
         {
-            quickView4.number = value;
-            quickView5.number = value;
-            quickView6.number = value;
+            quickView4.number = double.NaN;
+            quickView5.number = double.NaN;
+            quickView6.number = double.NaN;
         }
     }
 }
