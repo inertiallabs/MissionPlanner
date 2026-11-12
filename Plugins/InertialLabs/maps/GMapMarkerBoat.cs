@@ -28,7 +28,7 @@ namespace InertialLabs.Maps
             {
                 return;
             }
-            
+
             var temp = g.Transform;
             g.TranslateTransform(LocalPosition.X, LocalPosition.Y);
             g.RotateTransform(-Overlay.Control.Bearing);
