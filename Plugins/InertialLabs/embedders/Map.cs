@@ -8,8 +8,6 @@ using System.Reflection;
 using GMap.NET;
 using GMap.NET.WindowsForms;
 using static MAVLink;
-using MissionPlanner.Controls;
-using System.Threading;
 using InertialLabs.Maps;
 
 namespace InertialLabs.Embedders
@@ -236,8 +234,7 @@ namespace InertialLabs.Embedders
             {
                 return new Maps.GMapMarkerQuad(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw,
-                    MainV2.comPort.MAV.sysid)
+                    (float)PluginState.gps_track_over_ground_raw)
                 {
                     Tag = MainV2.comPort.MAV
                 };

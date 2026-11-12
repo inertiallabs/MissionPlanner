@@ -1,4 +1,3 @@
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -78,7 +77,7 @@ namespace InertialLabs.Embedders
 
         private void SetupTabWatcher()
         {
-            // delay in tab addition. To be shure, EahrsTab will be the last.
+            // delay in tab addition. To be sure, EahrsTab will be the last.
             var tabCtrl = inertialLabsPluginRef.Host.MainForm.FlightData.tabControlactions;
 
             tabUpdateTimer.Interval = 100;

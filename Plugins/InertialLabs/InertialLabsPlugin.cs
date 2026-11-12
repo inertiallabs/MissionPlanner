@@ -1,9 +1,4 @@
-﻿using MissionPlanner;
-using MissionPlanner.Controls;
-using System;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
+﻿using MissionPlanner.Controls;
 
 
 namespace InertialLabs

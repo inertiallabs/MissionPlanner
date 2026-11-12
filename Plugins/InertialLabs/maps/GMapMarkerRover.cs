@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using GMap.NET;
-using GMap.NET.WindowsForms;
-using MissionPlanner.Utilities;
 
 namespace InertialLabs.Maps
 {
@@ -24,11 +22,6 @@ namespace InertialLabs.Maps
 
         public override void OnRender(IGraphics g)
         {
-            if(IsHidden)
-            {
-                return;
-            }
-
             var temp = g.Transform;
             g.TranslateTransform(LocalPosition.X, LocalPosition.Y);
             g.RotateTransform(-Overlay.Control.Bearing);
@@ -41,16 +34,7 @@ namespace InertialLabs.Maps
             {
             }
 #if NET472_OR_GREATER
-            using (var ia = new System.Drawing.Imaging.ImageAttributes())
-            {
-                if (IsTransparent)
-                {
-                    // Draw image with transparency using a color matrix
-                    var cm = new System.Drawing.Imaging.ColorMatrix { Matrix33 = 0.39f };
-                    ia.SetColorMatrix(cm, System.Drawing.Imaging.ColorMatrixFlag.Default, System.Drawing.Imaging.ColorAdjustType.Bitmap);
-                }
-                g.DrawImage(icon, new Rectangle(-icon.Width / 2, -icon.Width / 2, icon.Width, icon.Height), 0, 0, icon.Width, icon.Height, GraphicsUnit.Pixel, ia);
-            }
+            g.DrawImage(icon, new Rectangle(-icon.Width / 2, -icon.Width / 2, icon.Width, icon.Height), 0, 0, icon.Width, icon.Height, GraphicsUnit.Pixel);
 #else
             g.DrawImageUnscaled(global::MissionPlanner.Maps.Resources.rover,
                 Size.Width / -2,

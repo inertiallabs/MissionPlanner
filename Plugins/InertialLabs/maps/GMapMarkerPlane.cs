@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using GMap.NET;
-using GMap.NET.WindowsForms;
-using MissionPlanner.Utilities;
 
 namespace InertialLabs.Maps
 {
@@ -55,11 +53,6 @@ namespace InertialLabs.Maps
 
         public override void OnRender(IGraphics g)
         {
-            if(IsHidden)
-            {
-                return;
-            }
-
             var temp = g.Transform;
             g.TranslateTransform(LocalPosition.X, LocalPosition.Y);
 
@@ -82,14 +75,7 @@ namespace InertialLabs.Maps
             // the plane
             g.TranslateTransform(-2, -2);
 
-            var color = Color.Blue;
-
-            if(IsTransparent)
-            {
-                color = Color.FromArgb(100, color);
-            }
-
-            using (var brush = new SolidBrush(color))
+            using (var brush = new SolidBrush(Color.Blue))
             {
                 g.FillPolygon(brush, plane);
             }
