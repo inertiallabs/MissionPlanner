@@ -224,38 +224,26 @@ namespace InertialLabs.Embedders
             {
                 return new Maps.GMapMarkerRover(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw)
-                {
-                    Tag = MainV2.comPort.MAV
-                };
+                    (float)PluginState.gps_track_over_ground_raw);
             }
             else if (MainV2.comPort.MAV.cs.firmware == MissionPlanner.ArduPilot.Firmwares.ArduCopter2 ||
                 MainV2.comPort.MAV.aptype == global::MAVLink.MAV_TYPE.QUADROTOR)
             {
                 return new Maps.GMapMarkerQuad(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw)
-                {
-                    Tag = MainV2.comPort.MAV
-                };
+                    (float)PluginState.gps_track_over_ground_raw);
             }
             else if (MainV2.comPort.MAV.aptype == global::MAVLink.MAV_TYPE.SURFACE_BOAT)
             {
                 return new Maps.GMapMarkerBoat(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw)
-                {
-                    Tag = MainV2.comPort.MAV
-                };
+                    (float)PluginState.gps_track_over_ground_raw);
             }
             else
             {
                 return new Maps.GMapMarkerPlane(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw)
-                {
-                    Tag = MainV2.comPort.MAV
-                };
+                    (float)PluginState.gps_track_over_ground_raw);
             }
         }
 
