@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
         <Authors>Valentin Bugrov</Authors>
         <Version>1.0.0</Version>
         <Company>Inertial Labs</Company>
@@ -17,103 +18,102 @@
         <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
         <CodeAnalysisRuleSet></CodeAnalysisRuleSet>
         <WarningsAsErrors>$(WarningsAsErrors);</WarningsAsErrors>
-        <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
 
     <ItemGroup>
         <Reference Include="MissionPlanner">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.exe</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.exe</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.Strings">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.Strings.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.Strings.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.ArduPilot">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.ArduPilot.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.ArduPilot.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.Maps">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.Maps.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.Maps.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.Controls">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.Controls.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.Controls.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.Utilities">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.Utilities.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.Utilities.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MissionPlanner.Drawing">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MissionPlanner.Drawing.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MissionPlanner.Drawing.dll</HintPath>
             <Aliases>Drawing</Aliases>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="System.Drawing.Common">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\System.Drawing.Common.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\System.Drawing.Common.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="MAVLink">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\MAVLink.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\MAVLink.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="log4net">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\log4net.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\log4net.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="BruTile">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\BruTile.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\BruTile.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="SvgNet">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\SvgNet.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\SvgNet.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="OpenTK">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\OpenTK.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\OpenTK.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="OpenTK.GLControl">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\OpenTK.GLControl.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\OpenTK.GLControl.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="Interfaces">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\Interfaces.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\Interfaces.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="GMap.NET.Core">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\GMap.NET.Core.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\GMap.NET.Core.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="GMap.NET.Drawing">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\GMap.NET.Drawing.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\GMap.NET.Drawing.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="GMap.NET.WindowsForms">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\GMap.NET.WindowsForms.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\GMap.NET.WindowsForms.dll</HintPath>
             <Private>false</Private>
         </Reference>
 
         <Reference Include="NetTopologySuite">
-            <HintPath>..\..\..\MissionPlanner\bin\Release\net461\NetTopologySuite.dll</HintPath>
+            <HintPath>..\..\bin\$(Configuration)\net461\NetTopologySuite.dll</HintPath>
             <Private>false</Private>
         </Reference>
     </ItemGroup>
