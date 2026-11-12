@@ -13,6 +13,8 @@ namespace InertialLabs.Maps
             new System.Drawing.Size(global::MissionPlanner.Maps.Resources.rover.Width,
                 global::MissionPlanner.Maps.Resources.rover.Height);
 
+        static readonly Bitmap icon = Resources.roverBlue;
+
         public GMapMarkerRover(PointLatLng p, float heading)
             : base(p)
         {
@@ -39,21 +41,23 @@ namespace InertialLabs.Maps
             {
             }
 #if NET472_OR_GREATER
-            var img = Resources.roverBlue;
-            var ia = new System.Drawing.Imaging.ImageAttributes();
-            if (IsTransparent)
+            using (var ia = new System.Drawing.Imaging.ImageAttributes())
             {
-                // Draw image with transparency using a color matrix
-                var cm = new System.Drawing.Imaging.ColorMatrix { Matrix33 = 0.39f };
-                ia.SetColorMatrix(cm, System.Drawing.Imaging.ColorMatrixFlag.Default, System.Drawing.Imaging.ColorAdjustType.Bitmap);
+                if (IsTransparent)
+                {
+                    // Draw image with transparency using a color matrix
+                    var cm = new System.Drawing.Imaging.ColorMatrix { Matrix33 = 0.39f };
+                    ia.SetColorMatrix(cm, System.Drawing.Imaging.ColorMatrixFlag.Default, System.Drawing.Imaging.ColorAdjustType.Bitmap);
+                }
+                g.DrawImage(icon, new Rectangle(-icon.Width / 2, -icon.Width / 2, icon.Width, icon.Height), 0, 0, icon.Width, icon.Height, GraphicsUnit.Pixel, ia);
             }
-            g.DrawImage(img, new Rectangle(-img.Width / 2, -img.Width / 2, img.Width, img.Height), 0, 0, img.Width, img.Height, GraphicsUnit.Pixel, ia);
 #else
             g.DrawImageUnscaled(global::MissionPlanner.Maps.Resources.rover,
                 Size.Width / -2,
                 Size.Height / -2);
 #endif
             g.Transform = temp;
+            temp.Dispose();
         }
     }
 }

@@ -144,6 +144,7 @@ namespace InertialLabs.Maps
             g.FillRectangle(thisDarkBlueBrush, 32 + Offset.X, 30 + Offset.Y, 5, 8);
 
             g.Transform = temp;
+            temp.Dispose();
         }
     }
 }

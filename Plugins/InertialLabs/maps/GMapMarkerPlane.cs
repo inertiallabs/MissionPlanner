@@ -89,9 +89,13 @@ namespace InertialLabs.Maps
                 color = Color.FromArgb(100, color);
             }
 
-            g.FillPolygon(new SolidBrush(color), plane);
+            using (var brush = new SolidBrush(color))
+            {
+                g.FillPolygon(brush, plane);
+            }
 
             g.Transform = temp;
+            temp.Dispose();
         }
     }
 }
