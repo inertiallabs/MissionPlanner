@@ -77,6 +77,11 @@ namespace InertialLabs.Forms
 
         private void BUT_sendtoahrs_Click(object sender, EventArgs e)
         {
+            CommandGuard.Run(SendAidingData);
+        }
+
+        private void SendAidingData()
+        {
             var aiding = new List<(string Name, Func<bool> Send)>();
 
             if (externalPositionCheckBox.Checked)

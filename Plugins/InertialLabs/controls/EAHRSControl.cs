@@ -35,38 +35,43 @@ namespace InertialLabs.Controls
 
         private void BUT_externalAHRS_gnss_enable_Click(object sender, EventArgs e)
         {
-            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS);
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_ENABLE_GNSS);
         }
 
         private void BUT_externalAHRS_gnss_disable_Click(object sender, EventArgs e)
         {
-            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS);
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_DISABLE_GNSS);
         }
 
         private void BUT_externalAHRS_vg3dclb_flight_start_Click(object sender, EventArgs e)
         {
-            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT);
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_VG3D_CALIBRATION_IN_FLIGHT);
         }
 
         private void BUT_externalAHRS_vg3dclb_flight_stop_Click(object sender, EventArgs e)
         {
-            SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT);
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP_VG3D_CALIBRATION_IN_FLIGHT);
         }
 
         private void BUT_externalAHRS_start_Click(object sender, EventArgs e)
         {
-            if (ConfirmCommand("External AHRS will be started."))
-            {
-                SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD);
-            }
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_START_UDD, "External AHRS will be started.");
         }
 
         private void BUT_externalAHRS_stop_Click(object sender, EventArgs e)
         {
-            if (ConfirmCommand("External AHRS will be stopped."))
+            RunCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP, "External AHRS will be stopped.");
+        }
+
+        private static void RunCommand(InertialLabs.MAVLink.MAV_CMD command, string confirmation = null)
+        {
+            CommandGuard.Run(() =>
             {
-                SendCommand(InertialLabs.MAVLink.MAV_CMD.EXTERNAL_AHRS_STOP);
-            }
+                if (confirmation == null || ConfirmCommand(confirmation))
+                {
+                    SendCommand(command);
+                }
+            });
         }
 
         private static bool ConfirmCommand(string action)
