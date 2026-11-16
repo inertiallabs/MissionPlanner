@@ -191,7 +191,7 @@ namespace InertialLabs.Controls
 
             if (PluginState.gps_lat_raw != 0 && PluginState.gps_lng_raw != 0)
             {
-                double delta_lng = (MainV2.comPort.MAV.cs.lng - PluginState.gps_lng_raw) * Math.PI / 180;
+                double delta_lng = Math.IEEERemainder(MainV2.comPort.MAV.cs.lng - PluginState.gps_lng_raw, 360) * Math.PI / 180;
                 quickView2.number = delta_lng * r * Math.Cos(PluginState.gps_lat_raw * Math.PI / 180);
             }
             else
