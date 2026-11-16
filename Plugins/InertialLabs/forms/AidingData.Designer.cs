@@ -1,4 +1,4 @@
-﻿namespace InertialLabs.Forms
+namespace InertialLabs.Forms
 {
     partial class AidingData
     {

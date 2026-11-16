@@ -1,4 +1,4 @@
-﻿namespace InertialLabs.Controls
+namespace InertialLabs.Controls
 {
     partial class EAHRSControl
     {

@@ -1,4 +1,4 @@
-﻿using MissionPlanner;
+using MissionPlanner;
 using System;
 using System.Windows.Forms;
 

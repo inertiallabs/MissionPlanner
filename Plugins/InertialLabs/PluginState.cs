@@ -1,4 +1,4 @@
-﻿using MissionPlanner;
+using MissionPlanner;
 using System.Diagnostics;
 using System.Threading;
 

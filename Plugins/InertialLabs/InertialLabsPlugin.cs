@@ -1,4 +1,4 @@
-﻿using MissionPlanner.Controls;
+using MissionPlanner.Controls;
 
 
 namespace InertialLabs

@@ -1,4 +1,4 @@
-﻿namespace InertialLabs.Embedders
+namespace InertialLabs.Embedders
 {
     public abstract class EmbedderInterface
     {
