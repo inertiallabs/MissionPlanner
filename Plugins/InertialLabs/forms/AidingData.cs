@@ -157,8 +157,8 @@ namespace InertialLabs.Forms
                     (float)forwardVelocityDvl.Value * 1e3f,
                     (float)verticalVelocityDvl.Value * 1e3f,
                     (float)lateralVelocityStdDvl.Value * 1e3f,
-                    (int)((float)forwardVelocityStdDvl.Value * 1e3f),
-                    (int)((float)verticalVelocityStdDvl.Value * 1e3f),
+                    ToMilli(forwardVelocityStdDvl.Value),
+                    ToMilli(verticalVelocityStdDvl.Value),
                     (float)latencyDvl.Value * 1e3f)));
             }
 
@@ -227,6 +227,11 @@ namespace InertialLabs.Forms
         private static int ToDegE7(decimal degrees)
         {
             return (int)Math.Round(degrees * 10000000m, MidpointRounding.AwayFromZero);
+        }
+
+        private static int ToMilli(decimal value)
+        {
+            return (int)Math.Round(value * 1000m, MidpointRounding.AwayFromZero);
         }
 
         private void BUT_close_Click(object sender, EventArgs e)
