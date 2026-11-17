@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace InertialLabs
+namespace InertialLabs.Primitives
 {
     internal static class CommandGuard
     {

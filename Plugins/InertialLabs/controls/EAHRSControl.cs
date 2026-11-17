@@ -4,6 +4,7 @@ using MissionPlanner.Utilities;
 using System;
 using System.Reflection;
 using System.Windows.Forms;
+using InertialLabs.Primitives;
 
 namespace InertialLabs.Controls
 {

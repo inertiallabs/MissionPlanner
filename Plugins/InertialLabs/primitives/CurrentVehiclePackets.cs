@@ -2,7 +2,7 @@ using MissionPlanner;
 using System;
 using System.Windows.Forms;
 
-namespace InertialLabs
+namespace InertialLabs.Primitives
 {
     // Passes a handler the MAVLink packets of the current vehicle, MainV2.comPort.MAV. It's the vehicle that Flight Data
     // shows and the plugin sends its commands to. The host replaces MainV2.comPort when the user selects a vehicle

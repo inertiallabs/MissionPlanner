@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace InertialLabs
+namespace InertialLabs.Primitives
 {
     // Order is important! From least to most severe. This is used for sorting the rows in the status table.
     internal enum EahrsSeverity
@@ -88,17 +88,17 @@ namespace InertialLabs
             F(MAVLink.ILABS_EAHRS_ADU_STATUS_FLAGS.EAHRS_ADU_BAROMETRIC_TEMPERATURE, EahrsSeverity.Warning),
         };
 
-        public static List<EahrsStatusRow> GetStatusRows()
+        public static List<EahrsStatusRow> GetStatusRows(EahrsStatusInfo status)
         {
             var rows = new List<EahrsStatusRow>();
-            AddRowsFromFlags(rows, UswFlags, PluginState.eahrsStatusValue1);
-            AddRowsFromFlags(rows, Usw2Flags, PluginState.eahrsStatusValue2);
-            AddRowsFromFlags(rows, AduFlags, PluginState.eahrsStatusValue3);
+            AddRowsFromFlags(rows, UswFlags, status.eahrsStatusValue1);
+            AddRowsFromFlags(rows, Usw2Flags, status.eahrsStatusValue2);
+            AddRowsFromFlags(rows, AduFlags, status.eahrsStatusValue3);
 
-            uint gpsFix = PluginState.eahrsStatusValue4;
+            uint gpsFix = status.eahrsStatusValue4;
             rows.Add(new EahrsStatusRow { Name = "gps_fix", Value = gpsFix, Severity = GpsFixSeverity(gpsFix) });
 
-            uint gpsSpoofing = PluginState.eahrsStatusValue5;
+            uint gpsSpoofing = status.eahrsStatusValue5;
             rows.Add(new EahrsStatusRow { Name = "gps_spoofing_indicated", Value = gpsSpoofing, Severity = GpsSpoofingSeverity(gpsSpoofing) });
             return rows;
         }
