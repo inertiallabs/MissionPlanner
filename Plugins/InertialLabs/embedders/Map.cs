@@ -88,8 +88,9 @@ namespace InertialLabs.Embedders
             markersUpdateTimer.Interval = 100;
             markersUpdateTimer.Tick += (s, e) =>
             {
-                UpdateGPSMarker();
-                UpdateVehiclePosEstimation();
+                var info = PluginState.AhrsAdditionalRawInfo;
+                UpdateGPSMarker(info);
+                UpdateVehiclePosEstimation(info);
                 UpdateGpsDistanceAround();
             };
 
@@ -131,7 +132,7 @@ namespace InertialLabs.Embedders
                 }
 
                 // GPS Markers
-                gpsMarker = GetGPSMarker();
+                gpsMarker = GetGPSMarker(PluginState.AhrsAdditionalRawInfo);
                 gpsMarker.IsVisible = false;
 
                 vehiclePosEstimationCircleMarker = new GMapMarkerCircle(MainV2.comPort.MAV.cs.Location, 0, Color.Red);
@@ -149,14 +150,14 @@ namespace InertialLabs.Embedders
             loadWaitTimer.Start();
         }
 
-        private void UpdateGPSMarker()
+        private void UpdateGPSMarker(AhrsAdditionalRawInfo info)
         {
-            if (!PluginState.show_gps_raw_location || !PluginState.is_gps_raw_valid || !PluginState.IsAhrsAdditionalRawInfoFresh)
+            if (!PluginState.show_gps_raw_location || !info.is_gps_raw_valid || !info.IsFresh)
             {
                 gpsMarker.IsVisible = false;
                 return;
             }
-            if (PluginState.gps_lat_raw == 0 && PluginState.gps_lng_raw == 0)
+            if (info.gps_lat_raw == 0 && info.gps_lng_raw == 0)
             {
                 gpsMarker.IsVisible = false;
                 return;
@@ -165,27 +166,27 @@ namespace InertialLabs.Embedders
             /// Check GPSMarker type change
             if (lastAptype != MainV2.comPort.MAV.aptype)
             {
-                ReplaceGPSMarker();
+                ReplaceGPSMarker(info);
                 lastAptype = MainV2.comPort.MAV.aptype;
             }
 
             PointLatLng location = MainV2.comPort.MAV.cs.Location;
-            location.Lat = PluginState.gps_lat_raw;
-            location.Lng = PluginState.gps_lng_raw;
+            location.Lat = info.gps_lat_raw;
+            location.Lng = info.gps_lng_raw;
             gpsMarker.Position = location;
-            gpsMarker.heading = (float)PluginState.gps_track_over_ground_raw;
+            gpsMarker.heading = (float)info.gps_track_over_ground_raw;
             gpsMarker.IsVisible = true;
         }
 
-        private void UpdateVehiclePosEstimation()
+        private void UpdateVehiclePosEstimation(AhrsAdditionalRawInfo info)
         {
-            if (!PluginState.show_ins_pos_estimation || !PluginState.IsAhrsAdditionalRawInfoFresh)
+            if (!PluginState.show_ins_pos_estimation || !info.IsFresh)
             {
                 vehiclePosEstimationCircleMarker.IsVisible = false;
                 return;
             }
 
-            double radius_m = Math.Max(PluginState.ins_lat_accuracy, PluginState.ins_lng_accuracy);
+            double radius_m = Math.Max(info.ins_lat_accuracy, info.ins_lng_accuracy);
             if (radius_m < 10)
             {
                 vehiclePosEstimationCircleMarker.IsVisible = false;
@@ -214,43 +215,43 @@ namespace InertialLabs.Embedders
             gcsSignalAreaCircleMarker.IsVisible = true;
         }
 
-        private GMapMarkerBase GetGPSMarker()
+        private GMapMarkerBase GetGPSMarker(AhrsAdditionalRawInfo info)
         {
             PointLatLng location = MainV2.comPort.MAV.cs.Location;
-            location.Lat = PluginState.gps_lat_raw;
-            location.Lng = PluginState.gps_lng_raw;
+            location.Lat = info.gps_lat_raw;
+            location.Lng = info.gps_lng_raw;
 
             if (MainV2.comPort.MAV.aptype == global::MAVLink.MAV_TYPE.GROUND_ROVER)
             {
                 return new Maps.GMapMarkerRover(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw);
+                    (float)info.gps_track_over_ground_raw);
             }
             else if (MainV2.comPort.MAV.cs.firmware == MissionPlanner.ArduPilot.Firmwares.ArduCopter2 ||
                 MainV2.comPort.MAV.aptype == global::MAVLink.MAV_TYPE.QUADROTOR)
             {
                 return new Maps.GMapMarkerQuad(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw);
+                    (float)info.gps_track_over_ground_raw);
             }
             else if (MainV2.comPort.MAV.aptype == global::MAVLink.MAV_TYPE.SURFACE_BOAT)
             {
                 return new Maps.GMapMarkerBoat(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw);
+                    (float)info.gps_track_over_ground_raw);
             }
             else
             {
                 return new Maps.GMapMarkerPlane(
                     location,
-                    (float)PluginState.gps_track_over_ground_raw);
+                    (float)info.gps_track_over_ground_raw);
             }
         }
 
-        private void ReplaceGPSMarker()
+        private void ReplaceGPSMarker(AhrsAdditionalRawInfo info)
         {
             markersOverlay.Markers.Remove(gpsMarker);
-            gpsMarker = GetGPSMarker();
+            gpsMarker = GetGPSMarker(info);
             markersOverlay.Markers.Add(gpsMarker);
         }
 

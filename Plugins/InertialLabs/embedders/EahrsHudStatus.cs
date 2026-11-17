@@ -139,10 +139,11 @@ namespace InertialLabs.Embedders
 
         public void UpdateEahrsStatus()
         {
+            var status = PluginState.EahrsStatusInfo;
             bool hasStatus;
             try
             {
-                hasStatus = PluginState.IsEahrsStatusInfoFresh &&
+                hasStatus = status.IsFresh &&
                             MainV2.comPort.MAV.param.ContainsKey("EAHRS_TYPE") &&
                             MainV2.comPort.MAV.param["EAHRS_TYPE"].Value == 5 /*Inertial Labs*/;
             }
@@ -158,7 +159,7 @@ namespace InertialLabs.Embedders
             }
 
             var mostSevere = EahrsSeverity.None;
-            foreach (var row in EahrsStatusTable.GetStatusRows())
+            foreach (var row in EahrsStatusTable.GetStatusRows(status))
             {
                 if (row.Severity > mostSevere)
                 {

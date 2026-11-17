@@ -141,20 +141,21 @@ namespace InertialLabs.Controls
 
         private void updateTimer_Tick(object sender, EventArgs e)
         {
-            if (PluginState.IsAhrsAdditionalRawInfoFresh)
+            var info = PluginState.AhrsAdditionalRawInfo;
+            if (info.IsFresh)
             {
-                if (PluginState.is_gps_raw_valid)
+                if (info.is_gps_raw_valid)
                 {
-                    calculateInsGnssPosDiff();
+                    calculateInsGnssPosDiff(info);
                 }
                 else
                 {
                     resetInsGnssPosDiffValues();
                 }
 
-                quickView4.number = PluginState.ins_lat_accuracy;
-                quickView5.number = PluginState.ins_lng_accuracy;
-                quickView6.number = PluginState.ins_alt_accuracy;
+                quickView4.number = info.ins_lat_accuracy;
+                quickView5.number = info.ins_lng_accuracy;
+                quickView6.number = info.ins_alt_accuracy;
             }
             else
             {
@@ -170,7 +171,7 @@ namespace InertialLabs.Controls
             PluginState.gcs_distance_around = (uint)NUD_gcs_distance_around.Value;
         }
 
-        private void calculateInsGnssPosDiff()
+        private void calculateInsGnssPosDiff(AhrsAdditionalRawInfo info)
         {
             const int r = 6371000; // constant for conversion from Spherical to Cartesian coordinates
 
@@ -180,9 +181,9 @@ namespace InertialLabs.Controls
                 return;
             }
 
-            if (PluginState.gps_lat_raw != 0)
+            if (info.gps_lat_raw != 0)
             {
-                double delta_lat = (MainV2.comPort.MAV.cs.lat - PluginState.gps_lat_raw) * Math.PI / 180;
+                double delta_lat = (MainV2.comPort.MAV.cs.lat - info.gps_lat_raw) * Math.PI / 180;
                 quickView1.number = delta_lat * r;
             }
             else
@@ -190,19 +191,19 @@ namespace InertialLabs.Controls
                 quickView1.number = double.NaN;
             }
 
-            if (PluginState.gps_lat_raw != 0 && PluginState.gps_lng_raw != 0)
+            if (info.gps_lat_raw != 0 && info.gps_lng_raw != 0)
             {
-                double delta_lng = Math.IEEERemainder(MainV2.comPort.MAV.cs.lng - PluginState.gps_lng_raw, 360) * Math.PI / 180;
-                quickView2.number = delta_lng * r * Math.Cos(PluginState.gps_lat_raw * Math.PI / 180);
+                double delta_lng = Math.IEEERemainder(MainV2.comPort.MAV.cs.lng - info.gps_lng_raw, 360) * Math.PI / 180;
+                quickView2.number = delta_lng * r * Math.Cos(info.gps_lat_raw * Math.PI / 180);
             }
             else
             {
                 quickView2.number = double.NaN;
             }
 
-            if (PluginState.gps_alt_raw != 0)
+            if (info.gps_alt_raw != 0)
             {
-                double delta_alt = MainV2.comPort.MAV.cs.altasl / CurrentState.multiplieralt - PluginState.gps_alt_raw;
+                double delta_alt = MainV2.comPort.MAV.cs.altasl / CurrentState.multiplieralt - info.gps_alt_raw;
                 quickView3.number = -1 * delta_alt;
             }
             else

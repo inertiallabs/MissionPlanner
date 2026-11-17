@@ -23,14 +23,15 @@ namespace InertialLabs.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            bool hasData = PluginState.IsEahrsStatusInfoFresh;
+            var status = PluginState.EahrsStatusInfo;
+            bool hasData = status.IsFresh;
             string title = hasData ? formTitle : formTitle + " - NO DATA";
             if (Text != title)
             {
                 Text = title;
             }
 
-            var rows = EahrsStatusTable.GetStatusRows();
+            var rows = EahrsStatusTable.GetStatusRows(status);
             for (int idx = 0; idx < rows.Count; idx++)
             {
                 if (flowLayoutPanel1.Controls.Count <= idx)

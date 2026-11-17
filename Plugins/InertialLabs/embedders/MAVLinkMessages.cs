@@ -41,26 +41,22 @@ namespace InertialLabs.Embedders
                     {
                         var ahrs_info = mavLinkMessage.ToStructure<MAVLink.mavlink_ahrs_additional_raw_info_t>();
 
-                        PluginState.gps_lat_raw = ahrs_info.lat_raw * 1.0e-7;
-                        PluginState.gps_lng_raw = ahrs_info.lon_raw * 1.0e-7;
-                        PluginState.gps_alt_raw = ahrs_info.alt_raw * 1.0e-3;
-                        PluginState.gps_track_over_ground_raw = ahrs_info.track_over_ground_raw * 1.0e-2;
-                        PluginState.is_gps_raw_valid = ahrs_info.gps_raw_status == 0;
-                        PluginState.ins_lat_accuracy = ahrs_info.ins_lat_accuracy * 1.0e-3;
-                        PluginState.ins_lng_accuracy = ahrs_info.ins_lng_accuracy * 1.0e-3;
-                        PluginState.ins_alt_accuracy = ahrs_info.ins_alt_accuracy * 1.0e-3;
-                        PluginState.SaveAhrsAdditionalRawInfoTimestamp(vehicle);
+                        PluginState.AhrsAdditionalRawInfo = new AhrsAdditionalRawInfo(vehicle,
+                            gps_lat_raw: ahrs_info.lat_raw * 1.0e-7,
+                            gps_lng_raw: ahrs_info.lon_raw * 1.0e-7,
+                            gps_alt_raw: ahrs_info.alt_raw * 1.0e-3,
+                            gps_track_over_ground_raw: ahrs_info.track_over_ground_raw * 1.0e-2,
+                            is_gps_raw_valid: ahrs_info.gps_raw_status == 0,
+                            ins_lat_accuracy: ahrs_info.ins_lat_accuracy * 1.0e-3,
+                            ins_lng_accuracy: ahrs_info.ins_lng_accuracy * 1.0e-3,
+                            ins_alt_accuracy: ahrs_info.ins_alt_accuracy * 1.0e-3);
                     }
                     break;
                 case (uint)InertialLabs.MAVLink.MAVLINK_MSG_ID.EAHRS_STATUS_INFO:
                     {
                         var status = mavLinkMessage.ToStructure<MAVLink.mavlink_eahrs_status_info_t>();
-                        PluginState.eahrsStatusValue1 = status.status1;
-                        PluginState.eahrsStatusValue2 = status.status2;
-                        PluginState.eahrsStatusValue3 = status.status3;
-                        PluginState.eahrsStatusValue4 = status.status4;
-                        PluginState.eahrsStatusValue5 = status.status5;
-                        PluginState.SaveEahrsStatusInfoTimestamp(vehicle);
+                        PluginState.EahrsStatusInfo = new EahrsStatusInfo(vehicle,
+                            status.status1, status.status2, status.status3, status.status4, status.status5);
                     }
                     break;
                 default:
